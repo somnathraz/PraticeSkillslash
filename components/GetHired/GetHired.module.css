@@ -76,10 +76,7 @@
   box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.08);
   border-radius: 9px;
   margin-left: 54px;
-  background-image: url("https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/software_pattern__.webp");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  position: relative;
 }
 @media (max-width: 1281px) {
   .GetHired {

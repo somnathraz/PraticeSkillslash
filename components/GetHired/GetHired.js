@@ -35,6 +35,16 @@ const GetHired = () => {
           </div>
         </div>
         <div className={styles.right}>
+          <div className="bgWrap">
+            <Image
+              alt="software-pattern"
+              src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/software_pattern__.webp"
+              layout="fill"
+              objectFit="cover"
+              quality={100}
+              loading="lazy"
+            />
+          </div>
           {mobile ? (
             <Image
               src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Companies_Mobile.webp"

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./FirstSection.module.css";
 import Image from "next/image";
 import { BsArrowRightShort, BsPlayFill } from "react-icons/bs";
@@ -6,21 +6,12 @@ import TextAnimation from "../Animation/TextAnimation";
 import VideoPopup from "../VideoPopup/VideoPopup";
 
 const FirstSection = () => {
-  const [mobile, setMobile] = useState(false);
   const [video, setVideo] = useState(false);
 
   const videoSHow = () => {
     setVideo(true);
   };
-  useEffect(() => {
-    let width = window.innerWidth;
-    if (width < 481) {
-      setMobile(true);
-    }
-    if (width > 481) {
-      setMobile(false);
-    }
-  });
+
   return (
     <div className={styles.FirstWrap}>
       <VideoPopup triggers={video} setTriggers={setVideo} ids="512xWUs9uXs" />

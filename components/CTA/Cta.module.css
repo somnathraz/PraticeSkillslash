@@ -1,11 +1,10 @@
 .CtaWrapper {
-  background-image: url("https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Cta_Skillslash.webp");
-  background-position: center center;
-  background-size: cover;
+  position: relative;
   padding: 90px 130px;
   display: grid;
   grid-template-columns: 50% 50%;
 }
+
 .leftCta {
   display: flex;
   flex-flow: column;
@@ -84,10 +83,6 @@
 }
 @media (max-width: 481px) {
   .CtaWrapper {
-    background-image: url("https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Mobile_CTA.webp");
-    background-position: center center;
-    background-size: contain;
-    background-repeat: no-repeat;
     padding: 20px 10px;
     height: 702px;
     display: flex;
