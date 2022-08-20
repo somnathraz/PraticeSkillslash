@@ -1,0 +1,950 @@
+{
+  "metaInfo": {
+    "title": "Business analytics course with industry experience in Gurugram - Skillslash",
+    "desc": "Step up to get direct company certification under our Business analytics course in Gurugram. Study in live-interactive classes.",
+    "keyword": "business analyst course in Gurgaon, business analyst certification in Gurgaon, business analyst training in Gurgaon, business analyst course, business analyst courses, business analyst certification, business analyst training",
+    "canonical": "https://skillslash.com/business-analytics-course-in-gurugram"
+  },
+  "form": {
+    "dataScience": false,
+    "blockchain": false,
+    "DataEngineering": false,
+    "BusinessAnalytics": true,
+    "FullStack": false
+  },
+  "FirstSection": {
+    "deskTopPara": "Get industry exposure and get yourself placed",
+    "mTopPara": "Get industry exposure and get yourself placed",
+    "title": "Business analytics certification course in Gurugram",
+    "spanTitleText": "100% Job guarantee program",
+    "desc": "Learn business analytics fundamentals by enrolling in our business analytics course in Gurugram. Besides, gain valuable experience working on top-tier industry-collaborated projects."
+  },
+  "ProgramInfo": {
+    "BatchDate": "21 August,2022",
+    "BatchDuration": "09 Months",
+    "Placement": "100% Job Guarantee"
+  },
+  "BoxShape": {
+    "title": "Why Join this Programme?",
+    "Box1h5": "Certificate For Projects",
+    "box1desc": "Bring your own projects and receive the assistance you need to complete them. Besides, get project certification from well-known startups.",
+    "Box2h5": "Tailor-made courses",
+    "box2desc": " Most importantly, you will be able to design your own course to meet your individual learning requirements and goals.",
+    "Box3h5": "Job Support",
+    "box3desc": " Firstly, you will get free career counselling and help to get started. Secondly, we assist you with interview preparation and generate job prospects.",
+    "Box4h5": "Program Subscription",
+    "box4desc": "Above all, with a three-year membership, you will have access to the business analytics course in Gurugram for three years."
+  },
+  "TopCTA": {
+    "title": "Having Doubts? Talk with our Experts",
+    "BeforeBR": " Talk to our expert counsellor to know if your profile is suitable",
+    "AfterBR": " for career transition in data science."
+  },
+  "Benefits": {
+    "desc": " Learn Data science with multiple domain specialization and become a data scientist with our 100% job Guaranteed program.",
+    "InterviewT": "Become data scientist with top Companies",
+    "InterviewD": "Interact and Learn from mentors working in top product based companies to crack interviews for your dream role.",
+    "CertificateT": " Get real work experience from companies",
+    "CertificateD": "Work as a data scientist on live projects directly with companies to gain real work experience.",
+    "JobT": "100% job guarantee or money back",
+    "JobD": " Our program seeks to eliminate financial risk in the upskilling journey with our Job guarantee."
+  },
+  "Certificate": {
+    "popupHead": "Download Data science Brochure",
+    "title": "Get Certificate directly from AI companies",
+    "desc": "Get 100% job guarantee and real-work experience by learning from the best data science institute in India and crack interviews with confidence.",
+    "src": "https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Certificate-(Business analytics).webp"
+  },
+  "RealWork": {
+    "desc": "Basically, most courses only teach students the fundamentals. However, under Skillslash’s business analytics course in Gurugram, we focus on the actual work experience. Because, work experience can be useful in several ways. Some of which are given below:"
+  },
+  "popupHead": "Download Business analytics Course Brochure",
+  "syllabusDesc": "SOur business analytics course is curated by leading faculties and industry leaders. Especially, with the aim to provide practical learning experience with live interactive classes and projects.",
+  "syllabus": [
+    {
+      "Module0": {
+        "title": "Module 0 Basics For Data Science",
+        "content": [
+          {
+            "chap": {
+              "title": "Chapter 1: Introduction to Programming ( 3 hrs )",
+              "desc": [
+                "Source code Vs bytecode Vs machine code, Compiler Vs Interpreter, C/C++, Java Vs Python."
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 2: code editors basics (1 hrs)",
+              "desc": [
+                "Different type of code editors in python, Introduction to Anaconda and IDEs"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 3: python basics (1 hrs)",
+              "desc": [
+                "Variable Vs Identifiers, Strings Operators Vs Operand, Procedure oriented Vs Modular programming."
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 4: statistics basics & probability (1 hrs)",
+              "desc": [
+                "Measures of Central Tendency & dispersion, Inferential statistics and Sampling theory."
+              ]
+            }
+          }
+        ],
+        "id": 0,
+        "open": true
+      }
+    },
+    {
+      "Module0": {
+        "title": "Module 1 - Programming Essentials",
+        "content": [
+          {
+            "chap": {
+              "title": "Chapter 1:PROGRAMMING INTRODUCTION ( 3 hrs )",
+              "desc": [
+                "Different types of Programming Language.",
+                "What is Compiler?",
+                "What is an Interpreter?"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 2: PYTHON INTRODUCTION (1 hrs)",
+              "desc": [
+                "How a Python Program runs on our system?",
+                "Features of Python Memory Management in Python,",
+                "Different Implementations of Python."
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 3: CONDITIONAL AND LOOPS (1 hrs)",
+              "desc": ["Conditional Statement", "Loop Statement."]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 4: PYTHON PROGRAMMING COMPONENTS",
+              "desc": [
+                "Linting",
+                "Formatting",
+                "Understanding Python code",
+                "Command Line Arguments",
+                "Python Operators"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 5: FUNCTION",
+              "desc": [
+                "Working with functions",
+                "Parameters vs Arguments",
+                "Namespace vs Scope",
+                "Function call vs Function referencing"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 6: EXPECTION HANDELING",
+              "desc": [
+                "Introduction to Exception Handling",
+                "Type of Errors",
+                "Nestedtry-except block & Default except for block."
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 7: MODULES IN PYTHON",
+              "desc": [
+                "Introduction to Modular Programming",
+                "Importing Modules and different import statement",
+                "Types of Modules."
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 8: FILE HANDELING",
+              "desc": [
+                "Use of File Handling?",
+                "Type of Files",
+                "File Operation",
+                "What is File Handling?",
+                "Why do we need File Handling?",
+                "Type of Files",
+                "File Operation"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 9: REGULAR EXPRESSION",
+              "desc": [
+                "Intro & use of Regular Expression?",
+                "Regex module & important methods,",
+                "Regex pattern and it’s interpretation."
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 10: NUMPY IN PYTHON",
+              "desc": [
+                "Intro & use of numpy, What is an array?",
+                "Array Operations using Numpy",
+                "Numpy and Scipy,",
+                "Numpy and Pandas"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 11: PANDAS IN PYTHON",
+              "desc": [
+                "Numpy vs Pandas",
+                "Exporting Dataframe to CSV and Excel",
+                "EDA using Pandas."
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 12: MatplotLib",
+              "desc": [
+                "Lines & markers",
+                "Figures",
+                "Watermark",
+                "Shapes",
+                "Polygons and arrows Color maps",
+                "Autocorrelation study"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 13: Seaborn",
+              "desc": [
+                "Working with seaborn on titanic dataset",
+                "Introduction & installation",
+                "Controlling figure asthetics",
+                "Different plots in seaborn"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 14: Other visualisation libraries",
+              "desc": ["Plotly", "Pygal", "Geopltlib etc."]
+            }
+          }
+        ],
+        "id": 1,
+        "open": false
+      }
+    },
+    {
+      "Module0": {
+        "title": "Module 2 - Applied Statistics",
+        "content": [
+          {
+            "chap": {
+              "title": "Chapter 1:- Probability and Statistical Inferences ( 4 hrs )",
+              "desc": [
+                "Introduction to Probability Principles",
+                "Random Variables and Probability principles",
+                "Discrete Probability Distributions - Binomial, Poisson etc",
+                "Continuous Probability Distributions - Gaussian, Normal, etc",
+                "Joint and Conditional Probabilities",
+                "Bayes theorem and its applications",
+                "Central Limit Theorem and Applications"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 2: Statistics Foundations (1 hrs)",
+              "desc": [
+                "Elements of Descriptive Statistics",
+                "Measures of Central tendency and Dispersion",
+                "Inferential Statistics fundamentals",
+                "Sampling theory and scales of measurement",
+                "Covariance and correlation"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 3: Hypothesis Testing and its Applications (1 hrs)",
+              "desc": [
+                "Basic Concepts - Formulation of Hypothesis, Making a decision",
+                "Advanced Concepts - Choice of Test - t test vs z test",
+                "Evaluation of Test - P value and Critical Value approach",
+                "Confidence Intervals, Type 1 and 2 errors"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 4: Exploratory Data Analysis (1 hrs)",
+              "desc": [
+                "Ingest data",
+                "Data cleaning",
+                "Outlier detection & Missing value imputation,",
+                "Missing value imputation",
+                "Capstone project for Business Analysis"
+              ]
+            }
+          }
+        ],
+        "id": 2,
+        "open": false
+      }
+    },
+    {
+      "Module0": {
+        "title": "Module 3 - Introduction to  Machine Learning",
+        "content": [
+          {
+            "chap": {
+              "title": "Chapter 1:Primer on Machine Learning ( 3 hrs )",
+              "desc": [
+                "Unsupervised and Reinforcement",
+                "Types of Learning - Supervised",
+                "Statistics vs Machine Learning",
+                "Types of Analysis - Descriptive, Predictive, and Prescriptive",
+                "Bias Variance Tradeoff - Overfitting vs Underfitting"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 2: Regression",
+              "desc": [
+                "Correlation vs Causation",
+                "Simple and Multiple linear regression",
+                "Linear regression with Polynomial features",
+                "What is linear in Linear Regression?",
+                "OLS Estimation and Gradient descent",
+                "Model Evaluation Metrics for regression problems - MAE, RMSE, MSE, and MAP"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 3: Classification",
+              "desc": [
+                "Introduction to Classification problems",
+                "Logistic Regression for Binary problems",
+                "Maximum Likelihood estimation",
+                "Data Imbalance and redressal methodology",
+                "Up sampling, Down sampling and SMOTE"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 4: Clustering-K means",
+              "desc": [
+                "Introduction to Unsupervised Learning",
+                "Hierarchical and Non-Hierarchical techniques",
+                "K Means Algorithms - Partition based model for clustering",
+                "Model Evaluation metrics – Clustering"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 5: KNN",
+              "desc": [
+                "Introduction to KNNs",
+                "KNNs as a classifier",
+                "Non-Parametric algorithms and Lazy learning ideology",
+                "Applications in Missing value imputes and Balancing datasets"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 6: Advance Regression Model",
+              "desc": [
+                "Introduction to regularization",
+                "Understanding ridge regression",
+                "Working with Lasso regression",
+                "Tackling multicollinearitywith regression"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 7: Decision Trees",
+              "desc": [
+                "Nonlinear models for classification",
+                "Intro to decision trees",
+                "Why are they called Greedy Algorithms?",
+                "Information Theory - Measures of Impurity",
+                "Susceptibility to overfitting and high variance ",
+                "Pruning and Truncation."
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 8: Ensemble Techniques",
+              "desc": [
+                "Introduction to Bagging as an Ensemble technique",
+                "Bootstrap Aggregation and Out of Bag error",
+                "Random Forests and its Applications in Feature selection",
+                "How Bagging overcomes the overfitting problem?",
+                "Scent and Boosting",
+                "How Boosting overcomes the Bias - Variance Tradeoff",
+                "Gradient Boosting and Xgboost as regularised boosting"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 9: Support Vector Machines",
+              "desc": [
+                "Introduction to Expectation— Maximization Algorithms",
+                "The kernel tricks",
+                "Linear, Polynomia, and RBF kernels, SVMs for regression and classification",
+                "Applications in Multiclass classification."
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 10: Bayesian Family Algorithms",
+              "desc": [
+                "Naive Bayes for Text classification",
+                "Bag of words and TF-IDF algorithm",
+                "Multinomial and Gaussian Naive Bayes, Bayesian Belief networks and Path models."
+              ]
+            }
+          },
+
+          {
+            "chap": {
+              "title": "Chapter 11: Time-series Analysis",
+              "desc": [
+                "Intro to Time series",
+                "Autocorrelation and ACF/PACF plots",
+                "The Random Walk model and Stationarity of Time Series",
+                "Tests for Stationarity - ADF and Dickey- Fuller test, AR, MA, ARIMA, SARIMA models",
+                "A regression approach to time series forecasting."
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 12: Machine Learning Pipeline & auto ML",
+              "desc": [
+                "Feature engineering & selection techniques",
+                "Principal Component Analysis",
+                "Linear Discriminant Analysis",
+                "Serving the model via Rest API & Keras."
+              ]
+            }
+          }
+        ],
+        "id": 3,
+        "open": false
+      }
+    },
+    {
+      "Module0": {
+        "title": "Module 4 - SQL & MongoDB for business",
+        "content": [
+          {
+            "chap": {
+              "title": "Chapter 1:- Introduction to SQL",
+              "desc": [
+                "Working with MySQL, DDL, TCL, DML commands",
+                "Relational and database schema",
+                "Working with keys",
+                "Database manipu lation, management, and administration"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 2: No SQL Databases",
+              "desc": [
+                "What is HBase?",
+                "HBase Architecture",
+                "HBase Components",
+                "Storage Model of HBase",
+                "HBase vs RDBMS",
+                "Introduction to Mongo DB, CRUD",
+                "Advantages of MongoDB over RDBMS Use cases."
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 3: SQL Fundamental Statements ",
+              "desc": [
+                "SELECT Statement.",
+                "COUNT.",
+                "SELECT WHERE.",
+                "ORDER BY.",
+                "IN, NOT IN.",
+                "NULL and NOT_NULL.",
+                "Comparison Operators (=, >, >=, <=).",
+                "MySQL Warnings (Understand and Debug)."
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 4: Refining Selection.",
+              "desc": [
+                "SELECT DISTINCT.",
+                "LIKE, NOT LIKE, ILIKE.",
+                "LIMIT.",
+                "BETWEEN.",
+                "BETWEEN – AND"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 5: SQL Databases",
+              "desc": [
+                "Introduction to database",
+                "Creating Data base",
+                "Dropping Database",
+                "Using Database",
+                "Introduction to Tables",
+                "Data types in SQL",
+                "Use case of different data",
+                "Working with tables",
+                "Coding best practices in SQL."
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 6: JOINS & string function",
+              "desc": [
+                "Introduction to JOINs",
+                "Types of JOINS",
+                "Usage of different types of JOINS",
+                "Loading Data",
+                "Usage of string functions like; CONCAT, SUBSTRING etc",
+                "INNER join,OUTER join, Full join, Left Join, Right Join, UNION."
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 7: Basics & CRUD Operations",
+              "desc": [
+                "Data bases",
+                "Collection & Documents",
+                "Shell & MongoDB drivers",
+                "What is JSON Data",
+                "Create, Read, Update, Delete",
+                "Working with Arrays",
+                "Understanding Schemas and Relations."
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 8: SQL Statements & functions",
+              "desc": [
+                "Multiple INSERT",
+                "INSERT INTO. GROUP BY HAVING",
+                "WHERE vs HAVING, UPDATE, DELETE, AS",
+                "EXISTS-NOT EXISTS",
+                "Application of g roup by",
+                "Count function, MIN and MAX, Sum Function, Avg Function"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 9: Advance SQL",
+              "desc": [
+                "Local, Session",
+                "Global Variables",
+                "Timestamps and Extract",
+                "CURRENT DATE & TIME",
+                "EXTRACT AGE, TO CHAR",
+                "Mathematical Functions and Operators",
+                "CEIL & FLOOR, POWER, RANDOM",
+                "ROUND, SETSEED",
+                "Operators and their precedence"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 10: Mongo DB",
+              "desc": [
+                "What is MongoDB?",
+                "Characteristics, Structure and Features.",
+                "MongoDB Ecosystem.",
+                "Installation process.",
+                "Connecting to MongoDB database.",
+                "What are Object Ids in MongoDb.",
+                "Data Formats in MongoDB.",
+                "MongoDB Aggregation Framework.",
+                "Aggregating Documents.",
+                "What are MongoDB Drivers?",
+                "Finding, Deleting, Updating, Inserting Elements."
+              ]
+            }
+          }
+        ],
+        "id": 4,
+        "open": false
+      }
+    },
+    {
+      "Module0": {
+        "title": "Module 5 - Excel for Business",
+        "content": [
+          {
+            "chap": {
+              "title": "Chapter 1: Excel Fundamentals",
+              "desc": [
+                "Introduction to Excel interface.",
+                "Customizing Excel Quick Access Toolbar.",
+                "Structure of Excel Workbook.",
+                "Excel Menus.",
+                "Excel Toolbars: Hiding, Displaying, and Moving Toolbars.",
+                "Switching Between Sheets in a Workbook.",
+                "Inserting and Deleting Worksheets.",
+                "Renaming and Moving Worksheets.",
+                "Protecting a Workbook.",
+                "Hiding and Unhiding Columns, Rows and Sheets.",
+                "Splitting and Freezing a Window.",
+                "Inserting Page Breaks.",
+                "Advanced Printing Options.",
+                "Opening, saving and closing Excel document.",
+                "Common Excel Shortcut Keys.",
+                "Quiz."
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 2: Worksheet Customization",
+              "desc": [
+                "Adjusting Page Margins and Orientation.",
+                "Creating Headers, Footers, and Page Numbers.",
+                "Adding Print Titles and Gridlines.",
+                "Formatting Fonts & Values.",
+                "Adjusting Row Height and Column Width.",
+                "Changing Cell Alignment.",
+                "Adding Borders.",
+                "Applying Colours and Patterns.",
+                "Using the Format Painter.",
+                "Formatting Data as Currency Values.",
+                "Formatting Percentages.",
+                "Merging Cells, Rotating Text.",
+                "Using Auto Fill.",
+                "Moving and Copying Data in an Excel Worksheet.",
+                "Inserting and Deleting Rows and Columns."
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 3: Images and Shapes into Excel Worksheet ",
+              "desc": [
+                "Inserting Excel Shapes.",
+                "Formatting Excel Shapes.",
+                "Inserting Images.",
+                "Working with Excel SmartArt."
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 4: Basic work on Excel",
+              "desc": [
+                "Entering and selecting values. Using numeric data in excel",
+                "Working with forms menu, cell references, conditional",
+                "Formatting and data validation",
+                "Finding and replacing information from worksheet",
+                "Inserting & deleting cells, rows and columns."
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 5: Excel Formulae",
+              "desc": [
+                "Creating basic formulae in excel",
+                "Im plementing excel formulae in worksheet",
+                "Relative cell referencing",
+                "Absolute cell referencing",
+                "Relative vs Absol ute cell references in formulae",
+                "Understanding the order of operation",
+                "Entering and Editing text, Fixing errors in your formulae",
+                "Formulae with several operators, Formulae with cell ranges",
+                "Quiz."
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 6: Excel Functions",
+              "desc": [
+                "Working with functions like SUM(), AVERAGE() etc",
+                "Adjacent cells error in excel calculations",
+                "Use of AutoSum & autofill command",
+                "Quiz"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 7: Charts and Graphs",
+              "desc": [
+                "Creating a column chart.",
+                "Working with the excel chart ribbon.",
+                "Adding and modifying data on an Excel chart.",
+                "Formatting an excel chart.",
+                "Moving a chart to another worksheet.",
+                "Resizing a chart.",
+                "Changing a chart’s source data.",
+                "Adding titles, gridlines and a data table.",
+                "Formatting a data series and chart axis.",
+                "Using fill effects.",
+                "Changing a chart type and working with pie charts.",
+                "Quiz."
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 8: Support Vector Machines",
+              "desc": [
+                "Intro to Pivot Tables",
+                "Structuring Source Data for Analysis in Excel",
+                "Creating a PivotTable",
+                "Exploring Pivot Ta ble Analyse & Desig n Options",
+                "Working with and on pivot tables",
+                "Dealing with Growing Source Data",
+                "Enriching data with Pivot table calculated values & fields",
+                "Formatting and charting a PivotTable",
+                "Pivot Table Case Study",
+                "Quiz"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 9: Basic Macros",
+              "desc": [
+                "Introduction to macros",
+                "Automating Tasks with Macros",
+                "Recording a Macro",
+                "Playing a Macro",
+                "Assigning a Macro a Shortcut Key."
+              ]
+            }
+          }
+        ],
+        "id": 5,
+        "open": false
+      }
+    },
+    {
+      "Module0": {
+        "title": "Module 6 - Power BI",
+        "content": [
+          {
+            "chap": {
+              "title": "Chapter 1: Introducation To Power BI",
+              "desc": [
+                "Why Power BI?",
+                "Account Types.",
+                "Installing Power BI.",
+                "Understanding the Power BI Desktop Workflow.",
+                "Exploring the Interface of the Data Model.",
+                "Understanding the Query Editor Interface."
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 2: Query Editor",
+              "desc": [
+                "Connecting Power BI Desktop to Source Files.",
+                "Keeping & Removing Rows.",
+                "Removing Empty Rows.",
+                "Create calculate columns.",
+                "Make first row as headers.",
+                "Change Data type.",
+                "Rearrange the columns.",
+                "Remove duplicates.",
+                "Unpivot columns and split columns.",
+                "Working with filters.",
+                "Appending queries.",
+                "Working with columns.",
+                "Replacing values.",
+                "Splitting columns.",
+                "Formatting data & handling formatting errors.",
+                "Pivoting & unpivoting data.",
+                "Query duplicates vs references"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 3: Power BI",
+              "desc": [
+                "Power BI",
+                "Working with Time series Understanding aggregation and granularity",
+                "Filters and Slicers in Power BI",
+                "Maps, Scatterplots and BI Reports",
+                "Creating a Customer Seq mentation."
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 4: Data Models",
+              "desc": [
+                "Understanding Relationships.",
+                "Many-to-One & One-to-One.",
+                "Cross Filter Direction & Many-to-Many.",
+                "M-Language vs DAX (Data Analysis Expressions).",
+                "Basics of DAX.",
+                "DAX Data Types.",
+                "DAX Operators and Syntax.",
+                "Importing Data for DAX Learning.",
+                "Resources for DAX Learning.",
+                "M vs DAX.",
+                "Understanding IF & RELATED.",
+                "Create a Column.",
+                "Rules to Create Measures.",
+                "Calculated Columns vs Calculated Measures.",
+                "Understanding CALCULATE & FILTER.",
+                "Understanding Data Category",
+                "SUM, AVERAGE, MIN, MAX, SUMX, COUNT, DIVIDE, COUNT, COUNTROOMS, CALCULATE, FILTER, ALL",
+                "Time Intelligence.",
+                "Create date table in M.",
+                "Create date table in DAX.",
+                "Display last refresh date.",
+                "SAMEPERIODLASTYEAR.",
+                "TOTALYTD.",
+                "DATEADD.",
+                "PREVIOUSMONTH."
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 5: Time Intelligence",
+              "desc": [
+                "Create data table in M and DAX, Display last refresh Date."
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 6: Modelling",
+              "desc": [
+                "Create your first report.",
+                "Modelling basics to advance.",
+                "Modelling and relationship.",
+                "Ways of creating relationship.",
+                "Normalisation – De-normalisation.",
+                "OLTP vs OLAP.",
+                "Star schema vs Snowflake schema."
+              ]
+            }
+          }
+        ],
+        "id": 6,
+        "open": false
+      }
+    }
+  ],
+  "Review": {
+    "title": "Why pratical learning experience is vital?",
+    "desc": " Skillslash’s online business analytics certification in Gurugram is designed for creative minds and made for everyone.Take business analytics course with us. And, experience the new era of education."
+  },
+  "Fee": {
+    "FullStack": true,
+    "desc": " The business analytics course fee starts from ₹ 55,000 (Excluding GST). Besides, we aim to deliver to you quality education considering the aspect of feasibility",
+    "desc1": "We are driven by the idea of program affordability. So, we give you several financial options to manage and budget the course expenses. Because we believe in fair reachability and access to all our carefully curated programs. Therefore, you get options such as EMI to pay the business analytics course fees.",
+    "BasicPrice": "₹ 55,000 + GST",
+    "BasicDesc": "Get Business Analytics training from Industry experts",
+    "ProPrice": "₹ 75,000 + GST",
+    "ProDesc": " Get Business Analytics training training with real work Experience",
+    "ProMaxPrice": "₹ 1,05,000 + GST",
+    "ProMaxDesc": " Get Business Analytics training with 100% Job Guarantee"
+  },
+  "BatchDetails": {
+    "BatchHeader": "The business analytics course in Gurugram next cohorts 2022",
+    "BatchName1": "weekend Batch",
+    "BatchName2": "Weekend Batch",
+    "weekDayBatchDate": "21 August 2022",
+    "weekEndBatchDate": "28 August 2022",
+    "weekDayBatchTime": "09:00 – 12:00 PM",
+    "weekEndBatchTime": "09:00 – 12:00 PM",
+    "weekEndBatch": "true",
+    "weekDayBatch": "true"
+  },
+  "FAQ": {
+    "desc": "Have a look at the FAQ’s below to know more about our business analytics training, fees and project details."
+  },
+  "FaqDATA": [
+    {
+      "id": 0,
+      "ques": " What is the business analytics course duration in Gurugram and what modules are covered?",
+      "ans": "The duration of the business analytics course in Gurugram is 5 months. But, depending on your schedule (weekdays/weekends), the amount of time you spend learning will vary. Under our business analytics training, in different modules you will be able to study about a variety of topics. Beginning with the fundamentals of programming, such as python and cloud basics, and progressing to advanced Excel, DBMS - SQL and NoSQL, and data visualization using power BI and Tableau.",
+      "open": false
+    },
+    {
+      "id": 1,
+      "ques": "What are the requirements to take a business analytics certification course in Gurugram?",
+      "ans": "Every enthusiastic data science aspirant, we believe, is capable of making a successful data science career move. But, no, we don't have any stringent eligibility requirements. However, we do assess candidates' aptitude for the learning module in the business analytics sector. Specifically, on the basis of programming skills and statistical knowledge. The business analytics course is specifically curated for professionals. Also, a candidate must have at least one year of professional experience in any field.",
+      "open": false
+    },
+    {
+      "id": 2,
+      "ques": "What is the business analytics course fee at Skillslash?",
+      "ans": "The business analytics training has a course fee start from INR 55, 000. In addition, you can also avail a scholarship program under our business analytics course in Gurugram. Besides, you can get up to a 10% scholarship for the business analytics training in Gurugram if you take an aptitude exam. So, if a candidate has a score of more than 65 percent on the aptitude exam, he or she will be eligible for a 10 percent reduction on the course fees.",
+      "open": false
+    },
+    {
+      "id": 3,
+      "ques": "If I have to miss a class due to an emergency, will there be a make-up class available?",
+      "ans": "Firstly, we provide live online classes. Additionally, all of our students have access to video recordings of those classes. Besides, we provide you with unrestricted access to these recorded sessions. So, you can refer to them whenever you need theoretical assistance in your business analytics, AI or ML career. As a result, if you miss any of the live classes, you need not be disappointed. That said, we do, however, strongly encourage you to attend all live classes.",
+      "open": false
+    },
+    {
+      "id": 4,
+      "ques": " How many projects are included in this business analytics course in Gurugram?",
+      "ans": "The business analytics certification in Gurugram offers 15+ real-world projects from which you can choose a couple for case study learning based on the demands of your domain. Aside from that, under the business analytics course curriculum, you will have the opportunity to work on three industry projects (capstone projects) with a variety of MNCs and startups.",
+      "open": false
+    },
+    {
+      "id": 5,
+      "ques": "What kind of certification does the business analytics course provide",
+      "ans": "The catch is that you will not receive any form of certification or academic degree if you attend the business analytics training. Instead, we provide a project management certificate that is recognized all over the world. Besides, under this business analytics course in Gurugram, you can get direct certifications from the company with which you completed your industrial project.",
+      "open": false
+    }
+  ]
+}

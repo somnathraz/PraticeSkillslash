@@ -1,0 +1,253 @@
+.wrapper {
+  position: relative;
+  margin-left: 30px;
+  height: max-content;
+}
+.MenuTabs {
+  display: flex;
+  margin-top: 30px;
+  height: 350px;
+  gap: 20px;
+  justify-content: space-between;
+  background-color: white;
+}
+.leftPanel {
+  display: flex;
+  flex-flow: column;
+}
+.leftPanel .gridWrap {
+  display: none;
+}
+.span {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+  width: 350px;
+  color: black;
+  font-size: 18px;
+  padding: 15px 25px;
+  font-weight: 400;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.span:hover {
+  background-color: #eaeaea;
+}
+.span span,
+.spanActive span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ActiveSpanIcon {
+  font-size: 20px;
+  color: white;
+  margin-right: 10px;
+}
+.spanIcon {
+  color: black;
+  font-size: 20px;
+  margin-right: 10px;
+}
+.spanActive {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+  width: 350px;
+  color: white;
+  background: #0487d9;
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 15px 25px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.middlePanel {
+  margin: 0;
+  margin-top: -10px;
+  padding: 0;
+  width: 100%;
+}
+.gridWrap {
+  display: grid;
+  width: inherit;
+  grid-template-columns: 32% 32% 32%;
+  gap: 20px;
+  align-items: flex-start;
+}
+.gridBox {
+  width: 100%;
+  position: relative;
+  box-shadow: -1px 0px 10px 2px rgba(4, 135, 217, 0.1);
+
+  border-radius: 19px;
+  background: #ffffff;
+}
+.gridImg {
+  padding: 0;
+  margin: -8px -5px 0px -5px;
+}
+.gridInnerBox {
+  background: #ffffff;
+
+  border-radius: 19px;
+  padding: 0px 15px 15px 15px;
+  width: 100%;
+
+  display: flex;
+  flex-flow: column;
+  gap: 5px;
+  z-index: 10;
+}
+.gridBanner {
+  max-width: 100%;
+  height: auto;
+}
+
+.gridInnerBox span {
+  display: flex;
+  align-items: center;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+}
+.line {
+  border: 0.1px solid rgba(175, 175, 175, 0.118);
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.lines {
+  border: 0.1px solid rgba(175, 175, 175, 0.118);
+}
+.gridBtn {
+  background-color: transparent;
+  color: #0487d9;
+  font-weight: 600;
+  width: 100%;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  line-height: 21px;
+
+  text-align: center;
+  padding: 0;
+  padding-top: 10px;
+}
+.gridIcon {
+  color: #0d4a9b;
+  font-size: 30px;
+  padding: 5px;
+  margin-right: 5px;
+  border-radius: 4px;
+}
+.gridBox h4 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+}
+@media (max-width: 1281px) {
+  .span,
+  .spanActive {
+    width: 250px;
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+  .wrapper {
+    margin-left: 15px;
+  }
+  .gridImg {
+    height: max-content;
+  }
+  .gridInnerBox {
+    margin-top: -30px;
+  }
+  .gridBox h4 {
+    font-size: 15px;
+  }
+  .gridInnerBox span {
+    width: max-content;
+    font-size: 15px;
+  }
+  .gridInnerBox button {
+    font-size: 15px;
+  }
+}
+@media (max-width: 961px) {
+  .wrapper {
+    margin-left: 0px;
+  }
+  .span,
+  .spanActive {
+    width: 210px;
+    font-size: 14px;
+    padding: 10px;
+  }
+  .MenuTabs {
+    gap: 5px;
+  }
+  .gridWrap {
+    gap: 5px;
+    grid-template-columns: 32% 35% 32%;
+  }
+  .gridBox:nth-child(2) .gridInnerBox {
+    margin-top: -38px;
+  }
+  .MenuTabs {
+    height: 300px;
+  }
+  .gridBox h4 {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .gridInnerBox span {
+    font-size: 12px;
+  }
+  .gridIcon {
+    font-size: 25px;
+  }
+}
+@media (max-width: 481px) {
+  .wrapper {
+    margin-left: 0px;
+  }
+  .gridBox h4 {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+  .gridInnerBox {
+    margin-top: -10px;
+  }
+  .gridBox:nth-child(2) .gridInnerBox {
+    margin-top: -10px;
+  }
+  .MenuTabs {
+    left: 0;
+
+    flex-flow: column;
+  }
+  .leftPanel {
+    margin-right: 0px;
+  }
+
+  .middlePanel {
+    display: none;
+  }
+  .span {
+    width: 100%;
+  }
+  .spanActive {
+    width: 100%;
+  }
+  .leftPanel .gridWrap {
+    display: grid;
+    width: inherit;
+    grid-template-columns: 82% 82% 82%;
+    gap: 20px;
+    align-items: flex-start;
+    overflow-y: scroll;
+    height: 400px;
+  }
+}

@@ -1,0 +1,220 @@
+.MegaMenu {
+  display: grid;
+  grid-template-columns: 28% 47% 25%;
+  padding-left: 100px;
+  gap: 10px;
+  padding-right: 100px;
+}
+.leftSideMenu {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+  padding: 35px 10px 10px 10px;
+
+  margin-bottom: 20px;
+}
+
+.leftSideMenu h6,
+.MiddleMenu h6,
+.rightSideMenu h6 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  color: black;
+}
+.leftSideMenu h6 {
+  margin-bottom: 30px;
+}
+
+.leftSideMenu .normalSpan {
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between;
+  padding: 10px 25px;
+  font-size: 16px;
+  font-weight: 500;
+
+  border-radius: 3px;
+  margin-top: -8px;
+  cursor: pointer;
+}
+.activeSpan {
+  display: flex;
+  align-items: center;
+  background-color: #0487d9;
+  color: white;
+  justify-content: space-between;
+  padding: 10px 25px;
+  font-size: 16px;
+  font-weight: 500;
+
+  border-radius: 3px;
+
+  cursor: pointer;
+}
+.leftSideMenu .normalSpan:hover {
+  background-color: #eaeaea;
+}
+.innerSpan {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gridPanel {
+  display: grid;
+  grid-template-columns: 45% 45%;
+  gap: 20px;
+  margin-top: 23px;
+  margin-bottom: 20px;
+}
+.MiddleMenu {
+  padding-top: 35px;
+}
+.mInnerBox {
+  display: flex;
+
+  gap: 0px;
+  margin-top: 20px;
+  padding: 15px 30px;
+  background-color: white;
+  border-radius: 10px;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0px 0px 9px 2px rgba(4, 135, 217, 0.1);
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.mInnerBox h5 {
+  margin: 0;
+  font-size: 16px;
+}
+.mInnerBox h5:hover {
+  color: #f28705;
+}
+.mInnerBox span {
+  display: flex;
+  gap: 0px;
+  color: #646464;
+}
+.mInnerBoxDiv {
+  display: flex;
+  flex-flow: column;
+  gap: 5px;
+}
+.mInnerBox span div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dot {
+  font-size: 20px;
+  color: #646464;
+}
+.ArrowDiv {
+  display: flex;
+  align-items: flex-start;
+  align-self: flex-start;
+  justify-content: flex-start;
+}
+.sideArrow {
+  font-size: 30px;
+  margin-top: -4px;
+  color: #0487d9;
+}
+.rightSideMenu {
+  padding-top: 35px;
+  padding-left: 20px;
+  margin-bottom: 40px;
+}
+.flagB {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.flagB h5 {
+  font-size: 16px;
+  margin: 0;
+}
+.flagB p {
+  margin: 0;
+}
+.NavBtn {
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  color: black;
+  padding: 8px 10px;
+  font-size: 12px;
+  position: absolute;
+  top: 120px;
+  left: 10px;
+}
+.banner {
+  position: relative;
+}
+@media (max-width: 1281px) {
+  .MegaMenu {
+    padding-left: 20px;
+    padding-right: 20px;
+    grid-template-columns: 28% 45% 27%;
+  }
+  .leftSideMenu h6,
+  .MiddleMenu h6,
+  .rightSideMenu h6 {
+    font-size: 20px;
+  }
+  .rightSideMenu {
+    padding-left: 0;
+  }
+  .gridPanel {
+    grid-template-columns: 48% 48%;
+    gap: 10px;
+  }
+  .mInnerBox {
+    padding: 10px 15px;
+  }
+}
+@media (max-width: 481px) {
+  .leftSideMenu h6 {
+    display: none;
+  }
+  .normalSpan {
+    padding: 15px 25px;
+    background-color: #e9e9e9;
+    margin-top: 5px;
+  }
+  .activeSpan {
+    padding: 15px 25px;
+  }
+
+  .gridPanel {
+    margin: 0;
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 10px;
+  }
+  .mInnerBox {
+    padding: 15px 20px;
+    margin-top: 5px;
+  }
+  .MiddleMenu {
+    display: none;
+  }
+  .rightSideMenu {
+    display: none;
+  }
+  .MegaMenu {
+    display: flex;
+    padding: 0;
+  }
+  .leftSideMenu {
+    display: flex;
+    width: 100%;
+    flex-flow: column;
+    padding: 10px;
+  }
+}

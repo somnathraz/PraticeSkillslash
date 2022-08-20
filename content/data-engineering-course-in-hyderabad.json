@@ -1,0 +1,512 @@
+{
+  "metaInfo": {
+    "title": "Data engineering course with industry experience in Hyderabad - Skillslash",
+    "desc": "Step up to get direct company certification under our data engineering course in Hyderabad. Study in live-interactive classes.",
+    "keyword": "Data Engineering certification, Data Engineering courses, pmp training, Data Engineering certification india, Data Engineering course, Data Engineering training in india, Data Engineering course in india, Data Engineering certification india, Data Engineering certification cost in india",
+    "canonical": "https://skillslash.com/data-engineering-course-in-hyderabad"
+  },
+  "form": {
+    "dataScience": false,
+    "blockchain": false,
+    "DataEngineering": true,
+    "BusinessAnalytics": false,
+    "FullStack": false
+  },
+  "FirstSection": {
+    "deskTopPara": "Get placed by getting certified",
+    "mTopPara": "Get placed by getting certified",
+    "title": "Data engineering course",
+    "spanTitleText": "with industry experience",
+    "desc": "Learn the principles of data engineering by enrolling in the best data engineering course in Hyderabad. Gain valuable experience working on top-tier industry-collaborated projects as well."
+  },
+  "ProgramInfo": {
+    "BatchDate": "5 August,2022",
+    "BatchDuration": "09 Months",
+    "Placement": "100% Job Guarantee"
+  },
+  "BoxShape": {
+    "title": "Why Join this Programme?",
+    "Box1h5": "Direct company certification",
+    "box1desc": "You get the opportunity to bring your own projects and receive the assistance to complete them. Besides, get project certification from well-known startups.",
+    "Box2h5": "Design your own courses",
+    "box2desc": " Most importantly, you will be able to self-design your courses. In addition, you can get expert level data engineering training by experts.",
+    "Box3h5": "100% Job Guarantee",
+    "box3desc": " To begin, you can assure yourself a job with 100% job guarantee. In addition, you can get free career counseling services and guidance.",
+    "Box4h5": "Eligibility criteria",
+    "box4desc": "This Data engineering course in Hyderabad is recommended for professionals with at least 1 year of work experience. No programming experience is required."
+  },
+  "TopCTA": {
+    "title": "Having Doubts? Talk with our Experts",
+    "BeforeBR": " Talk to our expert counsellor to know if your profile is suitable",
+    "AfterBR": " for career transition in data science."
+  },
+  "Benefits": {
+    "desc": " Learn Data science with multiple domain specialization and become a data scientist with our 100% job Guaranteed program.",
+    "InterviewT": "Become data scientist with top Companies",
+    "InterviewD": "Interact and Learn from mentors working in top product based companies to crack interviews for your dream role.",
+    "CertificateT": " Get real work experience from companies",
+    "CertificateD": "Work as a data scientist on live projects directly with companies to gain real work experience.",
+    "JobT": "100% job guarantee or money back",
+    "JobD": " Our program seeks to eliminate financial risk in the upskilling journey with our Job guarantee."
+  },
+  "Certificate": {
+    "popupHead": "Download Data science Brochure",
+    "title": "Get Certificate directly from AI companies",
+    "desc": "Get 100% job guarantee and real-work experience by learning from the best data science institute in India and crack interviews with confidence.",
+    "src": "https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Certificate-(Data engineering).webp"
+  },
+  "RealWork": {
+    "desc": "Primarily, most courses only teach students basics. But, under our data engineering courses in Hyderabad, we emphasize on real work experience. In addition, work experience is helpful in several ways. Some of which are listed below:"
+  },
+  "syllabusDesc": "The Full stack software development course with a 100% job guarantee is curated by leading faculties and industry leaders. Especially, with the aim to provide practical learning experience with live interactive classes and projects.",
+  "popupHead": "Download Data Engineering Course Brochure",
+  "syllabus": [
+    {
+      "Module0": {
+        "title": "Module 0 (4weeks)",
+        "desc": "",
+        "content": [
+          {
+            "chap": {
+              "title": "Chapter 1: Programming Fundamentals(2 week )",
+              "desc": [
+                "Programming Basics, Variables, Conditional statements",
+                "Strings, Lists, Loops and Functions",
+                "Pointers in C, Revision of C/C++/Java/Javascript and Python Syntax",
+                "Basic Mathematics for Programming."
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 2: Software Development Essentials (2 week )",
+              "desc": [
+                "Introduction to HTTP, Rest API",
+                "Basic Linux",
+                "Version Control - GIT , Github",
+                "Operating System Basics",
+                "Database Fundamentals, SQL & No SQL introduction.",
+                "Networking Basics."
+              ]
+            }
+          }
+        ],
+        "id": 0,
+        "open": true
+      }
+    },
+    {
+      "Module0": {
+        "title": "Module 1 - Data Structures and Algorithms ( 12 Weeks )",
+        "desc": "This module helps you to master the algorithms and data structures interview in FAANG & top product based MNCs. You will be solving 250+ coding challenges under guidance of expert mentors working in Tier 1 companies like Microsoft, Amazon, Adobe, Facebook, Google etc.",
+        "content": [
+          {
+            "chap": {
+              "title": "",
+              "desc": [
+                "Array basics, Problem solving techniques with example",
+                "Time Complexity & Bit manipulations",
+                "Sorting, Searching & String Algorithms",
+                "Linked list",
+                "Two pointer techniques",
+                "Stack & Queue - Implementation & Problems.",
+                "Tree, Trie, Ternary Search tree",
+                "Recursion & Greedy Algorithms",
+                "Combinatorial problems with backtracking",
+                "Hashing",
+                "Graph Theory",
+                "Dynamic Programming"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Note",
+              "desc": [
+                "Programming Language Used: C/C++, Java",
+                "Total Number of problems to be solved in live class: 120+",
+                "Total coding problems in assignment: 100"
+              ]
+            }
+          }
+        ],
+        "id": 1,
+        "open": false
+      }
+    },
+    {
+      "Module0": {
+        "title": "Module 2 - System Design in Depth (6 weeks )",
+        "desc": "",
+        "content": [
+          {
+            "chap": {
+              "title": "Chapter 1: System Design fundamentals",
+              "desc": [
+                "OOD : Object-oriented analysis and design , Design patterns",
+                "CAP Theorem in distributed Computer Systems",
+                "Load balancing - Caching - Distributed And Global Cache",
+                "CDN, Proxy, Web Socket, Polling",
+                "Database Indexing, Sharding, Normalization, ACID, SQL vs NoSQL",
+                "Messaging Queue",
+                "Multithreading and Synchronization"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 2: High Level Design With Projects",
+              "desc": [
+                "Introduction to common MicroService design patterns",
+                "Microservices & System components in real world",
+                "Event Driven, Domain Driven, Rest API driven Architectures",
+                "3 Real time projects"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 3: Low Level Design With Projects",
+              "desc": [
+                "OOD and Design Patterns",
+                "API Design",
+                "DB Schema Design for NoSQL and SQL",
+                "Common LLD and API design questions"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 4: Mini Projects :",
+              "desc": [
+                "Designing Facebook news feed",
+                "Designing web crawler",
+                "Designing Uber Backend",
+                "Designing youtube"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Note",
+              "desc": [
+                "For more end to end Real industry Projects on system design & Full stack , Refer Project Section."
+              ]
+            }
+          }
+        ],
+        "id": 2,
+        "open": false
+      }
+    },
+    {
+      "Module0": {
+        "title": "Module 3 - Advance Data Structures & Algorithms (4 Weeks )",
+        "desc": "",
+        "content": [
+          {
+            "chap": {
+              "title": "",
+              "desc": [
+                "LRU cache Like Problems",
+                "Advance Tree - Segment tree, Suffix tree, Red black tree, K-D tree",
+                "Advance Dynamic Programming",
+                "CDN, Proxy, Web Socket, Polling",
+                "Solve 30+ hard level coding interview questions from FAANG companies."
+              ]
+            }
+          }
+        ],
+        "id": 3,
+        "open": false
+      }
+    },
+    {
+      "Module0": {
+        "title": "Module 4 - Coding Interview Prep ( 3 week )",
+        "desc": "",
+        "content": [
+          {
+            "chap": {
+              "title": "",
+              "desc": [
+                "Build Resume/Linkedin profile to get shortlisted in top tech companies",
+                "Learn Strategy to defend every single skill in your CV",
+                "Understand Hiring process for FAANG and product based MNCs",
+                "Sessions on Company wise interview.",
+                "Company wise Mock interview from industry expert.",
+                "Salary negotiations & strategy.",
+                "Meet your personal mentor and career coach for guidance."
+              ]
+            }
+          }
+        ],
+        "id": 4,
+        "open": false
+      }
+    },
+    {
+      "Module0": {
+        "title": "Module 1 - Data Structures and Algorithms ( 12 Weeks )",
+        "desc": "This module helps you to master the algorithms and data structures interview in FAANG & top product based MNCs. You will be solving 250+ coding challenges under guidance of expert mentors working in Tier 1 companies like Microsoft, Amazon, Adobe, Facebook, Google etc.",
+        "content": [
+          {
+            "chap": {
+              "title": "",
+              "desc": [
+                "Array basics, Problem solving techniques with example",
+                "Time Complexity & Bit manipulations",
+                "Sorting, Searching & String Algorithms",
+                "Linked list",
+                "Two pointer techniques",
+                "Stack & Queue - Implementation & Problems.",
+                "Tree, Trie, Ternary Search tree",
+                "Recursion & Greedy Algorithms",
+                "Combinatorial problems with backtracking",
+                "Hashing",
+                "Graph Theory",
+                "Dynamic Programming"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Note",
+              "desc": [
+                "Programming Language Used: C/C++, Java",
+                "Total Number of problems to be solved in live class: 120+",
+                "Total coding problems in assignment: 100"
+              ]
+            }
+          }
+        ],
+        "id": 1,
+        "open": false
+      }
+    },
+    {
+      "Module0": {
+        "title": "Module 5 - Electives & Specialization",
+        "desc": "( You can select any 2 electives based on your career goal & work exp.)",
+        "content": [
+          {
+            "chap": {
+              "title": "Module 5 - A : Full Stack Specialization With Real Work Experience (15 Weeks)",
+              "desc": []
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 1: Frontend Development ",
+              "desc": [
+                "Web development basics - HTML and CSS",
+                "Bootstrap Basics",
+                "Introduction to Javascript",
+                "Introduction to React Ecosystem",
+                "Modern Javascript For React",
+                "Advance React",
+                "Mastering UI & UX",
+                "Coding Responsive Websites and Webapps"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Chapter 2: Backend Development",
+              "desc": [
+                "Introduction to MVC",
+                "Learning Node.js",
+                "Mongodb for Developers",
+                "Learning express.js",
+                "Building Rest API with node.js and express",
+                "Securing Rest API with node.js",
+                "Build Microservices architecture with node.js",
+                "Docker & Kubernetes basics for node.js applications",
+                "Cloud Deployment using AWS."
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Module 5 B: Data Engineering Specialization ( 6 week )",
+              "desc": []
+            }
+          },
+          {
+            "chap": {
+              "title": "",
+              "desc": [
+                "Overview of Data Engineering",
+                "Advance SQL, NOSQL Database using Mongodb",
+                "Hadoop Basics",
+                "Design Data pipeline",
+                "Data warehousing",
+                "Apache Spark Fundamentals",
+                "Core data engineering - Staging, Profiling, cleansing, and migrating data.",
+                "2 capstone Projects"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Module 5 C : Advance AI & ML Specialization ( 10 week )",
+              "desc": []
+            }
+          },
+          {
+            "chap": {
+              "title": "",
+              "desc": [
+                "Probability theory",
+                "Statistics foundation",
+                "Exploratory Data Analysis",
+                "Intro to Machine learning",
+                "Supervised Learning",
+                "Unsupervised Learning",
+                "Deep Learning Basics",
+                "NLP and Chatbots",
+                "Basics of Computer Vision",
+                "2 Capstone Projects"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Module 5 D : Technical Engineering Manager ( Recommended for > 7 Yrs exp ) (8 weeks)",
+              "desc": []
+            }
+          },
+          {
+            "chap": {
+              "title": "",
+              "desc": [
+                "Technical Engineering Management Fundamentals",
+                "Technical concepts for Engineering managers",
+                "Digital product lifecycle.",
+                "Software Development Project management.",
+                "Building a product roadmap",
+                "Software Product Development Frameworks",
+                "Building a product from scratch",
+                "Building team - Hiring tech talent",
+                "How to manage tech teams?",
+                "Launching your Product",
+                "Product management tips.",
+                "Behavioral interviews for Engineering managers"
+              ]
+            }
+          },
+          {
+            "chap": {
+              "title": "Module 5 D : Technical Engineering Manager ( Recommended for > 7 Yrs exp ) (8 weeks)",
+              "desc": []
+            }
+          },
+          {
+            "chap": {
+              "title": "",
+              "desc": [
+                "Blockchain Basics",
+                "Hyperledger Fundamentals",
+                "Bitcoin & Blockchain Cryptocurrencies",
+                "Introduction to Ethereum",
+                "Smart Contract Basics",
+                "Hyperledger Fabric Basics",
+                "Real time use cases of blockchain in : Fintech, Supply chain, Healthcare etc."
+              ]
+            }
+          }
+        ],
+        "id": 5,
+        "open": false
+      }
+    },
+    {
+      "Module0": {
+        "title": "Module 6 : Work on End to End Projects in Partnership With Startups",
+        "desc": "We help you to work on projects directly with startups so that you get real work experience. You will be building scalable tech products from scratch using full stack technologies and advanced system design concepts. You are recommended to work on minimum 3-4 projects end to end and build a project portfolio to crack coding interviews in top MNCs with confidence.",
+        "content": [
+          {
+            "chap": {
+              "title": "",
+              "desc": []
+            }
+          }
+        ],
+        "id": 6,
+        "open": false
+      }
+    }
+  ],
+  "Review": {
+    "title": "What makes our Data engineering course in Hyderabad special?",
+    "desc": " Skillslash’s online data engineering courses in Hyderabad are designed for creative and made for everyone. Take data engineering training with us and experience the new era of education."
+  },
+  "Fee": {
+    "FullStack": true,
+    "desc": " The data engineering course fees in Hyderabad start from INR 59,000 (Excluding GST). In addition, we aim to deliver to you quality education considering the aspect of feasibility.",
+    "desc1": "We are driven by the idea of program affordability. So, we give you several financial options to manage and budget the data engineering course expenses. Because we believe in fair reachability and access to all our carefully curated programs. Therefore, you get options such as EMI to pay the data engineering course fees in Hyderabad.",
+    "BasicPrice": "₹ 59,000 + GST",
+    "BasicDesc": "Get data engineering training from Industry experts",
+    "ProPrice": "₹ 79,000 + GST",
+    "ProDesc": " Get data engineering training with real work Experience",
+    "ProMaxPrice": "₹ 1,09,000 + GST",
+    "ProMaxDesc": " Get data engineering training with 100% Job Guarantee"
+  },
+  "BatchDetails": {
+    "BatchHeader": "The Data Engineering course next cohorts 2022",
+    "BatchName1": "weekday Batch",
+    "BatchName2": "Weekday Batch",
+    "weekDayBatchDate": "5 August 2022",
+    "weekEndBatchDate": "29 July 2022",
+    "weekDayBatchTime": "08:00 – 10:00 PM",
+    "weekEndBatchTime": "08:00 – 10:00 PM",
+    "weekEndBatch": "true",
+    "weekDayBatch": "true"
+  },
+  "FAQ": {
+    "desc": "Read the FAQ’s below to know more about our data engineering training, fees and project details."
+  },
+  "FaqDATA": [
+    {
+      "id": 0,
+      "ques": "What is the business analytics course duration and what modules are covered?",
+
+      "ans": "The Data engineering course in Hyderabad lasts for six months. The amount of time you spend learning will vary depending on your schedule (weekdays/weekends). Also, you will be able to study a variety of topics under different courses. Especially, starting with the principles of programming, such as python and cloud basics, and progressing to advanced Excel, DBMS - SQL and NoSQL, and concepts like ETL and python with object-oriented programming.",
+      "open": false
+    },
+    {
+      "id": 1,
+      "ques": "What are the prerequisites for enrolling in a data engineering course in Hyderabad?",
+
+      "ans": " We believe that any eager data science aspirant can make a successful data science career move. No, we don't have any severe prerequisites for eligibility. But, we do, however, examine candidates' ability for the data engineering course. Particularly, on the basis of programming abilities. The data engineering course in Hyderabad has been designed with experts in mind. Besides, a candidate enrolling must have at least one year of professional experience in any field.",
+      "open": false
+    },
+    {
+      "id": 2,
+      "ques": "What is the data engineering course fee at Skillslash?",
+
+      "ans": "The data engineering training has a course fee start from INR 59,000. In addition, you can also avail a scholarship program under our data engineering training. You can get up to a 10% scholarship for the Fresh Graduates program if you take an aptitude exam. So, if a candidate has a score of more than 65 percent on the aptitude exam, he or she will be eligible for a 10 percent reduction on the course fees.",
+      "open": false
+    },
+    {
+      "id": 3,
+      "ques": "If I have to miss a class due to an emergency, will there be a make-up class available?",
+
+      "ans": "Above all, we provide live online classes. Additionally, all of our students have access to video recordings of those classes. Besides, we provide you with unrestricted access to these recorded sessions so that you can refer to them whenever you need theoretical assistance in your data engineering, AI or ML career. As a result, if you miss any of the live classes, you won't be disappointed. That said, we do, however, strongly encourage you to attend all live classes.",
+      "open": false
+    },
+    {
+      "id": 4,
+      "ques": "How many projects are included in this Data engineering course in Hyderabad?",
+      "ans": "Skillslash offers you the best data engineering course in Hyderabad with 15+ real-world projects from which you can choose a couple for case study learning based on the demands of your domain. Aside from that, during the following modules, you will have the opportunity to work on three industry projects (capstone projects) with a variety of MNCs and startups.",
+      "open": false
+    },
+    {
+      "id": 5,
+      "ques": "What kind of certification does the data engineering course in Hyderabad provide?",
+
+      "ans": "The data engineering course offers 15+ real-world projects from which you can choose a couple for case study learning based on the demands of your domain. Aside from that, during the following modules, you will have the opportunity to work on three industry projects (capstone projects) with a variety of MNCs and startups.",
+      "open": false
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+.ReviewTop {
+  display: grid;
+  grid-template-columns: 49% 49%;
+  padding: 30px 100px 0px 100px;
+  gap: 30px;
+}
+
+.ReviewRight {
+  padding-right: 110px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.ReviewRight h4 {
+  margin-bottom: 10px;
+  margin-right: 90px;
+}
+
+.ReviewLeft {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.pIcon {
+  font-size: 60px;
+  color: #0487d9;
+  position: absolute;
+  top: 40%;
+  cursor: pointer;
+
+  left: 41%;
+  border-radius: 50%;
+  background-color: white;
+  z-index: 99;
+}
+.leftPoints p {
+  font-size: 18px;
+}
+.ReviewSlider {
+  padding: 40px 100px;
+}
+.rating {
+  width: 35%;
+}
+.ReviewBox {
+  display: flex;
+  flex-flow: column;
+  padding: 40px 50px;
+  gap: 10px;
+  max-height: 750px;
+  padding: 40px 50px;
+  background: #ffffff;
+  border-bottom: 5px solid #0487d9;
+  box-shadow: 12px 12px 24px -1px rgba(4, 135, 217, 0.1);
+  border-radius: 25px;
+  margin-bottom: 30px;
+}
+
+.ReviewBox h5,
+.ReviewBoxS h5,
+.ReviewBox1 h5,
+.ReviewBox2 h5 {
+  font-weight: 700;
+  font-size: 21px;
+  margin: 0;
+}
+.ReviewBoxS {
+  display: flex;
+  flex-flow: column;
+  height: max-content;
+  max-height: 750px;
+  padding: 40px 50px;
+  gap: 10px;
+}
+.ReviewBox1 {
+  display: flex;
+  flex-flow: column;
+  height: max-content;
+  max-height: 750px;
+  padding: 40px 50px;
+  gap: 10px;
+}
+.ReviewBox2 {
+  display: flex;
+  flex-flow: column;
+  height: max-content;
+  max-height: 750px;
+  padding: 40px 50px;
+  margin-left: -30px;
+  gap: 10px;
+}
+.ReviewBox1:hover {
+  display: flex;
+  flex-flow: column;
+  height: max-content;
+  max-height: 750px;
+  padding: 40px 50px;
+  gap: 10px;
+  background: #ffffff;
+  border-bottom: 5px solid #f28705;
+  box-shadow: 12px 12px 24px -1px rgba(242, 135, 5, 0.1);
+  border-radius: 25px;
+  margin-bottom: 30px;
+}
+.ReviewBox2:hover {
+  display: flex;
+  flex-flow: column;
+  height: max-content;
+  max-height: 750px;
+  padding: 40px 50px;
+  gap: 10px;
+
+  background: #ffffff;
+  border-bottom: 5px solid #0487d9;
+  box-shadow: 12px 12px 24px -1px rgba(4, 135, 217, 0.1);
+  border-radius: 25px;
+  margin-bottom: 30px;
+}
+.points p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+@media (max-width: 1281px) {
+  .ReviewSlider {
+    padding: 0px 20px;
+    margin-top: 40px;
+  }
+  .ReviewTop {
+    padding: 0px 20px;
+    margin-top: 30px;
+  }
+  .ReviewRight h4 {
+    font-size: 30px;
+    line-height: 37px;
+    margin-right: 20px;
+  }
+}
+@media (max-width: 1281px) {
+  .ReviewRight {
+    padding-right: 10px;
+  }
+  .ReviewRight h4 {
+    font-size: 26px;
+    line-height: 30px;
+  }
+  .ReviewSlider h4 {
+    font-size: 26px;
+  }
+}
+@media (max-width: 801px) {
+  .ReviewRight h4 {
+    font-size: 24px;
+  }
+  .ReviewSlider h4 {
+    font-size: 24px;
+  }
+  .ReviewTop {
+    display: flex;
+    flex-flow: column;
+  }
+}
+
+@media (max-width: 481px) {
+  .ReviewSlider {
+    padding: 20px 10px;
+    margin-top: 30px;
+  }
+  .ReviewTop {
+    padding: 20px 10px;
+    display: flex;
+    flex-flow: column;
+  }
+  .ReviewLeft {
+    position: relative;
+  }
+  .ReviewRight {
+    padding-right: 10px;
+  }
+  .ReviewRight h4 {
+    margin-right: 0px;
+  }
+  .leftPoints p {
+    gap: 5px;
+    font-size: 16px;
+  }
+}

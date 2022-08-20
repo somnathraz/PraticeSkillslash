@@ -1,0 +1,85 @@
+.Advantages {
+  background-color: #f6fdff;
+  display: grid;
+  grid-template-columns: 49% 49%;
+  gap: 20px;
+}
+.leftAdv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.RightAdv h5 {
+  font-weight: 700;
+  font-size: 37px;
+  line-height: 35px;
+  margin: 0;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.DivIcon {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 39px;
+}
+
+.DivIcon h6 {
+  font-weight: 800;
+  font-size: 20px;
+
+  line-height: 28px;
+  margin: 0;
+  margin-top: -5px;
+  padding: 0;
+  color: #0487d9;
+}
+.DivIcon p {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  margin: 0;
+  margin-top: 4px;
+
+  color: #646464;
+}
+.btn {
+  margin-left: 90px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #0487d9;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.btnIcon {
+  color: white;
+}
+.btn:hover {
+  background-color: #f28705;
+}
+@media (max-width: 961px) {
+  .RightAdv h5 {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .DivIcon h6 {
+    font-size: 18px;
+  }
+  .DivIcon p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 481px) {
+  .Advantages {
+    display: flex;
+    flex-flow: column;
+  }
+  .RightAdv h5 {
+    font-size: 27px;
+  }
+  .btn {
+    margin-left: 0;
+  }
+}

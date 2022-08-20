@@ -1,0 +1,148 @@
+.GetHired {
+  display: grid;
+  align-items: center;
+  margin: 70px 100px 40px 100px;
+}
+
+.imageBox {
+  display: grid;
+  grid-template-columns: 39% 59%;
+  align-items: center;
+  margin-left: 20px;
+}
+.imageBox .left {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+.left div {
+  display: flex;
+  flex-flow: column;
+
+  justify-content: center;
+
+  padding: 33px 57px;
+  border-radius: 10px;
+}
+.CInner p {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  margin: 0;
+  margin-bottom: 20px;
+  color: #0487d9;
+}
+.top {
+  margin-bottom: 30px;
+  border-left: 7px solid #0487d9;
+  box-shadow: 0px 0px 10px 2px rgba(4, 135, 217, 0.1);
+  border-radius: 9px;
+}
+
+.imageBox .left .top h5 {
+  color: #0487d9;
+}
+.left p {
+  margin: 0;
+  color: rgb(0, 0, 0);
+}
+.left h5 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+}
+.middle {
+  background: #ffffff;
+  border-left: 7px solid #f28705;
+  box-shadow: 0px 0px 10px 2px rgba(242, 135, 5, 0.1);
+  border-radius: 9px;
+
+  margin-bottom: 30px;
+}
+.imageBox .left .middle h5 {
+  color: #f28705;
+}
+
+.bottom {
+  border-left: 7px solid #0487d9;
+  box-shadow: 0px 0px 10px 2px rgba(4, 135, 217, 0.1);
+  border-radius: 9px;
+}
+.imageBox .left .bottom h5 {
+  color: #0487d9;
+}
+.right {
+  background: #ffffff;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.08);
+  border-radius: 9px;
+  margin-left: 54px;
+  background-image: url("https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/software_pattern__.webp");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (max-width: 1281px) {
+  .GetHired {
+    margin: 40px;
+  }
+  .left div {
+    padding: 20px 30px;
+  }
+  .right {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
+@media (max-width: 801px) {
+  .CInner h4 {
+    font-size: 24px;
+  }
+  .left h5 {
+    font-size: 22px;
+  }
+  .left p {
+    font-size: 14px;
+  }
+  .left div {
+    padding: 15px 20px;
+    margin-bottom: 10px;
+  }
+  .imageBox .left {
+    width: 100%;
+  }
+}
+@media (max-width: 641px) {
+  .imageBox {
+    display: flex;
+    flex-flow: column;
+  }
+  .right {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 481px) {
+  .GetHired {
+    display: block;
+    margin: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 40px;
+  }
+
+  .imageBox {
+    display: block;
+    grid-template-columns: auto;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .right {
+    margin-left: 0px;
+    margin-top: 30px;
+  }
+  .CInner h4 {
+    margin-bottom: 0;
+  }
+}

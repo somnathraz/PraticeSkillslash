@@ -1,0 +1,107 @@
+.StepsWrap {
+  display: grid;
+  grid-template-columns: 45% 53%;
+  margin-top: 30px;
+  margin-left: 40px;
+  gap: 80px;
+}
+.leftStep {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rightStep {
+  display: flex;
+  flex-flow: column;
+  position: relative;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+.line {
+  width: 4px;
+  height: 40px;
+  position: absolute;
+  top: 85px;
+  left: 40px;
+  z-index: 0;
+}
+.line2 {
+  width: 4px;
+  height: 44px;
+  position: absolute;
+  top: 83px;
+  left: 40px;
+  z-index: 0;
+}
+.DivIcon {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.DivIcon h6 {
+  font-weight: 800;
+  font-size: 20px;
+
+  line-height: 28px;
+  margin: 0;
+  margin-top: -5px;
+  padding: 0;
+  color: #0487d9;
+}
+.DivIcon p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  margin: 0;
+  margin-top: 4px;
+
+  color: #646464;
+}
+.rightIcon {
+  margin-right: 130px;
+}
+@media (max-width: 1281px) {
+  .line {
+    top: 80px;
+  }
+  .line2 {
+    top: 80px;
+  }
+}
+@media (max-width: 961px) {
+  .StepsWrap {
+    margin-left: 10px;
+    gap: 20px;
+  }
+  .rightIcon {
+    margin-right: 0px;
+  }
+  .line2 {
+    top: 90px;
+  }
+}
+@media (max-width: 481px) {
+  .StepsWrap {
+    display: flex;
+    flex-flow: column;
+    margin-left: 0;
+    gap: 20px;
+  }
+  .rightIcon {
+    margin-right: 0px;
+  }
+  .rightStep {
+    gap: 30px;
+  }
+  .line {
+    top: 85px;
+    height: 45px;
+  }
+  .line2 {
+    top: 94px;
+    height: 60px;
+  }
+}
