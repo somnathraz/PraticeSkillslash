@@ -316,5 +316,6 @@ export async function getStaticProps({ params }) {
     props: {
       DataScienceCourseData,
     },
+    revalidate: false,
   };
 }
