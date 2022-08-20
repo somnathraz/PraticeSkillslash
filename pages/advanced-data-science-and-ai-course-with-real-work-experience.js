@@ -30,7 +30,6 @@ import Navbar from "../components/Navbar/Navbar";
 
 export default function Home() {
   const [popups, setPopups] = useState(false);
-  const [mobile, setMobile] = useState(false);
 
   const popupShow = () => {
     setPopups(true);

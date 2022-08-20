@@ -11,9 +11,6 @@ const Advantages = () => {
     setPopups(true);
   };
 
-  const static_url = process.env.CDN_URL;
-  const img_url = `${static_url}/web/Advantages_of_skillslash.webp`;
-
   return (
     <div className={styles.Advantages}>
       <Popup trigger={popups} setTrigger={setPopups} className="popupModal">
@@ -31,6 +28,7 @@ const Advantages = () => {
           src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Advantages_of_skillslash.webp"
           width="535"
           height="535"
+          loading="lazy"
           layout="intrinsic"
         />
       </div>
