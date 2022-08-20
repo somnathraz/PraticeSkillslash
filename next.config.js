@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  swcMinify: true,
   reactStrictMode: true,
 };
 
@@ -8,7 +9,7 @@ module.exports = {
   async headers() {
     return [
       {
-        source: "/:all*(svg|jpg|png)",
+        source: "/:all*(svg|jpg|png|webp)",
         locale: false,
         headers: [
           {
