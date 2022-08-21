@@ -68,9 +68,7 @@ function FAQ({ FaqData, desc }) {
                   <p>
                     {ans}
 
-                    <a href={linkURL} target="_blank">
-                      {linkText}
-                    </a>
+                    <a href={linkURL}>{linkText}</a>
                     {ansAfter}
                   </p>
                 ) : (

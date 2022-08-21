@@ -14,7 +14,7 @@ const OurExpert = () => {
     if (width < 481) {
       setMobile(true);
     }
-  });
+  }, [mobile]);
 
   return (
     <section className={styles.GetHired}>

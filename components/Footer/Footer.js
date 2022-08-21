@@ -20,44 +20,38 @@ const Footer = () => {
         <div className={styles.iconWrapper}>
           <h5>Follow us!</h5>
           <div className={styles.sIcon}>
-            <a
+            <Link
               href="https://www.facebook.com/SkillSlash-100623872122442"
-              target="_blank"
+              passHref
             >
               <AiFillFacebook className={styles.FIcon} />
-            </a>
-            <a
-              href="https://www.instagram.com/skillslash_Academy/"
-              target="_blank"
-            >
+            </Link>
+            <Link href="https://www.instagram.com/skillslash_Academy/" passHref>
               <AiFillInstagram className={styles.FIcon} />
-            </a>
-            <a href="https://www.youtube.com/c/Skillslash" target="_blank">
+            </Link>
+            <a href="https://www.youtube.com/c/Skillslash" passHref>
               <AiFillYoutube className={styles.FIcon} />
             </a>
-            <a href="https://twitter.com/skillslash" target="_blank">
+            <Link href="https://twitter.com/skillslash" passHref>
               <AiFillTwitterSquare className={styles.FIcon} />
-            </a>
-            <a
+            </Link>
+            <Link
               href="https://www.linkedin.com/company/skillslash"
               target="_blank"
             >
               <AiFillLinkedin className={styles.FIcon} />
-            </a>
-            <a href="https://skillslash.com/rss/feed.xml" target="_blank">
-              <BiRss className={styles.FIcon} />
-            </a>
+            </Link>
           </div>
         </div>
         <div className={styles.fPages}>
           <h5>Pages</h5>
-          <Link href="/About">
+          <Link href="/About" passHref>
             <p>About</p>
           </Link>
-          <Link href="/blog">
+          <Link href="/blog" passHref>
             <p>Blog</p>
           </Link>
-          <Link href="/Contact-us">
+          <Link href="/Contact-us" passHref>
             <p>Contact</p>
           </Link>
         </div>
@@ -89,6 +83,7 @@ const Footer = () => {
                 src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Bengaluru-office-location-google-map.webp"
                 width="325"
                 height="186"
+                alt="bangalore-office-skilslash"
                 layout="intrinsic"
               />
             </a>
@@ -104,6 +99,7 @@ const Footer = () => {
                 src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Mumbai-office-location-google-map.webp"
                 width="325"
                 height="186"
+                alt="Mumbai-office-skilslash"
                 layout="intrinsic"
               />
             </a>
@@ -119,6 +115,7 @@ const Footer = () => {
                 src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Hyderabad-office-location-google-map.webp"
                 width="325"
                 height="186"
+                alt="Hyderabad-office-skilslash"
                 layout="intrinsic"
               />
             </a>
@@ -134,6 +131,7 @@ const Footer = () => {
                 src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Bengaluru-office-location-google-map.webp"
                 width="325"
                 height="186"
+                alt="Gurugram-office-skilslash"
                 layout="intrinsic"
               />
             </a>
@@ -144,42 +142,45 @@ const Footer = () => {
       <div className={styles.thirdFooter}>
         <h5>Top Industry demand programs</h5>
         <div className={styles.linksWrap}>
-          <a href="/advanced-data-science-and-ai-course-with-real-work-experience">
+          <Link
+            href="/advanced-data-science-and-ai-course-with-real-work-experience"
+            passHref
+          >
             <span>Advanced Data Science and AI Course |</span>
-          </a>
-          <Link href="/business-analytics-course">
+          </Link>
+          <Link href="/business-analytics-course" passHref>
             <span>Business Analytics online Training |</span>
           </Link>
-          <Link href="/data-engineering-course">
+          <Link href="/data-engineering-course" passHref>
             <span>Data Engineering course with certification</span>
           </Link>
-          <Link href="/block-chain-course">
+          <Link href="/block-chain-course" passHref>
             <span>Blockchain program and certification |</span>
           </Link>
-          <Link href="/full-stack-developer-course">
+          <Link href="/full-stack-developer-course" passHref>
             <span>Full Stack Developer course with certification</span>
           </Link>
         </div>
         <div className={styles.terms}>
-          <Link href="/terms-of-use">
+          <Link href="/terms-of-use" passHref>
             <span>
               <GoPrimitiveDot />
               Terms of Use
             </span>
           </Link>
-          <Link href="/privacy-statement">
+          <Link href="/privacy-statement" passHref>
             <span>
               <GoPrimitiveDot />
               Privacy Policy
             </span>
           </Link>
-          <Link href="/refunds-cancellation">
+          <Link href="/refunds-cancellation" passHref>
             <span>
               <GoPrimitiveDot />
               Refund Policy
             </span>
           </Link>
-          <Link href="/job-guarantee-terms-and-conditions">
+          <Link href="/job-guarantee-terms-and-conditions" passHref>
             <span>
               <GoPrimitiveDot />
               Job Guarantee Terms and Conditions

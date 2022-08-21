@@ -14,7 +14,7 @@ const terms = () => {
         <h2>Welcome to Skillslash!</h2>
         <p>
           These terms and conditions outline the rules and regulations for the
-          use of Skillslash's Website, located at www.skillslash.com.
+          use of Skillslash&spoas;s Website, located at www.skillslash.com.
         </p>
         <p>
           By accessing this website we assume you accept these terms and
@@ -23,25 +23,27 @@ const terms = () => {
         </p>
         <p>
           The following terminology applies to these Terms and Conditions,
-          Privacy Statement and Disclaimer Notice and all Agreements: "Client",
-          "You" and "Your" refers to you, the person log on this website and
-          compliant to the Company’s terms and conditions. "The Company",
-          "Ourselves", "We", "Our" and "Us", refers to our Company. "Party",
-          "Parties", or "Us", refers to both the Client and ourselves. All terms
-          refer to the offer, acceptance and consideration of payment necessary
-          to undertake the process of our assistance to the Client in the most
-          appropriate manner for the express purpose of meeting the Client’s
-          needs in respect of provision of the Company’s stated services, in
-          accordance with and subject to, prevailing law of Netherlands. Any use
-          of the above terminology or other words in the singular, plural,
-          capitalization and/or he/she or they, are taken as interchangeable and
-          therefore as referring to same.
+          Privacy Statement and Disclaimer Notice and all Agreements:
+          &quote;Client&quote;, &quote;You&quote; and &quote;Your&quote; refers
+          to you, the person log on this website and compliant to the Company’s
+          terms and conditions. &quote;The Company&quote;,
+          &quote;Ourselves&quote;, &quote;We&quote;, &quote;Our&quote; and
+          &quote;Us&quote;, refers to our Company. &quote;Party&quote;,
+          &quote;Parties&quote;, or &quote;Us&quote;, refers to both the Client
+          and ourselves. All terms refer to the offer, acceptance and
+          consideration of payment necessary to undertake the process of our
+          assistance to the Client in the most appropriate manner for the
+          express purpose of meeting the Client’s needs in respect of provision
+          of the Company’s stated services, in accordance with and subject to,
+          prevailing law of Netherlands. Any use of the above terminology or
+          other words in the singular, plural, capitalization and/or he/she or
+          they, are taken as interchangeable and therefore as referring to same.
         </p>
         <h3>Cookies</h3>
 
         <p>
           We employ the use of cookies. By accessing Skillslash, you agreed to
-          use cookies in agreement with the Skillslash's Privacy Policy.
+          use cookies in agreement with the Skillslash&#39;s Privacy Policy.
         </p>
         <p>
           Most interactive websites use cookies to let us retrieve the user’s
@@ -214,7 +216,7 @@ const terms = () => {
           </li>
         </ul>
         <p>
-          No use of Skillslash's logo or other artwork will be allowed for
+          No use of Skillslash&lsquo;s logo or other artwork will be allowed for
           linking absent a trademark license agreement.
         </p>
         <h3>iFrames</h3>

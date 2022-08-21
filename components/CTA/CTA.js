@@ -13,7 +13,7 @@ const CTA = () => {
     if (width > 481) {
       setMobile(false);
     }
-  });
+  }, []);
   return (
     <div className={styles.CtaWrapper}>
       <div className="bgWrap">

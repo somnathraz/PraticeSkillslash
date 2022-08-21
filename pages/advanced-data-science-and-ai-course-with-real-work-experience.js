@@ -12,7 +12,7 @@ import FAQ from "../components/Course/FAQ/FAQ";
 import Fee from "../components/Course/Fee/Fee";
 import styles from "../styles/Home.module.css";
 import BoxShape from "../components/Course/Boxshape/BoxShape";
-import OfferPopup from "../components/Course/OfferPopup/OfferPopup";
+
 import RealWork from "../components/Course/ReaWork/RealWork";
 import Project from "../components/Course/Project/Project";
 import Reviews from "../components/Review/Reviews";

@@ -2,7 +2,7 @@
 import React from "react";
 
 import styles from "./BoxShape.module.css";
-
+import Image from "next/image";
 import Form from "../../Form/Form";
 
 const BoxShape = ({
@@ -30,12 +30,13 @@ const BoxShape = ({
         <div className={styles.left}>
           <div className={styles.box}>
             <div className={styles.ImgB}>
-              <img
+              <Image
                 src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Real work experience-06.svg"
                 alt="Real work Experience"
                 className={styles.icon}
                 width="40"
                 height="40"
+                layout="intrinsic"
                 loading="lazy"
               />
             </div>
@@ -45,12 +46,13 @@ const BoxShape = ({
           </div>
           <div className={styles.box}>
             <div className={styles.ImgC}>
-              <img
+              <Image
                 src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/byoc-icon.svg"
                 alt="Build your own course"
                 className={styles.icon}
                 width="35"
                 height="35"
+                layout="intrinsic"
                 loading="lazy"
               />
             </div>
@@ -73,12 +75,13 @@ const BoxShape = ({
           </div>
           <div className={styles.box}>
             <div className={styles.ImgC}>
-              <img
+              <Image
                 src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/eligibilty-criteria.svg"
                 alt="Eligibility Criteria"
                 className={styles.icon}
                 width="35"
                 height="35"
+                layout="intrinsic"
                 loading="lazy"
               />
             </div>

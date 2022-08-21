@@ -99,7 +99,7 @@ function Pricing() {
           <p className={styles.Prices}>and Get Scholarship Worth 25,000 INR</p>
           <p className={styles.Courses}>
             Check the eligibility criteria and apply for the for the scholarship
-            and grab the chance before it's late.
+            and grab the chance before it&spos;s late.
           </p>
           <div>
             <button className={styles.button} onClick={popupShow}>

@@ -9,12 +9,12 @@ import ToolsCovered from "../components/Course/ToolsCovered/ToolsCovered";
 import Benefits from "../components/Course/Benefits/Benefits";
 import BatchDetails from "../components/Course/BatchDetails/BatchDetails";
 import BannerCTA from "../components/Course/BannerCTA/BannerCTA";
-import Pricing from "../components/Course/Pricing/Pricing";
+
 import FAQ from "../components/Course/FAQ/FAQ";
 import Fee from "../components/Course/Fee/Fee";
 import styles from "../styles/Home.module.css";
 import BoxShape from "../components/Course/Boxshape/BoxShape";
-import OfferPopup from "../components/Course/OfferPopup/OfferPopup";
+
 import RealWork from "../components/Course/ReaWork/RealWork";
 import Project from "../components/Course/Project/Project";
 import Reviews from "../components/Review/Reviews";

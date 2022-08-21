@@ -53,7 +53,7 @@ const Fee = ({
       setSpaceBetween(10);
       setMobile(true);
     }
-  });
+  }, [setSlidesPerView]);
 
   return (
     <div className={styles.FeeS}>

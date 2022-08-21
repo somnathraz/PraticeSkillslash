@@ -22,7 +22,7 @@ const MegaMenu = ({ handleIcon }) => {
     if (width > 481) {
       setMobile(false);
     }
-  });
+  }, [mobile]);
   return (
     <div className={styles.MegaMenu}>
       <div className={styles.leftSideMenu}>
@@ -50,7 +50,7 @@ const MegaMenu = ({ handleIcon }) => {
                   className={styles.mInnerBox}
                   onClick={() => handleIcon(false)}
                 >
-                  <a href="/advanced-data-science-and-ai-course-with-real-work-experience">
+                  <a href="http://skillslash.com/advanced-data-science-and-ai-course-with-real-work-experience">
                     <div className={styles.mInnerBoxDiv}>
                       <h5>Advance Data science and AI course</h5>
                       <span>
@@ -61,7 +61,7 @@ const MegaMenu = ({ handleIcon }) => {
                     </div>
                   </a>
                 </div>
-                <a href="/full-stack-developer-course">
+                <a href="http://skillslash.com/full-stack-developer-course">
                   <div
                     className={styles.mInnerBox}
                     onClick={() => handleIcon(false)}
@@ -76,7 +76,7 @@ const MegaMenu = ({ handleIcon }) => {
                     </div>
                   </div>
                 </a>
-                <a href="/business-analytics-course">
+                <a href="http://skillslash.com/business-analytics-course">
                   <div
                     className={styles.mInnerBox}
                     onClick={() => handleIcon(false)}
@@ -133,7 +133,7 @@ const MegaMenu = ({ handleIcon }) => {
             {DataScience ? (
               <div className={styles.gridPanel}>
                 <a
-                  href="/advanced-data-science-and-ai-course-with-real-work-experience"
+                  href="http://skillslash.com/advanced-data-science-and-ai-course-with-real-work-experience"
                   onClick={() => handleIcon(false)}
                 >
                   <div className={styles.mInnerBox}>
@@ -148,7 +148,7 @@ const MegaMenu = ({ handleIcon }) => {
                   </div>
                 </a>
                 <a
-                  href="/business-analytics-course"
+                  href="http://skillslash.com/business-analytics-course"
                   onClick={() => handleIcon(false)}
                 >
                   <div className={styles.mInnerBox}>
@@ -163,7 +163,7 @@ const MegaMenu = ({ handleIcon }) => {
                   </div>
                 </a>
                 <a
-                  href="/data-engineering-course"
+                  href="http://skillslash.com/data-engineering-course"
                   onClick={() => handleIcon(false)}
                 >
                   <div className={styles.mInnerBox}>
@@ -218,7 +218,7 @@ const MegaMenu = ({ handleIcon }) => {
             </span>
             {software ? (
               <div className={styles.gridPanel}>
-                <a href="/full-stack-developer-course">
+                <a href="http://skillslash.com/full-stack-developer-course">
                   <div
                     className={styles.mInnerBox}
                     onClick={() => handleIcon(false)}
@@ -274,7 +274,7 @@ const MegaMenu = ({ handleIcon }) => {
             </span>
             {blockchain ? (
               <div className={styles.gridPanel}>
-                <a href="/block-chain-course">
+                <a href="http://skillslash.com/block-chain-course">
                   <div
                     className={styles.mInnerBox}
                     onClick={() => handleIcon(false)}
@@ -316,7 +316,7 @@ const MegaMenu = ({ handleIcon }) => {
         <h6>Learn from top experts</h6>
         {popular ? (
           <div className={styles.gridPanel}>
-            <a href="/advanced-data-science-and-ai-course-with-real-work-experience">
+            <a href="http://skillslash.com/advanced-data-science-and-ai-course-with-real-work-experience">
               <div
                 className={styles.mInnerBox}
                 onClick={() => handleIcon(false)}
@@ -331,7 +331,7 @@ const MegaMenu = ({ handleIcon }) => {
                 </div>
               </div>
             </a>
-            <a href="/full-stack-developer-course">
+            <a href="http://skillslash.com/full-stack-developer-course">
               <div
                 className={styles.mInnerBox}
                 onClick={() => handleIcon(false)}
@@ -346,7 +346,7 @@ const MegaMenu = ({ handleIcon }) => {
                 </div>
               </div>
             </a>
-            <a href="/business-analytics-course">
+            <a href="http://skillslash.com/business-analytics-course">
               <div
                 className={styles.mInnerBox}
                 onClick={() => handleIcon(false)}
@@ -367,7 +367,7 @@ const MegaMenu = ({ handleIcon }) => {
         )}
         {DataScience ? (
           <div className={styles.gridPanel}>
-            <a href="/advanced-data-science-and-ai-course-with-real-work-experience">
+            <a href="http://skillslash.com/advanced-data-science-and-ai-course-with-real-work-experience">
               <div className={styles.mInnerBox}>
                 <div
                   className={styles.mInnerBoxDiv}
@@ -382,7 +382,7 @@ const MegaMenu = ({ handleIcon }) => {
                 </div>
               </div>
             </a>
-            <a href="/business-analytics-course">
+            <a href="http://skillslash.com/business-analytics-course">
               <div
                 className={styles.mInnerBox}
                 onClick={() => handleIcon(false)}
@@ -397,7 +397,7 @@ const MegaMenu = ({ handleIcon }) => {
                 </div>
               </div>
             </a>
-            <a href="/data-engineering-course">
+            <a href="http://skillslash.com/data-engineering-course">
               <div
                 className={styles.mInnerBox}
                 onClick={() => handleIcon(false)}
@@ -418,7 +418,7 @@ const MegaMenu = ({ handleIcon }) => {
         )}
         {software ? (
           <div className={styles.gridPanel}>
-            <a href="/full-stack-developer-course">
+            <a href="http://skillslash.com/full-stack-developer-course">
               <div
                 className={styles.mInnerBox}
                 onClick={() => handleIcon(false)}
@@ -439,7 +439,7 @@ const MegaMenu = ({ handleIcon }) => {
         )}
         {blockchain ? (
           <div className={styles.gridPanel}>
-            <a href="/block-chain-course">
+            <a href="http://skillslash.com/block-chain-course">
               <div
                 className={styles.mInnerBox}
                 onClick={() => handleIcon(false)}
@@ -462,7 +462,7 @@ const MegaMenu = ({ handleIcon }) => {
 
       <div className={styles.rightSideMenu}>
         <h6>Our Flagship Program</h6>
-        <a href="/advanced-data-science-and-ai-course-with-real-work-experience">
+        <a href="http://skillslash.com/advanced-data-science-and-ai-course-with-real-work-experience">
           <div className={styles.flagB} onClick={() => handleIcon(false)}>
             <div className={styles.left}>
               <Image
@@ -471,6 +471,7 @@ const MegaMenu = ({ handleIcon }) => {
                 height="30"
                 layout="intrinsic"
                 loading="lazy"
+                alt="reward"
               />
             </div>
             <div className={styles.right}>
@@ -486,7 +487,9 @@ const MegaMenu = ({ handleIcon }) => {
             height="248"
             layout="intrinsic"
             loading="lazy"
+            alt="data-science-course"
           />
+
           <button className={styles.NavBtn}>START FOR FREE</button>
         </div>
       </div>

@@ -38,7 +38,7 @@ const Navbar = ({
     if (width > 481) {
       setMobile(false);
     }
-  });
+  }, [mobile]);
 
   const popupShow = () => {
     setPopups(true);
@@ -99,7 +99,7 @@ const Navbar = ({
               </span>
             </div>
           </div>
-          <a href="/">
+          <Link href="/">
             <Image
               src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/logo.ico"
               alt="Skillslash"
@@ -108,7 +108,7 @@ const Navbar = ({
               width={mobile ? "140px" : "230px"}
               height="60px"
             />
-          </a>
+          </Link>
           <button
             onMouseEnter={() => setIcon(true)}
             onMouseOver={() => setIcon(true)}

@@ -84,11 +84,12 @@ const RealWork = ({ desc }) => {
           loading="lazy"
         />
         <div className={styles.vBlur}>
-          <img
+          <Image
             src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Video_icon.svg"
             alt="Why real work Experience"
             width="88"
             height="88"
+            layout="intrinsic"
             className={styles.vIcon}
             onClick={videoSHow}
           />

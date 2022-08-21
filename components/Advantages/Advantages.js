@@ -29,6 +29,7 @@ const Advantages = () => {
           width="535"
           height="535"
           loading="lazy"
+          alt="Advantages-of-skillslasj"
           layout="intrinsic"
         />
       </div>
@@ -40,6 +41,7 @@ const Advantages = () => {
               src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Custom_tracks.webp"
               width="65"
               height="65"
+              alt="custom_track"
               layout="intrinsic"
               loading="lazy"
             />
@@ -57,6 +59,7 @@ const Advantages = () => {
               height="65"
               layout="intrinsic"
               loading="lazy"
+              alt="Project-Certificate"
             />
           </div>
           <div className={styles.rightIcon}>
@@ -74,11 +77,12 @@ const Advantages = () => {
               height="65"
               layout="intrinsic"
               loading="lazy"
+              alt="Job-Guarantee"
             />
           </div>
           <div className={styles.rightIcon}>
             <h6>Job Guarantee</h6>
-            <p>Get 100% assured jobs in top MNC's and Startups</p>
+            <p>Get 100% assured jobs in top MNC&apos;s and Startups</p>
           </div>
         </div>
         <button className={styles.btn} onClick={popupShow}>

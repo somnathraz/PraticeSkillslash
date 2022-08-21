@@ -29,7 +29,7 @@ const ContactForm = ({ popup, setTrigger }) => {
 
   useEffect(() => {
     setQuery({ ...query, phone: value, dateTime: startDate });
-  }, [value, startDate]);
+  }, [value, query, startDate]);
 
   // Update inputs value
   const handleParam = () => (e) => {

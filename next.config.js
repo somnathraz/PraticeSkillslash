@@ -23,4 +23,6 @@ module.exports = {
   images: {
     domains: ["skillslash-cdn.s3.ap-south-1.amazonaws.com"],
   },
+
+  swcMinify: true,
 };

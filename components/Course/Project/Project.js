@@ -157,9 +157,12 @@ const Project = ({ ChangeProject }) => {
                   </div>
                 </div>
                 <div className={styles.projectFooter}>
-                  <img
+                  <Image
+                    layout="intrinsic"
                     src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Moodys-Project.webp"
                     alt="Moody's"
+                    width="107"
+                    height="60"
                     loading="lazy"
                   />
                 </div>
@@ -190,9 +193,12 @@ const Project = ({ ChangeProject }) => {
                   </div>
                 </div>
                 <div className={styles.projectFooter}>
-                  <img
+                  <Image
+                    layout="intrinsic"
                     src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Bloombreg.webp"
                     alt="Bloomberg"
+                    width="107"
+                    height="60"
                     loading="lazy"
                   />
                 </div>
@@ -220,9 +226,12 @@ const Project = ({ ChangeProject }) => {
                   </div>
                 </div>
                 <div className={styles.projectFooter}>
-                  <img
+                  <Image
+                    layout="intrinsic"
                     src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Razorpay.webp"
                     alt="Razorpay"
+                    width="107"
+                    height="60"
                     loading="lazy"
                   />
                 </div>
@@ -252,9 +261,12 @@ const Project = ({ ChangeProject }) => {
                   </div>
                 </div>
                 <div className={styles.projectFooter}>
-                  <img
+                  <Image
+                    layout="intrinsic"
                     src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Uber.webp"
                     alt="Uber"
+                    width="107"
+                    height="60"
                     loading="lazy"
                   />
                 </div>
@@ -282,9 +294,12 @@ const Project = ({ ChangeProject }) => {
                   </div>
                 </div>
                 <div className={styles.projectFooter}>
-                  <img
+                  <Image
+                    layout="intrinsic"
                     src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Mercedez.webp"
                     alt="Mercedes"
+                    width="107"
+                    height="60"
                     loading="lazy"
                   />
                 </div>
@@ -314,9 +329,12 @@ const Project = ({ ChangeProject }) => {
                   </div>
                 </div>
                 <div className={styles.projectFooter}>
-                  <img
+                  <Image
+                    layout="intrinsic"
                     src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Tesela.webp"
                     alt="Tesela"
+                    width="107"
+                    height="60"
                     loading="lazy"
                   />
                 </div>
@@ -347,10 +365,13 @@ const Project = ({ ChangeProject }) => {
                   </div>
                 </div>
                 <div className={styles.projectFooter}>
-                  <img
+                  <Image
+                    layout="intrinsic"
                     loading="lazy"
                     src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/lyft.webp"
                     alt="lyft"
+                    width="107"
+                    height="60"
                   />
                 </div>
               </div>
@@ -377,10 +398,13 @@ const Project = ({ ChangeProject }) => {
                   </div>
                 </div>
                 <div className={styles.projectFooter}>
-                  <img
+                  <Image
+                    layout="intrinsic"
                     loading="lazy"
                     src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Google.webp"
                     alt="Google"
+                    width="107"
+                    height="60"
                   />
                 </div>
               </div>
@@ -439,10 +463,13 @@ const Project = ({ ChangeProject }) => {
                   </div>
                 </div>
                 <div className={styles.projectFooter}>
-                  <img
+                  <Image
+                    layout="intrinsic"
                     loading="lazy"
                     src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/proscia.webp"
                     alt="Proscia"
+                    width="107"
+                    height="60"
                   />
                 </div>
               </div>
@@ -469,10 +496,13 @@ const Project = ({ ChangeProject }) => {
                   </div>
                 </div>
                 <div className={styles.projectFooter}>
-                  <img
+                  <Image
+                    layout="intrinsic"
                     loading="lazy"
                     src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Youtube.webp"
                     alt="Youtube"
+                    width="107"
+                    height="60"
                   />
                 </div>
               </div>
@@ -504,10 +534,13 @@ const Project = ({ ChangeProject }) => {
                   </div>
                 </div>
                 <div className={styles.projectFooter}>
-                  <img
+                  <Image
+                    layout="intrinsic"
                     loading="lazy"
                     src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Google-play.webp"
                     alt="GooglePlay"
+                    width="107"
+                    height="60"
                   />
                 </div>
               </div>
@@ -537,10 +570,13 @@ const Project = ({ ChangeProject }) => {
                   </div>
                 </div>
                 <div className={styles.projectFooter}>
-                  <img
+                  <Image
+                    layout="intrinsic"
                     loading="lazy"
                     src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/soptify-logo.webp"
                     alt="Spotify"
+                    width="107"
+                    height="60"
                   />
                 </div>
               </div>
@@ -571,10 +607,13 @@ const Project = ({ ChangeProject }) => {
                   </div>
                 </div>
                 <div className={styles.projectFooter}>
-                  <img
+                  <Image
+                    layout="intrinsic"
                     loading="lazy"
                     src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Mckinsey.webp"
                     alt="Mckinsey"
+                    width="107"
+                    height="60"
                   />
                 </div>
               </div>
@@ -896,7 +935,8 @@ const Project = ({ ChangeProject }) => {
                   </div>
                 </div>
                 <div className={styles.projectFooter}>
-                  <img loading="lazy" src="/Google.webp" alt="Google" />
+                  <Image
+                  layout="intrinsic" loading="lazy" src="/Google.webp" alt="Google" />
                 </div>
               </div>
               <div className={styles.project}>
@@ -954,7 +994,8 @@ const Project = ({ ChangeProject }) => {
                   </div>
                 </div>
                 <div className={styles.projectFooter}>
-                  <img loading="lazy" src="/proscia.webp" alt="Proscia" />
+                  <Image
+                  layout="intrinsic" loading="lazy" src="/proscia.webp" alt="Proscia" />
                 </div>
               </div>
               <div className={styles.project}>
@@ -980,7 +1021,8 @@ const Project = ({ ChangeProject }) => {
                   </div>
                 </div>
                 <div className={styles.projectFooter}>
-                  <img loading="lazy" src="Youtube.webp" alt="Youtube" />
+                  <Image
+                  layout="intrinsic" loading="lazy" src="Youtube.webp" alt="Youtube" />
                 </div>
               </div>
               <div className={styles.project}>
@@ -1011,7 +1053,8 @@ const Project = ({ ChangeProject }) => {
                   </div>
                 </div>
                 <div className={styles.projectFooter}>
-                  <img
+                  <Image
+                  layout="intrinsic"
                     loading="lazy"
                     src="/Google-play.webp"
                     alt="GooglePlay"
@@ -1044,7 +1087,8 @@ const Project = ({ ChangeProject }) => {
                   </div>
                 </div>
                 <div className={styles.projectFooter}>
-                  <img loading="lazy" src="/soptify-logo.webp" alt="Spotify" />
+                  <Image
+                  layout="intrinsic" loading="lazy" src="/soptify-logo.webp" alt="Spotify" />
                 </div>
               </div>
               <div className={styles.project}>
@@ -1074,7 +1118,8 @@ const Project = ({ ChangeProject }) => {
                   </div>
                 </div>
                 <div className={styles.projectFooter}>
-                  <img loading="lazy" src="/Mckinsey.webp" alt="Mckinsey" />
+                  <Image
+                  layout="intrinsic" loading="lazy" src="/Mckinsey.webp" alt="Mckinsey" />
                 </div>
               </div> */}
             </div>

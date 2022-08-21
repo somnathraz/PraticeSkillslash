@@ -42,7 +42,7 @@ const Form = ({
   });
   useEffect(() => {
     setQuery({ ...query, phone: value, dateTime: startDate });
-  }, [value, startDate]);
+  }, [value, startDate, query]);
 
   // Update inputs value
   const handleParam = () => (e) => {

@@ -45,7 +45,7 @@ const FirstSection = ({
     if (width < 481) {
       setMobile(true);
     }
-  });
+  }, [setSlidesPerView]);
 
   return (
     <section className={styles.wrapper}>

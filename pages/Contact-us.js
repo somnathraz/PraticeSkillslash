@@ -66,7 +66,7 @@ const Contact = () => {
             <div className={styles.infoLeftSide}>
               <BiPhoneCall className={styles.PhoneIcon} />
             </div>
-            <a href="tel:8391-911-911" target="_blank">
+            <a href="tel:8391-911-911">
               <div className={styles.infoRightSide}>
                 <h5>Phone</h5>
                 <p>8391-911-911</p>
@@ -94,10 +94,7 @@ const Contact = () => {
                 No.255 2nd floor Skillslash above Airtel office ,17th cross
                 road, HSR Layout Sector 6 Bangalore, Karnataka -560102
               </p>
-              <a
-                href="https://www.google.com/maps/place/Skillslash/@12.934427,77.694266,13z/data=!4m5!3m4!1s0x0:0x454e4c9c26cfc3f8!8m2!3d12.9344271!4d77.6942656?hl=en"
-                target="_blank"
-              >
+              <a href="https://www.google.com/maps/place/Skillslash/@12.934427,77.694266,13z/data=!4m5!3m4!1s0x0:0x454e4c9c26cfc3f8!8m2!3d12.9344271!4d77.6942656?hl=en">
                 <p className={styles.IconPara}>
                   <GrLocation /> Get direction
                 </p>
@@ -120,10 +117,7 @@ const Contact = () => {
                 Skillslash Pvt Ltd, Level 2, B, Andheri Kurla Road, Wing, Times
                 Square, Unit 1, Andheri East Mumbai, Maharashtra 400059
               </p>
-              <a
-                href="https://www.google.com/maps/place/Skillslash/@19.106737,72.882517,13z/data=!4m5!3m4!1s0x0:0x7c5440708ff6a610!8m2!3d19.1067368!4d72.8825239?hl=en"
-                target="_blank"
-              >
+              <a href="https://www.google.com/maps/place/Skillslash/@19.106737,72.882517,13z/data=!4m5!3m4!1s0x0:0x7c5440708ff6a610!8m2!3d19.1067368!4d72.8825239?hl=en">
                 <p className={styles.IconPara}>
                   <GrLocation /> Get direction
                 </p>
@@ -146,10 +140,7 @@ const Contact = () => {
                 Skillslash Pvt Ltd, Level 2, iLabs Centre, Oval Building, Plot
                 no.18, Inorbit Mall Rd, HITEC City Hyderabad, Telangana 500081
               </p>
-              <a
-                href="https://www.google.com/maps/place/Skillslash/@17.4324482,78.3872514,15z/data=!4m5!3m4!1s0x0:0x1022d0491cb5a1a3!8m2!3d17.4324642!4d78.3872631"
-                target="_blank"
-              >
+              <a href="https://www.google.com/maps/place/Skillslash/@17.4324482,78.3872514,15z/data=!4m5!3m4!1s0x0:0x1022d0491cb5a1a3!8m2!3d17.4324642!4d78.3872631">
                 <p className={styles.IconPara}>
                   <GrLocation /> Get direction
                 </p>
@@ -172,10 +163,7 @@ const Contact = () => {
                 Skillslash Pvt Ltd, Chase Park 7600 Chevy Chase Drive Suite 300,
                 Texas, Austin
               </p>
-              <a
-                href="https://www.google.com/maps/place/Skillslash/@17.4324482,78.3872514,15z/data=!4m5!3m4!1s0x0:0x1022d0491cb5a1a3!8m2!3d17.4324642!4d78.3872631"
-                target="_blank"
-              >
+              <a href="https://www.google.com/maps/place/Skillslash/@17.4324482,78.3872514,15z/data=!4m5!3m4!1s0x0:0x1022d0491cb5a1a3!8m2!3d17.4324642!4d78.3872631">
                 <p className={styles.IconPara}>
                   <GrLocation /> Get direction
                 </p>
@@ -198,10 +186,7 @@ const Contact = () => {
                 Skillslash Pvt Ltd, 10th floor, Tower-B Unitech Cyber Park,
                 Gurugram, Haryana 122003
               </p>
-              <a
-                href="https://www.google.com/maps/place/Skillslash/@17.4324482,78.3872514,15z/data=!4m5!3m4!1s0x0:0x1022d0491cb5a1a3!8m2!3d17.4324642!4d78.3872631"
-                target="_blank"
-              >
+              <a href="https://www.google.com/maps/place/Skillslash/@17.4324482,78.3872514,15z/data=!4m5!3m4!1s0x0:0x1022d0491cb5a1a3!8m2!3d17.4324642!4d78.3872631">
                 <p className={styles.IconPara}>
                   <GrLocation /> Get direction
                 </p>

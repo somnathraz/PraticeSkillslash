@@ -32,7 +32,7 @@ function BatchDetails({
     if (width < 641) {
       setMobile(true);
     }
-  });
+  }, [mobile]);
   const popupShow = () => {
     setPopups(true);
   };

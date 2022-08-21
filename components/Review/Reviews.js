@@ -41,7 +41,7 @@ const Reviews = ({
     if (width > 1281) {
       setSpaceBetween(60);
     }
-  });
+  }, [mobile]);
   const [video, setVideo] = useState(false);
   const videoSHow = () => {
     setVideo(true);
@@ -78,10 +78,11 @@ const Reviews = ({
                   />
                   <h5>Pragyan Prakash</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
+                      layout="intrinsic"
                       alt="5 Star Rating"
                     />
                   </div>
@@ -114,10 +115,11 @@ const Reviews = ({
                   />
                   <h5>Mrinal Sahay</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/orange_star.webp"
                       width="80px"
                       height="20px"
+                      layout="intrinsic"
                       alt="5 Star Rating"
                     />
                   </div>
@@ -150,7 +152,8 @@ const Reviews = ({
                   />
                   <h5>Gautam</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -186,7 +189,8 @@ const Reviews = ({
                   />
                   <h5>Sammer Ahmed</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -223,7 +227,8 @@ const Reviews = ({
                   />
                   <h5>Tilak Rao</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -257,7 +262,8 @@ const Reviews = ({
                   />
                   <h5>Pragyan Prakash</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -293,7 +299,8 @@ const Reviews = ({
                   />
                   <h5>Mrinal Sahay</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/orange_star.webp"
                       width="80px"
                       height="20px"
@@ -329,7 +336,8 @@ const Reviews = ({
                   />
                   <h5>Gautam</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -365,7 +373,8 @@ const Reviews = ({
                   />
                   <h5>Sammer Ahmed</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -402,7 +411,8 @@ const Reviews = ({
                   />
                   <h5>Tilak Rao</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -444,7 +454,8 @@ const Reviews = ({
                   />
                   <h5>Pankaj Chowdhury</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -480,7 +491,8 @@ const Reviews = ({
                   />
                   <h5>Manisha singh</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/orange_star.webp"
                       width="80px"
                       height="20px"
@@ -517,7 +529,8 @@ const Reviews = ({
                   />
                   <h5>Muralikrishna Alichetty</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -554,7 +567,8 @@ const Reviews = ({
                   />
                   <h5>GIRISH BALLAMPALLI</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -589,7 +603,8 @@ const Reviews = ({
                   />
                   <h5>Anukalp Desai</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/orange_star.webp"
                       width="80px"
                       height="20px"
@@ -623,7 +638,8 @@ const Reviews = ({
                   />
                   <h5> Anurag Sinha</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -660,7 +676,8 @@ const Reviews = ({
                   />
                   <h5>Ankur Singh</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -695,7 +712,8 @@ const Reviews = ({
                   />
                   <h5>Pragyan Prakash</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -731,7 +749,8 @@ const Reviews = ({
                   />
                   <h5>Pankaj Chowdhury</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -767,7 +786,8 @@ const Reviews = ({
                   />
                   <h5>Manisha singh</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -804,7 +824,8 @@ const Reviews = ({
                   />
                   <h5>Muralikrishna Alichetty</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -841,7 +862,8 @@ const Reviews = ({
                   />
                   <h5>GIRISH BALLAMPALLI</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -876,7 +898,8 @@ const Reviews = ({
                   />
                   <h5>Anukalp Desai</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -910,7 +933,8 @@ const Reviews = ({
                   />
                   <h5> Anurag Sinha</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -947,7 +971,8 @@ const Reviews = ({
                   />
                   <h5>Ankur Singh</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -984,7 +1009,8 @@ const Reviews = ({
                   />
                   <h5>Mrinal Sahay</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/orange_star.webp"
                       width="80px"
                       height="20px"
@@ -1020,7 +1046,8 @@ const Reviews = ({
                   />
                   <h5>Gautam</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -1056,7 +1083,8 @@ const Reviews = ({
                   />
                   <h5>Sammer Ahmed</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -1093,7 +1121,8 @@ const Reviews = ({
                   />
                   <h5>Tilak Rao</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -1127,7 +1156,8 @@ const Reviews = ({
                   />
                   <h5>Pragyan Prakash</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -1163,7 +1193,8 @@ const Reviews = ({
                   />
                   <h5>Mrinal Sahay</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/orange_star.webp"
                       width="80px"
                       height="20px"
@@ -1199,7 +1230,8 @@ const Reviews = ({
                   />
                   <h5>Gautam</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -1235,7 +1267,8 @@ const Reviews = ({
                   />
                   <h5>Sammer Ahmed</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -1272,7 +1305,8 @@ const Reviews = ({
                   />
                   <h5>Tilak Rao</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -1306,7 +1340,8 @@ const Reviews = ({
                   />
                   <h5>Pragyan Prakash</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -1342,7 +1377,8 @@ const Reviews = ({
                   />
                   <h5>Mrinal Sahay</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/orange_star.webp"
                       width="80px"
                       height="20px"
@@ -1378,7 +1414,8 @@ const Reviews = ({
                   />
                   <h5>Gautam</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -1414,7 +1451,8 @@ const Reviews = ({
                   />
                   <h5>Sammer Ahmed</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -1451,7 +1489,8 @@ const Reviews = ({
                   />
                   <h5>Tilak Rao</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -1485,7 +1524,8 @@ const Reviews = ({
                   />
                   <h5>Pragyan Prakash</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -1521,7 +1561,8 @@ const Reviews = ({
                   />
                   <h5>Mrinal Sahay</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/orange_star.webp"
                       width="80px"
                       height="20px"
@@ -1557,7 +1598,8 @@ const Reviews = ({
                   />
                   <h5>Gautam</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -1593,7 +1635,8 @@ const Reviews = ({
                   />
                   <h5>Sammer Ahmed</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -1630,7 +1673,8 @@ const Reviews = ({
                   />
                   <h5>Tilak Rao</h5>
                   <div className={styles.rating}>
-                    <img
+                    <Image
+                      layout="intrinsic"
                       src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Star_review_icon.webp"
                       width="80px"
                       height="20px"
@@ -1661,6 +1705,7 @@ const Reviews = ({
             height="356"
             loading="lazy"
             layout="intrinsic"
+            alt="review-of-skillslasj"
           />
           <MdPlayCircleFilled className={styles.pIcon} onClick={videoSHow} />
         </div>

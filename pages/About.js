@@ -58,6 +58,7 @@ const AboutUs = () => {
               src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/about-us_header.webp"
               width="631"
               height="591"
+              alt="about-us"
               layout="intrinsic"
             />
           </div>
@@ -69,6 +70,7 @@ const AboutUs = () => {
             src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/core_values.webp"
             width="707"
             height="404"
+            alt="our-core-values"
             layout="intrinsic"
           />
         </div>
@@ -108,6 +110,7 @@ const AboutUs = () => {
           src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Goal_of_skillslash.webp"
           width="1000"
           height="304"
+          alt="Goal-of-Skillslash"
           layout="intrinsic"
         />
       </div>

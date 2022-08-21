@@ -9,7 +9,7 @@ function ToolsCovered() {
     if (width < 481) {
       setMobile(true);
     }
-  });
+  }, [mobile]);
   return (
     <section className={styles.ToolsCovered}>
       <h4>Tools Covered</h4>

@@ -12,19 +12,22 @@ const Steps = () => {
           height="388"
           layout="intrinsic"
           loading="lazy"
+          alt="Get-hired-skillslash"
         />
       </div>
       <div className={styles.rightStep}>
         <div className={styles.DivIcon}>
           <div className={styles.leftIcon}>
-            <img
+            <Image
               src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Acquire_icon.svg"
               width="85"
               height="85"
               layout="intrinsic"
               loading="lazy"
+              alt="quire certificate"
             />
-            <img
+            <Image
+              layout="intrinsic"
               src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Line_icon.svg"
               alt="getHired_steps_in_Skillslash"
               className={styles.line}
@@ -42,14 +45,16 @@ const Steps = () => {
 
         <div className={styles.DivIcon}>
           <div className={styles.leftIcon}>
-            <img
+            <Image
               src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Build_experience.svg"
               width="85"
               height="85"
+              alt="Build_experience"
               layout="intrinsic"
               loading="lazy"
             />
-            <img
+            <Image
+              layout="intrinsic"
               src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Line_icon.svg"
               alt="getHired_steps_in_Skillslash"
               className={styles.line2}
@@ -67,12 +72,13 @@ const Steps = () => {
         </div>
         <div className={styles.DivIcon}>
           <div className={styles.leftIcon}>
-            <img
+            <Image
               src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/GetHired.svg"
               width="85"
               height="85"
               layout="intrinsic"
               loading="lazy"
+              alt="GetHired"
             />
           </div>
           <div className={styles.rightIcon}>

@@ -12,7 +12,7 @@ const GetHired = () => {
     if (width > 481) {
       setMobile(false);
     }
-  });
+  }, []);
   return (
     <section className={styles.GetHired}>
       <div className={styles.CInner}>

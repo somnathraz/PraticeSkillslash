@@ -28,7 +28,7 @@ const TextAnimation = () => {
       setPlay(true);
     }, 4000);
     return () => clearTimeout(timer);
-  }, []);
+  }, [swiftArray]);
 
   return (
     <span className={styles.span}>

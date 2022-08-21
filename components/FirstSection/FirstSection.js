@@ -18,7 +18,8 @@ const FirstSection = () => {
       <div className={styles.leftFirst}>
         <p className="pTop">Get Assured Career Transition From</p>
         <h1>
-          India's Best Project Based <span>Experiential Learning Platform</span>
+          India&apos;s Best Project Based{" "}
+          <span>Experiential Learning Platform</span>
         </h1>
 
         <p className={styles.pBot}>
@@ -44,6 +45,7 @@ const FirstSection = () => {
           height="597"
           width="900"
           layout="intrinsic"
+          alt="Best-data-science-institute"
         />
       </div>
     </div>
