@@ -11,6 +11,7 @@ import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Popup from "../Popup/Popup";
 import Form from "../Form/Form";
+import { useSelector } from "react-redux";
 import MegaMenu from "../MegaMenu/MegaMenu";
 import ContactForm from "../ContactusForm/ContactusForm";
 
@@ -24,7 +25,7 @@ const Navbar = ({
   redirectBl,
 }) => {
   const router = useRouter();
-
+  const cart = useSelector((state) => state.cart);
   const [Home, setHome] = useState(course);
   const [show, setShow] = useState(false);
   const [icon, setIcon] = useState(false);
@@ -49,7 +50,9 @@ const Navbar = ({
   const handleIcon = (data) => {
     setIcon(data);
   };
-
+  const getItemsCount = () => {
+    return cart.reduce((accumulator, item) => accumulator + item.quantity, 0);
+  };
   return (
     <div>
       <Popup trigger={popups} setTrigger={setPopups} className="popupModal">
@@ -140,6 +143,11 @@ const Navbar = ({
         <div className={styles.right}>
           <span>
             <Link href="/About">About us</Link>
+          </span>
+          <span>
+            <Link href="/cart">
+              <p>Cart ({getItemsCount()})</p>
+            </Link>
           </span>
 
           <span>

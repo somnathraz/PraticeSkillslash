@@ -31,6 +31,8 @@ const Steps = () => {
               src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Line_icon.svg"
               alt="getHired_steps_in_Skillslash"
               className={styles.line}
+              width="4px"
+              height="60px"
               loading="lazy"
             />
           </div>
@@ -58,6 +60,8 @@ const Steps = () => {
               src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Line_icon.svg"
               alt="getHired_steps_in_Skillslash"
               className={styles.line2}
+              width="4px"
+              height="60px"
               loading="lazy"
             />
           </div>

@@ -1,5 +1,14 @@
 export const DataScienceCourseData = [
   {
+    product: {
+      id: 1231823,
+      name: "Advance Data Science Course",
+      price: "59,000",
+      currency: "INR",
+      image:
+        "https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Get_Hired_Skillslash.webp",
+    },
+
     FirstSection: {
       deskTopPara: "Certification course for professionals",
       mTopPara: "Certification course for professionals",

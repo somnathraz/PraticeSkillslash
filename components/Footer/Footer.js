@@ -29,7 +29,7 @@ const Footer = () => {
             <Link href="https://www.instagram.com/skillslash_Academy/" passHref>
               <AiFillInstagram className={styles.FIcon} />
             </Link>
-            <a href="https://www.youtube.com/c/Skillslash" passHref>
+            <a href="https://www.youtube.com/c/Skillslash">
               <AiFillYoutube className={styles.FIcon} />
             </a>
             <Link href="https://twitter.com/skillslash" passHref>

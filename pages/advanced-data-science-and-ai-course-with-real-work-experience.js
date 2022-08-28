@@ -12,7 +12,6 @@ import FAQ from "../components/Course/FAQ/FAQ";
 import Fee from "../components/Course/Fee/Fee";
 import styles from "../styles/Home.module.css";
 import BoxShape from "../components/Course/Boxshape/BoxShape";
-
 import RealWork from "../components/Course/ReaWork/RealWork";
 import Project from "../components/Course/Project/Project";
 import Reviews from "../components/Review/Reviews";
@@ -27,6 +26,7 @@ import { DataScienceFaqData } from "../Data/DatascienceFaqData";
 import { DataScienceCourseData } from "../Data/DataScienceCourse/DataScienceCourseData";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import Navbar from "../components/Navbar/Navbar";
+import Product from "../components/Product/Product";
 
 export default function Home() {
   const [popups, setPopups] = useState(false);
@@ -166,6 +166,7 @@ export default function Home() {
           ProMaxDesc={DataScienceCourseData[0].Fee.ProMaxDesc}
         />
         <BatchDetails
+          props={DataScienceCourseData[0].product}
           dataScience={true}
           changeBatch={true}
           BatchName1={DataScienceCourseData[0].BatchDetails.BatchName1}
@@ -199,6 +200,11 @@ export default function Home() {
           <CTA dataScience={true} />
         </div>
         <BottomBar changeBottom={true} />
+        <div className={styles.cardWrap}>
+          <div className={styles.cardPop}>
+            <Product product={DataScienceCourseData[0].product} />
+          </div>
+        </div>
 
         <Footer />
       </div>

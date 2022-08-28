@@ -20,18 +20,18 @@ const CTA = () => {
         {mobile ? (
           <Image
             alt="software"
-            src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Cta_Skillslash.webp"
+            src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Mobile_CTA.webp"
             layout="fill"
-            objectFit="cover"
+            objectFit="contain"
             quality={100}
             loading="lazy"
           />
         ) : (
           <Image
             alt="software"
-            src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Mobile_CTA.webp"
+            src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Cta_Skillslash.webp"
             layout="fill"
-            objectFit="contain"
+            objectFit="cover"
             quality={100}
             loading="lazy"
           />
