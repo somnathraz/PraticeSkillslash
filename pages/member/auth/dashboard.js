@@ -1,17 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { withAuthSync } from "../../../lib/auth";
 
 import cookies from "next-cookies";
-import { useRouter } from "next/router";
 
-const Dashboard = ({ initialName }) => {
-  const router = useRouter();
-
-  useEffect(() => {
-    if (initialName === "") {
-      router.push("/member/auth");
-    }
-  });
-
+const Dashboard = ({ initialName, token }) => {
   return (
     <div>
       <h2>Welcome {initialName.replace("@skillslash.com", "")}</h2>
@@ -19,9 +11,11 @@ const Dashboard = ({ initialName }) => {
   );
 };
 
-export default Dashboard;
+export default withAuthSync(Dashboard);
 Dashboard.getInitialProps = async (ctx) => {
+  const { token, USER } = nextCookie(ctx);
   return {
-    initialName: cookies(ctx).USER || "",
+    initialName: USER,
+    token: token,
   };
 };
