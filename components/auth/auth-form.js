@@ -1,10 +1,11 @@
-import { useState, useRef, useRouter } from "react";
+import { useState, useRef } from "react";
 
 import classes from "./auth-form.module.css";
 import { login } from "../../lib/auth";
-import { setCookie } from "../../lib/useCookies";
+import { useRouter } from "next/router";
 
 function AuthForm() {
+  const router = useRouter();
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
   const [error, setError] = useState({
@@ -32,6 +33,7 @@ function AuthForm() {
         const { token, user } = await response.json();
 
         login({ token, user }, true);
+        router.push("/member/auth/dashboard");
       } else if (response.status === 404) {
         const { message } = await response.json();
         setError({ ...error, user: true });
