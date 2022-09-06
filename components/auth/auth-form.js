@@ -30,8 +30,7 @@ function AuthForm() {
       });
       if (response.status === 200) {
         const { token, user } = await response.json();
-        setCookie("USER", user);
-        console.log(token, "authform");
+
         login({ token, user }, true);
       } else if (response.status === 404) {
         const { message } = await response.json();
