@@ -3,17 +3,17 @@ import { withAuthSync } from "../../../lib/auth";
 
 import cookies from "next-cookies";
 
-const Dashboard = ({ initialName }) => {
+const Dashboard = () => {
   return (
     <div>
-      <h2>Welcome {initialName.replace("@skillslash.com", "")}</h2>
+      <h2>Welcome</h2>
     </div>
   );
 };
 
 export default withAuthSync(Dashboard);
-Dashboard.getInitialProps = async (ctx) => {
-  return {
-    initialName: cookies(ctx).USER || "",
-  };
-};
+// Dashboard.getInitialProps = async (ctx) => {
+//   return {
+//     initialName: cookies(ctx).USER || "",
+//   };
+// };
