@@ -662,37 +662,6 @@ const Tabs = () => {
                     </div>
                   </div>
                 </Link>
-                <Link href="/data-engineering-course">
-                  <div className={styles.gridBox}>
-                    <div className={styles.gridImg}>
-                      <img
-                        src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Data_engineering_course.webp"
-                        className={styles.gridBanner}
-                        loading="lazy"
-                        alt="data-engineering-course"
-                      />
-                    </div>
-                    <div className={styles.gridInnerBox}>
-                      <h4>Data Engineering Course with Industry Experience</h4>
-                      <div className={styles.lines}></div>
-                      <span>
-                        <AiOutlineCheck className={styles.gridIcon} />8 Months
-                      </span>
-                      <span>
-                        <AiOutlineCheck className={styles.gridIcon} />
-                        15+ Industry Projects
-                      </span>
-                      <span>
-                        <AiOutlineCheck className={styles.gridIcon} />
-                        EMI @INR 5801/month
-                      </span>
-                      <div className={styles.line}></div>
-                      <Link href="/data-engineering-course">
-                        <button className={styles.gridBtn}>View Program</button>
-                      </Link>
-                    </div>
-                  </div>
-                </Link>
               </div>
             ) : (
               ""

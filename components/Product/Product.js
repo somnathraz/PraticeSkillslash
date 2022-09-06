@@ -1,26 +1,31 @@
+import React from "react";
+import styles from "../../styles/Home.module.css";
 import Image from "next/image";
+
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cart.slice";
-import styles from "../../styles/ProductCard.module.css";
 
-const ProductCard = ({ product }) => {
+const Product = (props) => {
+  const {
+    data: { id, name, price, image },
+  } = props;
+
   const dispatch = useDispatch();
-  console.log(product);
 
   return (
     <div className={styles.card}>
-      <Image src={product.image} height={300} width={220} alt="hello" />
-      <h4 className={styles.title}>{product.name}</h4>
-
-      <p>$ {product.price}</p>
+      <Image src={image} alt={name} height="540" width="540" />
+      <h3>{name}</h3>
+      <p>{price.toLocaleString(undefined, { maximumFractionDigits: 2 })}</p>
       <button
-        onClick={() => dispatch(addToCart(product))}
-        className={styles.button}
+        onClick={() => {
+          dispatch(addToCart(props.data));
+        }}
       >
-        Add to Cart
+        Add to card
       </button>
     </div>
   );
 };
 
-export default ProductCard;
+export default Product;

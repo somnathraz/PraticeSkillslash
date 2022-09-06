@@ -162,21 +162,6 @@ const MegaMenu = ({ handleIcon }) => {
                     </div>
                   </div>
                 </a>
-                <a
-                  href="http://skillslash.com/data-engineering-course"
-                  onClick={() => handleIcon(false)}
-                >
-                  <div className={styles.mInnerBox}>
-                    <div className={styles.mInnerBoxDiv}>
-                      <h5>Data Engineering Course with Industry Experience</h5>
-                      <span>
-                        <div>8 Months</div>
-                        <BsDot className={styles.dot} />
-                        <div>Live Classes</div>
-                      </span>
-                    </div>
-                  </div>
-                </a>
               </div>
             ) : (
               ""
@@ -389,21 +374,6 @@ const MegaMenu = ({ handleIcon }) => {
               >
                 <div className={styles.mInnerBoxDiv}>
                   <h5>Business Analytics program for professionals</h5>
-                  <span>
-                    <div>8 Months</div>
-                    <BsDot className={styles.dot} />
-                    <div>Live Classes</div>
-                  </span>
-                </div>
-              </div>
-            </a>
-            <a href="http://skillslash.com/data-engineering-course">
-              <div
-                className={styles.mInnerBox}
-                onClick={() => handleIcon(false)}
-              >
-                <div className={styles.mInnerBoxDiv}>
-                  <h5>Data Engineering Course with Industry Experience</h5>
                   <span>
                     <div>8 Months</div>
                     <BsDot className={styles.dot} />

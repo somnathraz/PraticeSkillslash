@@ -20,7 +20,7 @@
     "desc": "Learn business analytics fundamentals by enrolling in our business analytics course in Mumbai. Besides, gain valuable experience working on top-tier industry-collaborated projects."
   },
   "ProgramInfo": {
-    "BatchDate": "21 August,2022",
+    "BatchDate": "23 september,2022",
     "BatchDuration": "09 Months",
     "Placement": "100% Job Guarantee"
   },
@@ -902,8 +902,12 @@
     "BatchName2": "Weekend Batch",
     "weekDayBatchDate": "21 August 2022",
     "weekEndBatchDate": "28 August 2022",
+    "weekDayBatchDate1": "10 september 2022",
+    "weekEndBatchDate1": "17 september 2022",
     "weekDayBatchTime": "09:00 – 12:00 PM",
     "weekEndBatchTime": "09:00 – 12:00 PM",
+    "weekDayBatchTime1": "02:00 – 05:00 PM",
+    "weekEndBatchTime1": "10:00 – 01:00 PM",
     "weekEndBatch": "true",
     "weekDayBatch": "true"
   },

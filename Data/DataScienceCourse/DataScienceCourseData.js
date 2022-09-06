@@ -3,7 +3,7 @@ export const DataScienceCourseData = [
     product: {
       id: 1231823,
       name: "Advance Data Science Course",
-      price: "59,000",
+      price: 59000.0,
       currency: "INR",
       image:
         "https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Get_Hired_Skillslash.webp",
@@ -1167,8 +1167,12 @@ export const DataScienceCourseData = [
       BatchName2: "Weekday Batch",
       weekDayBatchDate: "21 August 2022",
       weekEndBatchDate: "28 August 2022",
+      weekDayBatchDate1: "10 september 2022",
+      weekEndBatchDate1: "17 september 2022",
       weekDayBatchTime: "09:00 – 12:00 PM",
       weekEndBatchTime: "09:00 – 12:00 PM",
+      weekDayBatchTime1: "02:00 – 05:00 PM",
+      weekEndBatchTime1: "10:00 – 01:00 PM",
       weekEndBatch: "true",
       weekDayBatch: "true",
     },

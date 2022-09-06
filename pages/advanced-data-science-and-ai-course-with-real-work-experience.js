@@ -202,7 +202,7 @@ export default function Home() {
         <BottomBar changeBottom={true} />
         <div className={styles.cardWrap}>
           <div className={styles.cardPop}>
-            <Product product={DataScienceCourseData[0].product} />
+            <Product data={DataScienceCourseData[0].product} />
           </div>
         </div>
 

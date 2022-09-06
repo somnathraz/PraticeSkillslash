@@ -1,20 +1,22 @@
 import "../styles/globals.css";
 import "../styles/form.css";
-import Script from "next/script";
-import store from "../redux/store";
+
 import { Provider } from "react-redux";
+import store from "../redux/store";
+import Script from "next/script";
 
 function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
-      <Script
-        id="gtag"
-        strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=GTM-WJVZHTB`}
-      />
+      <>
+        <Script
+          id="gtag"
+          strategy="lazyOnload"
+          src={`https://www.googletagmanager.com/gtag/js?id=GTM-WJVZHTB`}
+        />
 
-      <Script strategy="lazyOnload" id="gtm-tag">
-        {`
+        <Script strategy="lazyOnload" id="gtm-tag">
+          {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -22,9 +24,10 @@ function MyApp({ Component, pageProps }) {
               page_path: window.location.pathname,
             });
                 `}
-      </Script>
+        </Script>
 
-      <Component {...pageProps} />
+        <Component {...pageProps} />
+      </>
     </Provider>
   );
 }

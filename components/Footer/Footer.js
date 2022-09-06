@@ -20,27 +20,21 @@ const Footer = () => {
         <div className={styles.iconWrapper}>
           <h5>Follow us!</h5>
           <div className={styles.sIcon}>
-            <Link
-              href="https://www.facebook.com/SkillSlash-100623872122442"
-              passHref
-            >
+            <a href="https://www.facebook.com/SkillSlash-100623872122442">
               <AiFillFacebook className={styles.FIcon} />
-            </Link>
-            <Link href="https://www.instagram.com/skillslash_Academy/" passHref>
+            </a>
+            <a href="https://www.instagram.com/skillslash_Academy/">
               <AiFillInstagram className={styles.FIcon} />
-            </Link>
+            </a>
             <a href="https://www.youtube.com/c/Skillslash">
               <AiFillYoutube className={styles.FIcon} />
             </a>
-            <Link href="https://twitter.com/skillslash" passHref>
+            <a href="https://twitter.com/skillslash">
               <AiFillTwitterSquare className={styles.FIcon} />
-            </Link>
-            <Link
-              href="https://www.linkedin.com/company/skillslash"
-              target="_blank"
-            >
+            </a>
+            <a href="https://www.linkedin.com/company/skillslash">
               <AiFillLinkedin className={styles.FIcon} />
-            </Link>
+            </a>
           </div>
         </div>
         <div className={styles.fPages}>
@@ -151,9 +145,7 @@ const Footer = () => {
           <Link href="/business-analytics-course" passHref>
             <span>Business Analytics online Training |</span>
           </Link>
-          <Link href="/data-engineering-course" passHref>
-            <span>Data Engineering course with certification</span>
-          </Link>
+
           <Link href="/block-chain-course" passHref>
             <span>Blockchain program and certification |</span>
           </Link>

@@ -102,7 +102,7 @@ const Navbar = ({
               </span>
             </div>
           </div>
-          <Link href="/">
+          <a href="http://localhost:3000">
             <Image
               src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/logo.ico"
               alt="Skillslash"
@@ -111,7 +111,7 @@ const Navbar = ({
               width={mobile ? "140px" : "230px"}
               height="60px"
             />
-          </Link>
+          </a>
           <button
             onMouseEnter={() => setIcon(true)}
             onMouseOver={() => setIcon(true)}
@@ -143,11 +143,6 @@ const Navbar = ({
         <div className={styles.right}>
           <span>
             <Link href="/About">About us</Link>
-          </span>
-          <span>
-            <Link href="/cart">
-              <p>Cart ({getItemsCount()})</p>
-            </Link>
           </span>
 
           <span>

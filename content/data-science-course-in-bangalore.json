@@ -3,21 +3,58 @@
     "title": "Data Science Course In Bangalore with 100% Placement | Skillslash",
     "desc": "Best Data science course in Bangalore at budget-friendly prices at Skillslash. Enroll in our data science course with placement support.",
     "keyword": "data science courses in bangalore, data science course in bangalore, data science training in bangalore, best data science courses in bangalore, data science institute in bangalore, data scientist course in bangalore, data science course fees in bangalore, data science course in bangalore with placement, Data Science course with placement guarantee, Data Science course, Data analyst course in Bangalore",
+
     "canonical": "https://skillslash.com/data-science-course-in-bangalore",
     "ReviewSchema": {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": "Data science course in Bangalore",
-      "brand": {
-        "@type": "Brand",
-        "name": "Skillslash"
+      "@context": "http://schema.org",
+      "@type": "EducationEvent",
+      "name": "Data science Course in Bangalore",
+      "description": "Skillslash’s best Data Science course in Bangalore comes with a 100% job guarantee. Besides, our Data Science courses are curated by leading faculties and industry leaders.Enroll now!",
+      "image": "https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Certificate-Advance-data-science.webp",
+      "performer": "Skillslash",
+
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "59000",
+        "highPrice": "130000",
+        "url": "https://skillslash.com/data-science-course-in-bangalore",
+        "availability": "https://schema.org/InStock",
+        "price": "59000",
+        "priceCurrency": "INR",
+        "validFrom": "2022-09-22"
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "9.3",
-        "bestRating": "10",
-        "worstRating": "1",
-        "ratingCount": "22657"
+      "startDate": "2022-09-23",
+      "endDate": "2022-12-07",
+      "url": "https://skillslash.com/data-science-course-in-bangalore",
+      "duration": "50",
+
+      "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+      "eventStatus": "http://schema.org/EventScheduled",
+      "location": [
+        {
+          "@type": "VirtualLocation",
+          "url": "https://skillslash.com/data-science-course-in-bangalore"
+        },
+        {
+          "@type": "Place",
+          "name": "Bangalore",
+          "address": {
+            "@type": "PostalAddress",
+            "name": "Bangalore,India"
+          },
+
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "12.927933",
+            "longitude": "77.645240"
+          }
+        }
+      ],
+
+      "organizer": {
+        "@type": "Organization",
+        "name": "Skillslash",
+        "url": "https://skillslash.com"
       }
     }
   },
@@ -32,18 +69,18 @@
     "deskTopPara": "Master Data Science With Expert Help",
     "mTopPara": "Master Data Science With Expert Help",
     "title": "Data Science Course in Bangalore",
-    "spanTitleText": "With 100% Job Guarantee",
+    "spanTitleText": "With 100% Placement",
     "desc": "Experience 100% live training with industry experts. Sign up in Skillslash’s Data Science course in Bangalore, work in real-time projects and gain globally acknowledged certifications."
   },
   "ProgramInfo": {
-    "BatchDate": "21 August 2022",
+    "BatchDate": "23 september 2022",
     "BatchDuration": "09 Months",
     "Placement": "100% Job Guarantee"
   },
   "BoxShape": {
     "title": "Why Join this Program?",
     "Box1h5": "Real Work Experience",
-    "box1desc": "Enroll in our Data Science course and get industrial training. Also, get a chance to working directly with top AI companies.",
+    "box1desc": "Enroll in our Data Science course in Bangalore and get industrial training. Also, get a chance to working directly with top AI companies.",
     "Box2h5": "Build Your Own Course",
     "box2desc": " Self-design your Data Science course with respect to your career goals. Also, take the training under expert guidance.",
     "Box3h5": "100% Job Guarantee",
@@ -72,7 +109,7 @@
     "src": "https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Certificate-Advance-data-science.webp"
   },
   "RealWork": {
-    "desc": "Sign up in India’s best Data Science course with 100% job guarantee. The Data Science courses are designed with an application-based learning approach. Furthermore, the extensive Artificial Intelligence and Data Science Syllabus focuses on helping learners build relevant experience. Especially, in the technologies they upskill to prove expertise."
+    "desc": "Sign up in India’s best Data Science course in Bangalore with 100% job guarantee. These Data Science courses are designed with an application-based learning approach. Furthermore, the extensive Artificial Intelligence and Data Science Syllabus focuses on helping learners build relevant experience. Especially, in the technologies they upskill to prove expertise."
   },
   "syllabusDesc": "Skillslash’s best Data Science course in Bangalore comes with a 100% job guarantee. Besides, the Data Science and AI courses are curated by leading faculties and industry leaders. Especially, with the aim to provide practical data science learning experience with live interactive classes and projects.",
   "popupHead": "Download Data science Course Brochure",
@@ -427,7 +464,6 @@
               ]
             }
           },
-
           {
             "chap": {
               "title": "Chapter 11: Time-series Analysis",
@@ -1146,19 +1182,19 @@
     }
   ],
   "Review": {
-    "title": "Why get enrolled in our Advanced Data Science course in Bangalore?",
+    "title": "Why get enrolled in our Advanced Data Science course ?",
     "desc": " Skillslash offers Best Data Science course in Bangalore with placement guarantee. Besides, our Data Science courses are designed for creative minds and also made for everyone. So, take our Artificial intelligence and Data science course and experience the new era of education!"
   },
   "Fee": {
     "FullStack": true,
     "desc": " The Data Science course fees in Bangalore start from INR 59,000 (Excluding GST). Besides, we aim to deliver to you quality education considering the aspect of feasibility.",
-    "desc1": "The Data Science course in bangalore, We have at Skillslash is designed giving focus to affordability. So, we give you several financial options to manage and budget the expenses of your Data Science course fees. Because, we believe in fair reachability and access to all our carefully curated Data Science programs. Therefore, you get options such as EMI to pay the fees of our Data Science course in Bangalore.",
+    "desc1": "The Data Science course, We have at Skillslash is designed giving focus to affordability. So, we give you several financial options to manage and budget the expenses of your Data Science course fees. Because, we believe in fair reachability and access to all our carefully curated Data Science programs. Therefore, you get options such as EMI to pay the fees of our Data Science courses.",
     "BasicPrice": "₹ 59,000 + GST",
-    "BasicDesc": "Get Data science training from Industry experts",
+    "BasicDesc": "Get Data science training in Bangalore from Industry experts",
     "ProPrice": "₹ 89,000 + GST",
-    "ProDesc": " Get Data Science training with real work Experience",
+    "ProDesc": " Get Data Science training in Bangalore with real work Experience",
     "ProMaxPrice": "₹ 1,30,000 + GST",
-    "ProMaxDesc": " Get Data Science training with 100% Job Guarantee"
+    "ProMaxDesc": " Get Data Science training in Bangalore with 100% Job Guarantee"
   },
   "BatchDetails": {
     "BatchHeader": "Data science course in Bangalore Next 2022 Cohort",
@@ -1166,8 +1202,12 @@
     "BatchName2": "Weekday Batch",
     "weekDayBatchDate": "21 August 2022",
     "weekEndBatchDate": "28 August 2022",
+    "weekDayBatchDate1": "10 september 2022",
+    "weekEndBatchDate1": "17 september 2022",
     "weekDayBatchTime": "09:00 – 12:00 PM",
     "weekEndBatchTime": "09:00 – 12:00 PM",
+    "weekDayBatchTime1": "02:00 – 05:00 PM",
+    "weekEndBatchTime1": "10:00 – 01:00 PM",
     "weekEndBatch": "true",
     "weekDayBatch": "true"
   },
