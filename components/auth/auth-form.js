@@ -33,7 +33,6 @@ function AuthForm() {
         const { token, user } = await response.json();
 
         login({ token, user }, true);
-        router.push("/member/auth/dashboard");
       } else if (response.status === 404) {
         const { message } = await response.json();
         setError({ ...error, user: true });
