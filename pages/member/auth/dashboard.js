@@ -1,5 +1,4 @@
 import React from "react";
-import { withAuthSync } from "../../../lib/auth";
 
 import cookies from "next-cookies";
 
@@ -11,7 +10,7 @@ const Dashboard = () => {
   );
 };
 
-export default withAuthSync(Dashboard);
+export default Dashboard;
 // Dashboard.getInitialProps = async (ctx) => {
 //   return {
 //     initialName: cookies(ctx).USER || "",
