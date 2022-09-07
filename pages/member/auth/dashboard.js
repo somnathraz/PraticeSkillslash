@@ -1,8 +1,9 @@
 import React from "react";
-
+import { withAuthSync } from "../../../lib/auth";
 import nextCookie from "next-cookies";
 
-const Dashboard = () => {
+const Dashboard = (props) => {
+  console.log(props);
   return (
     <div>
       <h2>Welcome</h2>
