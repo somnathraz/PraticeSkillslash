@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Head from "next/head";
 import axios from "axios";
@@ -14,8 +14,8 @@ import clientPromise from "../lib/mongodb";
 
 const CartPage = ({ isConnected }) => {
   const [payment, setPayments] = useState(false);
-
-  console.log(isConnected, "connected");
+  const couponDataCartRef = useRef();
+  const [loading, setLoading] = useState(false);
 
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
@@ -26,7 +26,9 @@ const CartPage = ({ isConnected }) => {
     dateTime: new Date(),
   });
 
-  console.log(cart, "cartpage");
+  const [discount, setDiscount] = useState();
+  const [discountMsg, setDiscountMsg] = useState("");
+
   const getTotalPrice = () => {
     return cart.reduce(
       (accumulator, item) =>
@@ -36,9 +38,16 @@ const CartPage = ({ isConnected }) => {
       0
     );
   };
-
+  const getDiscountPrice = () => {
+    return cart.reduce(
+      (accumulator, item) =>
+        parseFloat(
+          (discount / 100) * (accumulator + item.quantity * item.price)
+        ).toLocaleString("en-US"),
+      0
+    );
+  };
   const makePayment = async () => {
-    console.log(".here....");
     const res = await initializeRazorpay();
 
     if (!res) {
@@ -55,7 +64,7 @@ const CartPage = ({ isConnected }) => {
         "Content-Type": "application/json",
       },
     }).then((t) => t.json());
-    console.log(data);
+
     var options = {
       key: process.env.RAZORPAY_KEY, // Enter the Key ID generated from the Dashboard
       name: "Skillslash Pvt Ltd",
@@ -83,14 +92,14 @@ const CartPage = ({ isConnected }) => {
           paymentData
         );
 
-        console.log(result, "verifyData");
-        console.log(
-          response.razorpay_payment_id + "id",
-          "/n",
-          response.razorpay_order_id + "orderid",
-          "/n",
-          response.razorpay_signature + "signature"
-        );
+        // console.log(result, "verifyData");
+        // console.log(
+        //   response.razorpay_payment_id + "id",
+        //   "/n",
+        //   response.razorpay_order_id + "orderid",
+        //   "/n",
+        //   response.razorpay_signature + "signature"
+        // );
 
         //sending data to db//
         const dbSend = await axios.post(
@@ -98,7 +107,7 @@ const CartPage = ({ isConnected }) => {
           paymentData
         );
 
-        console.log(dbSend, "database data");
+        // console.log(dbSend, "database data");
         setPayments(true);
       },
       prefill: {
@@ -132,8 +141,44 @@ const CartPage = ({ isConnected }) => {
     const data = await fetch("/api/success", {
       method: "POST",
     }).then((t) => t.json());
-    console.log(data);
+    // console.log(data);
   };
+
+  async function submitHandler(event) {
+    event.preventDefault();
+    console.log("handler");
+    const couponDataCode = couponDataCartRef.current.value;
+
+    if (couponDataCode === "") {
+      setDiscountMsg("Enter coupon code");
+      return;
+    } else {
+      setLoading(true);
+      try {
+        const response = await fetch("/api/Database/getCoupon", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            couponCode: couponDataCode,
+          }),
+        });
+        if (response.status === 200) {
+          const { couponName, msg } = await response.json();
+          console.log(typeof parseInt(couponName.discountPercent), "FrontEnd");
+          setDiscount(parseInt(couponName.discountPercent));
+          setDiscountMsg(msg);
+        } else if (response.status === 404) {
+          setDiscountMsg("Coupon Not Valid");
+        }
+      } catch (err) {
+        console.error(
+          "You have an error in your code or there are network issues.",
+          err
+        );
+      }
+      setLoading(false);
+    }
+  }
 
   return (
     <div className={styles.container}>
@@ -170,7 +215,30 @@ const CartPage = ({ isConnected }) => {
             </p>
           </div>
         ))}
-        <h2>Grand Total: ₹ {getTotalPrice()}</h2>
+        <form onSubmit={submitHandler}>
+          <div>
+            <input
+              type="text"
+              id="percent"
+              required
+              ref={couponDataCartRef}
+              placeholder="Enter Promo code"
+            />
+            {discountMsg === "" ? "" : <p>{discountMsg}</p>}
+          </div>
+          <div>
+            {loading ? (
+              <div className="loader">Loading...</div>
+            ) : (
+              <button type="submit">Apply Coupon</button>
+            )}
+          </div>
+        </form>
+
+        <h2>
+          Grand Total: ₹{" "}
+          {discount === "" ? getTotalPrice() : getDiscountPrice()}
+        </h2>
 
         <PaymentForm setDetails={setDetails} />
         <button

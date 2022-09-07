@@ -86,10 +86,11 @@ function AuthForm() {
           )}
         </div>
         <div className={classes.actions}>
-          <button>
-            {" "}
-            {loading ? <div className="loader">Loading...</div> : "Log in"}
-          </button>
+          {loading ? (
+            <div className="loader">Loading...</div>
+          ) : (
+            <button>LogIn</button>
+          )}
         </div>
       </form>
     </section>

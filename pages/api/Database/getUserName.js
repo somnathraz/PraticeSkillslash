@@ -1,30 +1,34 @@
-import clientPromise from "../../../lib/mongodb";
+import { connectToDatabase } from "../../../lib/mongodb";
 
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 export default async function handler(req, res) {
-  const client = await clientPromise;
-  const db = client.db("skillslash");
+  const { db } = await connectToDatabase();
+
   switch (req.method) {
     case "POST":
-      let bodyObject = req.body;
+      let { discountPercent, couponCode, expireAt } = req.body;
+      const couponName = await db.collection("coupon").findOne({
+        couponCode,
+      });
+      if (couponName) {
+        res.status(409).json({ msg: "coupon Already Exist" });
+      } else {
+        let myPost = await db.collection("coupon").insertOne({
+          discountPercent,
+          couponCode,
+          expireAt: new Date(expireAt),
+        });
+        await db
+          .collection("coupon")
+          .createIndex({ expireAt: 1 }, { expireAfterSeconds: 0 });
+        res.json({ myPost, msg: "coupon created" });
+      }
 
-      console.log(bodyObject);
-      let myPost = await db
-        .collection("users")
-        .find({ _id: `ObjectId("63159dead2101f2b7e996efa")` });
-      res.json(myPost);
-
-      client.close();
       break;
     case "GET":
-      const allPosts = await db
-        .collection("users")
-        .findOne({ _id: `ObjectId("63159dead2101f2b7e996efa")` });
-      res.json({ status: 200, data: allPosts });
-      if (!allPosts) {
-        res.status(404).json({ msg: "no user found" });
-      }
+      res.status(502).json({ msg: "go back" });
+
       break;
   }
 }
