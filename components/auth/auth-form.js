@@ -3,6 +3,7 @@ import { useState, useRef } from "react";
 import classes from "./auth-form.module.css";
 import { login } from "../../lib/auth";
 import { useRouter } from "next/router";
+import jsCookie from "js-cookie";
 
 function AuthForm() {
   const router = useRouter();
@@ -31,8 +32,15 @@ function AuthForm() {
       });
       if (response.status === 200) {
         const { token, user } = await response.json();
-
-        login({ token, user }, true);
+        jsCookie.set("token", token, {
+          expires: 1,
+          secure: true,
+        });
+        jsCookie.set("user", user, {
+          expires: 1,
+          secure: true,
+        });
+        router.push("/member/auth/dashboard");
       } else if (response.status === 404) {
         const { message } = await response.json();
         setError({ ...error, user: true });

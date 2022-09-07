@@ -1,7 +1,7 @@
 import React from "react";
 import { withAuthSync } from "../../../lib/auth";
 
-import cookies from "next-cookies";
+import nextCookie from "next-cookies";
 
 const Dashboard = ({ initialName, token }) => {
   return (
