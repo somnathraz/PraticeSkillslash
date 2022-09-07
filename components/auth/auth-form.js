@@ -32,15 +32,7 @@ function AuthForm() {
       });
       if (response.status === 200) {
         const { token, user } = await response.json();
-        jsCookie.set("token", token, {
-          expires: 1,
-          secure: true,
-        });
-        jsCookie.set("user", user, {
-          expires: 1,
-          secure: true,
-        });
-        router.push("/member/auth/dashboard");
+        login({ token, user }, true);
       } else if (response.status === 404) {
         const { message } = await response.json();
         setError({ ...error, user: true });
