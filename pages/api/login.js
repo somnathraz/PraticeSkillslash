@@ -13,15 +13,14 @@ export default async function handler(req, res) {
     await client.connect();
     const col = client.db("skillslash").collection("users");
     let user = await col.findOne({ email: username });
-    console.log(user);
+
     // If no username, user doesn't exist
 
     if (user === null) {
       res.status(404).json({ message: "No user found" });
     } else {
       const passWordMatch = password === user.password;
-      if (passWordMatch)
-        res.status(200).json({ token: user._id.toString(), user: user.email });
+      if (passWordMatch) res.status(200).json({ token: user.email });
       else res.status(401).json({ message: "password mismatch" });
     }
   } catch (err) {
