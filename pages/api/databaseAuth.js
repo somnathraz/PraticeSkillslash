@@ -1,15 +1,15 @@
-import clientPromise from "../../lib/mongodb";
+import { connectToDatabase } from "../../lib/mongodb";
 export default async function handler(req, res) {
+  const { db } = await connectToDatabase();
   console.log(req.body);
-  const client = await clientPromise;
-  const db = client.db("skillslash");
+
   switch (req.method) {
     case "POST":
       let bodyObject = req.body;
 
       let myPost = await db.collection("payment").insertOne(bodyObject);
-      res.json(myPost);
-      client.close();
+      res.status(200).json({ myPost, msg: "successful" });
+
       break;
     case "GET":
       const allPosts = await db.collection("payment").find({}).toArray();

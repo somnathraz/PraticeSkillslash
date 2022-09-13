@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Head from "next/head";
 import axios from "axios";
@@ -10,12 +10,27 @@ import {
 } from "../redux/cart.slice";
 import styles from "../styles/CartPage.module.css";
 import PaymentForm from "../components/PaymentForm/PaymentForm";
-import clientPromise from "../lib/mongodb";
+import { useRouter } from "next/router";
+
+import { AiOutlineCloseCircle } from "react-icons/ai";
+import { BsClipboardPlus, BsClipboardCheck } from "react-icons/bs";
+import Toast from "../components/Toast/Toast";
 
 const CartPage = ({ isConnected }) => {
+  const router = useRouter();
   const [payment, setPayments] = useState(false);
   const couponDataCartRef = useRef();
+  const [redirectSeconds, setRedirectSeconds] = useState(15);
   const [loading, setLoading] = useState(false);
+  const [payLoading, setPayLoading] = useState(false);
+  const [copy, setCopy] = useState({ copy1: false, copy2: false });
+  const couponDataCode = "";
+  const [successHandel, setSuccessHandel] = useState(false);
+  const [showPayDetails, setShowPayDetails] = useState({
+    paymentId: "",
+    orderId: "",
+    msg: "",
+  });
 
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
@@ -23,13 +38,29 @@ const CartPage = ({ isConnected }) => {
     name: "",
     email: "",
     phone: "",
+    couponCode: "",
     dateTime: new Date(),
   });
 
-  const [discount, setDiscount] = useState();
+  const [discount, setDiscount] = useState("");
   const [discountMsg, setDiscountMsg] = useState("");
 
+  // useEffect(() => {
+  //   if (payment) {
+  //     const interval = setInterval(() => {
+  //       console.log(redirectSeconds);
+  //       if (redirectSeconds > 0) {
+  //         setRedirectSeconds(redirectSeconds - 1);
+  //       } else {
+  //         clearInterval(interval);
+  //         router.push("/");
+  //       }
+  //     }, 1000);
+  //   }
+  // }, [payment]);
+
   const getTotalPrice = () => {
+    console.log("normal method");
     return cart.reduce(
       (accumulator, item) =>
         parseFloat(accumulator + item.quantity * item.price).toLocaleString(
@@ -42,11 +73,14 @@ const CartPage = ({ isConnected }) => {
     return cart.reduce(
       (accumulator, item) =>
         parseFloat(
-          (discount / 100) * (accumulator + item.quantity * item.price)
+          accumulator +
+            item.quantity * item.price -
+            (discount / 100) * (accumulator + item.quantity * item.price)
         ).toLocaleString("en-US"),
       0
     );
   };
+
   const makePayment = async () => {
     const res = await initializeRazorpay();
 
@@ -75,6 +109,8 @@ const CartPage = ({ isConnected }) => {
       image:
         "https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/logo.ico",
       handler: async function (response) {
+        setSuccessHandel(true);
+        setPayLoading(true);
         const paymentData = {
           orderCreationId: data.id,
           paymentId: response.razorpay_payment_id,
@@ -84,6 +120,7 @@ const CartPage = ({ isConnected }) => {
           email: details.email,
           phone: details.phone,
           courseName: data.name,
+          time: details.dateTime,
         };
 
         // Validate payment at server - using webhooks is a better idea.
@@ -92,22 +129,50 @@ const CartPage = ({ isConnected }) => {
           paymentData
         );
 
-        // console.log(result, "verifyData");
-        // console.log(
-        //   response.razorpay_payment_id + "id",
-        //   "/n",
-        //   response.razorpay_order_id + "orderid",
-        //   "/n",
-        //   response.razorpay_signature + "signature"
-        // );
+        //Show user that payment is successful
 
+        console.log(result, "verifyData");
+        console.log(
+          response.razorpay_payment_id + "id",
+          "/n",
+          response.razorpay_order_id + "orderid",
+          "/n",
+          response.razorpay_signature + "signature"
+        );
+        generateInvoice(details.name);
         //sending data to db//
         const dbSend = await axios.post(
           "http://localhost:3000/api/databaseAuth",
           paymentData
         );
 
+        console.log(dbSend, "database payment data");
+        setPayLoading(false);
+        setShowPayDetails({
+          paymentId: response.razorpay_payment_id,
+          orderId: response.razorpay_order_id,
+          msg: "payment Successful",
+        });
+
         // console.log(dbSend, "database data");
+
+        try {
+          const response = await fetch("/api/Database/getCoupon", {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              couponCodeNameData: couponDataCartRef.current.value,
+            }),
+          });
+          if (response.status === 200) {
+            const { couponNameData, msg } = await response.json();
+            console.log(msg);
+          }
+          if (response.status === 404) {
+            const { msg } = await response.json();
+            console.log(msg);
+          }
+        } catch (error) {}
         setPayments(true);
       },
       prefill: {
@@ -120,6 +185,7 @@ const CartPage = ({ isConnected }) => {
     const paymentObject = new window.Razorpay(options);
     paymentObject.open();
   };
+
   const initializeRazorpay = () => {
     return new Promise((resolve) => {
       const script = document.createElement("script");
@@ -137,17 +203,11 @@ const CartPage = ({ isConnected }) => {
     });
   };
 
-  const verifiedPayment = async () => {
-    const data = await fetch("/api/success", {
-      method: "POST",
-    }).then((t) => t.json());
-    // console.log(data);
-  };
-
   async function submitHandler(event) {
     event.preventDefault();
     console.log("handler");
-    const couponDataCode = couponDataCartRef.current.value;
+    couponDataCode = couponDataCartRef.current.value;
+    setDetails({ ...details, couponCode: couponDataCode });
 
     if (couponDataCode === "") {
       setDiscountMsg("Enter coupon code");
@@ -179,6 +239,31 @@ const CartPage = ({ isConnected }) => {
       setLoading(false);
     }
   }
+
+  const generateInvoice = (name) => {
+    console.log("generatePDF");
+    // send a post request with the name to our API endpoint
+    const fetchData = async () => {
+      const data = await fetch("/api/generateInvoice", {
+        method: "POST",
+        body: { name },
+      });
+      // convert the response into an array Buffer
+      return data.arrayBuffer();
+    };
+    console.log(fetchData);
+    // convert the buffer into an object URL
+    const saveAsPDF = async () => {
+      const buffer = await fetchData();
+      const blob = new Blob([buffer]);
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "invoice.pdf";
+      link.click();
+    };
+
+    saveAsPDF();
+  };
 
   return (
     <div className={styles.container}>
@@ -228,7 +313,18 @@ const CartPage = ({ isConnected }) => {
           </div>
           <div>
             {loading ? (
-              <div className="loader">Loading...</div>
+              <div className="center">
+                <div className="wave"></div>
+                <div className="wave"></div>
+                <div className="wave"></div>
+                <div className="wave"></div>
+                <div className="wave"></div>
+                <div className="wave"></div>
+                <div className="wave"></div>
+                <div className="wave"></div>
+                <div className="wave"></div>
+                <div className="wave"></div>
+              </div>
             ) : (
               <button type="submit">Apply Coupon</button>
             )}
@@ -249,32 +345,96 @@ const CartPage = ({ isConnected }) => {
         >
           CheckOut
         </button>
-        <button>verify</button>
+        {successHandel ? (
+          <div className={styles.paymentShow}>
+            <div className={styles.innerPayment}>
+              <AiOutlineCloseCircle
+                className={styles.cross}
+                onClick={() => setSuccessHandel(false)}
+              />
+              {payLoading ? (
+                <>
+                  <div className="center">
+                    <div className="wave"></div>
+                    <div className="wave"></div>
+                    <div className="wave"></div>
+                    <div className="wave"></div>
+                    <div className="wave"></div>
+                    <div className="wave"></div>
+                    <div className="wave"></div>
+                    <div className="wave"></div>
+                    <div className="wave"></div>
+                    <div className="wave"></div>
+                  </div>
+                  verifying your payment please wait...
+                </>
+              ) : (
+                <div className={styles.paymentContent}>
+                  <Image
+                    src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/79952-successful.gif"
+                    width="120"
+                    height="120"
+                    layout="intrinsic"
+                    alt="animation"
+                  />
+
+                  <p>
+                    OrderId: {showPayDetails.orderId}
+                    {copy.copy1 ? (
+                      <BsClipboardCheck />
+                    ) : (
+                      <BsClipboardPlus
+                        onClick={() => {
+                          navigator.clipboard.writeText(
+                            ` OrderId: {showPayDetails.orderId}`
+                          );
+
+                          setCopy({ ...copy, copy1: true });
+                        }}
+                      />
+                    )}
+                  </p>
+                  <p>
+                    PaymentId: {showPayDetails.paymentId}
+                    {copy.copy2 ? (
+                      <BsClipboardCheck />
+                    ) : (
+                      <BsClipboardPlus
+                        onClick={() => {
+                          navigator.clipboard.writeText(
+                            ` PaymentId: ${showPayDetails.paymentId}`
+                          );
+                          setCopy({ ...copy, copy2: true });
+                        }}
+                      />
+                    )}
+                  </p>
+                  <p>{showPayDetails.msg}</p>
+                  <p className={styles.redirect}>
+                    redirecting you in {redirectSeconds} seconds....
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
+        {copy.copy1 || copy.copy2 ? (
+          <Toast content="successfully copied" />
+        ) : (
+          ""
+        )}
       </>
     </div>
   );
 };
 
 export default CartPage;
-export async function getServerSideProps(context) {
-  try {
-    await clientPromise;
-    // `await clientPromise` will use the default database passed in the MONGODB_URI
-    // However you can use another database (e.g. myDatabase) by replacing the `await clientPromise` with the following code:
-    //
-    // `const client = await clientPromise`
-    // `const db = client.db("myDatabase")`
-    //
-    // Then you can execute queries against your database like so:
-    // db.find({}) or any of the MongoDB Node Driver commands
-
-    return {
-      props: { isConnected: true },
-    };
-  } catch (e) {
-    console.error(e);
-    return {
-      props: { isConnected: false },
-    };
-  }
-}
+// CartPage.getInitialProps = async (ctx) => {
+//   // const { token, USER } = nextCookie(ctx);
+//   // return {
+//   //   initialName: USER,
+//   //   token: token,
+//   // };
+// };
