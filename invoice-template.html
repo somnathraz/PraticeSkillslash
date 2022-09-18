@@ -10,8 +10,35 @@
             margin-top: 5rem;
         }
 
+        h2,
+        h3,
+        p {
+            margin: 0;
+        }
+
+        .infoGrid {
+            display: grid;
+            grid-template-columns: 60% 40%;
+            justify-content: space-between;
+            gap: 40px;
+
+        }
+
+        .footer {
+            display: flex;
+            width: 100%;
+            margin-top: 60px;
+            justify-content: space-between;
+        }
+
+        .infoRow {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
         .invoice-box {
-            width: 600px;
+            width: 700px;
             max-width: 800px;
             margin: auto;
             padding: 30px;
@@ -113,18 +140,14 @@
                     <table>
                         <tr>
                             <td class="title">
-                                <svg width="100" max-width="300" height="86" viewBox="0 0 86 86" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M71.5413 30.5336C71.6237 29.9101 71.6667 29.2866 71.6667 28.6667C71.6667 20.1419 63.9876 13.3014 55.4664 14.4588C52.9832 10.0405 48.2532 7.16669 43 7.16669C37.7468 7.16669 33.0168 10.0405 30.5336 14.4588C21.9945 13.3014 14.3333 20.1419 14.3333 28.6667C14.3333 29.2866 14.3763 29.9101 14.4588 30.5336C10.0405 33.0204 7.16667 37.7504 7.16667 43C7.16667 48.2496 10.0405 52.9796 14.4588 55.4664C14.3761 56.0853 14.3342 56.709 14.3333 57.3334C14.3333 65.8581 21.9945 72.6808 30.5336 71.5413C33.0168 75.9595 37.7468 78.8334 43 78.8334C48.2532 78.8334 52.9832 75.9595 55.4664 71.5413C63.9876 72.6808 71.6667 65.8581 71.6667 57.3334C71.6667 56.7134 71.6237 56.0899 71.5413 55.4664C75.9595 52.9796 78.8333 48.2496 78.8333 43C78.8333 37.7504 75.9595 33.0204 71.5413 30.5336ZM39.2554 58.824L26.1153 45.5155L31.218 40.4845L39.3056 48.676L54.8107 33.2892L59.856 38.3775L39.2554 58.824Z"
-                                        fill="#58CAEA" />
-                                </svg>
+                                <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/logo.ico"
+                                    alt="skillslash" />
                             </td>
 
                             <td>
-                                Invoice #: 123<br>
-                                Created: January 1, 2020<br>
-                                Due: February 1, 2020
+                                Invoice #: {{invoiceId}}<br>
+                                Invoice Date: {{invoiceDate}}<br>
+                                Payment Date: {{paymentDate}}
                             </td>
                         </tr>
                     </table>
@@ -133,43 +156,53 @@
 
             <tr class="information">
                 <td colspan="2">
-                    <table>
-                        <tr>
-                            <td>
-                                Rona, Inc.<br>
-                                Earth<br>
-                                Universe, 3rd Dimension
-                            </td>
+                    <div class="infoGrid">
 
-                            <td>
-                                JackBoys Inc.<br>
-                                {{customerName}}<br>
-                                example@example.com
-                            </td>
-                        </tr>
-                    </table>
+                        <div>
+                            <h2>Skillslash Pvt Ltd.</h2>
+                            <h3>Business name : Skillslash</h3>
+                            <b>Address:</b>
+                            <p>Skillslash Pvt Ltd, Level 8, Umiya Business Bay, Tower 1, Cessna Business Bay,
+                                Marathahalli ORR, Bengaluru, 560103</p><br />
+                            <div class="infoRow"><b>GST :</b>
+                                <p>29AADCL9947P1ZF</p><br />
+                            </div>
+                            <div class="infoRow">
+                                <b>MOB:</b>
+                                <p><a href="tel:7349222263">+91 7349222263</a></p>
+                            </div>
+                            <div class="infoRow">
+                                <b> Website :</b>
+                                <p><a href="https://skillslash.com/">www.skillslash.com</a> </p>
+                            </div>
+                            <div class="infoRow">
+                                <b> Email:</b>
+                                <p><a href="mail:info@skillsash.com">info@skillsash.com</a> </p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="infoRow">
+                                <b>TO:</b>
+                                <p> {{customerName}}</p>
+                            </div>
+                            <div class="infoRow">
+                                <b>Email:</b>
+                                <p>{{customerEmail}}</p>
+                            </div>
+                            <div class="infoRow">
+                                <b>phone:</b>
+                                <p>{{customerPhone}}</p>
+                            </div>
+
+
+                        </div>
+
+                    </div>
                 </td>
             </tr>
 
-            <tr class="heading">
-                <td>
-                    Payment Method
-                </td>
 
-                <td>
-                    Check #
-                </td>
-            </tr>
-
-            <tr class="details">
-                <td>
-                    Check
-                </td>
-
-                <td>
-                    1000
-                </td>
-            </tr>
 
             <tr class="heading">
                 <td>
@@ -183,42 +216,43 @@
 
             <tr class="item">
                 <td>
-                    Real Estate
+                    {{courseName1}}
                 </td>
 
                 <td>
-                    $33,000.00
+                    Actual Price: ₹{{coursePrice1}}<br />
+                    GST:₹{{GST}}<br />
+                    Discount: ₹{{DiscountPrice}}<br />
+
                 </td>
             </tr>
 
             <tr class="item">
                 <td>
-                    Lamborghini
+                    {{courseName2}}
                 </td>
 
                 <td>
-                    $250,000.00
+                    Actual Price: ₹{{coursePrice2}}<br />
+                    GST:₹{{GST2}}<br />
+                    Discount: ₹{{DiscountPrice2}}<br />
                 </td>
             </tr>
 
-            <tr class="item last">
-                <td>
-                    Another stuff
-                </td>
 
-                <td>
-                    $10.00
-                </td>
-            </tr>
 
             <tr class="total">
                 <td></td>
 
                 <td>
-                    Total: $283,010.00
+                    Total: {{TotalPrice}}
                 </td>
             </tr>
         </table>
+        <div class="footer">
+            <div>Receiver Signature</div>
+            <div>Authorised Signatory</div>
+        </div>
     </div>
 </body>
 

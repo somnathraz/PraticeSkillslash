@@ -11,7 +11,6 @@ import {
 import styles from "../styles/CartPage.module.css";
 import PaymentForm from "../components/PaymentForm/PaymentForm";
 import { useRouter } from "next/router";
-
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { BsClipboardPlus, BsClipboardCheck } from "react-icons/bs";
 import Toast from "../components/Toast/Toast";
@@ -41,7 +40,7 @@ const CartPage = ({ isConnected }) => {
     couponCode: "",
     dateTime: new Date(),
   });
-
+  const [pdfNames, setPdfNames] = useState("");
   const [discount, setDiscount] = useState("");
   const [discountMsg, setDiscountMsg] = useState("");
 
@@ -93,7 +92,7 @@ const CartPage = ({ isConnected }) => {
 
     const data = await fetch("/api/razorpay", {
       method: "POST",
-      body: JSON.stringify({ prop: cart }),
+      body: JSON.stringify({ prop: cart, discount: discount }),
       headers: {
         "Content-Type": "application/json",
       },
@@ -120,7 +119,8 @@ const CartPage = ({ isConnected }) => {
           email: details.email,
           phone: details.phone,
           courseName: data.name,
-          time: details.dateTime,
+          time: new Date(),
+          pdfName: pdfNames,
         };
 
         // Validate payment at server - using webhooks is a better idea.
@@ -139,7 +139,22 @@ const CartPage = ({ isConnected }) => {
           "/n",
           response.razorpay_signature + "signature"
         );
-        generateInvoice(details.name);
+
+        try {
+          const name = details.email;
+          console.log(name, "insidetryofgenerateInvoice");
+          const data = await axios.post(
+            "http://localhost:3000/api/generateInvoice",
+            { name: name }
+          );
+          // convert the response into an array Buffer
+          if (data.response === 200) {
+            const pdfName = data.json();
+            console.log(pdfName);
+            setPdfNames(pdfName);
+          }
+        } catch (error) {}
+
         //sending data to db//
         const dbSend = await axios.post(
           "http://localhost:3000/api/databaseAuth",
@@ -249,20 +264,23 @@ const CartPage = ({ isConnected }) => {
         body: { name },
       });
       // convert the response into an array Buffer
-      return data.arrayBuffer();
+      if (data.response === 200) {
+        const pdfName = data.json();
+        setPdfNames(pdfName);
+      }
     };
     console.log(fetchData);
     // convert the buffer into an object URL
-    const saveAsPDF = async () => {
-      const buffer = await fetchData();
-      const blob = new Blob([buffer]);
-      const link = document.createElement("a");
-      link.href = URL.createObjectURL(blob);
-      link.download = "invoice.pdf";
-      link.click();
-    };
+    // const saveAsPDF = async () => {
+    //   const buffer = await fetchData();
+    //   const blob = new Blob([buffer]);
+    //   const link = document.createElement("a");
+    //   link.href = URL.createObjectURL(blob);
+    //   link.download = "invoice.pdf";
+    //   link.click();
+    // };
 
-    saveAsPDF();
+    // saveAsPDF();
   };
 
   return (
@@ -336,7 +354,7 @@ const CartPage = ({ isConnected }) => {
           {discount === "" ? getTotalPrice() : getDiscountPrice()}
         </h2>
 
-        <PaymentForm setDetails={setDetails} />
+        <PaymentForm setDetails={setDetails} cartData={cart} />
         <button
           onClick={() => {
             makePayment();

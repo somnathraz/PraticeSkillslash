@@ -9,6 +9,7 @@ export default async function handler(req, res) {
       key_secret: process.env.RAZORPAY_SECRET,
     });
     const body = req.body;
+    console.log(body.discount);
 
     // body.prop.map((data, i) => {
     //   console.log(data, "inside map");
@@ -16,7 +17,8 @@ export default async function handler(req, res) {
 
     // Create an order -> generate the OrderID -> Send it to the Front-end
     const payment_capture = 1;
-    const amount = body.prop[0].price;
+    const amount =
+      body.prop[0].price - (body.discount / 100) * body.prop[0].price;
     const quantity = body.prop[0].quantity;
     const currency = "INR";
 

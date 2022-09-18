@@ -30,13 +30,16 @@ const PaymentForm = ({ popup, setDetails }) => {
   let endPoint = "https://getform.io/f/fb4af2dc-0f8f-4518-8963-28058e9fa205";
 
   // Form Submit function
-  const formSubmit = (e) => {
+  const formSubmit = async (e) => {
     e.preventDefault();
+
     const formData = new FormData();
     Object.entries(query).forEach(([key, value]) => {
       formData.append(key, value);
     });
+
     setDetails(formData);
+
     fetch(`${endPoint}`, {
       method: "POST",
       body: formData,
