@@ -24,9 +24,28 @@ export default async function pdfGenerate(req, res) {
   // extract the customer name from the req.body object
   // and also set a default name with the logical operator
   console.log(req.body);
-  const { name, invoiceId, invoiceDate, paymentDate, customerEmail } = req.body;
+  const {
+    name,
+    invoiceId,
+    invoiceDate,
+    paymentDate,
+    customerEmail,
+    coursePrice1,
+    DiscountPrice,
+    TotalPrice,
+  } = req.body;
 
-  console.log(req.body, "generateInvoiceAPI");
+  console.log(
+    name,
+    invoiceId,
+    invoiceDate,
+    paymentDate,
+    customerEmail,
+    coursePrice1,
+    DiscountPrice,
+    TotalPrice,
+    "generateInvoiceAPI"
+  );
 
   const s3 = new AWS.S3({
     accessKeyId: AWSCredentials.accessKey,
@@ -65,6 +84,9 @@ export default async function pdfGenerate(req, res) {
       invoiceDate,
       paymentDate,
       customerEmail,
+      coursePrice1,
+      DiscountPrice,
+      TotalPrice,
     });
 
     // simulate a chrome browser with puppeteer and navigate to a new page
@@ -104,7 +126,10 @@ export default async function pdfGenerate(req, res) {
 
     transporter.sendMail(mailData, function (err, info) {
       if (err) console.log(err);
-      else console.log(info);
+      else {
+        console.log(info);
+        fs.unlinkSync(`./public/invoice/${fPdfName}.pdf`);
+      }
     });
     // send the result to the client
 
