@@ -140,15 +140,17 @@ const CartPage = ({ isConnected }) => {
           response.razorpay_signature + "signature"
         );
         const invoiceData = {
-          name: details.name,
+          customerName: details.name,
           customerEmail: details.email,
           invoiceId: 232131,
           invoiceDate: new Date(),
           paymentDate: new Date(),
-          courseName1: data.name,
-          coursePrice1: data.amount,
-          DiscountPrice: discount,
-          TotalPrice: cart[0].price,
+          courseName: data.name,
+          GST: data.GST,
+          customerPhone: details.phone,
+          coursePrice: cart[0].price,
+          DiscountPrice: (discount / 100) * cart[0].price,
+          TotalPrice: data.amount,
         };
 
         try {

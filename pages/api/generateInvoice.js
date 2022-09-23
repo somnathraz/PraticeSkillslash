@@ -24,24 +24,33 @@ export default async function pdfGenerate(req, res) {
   // extract the customer name from the req.body object
   // and also set a default name with the logical operator
   console.log(req.body);
+
   const {
-    name,
+    customerName,
+
     invoiceId,
     invoiceDate,
     paymentDate,
     customerEmail,
-    coursePrice1,
+    courseName,
+    GST,
+    customerPhone,
+    coursePrice,
     DiscountPrice,
     TotalPrice,
   } = req.body;
 
   console.log(
-    name,
+    customerName,
+    courseName,
+    GST,
+    customerPhone,
+    coursePrice,
     invoiceId,
     invoiceDate,
     paymentDate,
     customerEmail,
-    coursePrice1,
+
     DiscountPrice,
     TotalPrice,
     "generateInvoiceAPI"
@@ -79,12 +88,15 @@ export default async function pdfGenerate(req, res) {
     // compile the file with handlebars and inject the customerName variable
     const template = handlers.compile(`${file}`);
     const html = template({
-      name,
+      customerName,
+      courseName,
+      GST,
+      customerPhone,
+      coursePrice,
       invoiceId,
       invoiceDate,
       paymentDate,
       customerEmail,
-      coursePrice1,
       DiscountPrice,
       TotalPrice,
     });
@@ -92,7 +104,7 @@ export default async function pdfGenerate(req, res) {
     // simulate a chrome browser with puppeteer and navigate to a new page
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
-    const pdfName = name + new Date();
+    const pdfName = customerName + new Date();
     const fPdfName = pdfName.replace(/[&\/\\#,+()$~%.'":*?<>{} ]/g, "-");
     console.log(fPdfName);
     const mailData = {

@@ -2,6 +2,8 @@ import React from "react";
 import { withAuthSync } from "../../../lib/auth";
 import { useState, useRef } from "react";
 import DatePicker from "react-datepicker";
+import styles from "../../../styles/dashboard.module.css";
+import InvoiceForm from "../../../components/PaymentForm/InvoiceForm";
 
 const Dashboard = (props) => {
   const discountPercentRef = useRef();
@@ -110,6 +112,10 @@ const Dashboard = (props) => {
         </div>
       </form>
       {validCoupon.success ? <p>{couponCode}</p> : <p>{validCoupon.msg}</p>}
+      <div className={styles.loan}>
+        <h2>Generate Invoice</h2>
+        <InvoiceForm />
+      </div>
     </div>
   );
 };

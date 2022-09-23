@@ -13,6 +13,15 @@
 .formWrapper input {
   appearance: none;
 }
+.infoD {
+  width: max-content;
+  height: max-content;
+  padding: 20px 30px;
+  background-color: grey;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
 
 .NameInput {
   border-radius: 2px;

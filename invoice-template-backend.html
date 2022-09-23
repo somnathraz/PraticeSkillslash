@@ -148,7 +148,7 @@
 
                             <td>
                                 Invoice #: {{invoiceId}}<br>
-                                Invoice Date: {{invoiceDate}}<br>
+                                Invoice Date: {{paymentDate}}<br>
                                 Payment Date: {{paymentDate}}
                             </td>
                         </tr>
@@ -222,21 +222,9 @@
                 </td>
 
                 <td>
-                    Actual Price: ₹{{coursePrice}}<br />
-                    GST:+₹{{GST}}<br />
-                    Discount: -₹{{DiscountPrice}}<br />
-
-                </td>
-            </tr>
+                    Total Amount: ₹{{coursePrice}}<br />
 
 
-
-
-            <tr class="total">
-                <td></td>
-
-                <td>
-                    Total: {{TotalPrice}}
                 </td>
             </tr>
         </table>

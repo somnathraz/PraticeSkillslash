@@ -17,8 +17,11 @@ export default async function handler(req, res) {
 
     // Create an order -> generate the OrderID -> Send it to the Front-end
     const payment_capture = 1;
+    const GST =
+      (18 / 100) *
+      (body.prop[0].price - (body.discount / 100) * body.prop[0].price);
     const amount =
-      body.prop[0].price - (body.discount / 100) * body.prop[0].price;
+      body.prop[0].price - (body.discount / 100) * body.prop[0].price + GST;
     const quantity = body.prop[0].quantity;
     const currency = "INR";
 
@@ -35,6 +38,7 @@ export default async function handler(req, res) {
         id: response.id,
         currency: response.currency,
         amount: response.amount,
+        GST: GST,
       });
     } catch (err) {
       console.log(err);
