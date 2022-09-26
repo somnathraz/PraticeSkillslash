@@ -7,7 +7,7 @@ import setHours from "date-fns/setHours";
 import setMinutes from "date-fns/setMinutes";
 import addDays from "date-fns/addDays";
 import subDays from "date-fns/subDays";
-import axios from "axios";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
 const InvoiceForm = () => {
   //offset to maintain time zone difference
@@ -18,8 +18,8 @@ const InvoiceForm = () => {
     emailSent: "",
     myPost: "",
     fileUpload: "",
-    display: false,
   });
+  const [display, setDisplay] = useState(false);
   let id = Math.floor(1000 + Math.random() * 9000);
   const [value, setValue] = useState();
   const [query, setQuery] = useState({
@@ -54,32 +54,28 @@ const InvoiceForm = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const data = await axios.post(
-        `http://localhost:3000/api/InvoiceGenerator/invoice`,
-        query
-      );
-      // convert the response into an array Buffer
-      if (data.response === 200) {
-        const { fPdfName, emailSent, myPost, fileUpload } = data.json();
-        console.log(fPdfName, emailSent, myPost, fileUpload);
-        setInvoiceData({
-          fPdfName: fPdfName,
-          emailSent: emailSent,
-          myPost: myPost,
-          fileUpload: fileUpload,
-          display: true,
-        });
-      }
-    } catch (error) {}
+      const data = await fetch("/api/Invoice/invoice", {
+        method: "POST",
+        body: JSON.stringify({
+          customerName: query.customerName,
+          customerEmail: query.customerEmail,
+          customerPhone: query.customerPhone,
+          courseName: query.courseName,
+          paymentDate: query.paymentDate,
+          coursePrice: query.coursePrice,
+          invoiceId: id,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }).then((t) => t.json());
 
-    const formData = new FormData();
-    Object.entries(query).forEach(([key, value]) => {
-      formData.append(key, value);
-    });
-    fetch(`${endPoint}`, {
-      method: "POST",
-      body: formData,
-    }).then(() =>
+      setInvoiceData({
+        fPdfName: data.pdfName,
+        emailSent: data.emailInfo,
+        myPost: data.myPost,
+        fileUpload: data.fileLink,
+      });
       setQuery({
         customerName: "",
         customerEmail: "",
@@ -88,9 +84,15 @@ const InvoiceForm = () => {
         paymentDate: "",
         coursePrice: "",
         invoiceId: "",
-      })
-    );
+      });
+      setValue("");
+      setStartDate("");
+    } catch (error) {
+      console.log(error);
+    }
+
     setLoading(false);
+    setDisplay(true);
   };
 
   const filterPassedTime = (time) => {
@@ -227,14 +229,26 @@ const InvoiceForm = () => {
           </button>
         )}
       </form>
-      {invoiceData.display ? (
-        <div className={styles.infoD}>
-          <h2>Invoice Generated Successfully</h2>
-          <p>email ID: {invoiceData.emailSent}</p>
-          <p>pdf Name: {invoiceData.fPdfName}</p>
+      {display ? (
+        <div className={styles.infoWrap}>
+          <div className={styles.infoD}>
+            <AiOutlineCloseCircle
+              className={styles.close}
+              onClick={() => {
+                setDisplay(false);
+              }}
+            />
+            <h2>Invoice Generated Successfully</h2>
+            <p>
+              <b>email ID:</b> {invoiceData.emailSent}
+            </p>
+            <p>
+              <b>pdf Name:</b> {invoiceData.fPdfName}
+            </p>
 
-          <p>pdfLink: {invoiceData.fileUpload}</p>
-          <p>Uploaded to database InsertionId: {invoiceData.myPost}</p>
+            <p>pdfLink: {invoiceData.fileUpload}</p>
+            <p>Uploaded to database InsertionId: {invoiceData.myPost}</p>
+          </div>
         </div>
       ) : (
         ""

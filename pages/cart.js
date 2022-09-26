@@ -139,10 +139,11 @@ const CartPage = ({ isConnected }) => {
           "/n",
           response.razorpay_signature + "signature"
         );
+        let id = Math.floor(1000 + Math.random() * 9000);
         const invoiceData = {
           customerName: details.name,
           customerEmail: details.email,
-          invoiceId: 232131,
+          invoiceId: id,
           invoiceDate: new Date(),
           paymentDate: new Date(),
           courseName: data.name,

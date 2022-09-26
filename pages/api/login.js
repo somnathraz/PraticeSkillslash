@@ -1,5 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import bcrypt from "bcrypt";
+
 import { MongoClient } from "mongodb";
 
 export default async function handler(req, res) {
