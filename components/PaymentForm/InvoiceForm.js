@@ -7,17 +7,22 @@ import {
   AiOutlineCloseCircle,
   AiOutlineUser,
   AiOutlineMail,
+  AiOutlineDatabase,
 } from "react-icons/ai";
 import { BsPhone, BsArrowRightShort } from "react-icons/bs";
-import { BsFillJournalBookmarkFill, BsCalendarDate } from "react-icons/bs";
-import { MdOutlineAttachMoney } from "react-icons/md";
+import {
+  BsFillJournalBookmarkFill,
+  BsCalendarDate,
+  BsFileEarmarkPdf,
+} from "react-icons/bs";
+import { MdOutlineAttachMoney, MdOutlinePayment } from "react-icons/md";
 import { TbMinusVertical } from "react-icons/tb";
 
 const InvoiceForm = ({ refund, salesMan }) => {
   //offset to maintain time zone difference
 
   const [startDate, setStartDate] = useState();
-  console.log(startDate);
+
   const [loading, setLoading] = useState(false);
   const [verify, setVerify] = useState(false);
   const [invoiceData, setInvoiceData] = useState({
@@ -36,6 +41,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
     courseName: "",
     paymentDate: "",
     coursePrice: "",
+    paymentMode: "",
     salesMan: salesMan,
     invoiceId: id,
   });
@@ -182,6 +188,26 @@ const InvoiceForm = ({ refund, salesMan }) => {
             </option>
           </select>
         </div>
+        <div className={styles.formWrapper}>
+          <select
+            name="paymentMode"
+            required
+            value={query.paymentMode}
+            onChange={handleParam()}
+            placeholder="Select Payment Mode*"
+          >
+            <option className={styles.option} value="">
+              Payment Mode*
+            </option>
+
+            <option value="Propelld">Propelld</option>
+            <option value="Shopse">Shopse</option>
+
+            <option value="Razorpay">Razorpay</option>
+            <option value="Liquiloans">Liquiloans</option>
+            <option value="Direct Bank Transfer">Direct Bank Transfer</option>
+          </select>
+        </div>
 
         <div className={styles.inner} style={{ marginBottom: "10px" }}>
           <DatePicker
@@ -293,6 +319,17 @@ const InvoiceForm = ({ refund, salesMan }) => {
                 />
               </div>
               <div className={styles.readOnlyDiv}>
+                <MdOutlinePayment className={styles.formIcon} />
+                <TbMinusVertical className={styles.formLine} />
+                <input
+                  type="text"
+                  id="paymentMode"
+                  name="paymentMode"
+                  value={query.paymentMode}
+                  readOnly
+                />
+              </div>
+              <div className={styles.readOnlyDiv}>
                 <BsCalendarDate className={styles.formIcon} />
                 <TbMinusVertical className={styles.formLine} />
                 <input
@@ -367,15 +404,31 @@ const InvoiceForm = ({ refund, salesMan }) => {
               }}
             />
             <h2>Invoice Generated Successfully</h2>
-            <p>
-              <b>email ID:</b> {invoiceData.emailSent}
-            </p>
-            <p>
-              <b>pdf Name:</b> {invoiceData.fPdfName}
-            </p>
 
-            <p>pdfLink: {invoiceData.fileUpload}</p>
-            <p>Uploaded to database InsertionId: {invoiceData.myPost}</p>
+            <div className={styles.detailsDiv}>
+              <div className={styles.readOnlyDiv}>
+                <AiOutlineMail className={styles.formIcon} />
+                <TbMinusVertical className={styles.formLine} />
+                <p>{invoiceData.emailSent}</p>
+              </div>
+              <div className={styles.readOnlyDiv}>
+                <BsFileEarmarkPdf className={styles.formIcon} />
+                <TbMinusVertical className={styles.formLine} />
+                <p>{invoiceData.fPdfName}</p>
+              </div>
+              <div className={styles.readOnlyDiv}>
+                <BsFileEarmarkPdf className={styles.formIcon} />
+                <TbMinusVertical className={styles.formLine} />
+                <p>
+                  <a href={invoiceData.fileUpload}>{invoiceData.fileUpload}</a>
+                </p>
+              </div>
+              <div className={styles.readOnlyDiv}>
+                <AiOutlineDatabase className={styles.formIcon} />
+                <TbMinusVertical className={styles.formLine} />
+                <p>Uploaded to database InsertionId: {invoiceData.myPost}</p>
+              </div>
+            </div>
           </div>
         </div>
       ) : (

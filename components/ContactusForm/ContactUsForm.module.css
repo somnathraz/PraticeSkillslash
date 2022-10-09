@@ -236,6 +236,7 @@
 .readOnlyDiv {
   width: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
   position: relative;
   margin-bottom: 10px;
@@ -292,4 +293,15 @@
 }
 .readOnlyCheck label {
   color: white;
+}
+.readOnlyDiv p {
+  background-color: white;
+  border: 1px solid #99daff;
+  border-left: 0px;
+  height: 40px;
+  overflow-y: scroll;
+  border-radius: 0px 5px 5px 0px;
+  padding-left: 30px;
+  width: 70%;
+  margin-left: -20px;
 }

@@ -35,20 +35,10 @@ export default async function pdfGenerate(req, res) {
     coursePrice,
     invoiceId,
     salesMan,
+    paymentMode,
     paymentDate,
     customerEmail,
   } = req.body;
-
-  console.log(
-    customerName,
-    courseName,
-    customerPhone,
-    coursePrice,
-    invoiceId,
-    salesMan,
-    paymentDate,
-    customerEmail
-  );
 
   let GST =
     parseFloat(coursePrice) - parseFloat(coursePrice) * (100 / (100 + 18));
@@ -80,8 +70,8 @@ export default async function pdfGenerate(req, res) {
       if (err) {
         throw err;
       }
-      console.log(`File uploaded successfully. ${data.Location}`);
-      fileUpload = `File uploaded successfully. ${data.Location}`;
+
+      fileUpload = `${data.Location}`;
     });
   };
   GST = parseInt(GST);
@@ -109,7 +99,7 @@ export default async function pdfGenerate(req, res) {
     const page = await browser.newPage();
     const pdfName = customerName + new Date() + "-" + invoiceId;
     const fPdfName = pdfName.replace(/[&\/\\#,+()$~%.'":*?<>{} ]/g, "-");
-    console.log(fPdfName);
+
     const mailData = {
       from: "somanath@skillslash.com",
       to: customerEmail,
@@ -150,7 +140,7 @@ export default async function pdfGenerate(req, res) {
         });
       } else {
         emailSent = `email sent successfully. ${info.messageId}`;
-        console.log(info);
+
         const response = await sheets.spreadsheets.values.append({
           spreadsheetId: process.env.GOOGLE_SHEET_ID,
           range: "Sheet1",
@@ -167,6 +157,7 @@ export default async function pdfGenerate(req, res) {
                 "backendData",
                 GST,
                 invoiceId,
+                paymentMode,
                 courseName,
                 salesMan,
               ],
@@ -186,6 +177,7 @@ export default async function pdfGenerate(req, res) {
           fileLink: fileUpload,
           emailInfo: emailSent,
           salesMan: salesMan,
+          paymentMode: paymentMode,
         });
         res.status(200).json({
           myPost: myPost.insertedId,

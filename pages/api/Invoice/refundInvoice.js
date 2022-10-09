@@ -39,17 +39,6 @@ export default async function pdfGenerate(req, res) {
     customerEmail,
   } = req.body;
 
-  console.log(
-    customerName,
-    courseName,
-    customerPhone,
-    coursePrice,
-    invoiceId,
-    salesMan,
-    paymentDate,
-    customerEmail
-  );
-
   let GST =
     parseFloat(coursePrice) - parseFloat(coursePrice) * (100 / (100 + 18));
 
@@ -81,8 +70,8 @@ export default async function pdfGenerate(req, res) {
       if (err) {
         throw err;
       }
-      console.log(`File uploaded successfully. ${data.Location}`);
-      fileUpload = `File uploaded successfully. ${data.Location}`;
+
+      fileUpload = `${data.Location}`;
     });
   };
 
@@ -111,7 +100,7 @@ export default async function pdfGenerate(req, res) {
     const page = await browser.newPage();
     const pdfName = customerName + new Date() + "-" + invoiceId;
     const fPdfName = pdfName.replace(/[&\/\\#,+()$~%.'":*?<>{} ]/g, "-");
-    console.log(fPdfName);
+
     const mailData = {
       from: "somanath@skillslash.com",
       to: customerEmail,
@@ -152,7 +141,7 @@ export default async function pdfGenerate(req, res) {
         });
       } else {
         emailSent = `email sent successfully. ${info.messageId}`;
-        console.log(info);
+
         const response = await sheets.spreadsheets.values.append({
           spreadsheetId: process.env.GOOGLE_SHEET_ID,
           range: "Sheet2",
