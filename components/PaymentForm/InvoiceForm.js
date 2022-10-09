@@ -81,6 +81,8 @@ const InvoiceForm = ({ refund, salesMan }) => {
             customerPhone: query.customerPhone,
             courseName: query.courseName,
             paymentDate: query.paymentDate,
+            salesMan: query.salesMan,
+            paymentMode: query.paymentMode,
             coursePrice: query.coursePrice,
             invoiceId: id,
           }),

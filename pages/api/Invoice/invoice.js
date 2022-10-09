@@ -8,6 +8,7 @@ import { authentication } from "../../../lib/googleSheet";
 import { connectToDatabase } from "../../../lib/mongodb";
 let fileUpload = "";
 let emailSent = "";
+const invoiceDate = new Date();
 const AWSCredentials = {
   accessKey: process.env.AWSAccessKeyId,
   secret: process.env.AWSSecretKey,
@@ -87,6 +88,7 @@ export default async function pdfGenerate(req, res) {
       customerPhone,
       coursePrice,
       invoiceId,
+      invoiceDate,
       paymentDate,
       customerEmail,
       OriginalCost,

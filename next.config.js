@@ -6,6 +6,11 @@ const nextConfig = {
 
 module.exports = nextConfig;
 module.exports = {
+  publicRuntimeConfig: {
+    // Will be available on both server and client
+    backendUrl: process.env.BACKEND_URL,
+  },
+
   async headers() {
     return [
       {

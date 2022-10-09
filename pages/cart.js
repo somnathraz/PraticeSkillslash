@@ -14,8 +14,13 @@ import { useRouter } from "next/router";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { BsClipboardPlus, BsClipboardCheck } from "react-icons/bs";
 import Toast from "../components/Toast/Toast";
+import getConfig from "next/config";
 
 const CartPage = ({ isConnected }) => {
+  const { publicRuntimeConfig } = getConfig();
+  const instance = axios.create({
+    baseURL: publicRuntimeConfig.backendUrl,
+  });
   const router = useRouter();
   const [payment, setPayments] = useState(false);
   const couponDataCartRef = useRef();
@@ -127,10 +132,7 @@ const CartPage = ({ isConnected }) => {
         };
 
         // Validate payment at server - using webhooks is a better idea.
-        const result = await axios.post(
-          "http://localhost:3000/api/success",
-          paymentData
-        );
+        const result = await axios.post("/api/success", paymentData);
 
         //Show user that payment is successful
 
@@ -158,10 +160,7 @@ const CartPage = ({ isConnected }) => {
         };
 
         try {
-          const data = await axios.post(
-            `http://localhost:3000/api/generateInvoice`,
-            invoiceData
-          );
+          const data = await axios.post(`/api/generateInvoice`, invoiceData);
           // convert the response into an array Buffer
           if (data.response === 200) {
             const pdfName = data.json();
@@ -171,10 +170,7 @@ const CartPage = ({ isConnected }) => {
         } catch (error) {}
 
         //sending data to db//
-        const dbSend = await axios.post(
-          "http://localhost:3000/api/databaseAuth",
-          paymentData
-        );
+        const dbSend = await axios.post("/api/databaseAuth", paymentData);
         const formData = new FormData();
         Object.entries(paymentData).forEach(([key, value]) => {
           formData.append(key, value);
