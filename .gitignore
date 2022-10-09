@@ -32,6 +32,6 @@ yarn-error.log*
 .vercel
 
 rss/
-
+credentials.json
 .env
 .next/

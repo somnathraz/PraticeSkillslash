@@ -2,11 +2,36 @@ export const DataScienceCourseData = [
   {
     product: {
       id: 1231823,
-      name: "Advance Data Science Course",
+      name: "Data Science Course",
+      spanT: "Best Selling",
+      bHeading: "Learn data science from Industry experts",
+      desc: "Learn from mentors in live online classes. Work on Advance data science projects directly with companies and get real work experience.",
       price: 59000.0,
       currency: "INR",
       image:
-        "https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Get_Hired_Skillslash.webp",
+        "https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/data_science_banner.webp",
+    },
+    product1: {
+      id: 1231824,
+      name: "Data Science Course",
+      spanT: "Best Selling",
+      bHeading: "Learn data science from Industry experts",
+      desc: "Learn from mentors in live online classes. Work on Advance data science projects directly with companies and get real work experience.",
+      price: 109999.0,
+      currency: "INR",
+      image:
+        "https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/data_science_banner.webp",
+    },
+    product2: {
+      id: 1231825,
+      name: "Data Science Course",
+      spanT: "Best Selling",
+      bHeading: "Learn data science from Industry experts",
+      desc: "Learn from mentors in live online classes. Work on Advance data science projects directly with companies and get real work experience.",
+      price: 149999.0,
+      currency: "INR",
+      image:
+        "https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/data_science_banner.webp",
     },
 
     FirstSection: {

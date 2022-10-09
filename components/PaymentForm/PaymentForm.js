@@ -33,25 +33,25 @@ const PaymentForm = ({ popup, setDetails }) => {
   const formSubmit = async (e) => {
     e.preventDefault();
 
-    const formData = new FormData();
-    Object.entries(query).forEach(([key, value]) => {
-      formData.append(key, value);
-    });
+    // const formData = new FormData();
+    // Object.entries(query).forEach(([key, value]) => {
+    //   formData.append(key, value);
+    // });
 
-    setDetails(formData);
+    // setDetails(formData);
 
-    fetch(`${endPoint}`, {
-      method: "POST",
-      body: formData,
-    }).then(() =>
-      setQuery({
-        name: "",
-        email: "",
-        phone: "",
+    // fetch(`${endPoint}`, {
+    //   method: "POST",
+    //   body: formData,
+    // }).then(() =>
+    //   setQuery({
+    //     name: "",
+    //     email: "",
+    //     phone: "",
 
-        dateTime: "",
-      })
-    );
+    //     dateTime: "",
+    //   })
+    // );
 
     setDetails(query);
   };

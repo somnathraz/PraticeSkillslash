@@ -28,6 +28,11 @@ const Fee = ({
   redirectDe,
   redirectBa,
   redirectBl,
+  proProduct,
+  proMaxProduct,
+  jobProduct,
+  productData,
+  showProducts,
 }) => {
   const [popups, setPopups] = useState(false);
   const [mobile, setMobile] = useState(false);
@@ -227,7 +232,13 @@ const Fee = ({
             </div>
 
             <span className={styles.PFeatures}>
-              <button className={styles.button} onClick={popupShow}>
+              <button
+                className={styles.button}
+                onClick={() => {
+                  productData(proProduct);
+                  showProducts(true);
+                }}
+              >
                 Enrol Now
               </button>
             </span>
@@ -262,7 +273,13 @@ const Fee = ({
               <AiOutlineCloseCircle className={styles.cross} />
             </span>
             <span className={styles.PFeatures}>
-              <button className={styles.button} onClick={popupShow}>
+              <button
+                className={styles.button}
+                onClick={() => {
+                  productData(proMaxProduct);
+                  showProducts(true);
+                }}
+              >
                 Enrol Now
               </button>
             </span>
@@ -297,7 +314,13 @@ const Fee = ({
               <MdCheckCircle className={styles.check} />
             </span>
             <span className={styles.PFeatures}>
-              <button className={styles.button} onClick={popupShow}>
+              <button
+                className={styles.button}
+                onClick={() => {
+                  productData(jobProduct);
+                  showProducts(true);
+                }}
+              >
                 Enrol Now
               </button>
             </span>

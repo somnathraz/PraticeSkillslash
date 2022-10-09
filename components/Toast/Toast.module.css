@@ -3,8 +3,8 @@
 
   margin-left: auto;
   margin-right: auto;
-
-  position: absolute;
+  left: 45%;
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,6 +26,20 @@
   -webkit-box-shadow: 4px 5px 109px 13px rgba(183, 227, 194, 0.75);
   -moz-box-shadow: 4px 5px 109px 13px rgba(183, 227, 194, 0.75);
 }
+.toastInnerF {
+  background-color: #ffdfd8;
+  border-radius: 10px;
+  padding: 2px 5px;
+  border: 1px solid #ffa289;
+  width: max-content;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 4px 5px 109px 13px rgba(227, 183, 183, 0.75);
+  -webkit-box-shadow: 4px 5px 109px 13px rgba(227, 183, 183, 0.75);
+  -moz-box-shadow: 4px 5px 109px 13px rgba(227, 183, 183, 0.75);
+}
 .IconBack {
   cursor: pointer;
   background-color: #3ebe62;
@@ -35,11 +49,30 @@
   -webkit-box-shadow: 4px 5px 109px 13px rgba(183, 227, 194, 0.75);
   -moz-box-shadow: 4px 5px 109px 13px rgba(183, 227, 194, 0.75);
 }
+.IconBackF {
+  cursor: pointer;
+  background-color: #ff0000;
+  border-radius: 15px;
+  padding: 5px 8px;
+  box-shadow: 4px 5px 109px 13px rgba(227, 183, 183, 0.75);
+  -webkit-box-shadow: 4px 5px 109px 13px rgba(227, 183, 183, 0.75);
+  -moz-box-shadow: 4px 5px 109px 13px rgba(227, 183, 183, 0.75);
+}
 .icon {
   cursor: pointer;
   font-size: 30px;
   margin-bottom: -3px;
   color: white;
+  position: relative;
+  z-index: 1;
+}
+.iconF {
+  cursor: pointer;
+  font-size: 30px;
+  margin-bottom: -3px;
+  color: white;
+  position: relative;
+  z-index: 1;
 }
 @keyframes pulse {
   0% {

@@ -9,7 +9,6 @@ export default async function handler(req, res) {
       key_secret: process.env.RAZORPAY_SECRET,
     });
     const body = req.body;
-    console.log(body.discount);
 
     // body.prop.map((data, i) => {
     //   console.log(data, "inside map");
@@ -36,8 +35,10 @@ export default async function handler(req, res) {
       const response = await razorpay.orders.create(options);
       res.status(200).json({
         id: response.id,
+        coursePrice: body.prop[0].price,
         currency: response.currency,
-        amount: response.amount,
+        name: body.prop[0].name,
+        amount: amount,
         GST: GST,
       });
     } catch (err) {

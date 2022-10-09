@@ -11,7 +11,7 @@ let emailSent = "";
 const AWSCredentials = {
   accessKey: process.env.AWSAccessKeyId,
   secret: process.env.AWSSecretKey,
-  bucketName: "skillslash-cdn/generatead-invoice",
+  bucketName: "skillslash-cdn/Refund-Invoice",
 };
 
 const transporter = nodemailer.createTransport({
@@ -55,6 +55,7 @@ export default async function pdfGenerate(req, res) {
 
   let OriginalCost = parseFloat(coursePrice) - GST;
   OriginalCost = parseInt(OriginalCost);
+
   const CGST = parseInt(GST / 2);
   const SGST = parseInt(GST / 2);
 
@@ -84,6 +85,7 @@ export default async function pdfGenerate(req, res) {
       fileUpload = `File uploaded successfully. ${data.Location}`;
     });
   };
+
   GST = parseInt(GST);
   try {
     // read our invoice-template.html file using node fs module
@@ -153,7 +155,7 @@ export default async function pdfGenerate(req, res) {
         console.log(info);
         const response = await sheets.spreadsheets.values.append({
           spreadsheetId: process.env.GOOGLE_SHEET_ID,
-          range: "Sheet1",
+          range: "Sheet2",
           valueInputOption: "USER_ENTERED",
           requestBody: {
             values: [
@@ -162,10 +164,10 @@ export default async function pdfGenerate(req, res) {
                 customerEmail,
                 paymentDate,
                 customerPhone,
-                parseFloat(coursePrice),
+                parseInt(coursePrice),
                 "backendData",
                 "backendData",
-                GST,
+                parseInt(GST),
                 invoiceId,
                 courseName,
                 salesMan,

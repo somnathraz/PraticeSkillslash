@@ -232,20 +232,13 @@ const InvoiceForm = ({ refund, salesMan }) => {
       {verify ? (
         <div className={styles.infoWrap}>
           <div className={styles.infoD}>
-            <div className={styles.circle} />
-            <div className={styles.circle1} />
-            <div className={styles.circle2} />
-            <div className={styles.circle3} />
-            <div className={styles.circle4} />
-            <div className={styles.circle5} />
-
             <AiOutlineCloseCircle
               className={styles.close}
               onClick={() => {
                 setVerify(false);
               }}
             />
-            <h2>Verify Details</h2>
+            <h2>verify Details</h2>
             <form className={styles.readOnly} onSubmit={formSubmit}>
               <div className={styles.readOnlyDiv}>
                 <AiOutlineUser className={styles.formIcon} />

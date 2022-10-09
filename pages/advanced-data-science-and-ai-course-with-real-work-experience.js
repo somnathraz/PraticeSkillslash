@@ -17,7 +17,7 @@ import Project from "../components/Course/Project/Project";
 import Reviews from "../components/Review/Reviews";
 import DataScienceSyllabus from "../components/Course/Syllabus/DataScienceSyllabs";
 import Footer from "../components/Footer/Footer";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Popup from "../components/Popup/Popup";
 import Form from "../components/Form/Form";
 import BottomBar from "../components/Course/BottomBar/BottomBar";
@@ -25,15 +25,22 @@ import CTA from "../components/CTA/CTA";
 import { DataScienceFaqData } from "../Data/DatascienceFaqData";
 import { DataScienceCourseData } from "../Data/DataScienceCourse/DataScienceCourseData";
 import { BsArrowRightCircleFill } from "react-icons/bs";
+import { IoIosCloseCircleOutline } from "react-icons/io";
 import Navbar from "../components/Navbar/Navbar";
 import Product from "../components/Product/Product";
 
 export default function Home() {
   const [popups, setPopups] = useState(false);
+  const [productData, setProductData] = useState(
+    DataScienceCourseData[0].product
+  );
+  const [showProduct, setShowProduct] = useState(false);
 
   const popupShow = () => {
     setPopups(true);
   };
+  console.log(productData, "ProductData");
+  console.log(showProduct, "showProduct");
 
   return (
     <>
@@ -164,6 +171,11 @@ export default function Home() {
           ProDesc={DataScienceCourseData[0].Fee.ProDesc}
           ProMaxPrice={DataScienceCourseData[0].Fee.ProMaxPrice}
           ProMaxDesc={DataScienceCourseData[0].Fee.ProMaxDesc}
+          proProduct={DataScienceCourseData[0].product}
+          proMaxProduct={DataScienceCourseData[0].product1}
+          jobProduct={DataScienceCourseData[0].product2}
+          productData={setProductData}
+          showProducts={setShowProduct}
         />
         <BatchDetails
           props={DataScienceCourseData[0].product}
@@ -200,11 +212,19 @@ export default function Home() {
           <CTA dataScience={true} />
         </div>
         <BottomBar changeBottom={true} />
-        <div className={styles.cardWrap}>
-          <div className={styles.cardPop}>
-            <Product data={DataScienceCourseData[0].product} />
+        {showProduct ? (
+          <div className="cardWrap">
+            <div className="cardPop">
+              <IoIosCloseCircleOutline
+                className={styles.crossProduct}
+                onClick={() => setShowProduct(false)}
+              />
+              <Product data={productData} />
+            </div>
           </div>
-        </div>
+        ) : (
+          ""
+        )}
 
         <Footer />
       </div>

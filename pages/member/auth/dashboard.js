@@ -1,22 +1,51 @@
 import React from "react";
 import { withAuthSync } from "../../../lib/auth";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import styles from "../../../styles/dashboard.module.css";
 import InvoiceForm from "../../../components/PaymentForm/InvoiceForm";
+import {
+  AiOutlineUserAdd,
+  AiOutlineUserSwitch,
+  AiOutlineUserDelete,
+} from "react-icons/ai";
+import { BsThreeDots } from "react-icons/bs";
+import { RiCoupon2Line, RiHandCoinLine } from "react-icons/ri";
+import { TbFileInvoice } from "react-icons/tb";
+import AddUserFrom from "../../../components/PaymentForm/addUserForm";
+import Image from "next/image";
 
 const Dashboard = (props) => {
   const discountPercentRef = useRef();
   const couponLengthRef = useRef();
-  console.log(props);
+  const [showItem, setShowItem] = useState({
+    first: true,
+    second: false,
+    third: false,
+    fourth: false,
+    fifth: false,
+    sixth: false,
+  });
+  const [mobile, setMobile] = useState(false);
   const [startDate, setStartDate] = useState();
+  const [showMenu, setShowMenu] = useState(true);
   const [loading, setLoading] = useState(false);
+  const [sidebarExpand, setSideBarExpand] = useState(false);
   const [couponCode, setCouponCode] = useState();
   const [validCoupon, setValidCoupon] = useState({
     success: false,
     msg: "Coupon code will visible here",
   });
 
+  useEffect(() => {
+    let width = window.innerWidth;
+    if (width < 481) {
+      setMobile(true);
+    }
+    if (width > 481) {
+      setMobile(false);
+    }
+  }, [mobile]);
   const characters =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   function generateString(length) {
@@ -70,53 +99,278 @@ const Dashboard = (props) => {
   };
   console.log(validCoupon);
   return (
-    <div>
-      <h2>Welcome {props.token.replace("@skillslash.com", "")}</h2>
-      <form onSubmit={submitHandler}>
-        <div>
-          <label htmlFor="percent">Enter the Discount Percent </label>
-          <input
-            type="number"
-            id="percent"
-            required
-            ref={discountPercentRef}
-            placeholder="e.g.(12)"
-          />
+    <>
+      {showMenu ? (
+        <div
+          className={sidebarExpand ? styles.menuBarExpand : styles.menuBar}
+          onMouseEnter={() => setSideBarExpand(true)}
+          onMouseLeave={() => setSideBarExpand(false)}
+        >
+          <div className={styles.menu}>
+            <BsThreeDots className={styles.hamIcon} />
+          </div>
+          <div className={styles.close}>
+            {sidebarExpand ? (
+              <Image
+                src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/favicon.ico"
+                alt="Skillslash"
+                quality={100}
+                objectFit="contain"
+                width={mobile ? "140px" : "90px"}
+                height="90px"
+              />
+            ) : (
+              <Image
+                src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/favicon.ico"
+                alt="Skillslash"
+                quality={100}
+                objectFit="contain"
+                width={mobile ? "140px" : "40px"}
+                height="40px"
+              />
+            )}
+
+            {/* <span>
+              <BsThreeDots className={styles.close} />
+              CLOSE
+            </span> */}
+          </div>
+          <div className={styles.list}>
+            <div className={styles.head}>
+              <p className={styles.head}>Function</p>
+            </div>
+            <span
+              className={showItem.first ? styles.spanActive : styles.span}
+              onClick={() =>
+                setShowItem({
+                  ...showItem,
+                  first: true,
+                  second: false,
+                  third: false,
+                  fourth: false,
+                  fifth: false,
+                  sixth: false,
+                })
+              }
+            >
+              <RiCoupon2Line
+                className={
+                  showItem.first ? styles.barIconActive : styles.barIcon
+                }
+              />
+
+              <p className={styles.item}>Add Coupon</p>
+            </span>
+            <span
+              className={showItem.second ? styles.spanActive : styles.span}
+              onClick={() =>
+                setShowItem({
+                  ...showItem,
+                  second: true,
+                  first: false,
+                  third: false,
+                  fourth: false,
+                  fifth: false,
+                  sixth: false,
+                })
+              }
+            >
+              <TbFileInvoice
+                className={
+                  showItem.second ? styles.barIconActive : styles.barIcon
+                }
+              />
+
+              <p className={styles.item}>Add Invoice</p>
+            </span>
+            <span
+              className={showItem.sixth ? styles.spanActive : styles.span}
+              onClick={() =>
+                setShowItem({
+                  ...showItem,
+                  second: false,
+                  first: false,
+                  third: false,
+                  fourth: false,
+                  fifth: false,
+                  sixth: true,
+                })
+              }
+            >
+              <RiHandCoinLine
+                className={
+                  showItem.sixth ? styles.barIconActive : styles.barIcon
+                }
+              />
+
+              <p className={styles.item}>Refund Form</p>
+            </span>
+            {props.token === "spandan@skillslash.com" ? (
+              <div className={styles.list}>
+                <div className={styles.head}>
+                  <p className={styles.head}>User</p>
+                </div>
+                <span
+                  className={showItem.third ? styles.spanActive : styles.span}
+                  onClick={() =>
+                    setShowItem({
+                      ...showItem,
+                      third: true,
+                      first: false,
+                      second: false,
+                      fourth: false,
+                      fifth: false,
+                      sixth: false,
+                    })
+                  }
+                >
+                  <AiOutlineUserAdd
+                    className={
+                      showItem.third ? styles.barIconActive : styles.barIcon
+                    }
+                  />
+
+                  <p className={styles.item}>Add User</p>
+                </span>
+                <span
+                  className={showItem.fourth ? styles.spanActive : styles.span}
+                  onClick={() =>
+                    setShowItem({
+                      ...showItem,
+                      third: false,
+                      first: false,
+                      second: false,
+                      fourth: true,
+                      fifth: false,
+                      sixth: false,
+                    })
+                  }
+                >
+                  <AiOutlineUserDelete
+                    className={
+                      showItem.fourth ? styles.barIconActive : styles.barIcon
+                    }
+                  />
+
+                  <p className={styles.item}>Delete User</p>
+                </span>
+                <span
+                  className={showItem.fifth ? styles.spanActive : styles.span}
+                  onClick={() =>
+                    setShowItem({
+                      ...showItem,
+                      third: false,
+                      first: false,
+                      second: false,
+                      fourth: false,
+                      fifth: true,
+                    })
+                  }
+                >
+                  <AiOutlineUserSwitch
+                    className={
+                      showItem.fifth ? styles.barIconActive : styles.barIcon
+                    }
+                  />
+
+                  <p className={styles.item}>Edit User</p>
+                </span>
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
         </div>
-        <div>
-          <label htmlFor="length">Enter Coupon length</label>
-          <input type="number" id="length" required ref={couponLengthRef} />
-        </div>
-        <div>
-          <label htmlFor="Expire">Enter Coupon Expire Date</label>
-          <DatePicker
-            selected={startDate}
-            name="dateTime"
-            id="dateTime"
-            onChange={(date) => setStartDate(date)}
-            showTimeSelect
-            timeIntervals={15}
-            filterTime={filterPassedTime}
-            minDate={new Date()}
-            placeholderText="Select Date and Time"
-            dateFormat="MMMM d, yyyy h:mm aa"
-            required
-          />
-        </div>
-        <div>
-          {loading ? (
-            <div className="loader">Loading...</div>
-          ) : (
-            <button>Generate Coupon</button>
-          )}
-        </div>
-      </form>
-      {validCoupon.success ? <p>{couponCode}</p> : <p>{validCoupon.msg}</p>}
-      <div className={styles.loan}>
-        <h2>Generate Invoice</h2>
-        <InvoiceForm />
+      ) : (
+        ""
+      )}
+      <div className={styles.header}>
+        <h2 style={{ textAlign: "center" }}>
+          Welcome {props.token.replace("@skillslash.com", "")}
+        </h2>
       </div>
-    </div>
+      <div className={styles.dashboard}>
+        {showItem.third ? (
+          <div className={styles.loan}>
+            <h2>Register a User</h2>
+            <AddUserFrom />
+          </div>
+        ) : (
+          ""
+        )}
+
+        {showItem.first ? (
+          <div className={styles.couponWrap}>
+            <h2>Generate Coupon Code</h2>
+            <form onSubmit={submitHandler} className={styles.form}>
+              <div className={styles.inner}>
+                <input
+                  type="number"
+                  id="percent"
+                  required
+                  placeholder="Enter the Discount Percent"
+                  ref={discountPercentRef}
+                />
+              </div>
+              <div className={styles.inner}>
+                <input
+                  type="number"
+                  id="length"
+                  required
+                  ref={couponLengthRef}
+                  placeholder="Enter Coupon length"
+                />
+              </div>
+              <div className={styles.inner}>
+                <DatePicker
+                  selected={startDate}
+                  name="dateTime"
+                  id="dateTime"
+                  onChange={(date) => setStartDate(date)}
+                  showTimeSelect
+                  timeIntervals={15}
+                  filterTime={filterPassedTime}
+                  minDate={new Date()}
+                  placeholderText="Enter Coupon Expire Date"
+                  dateFormat="MMMM d, yyyy h:mm aa"
+                  required
+                />
+              </div>
+              <div className={styles.inner}>
+                {loading ? (
+                  <div className="loader">Loading...</div>
+                ) : (
+                  <button>Generate Coupon</button>
+                )}
+              </div>
+            </form>
+            {validCoupon.success ? (
+              <p className={styles.couponCode}>{couponCode}</p>
+            ) : (
+              <p className={styles.couponCodeS}>{validCoupon.msg}</p>
+            )}
+          </div>
+        ) : (
+          ""
+        )}
+        {showItem.sixth ? (
+          <div className={styles.loan}>
+            <h2>Generate Invoice</h2>
+            <InvoiceForm refund salesMan={props.token} />
+          </div>
+        ) : (
+          ""
+        )}
+        {showItem.second ? (
+          <div className={styles.loan}>
+            <h2>Generate Invoice</h2>
+            <InvoiceForm salesMan={props.token} />
+          </div>
+        ) : (
+          ""
+        )}
+      </div>
+    </>
   );
 };
 

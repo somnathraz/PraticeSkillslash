@@ -115,6 +115,9 @@ const CartPage = ({ isConnected }) => {
           paymentId: response.razorpay_payment_id,
           orderId: response.razorpay_order_id,
           signature: response.razorpay_signature,
+          TotalPrice: data.amount,
+          GST: data.GST,
+          coursePrice: data.coursePrice,
           name: details.name,
           email: details.email,
           phone: details.phone,
@@ -172,6 +175,15 @@ const CartPage = ({ isConnected }) => {
           "http://localhost:3000/api/databaseAuth",
           paymentData
         );
+        const formData = new FormData();
+        Object.entries(paymentData).forEach(([key, value]) => {
+          formData.append(key, value);
+        });
+
+        fetch("https://getform.io/f/fb4af2dc-0f8f-4518-8963-28058e9fa205", {
+          method: "POST",
+          body: formData,
+        });
 
         console.log(dbSend, "database payment data");
         setPayLoading(false);
@@ -267,33 +279,33 @@ const CartPage = ({ isConnected }) => {
     }
   }
 
-  const generateInvoice = (name) => {
-    console.log("generatePDF");
-    // send a post request with the name to our API endpoint
-    const fetchData = async () => {
-      const data = await fetch("/api/generateInvoice", {
-        method: "POST",
-        body: { name },
-      });
-      // convert the response into an array Buffer
-      if (data.response === 200) {
-        const pdfName = data.json();
-        setPdfNames(pdfName);
-      }
-    };
-    console.log(fetchData);
-    // convert the buffer into an object URL
-    // const saveAsPDF = async () => {
-    //   const buffer = await fetchData();
-    //   const blob = new Blob([buffer]);
-    //   const link = document.createElement("a");
-    //   link.href = URL.createObjectURL(blob);
-    //   link.download = "invoice.pdf";
-    //   link.click();
-    // };
+  // const generateInvoice = (name) => {
+  //   console.log("generatePDF");
+  //   // send a post request with the name to our API endpoint
+  //   const fetchData = async () => {
+  //     const data = await fetch("/api/generateInvoice", {
+  //       method: "POST",
+  //       body: { name },
+  //     });
+  //     // convert the response into an array Buffer
+  //     if (data.response === 200) {
+  //       const pdfName = data.json();
+  //       setPdfNames(pdfName);
+  //     }
+  //   };
+  //   console.log(fetchData);
+  //   // convert the buffer into an object URL
+  //   // const saveAsPDF = async () => {
+  //   //   const buffer = await fetchData();
+  //   //   const blob = new Blob([buffer]);
+  //   //   const link = document.createElement("a");
+  //   //   link.href = URL.createObjectURL(blob);
+  //   //   link.download = "invoice.pdf";
+  //   //   link.click();
+  //   // };
 
-    // saveAsPDF();
-  };
+  //   // saveAsPDF();
+  // };
 
   return (
     <div className={styles.container}>
@@ -309,7 +321,7 @@ const CartPage = ({ isConnected }) => {
           <div>Actions</div>
           <div>Total Price</div>
         </div>
-        {cart.map((item) => (
+        {cart.map((item, i) => (
           <div className={styles.body} key={item.id}>
             <div className={styles.image}>
               <Image src={item.image} height="90" width="65" alt="hello" />
@@ -366,7 +378,7 @@ const CartPage = ({ isConnected }) => {
           {discount === "" ? getTotalPrice() : getDiscountPrice()}
         </h2>
 
-        <PaymentForm setDetails={setDetails} cartData={cart} />
+        <PaymentForm setDetails={setDetails} />
         <button
           onClick={() => {
             makePayment();

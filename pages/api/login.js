@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 import { MongoClient } from "mongodb";
-
+import bcrypt from "bcrypt";
 export default async function handler(req, res) {
   const { username, password } = req.body;
 
@@ -19,7 +19,7 @@ export default async function handler(req, res) {
     if (user === null) {
       res.status(404).json({ message: "No user found" });
     } else {
-      const passWordMatch = password === user.password;
+      const passWordMatch = await bcrypt.compare(password, user.password);
       if (passWordMatch) res.status(200).json({ token: user.email });
       else res.status(401).json({ message: "password mismatch" });
     }
