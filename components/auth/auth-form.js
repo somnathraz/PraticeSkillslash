@@ -31,8 +31,8 @@ function AuthForm() {
         }),
       });
       if (response.status === 200) {
-        const { token } = await response.json();
-        login({ token }, true);
+        const { token, role } = await response.json();
+        login({ token, role }, true);
       } else if (response.status === 404) {
         const { message } = await response.json();
         setError({ ...error, user: true });

@@ -16,6 +16,7 @@ import AddUserFrom from "../../../components/PaymentForm/addUserForm";
 import Image from "next/image";
 
 const Dashboard = (props) => {
+  console.log(props);
   const discountPercentRef = useRef();
   const couponLengthRef = useRef();
   const [showItem, setShowItem] = useState({
@@ -205,7 +206,7 @@ const Dashboard = (props) => {
 
               <p className={styles.item}>Refund Form</p>
             </span>
-            {props.token === "spandan@skillslash.com" ? (
+            {props.token.role === "Admin" ? (
               <div className={styles.list}>
                 <div className={styles.head}>
                   <p className={styles.head}>User</p>
@@ -286,7 +287,7 @@ const Dashboard = (props) => {
       )}
       <div className={styles.header}>
         <h2 style={{ textAlign: "center" }}>
-          Welcome {props.token.replace("@skillslash.com", "")}
+          Welcome {props.token.token.replace("@skillslash.com", "")}
         </h2>
       </div>
       <div className={styles.dashboard}>
@@ -356,7 +357,7 @@ const Dashboard = (props) => {
         {showItem.sixth ? (
           <div className={styles.loan}>
             <h2>Generate Invoice</h2>
-            <InvoiceForm refund salesMan={props.token} />
+            <InvoiceForm refund salesMan={props.token.token} />
           </div>
         ) : (
           ""
@@ -364,7 +365,7 @@ const Dashboard = (props) => {
         {showItem.second ? (
           <div className={styles.loan}>
             <h2>Generate Invoice</h2>
-            <InvoiceForm salesMan={props.token} />
+            <InvoiceForm salesMan={props.token.token} />
           </div>
         ) : (
           ""

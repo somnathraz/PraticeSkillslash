@@ -19,6 +19,7 @@ const AddUserFrom = () => {
   const [query, setQuery] = useState({
     email: "",
     password: "",
+    role: "",
   });
 
   // Update inputs value
@@ -42,6 +43,7 @@ const AddUserFrom = () => {
         body: JSON.stringify({
           email: query.email,
           password: query.password,
+          role: query.role,
         }),
         headers: {
           "Content-Type": "application/json",
@@ -116,6 +118,22 @@ const AddUserFrom = () => {
               onClick={() => setShowPass(true)}
             />
           )}
+        </div>
+        <div className={styles.formWrapper}>
+          <select
+            name="role"
+            required
+            value={query.role}
+            onChange={handleParam()}
+            placeholder="Select User Role*"
+          >
+            <option className={styles.option} value="">
+              User Role*
+            </option>
+
+            <option value="Admin">Admin</option>
+            <option value="Editor">Editor</option>
+          </select>
         </div>
         {loading ? (
           <div className="center">
