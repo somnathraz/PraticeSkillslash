@@ -305,3 +305,11 @@
   width: 70%;
   margin-left: -20px;
 }
+@media (max-width: 481px) {
+  .readOnly {
+    width: 100%;
+  }
+  .infoD {
+    width: 90%;
+  }
+}

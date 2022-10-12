@@ -32,9 +32,39 @@ const InvoiceForm = ({ refund, salesMan }) => {
     fileUpload: "",
   });
   const [display, setDisplay] = useState(false);
+  const [pId, setPId] = useState();
   let code;
-  let dateT = new Date().toLocaleDateString;
-  let id = Math.floor(1000 + Math.random() * 9000) + dateT.replace("/", "");
+  let dateT = new Date().getDate();
+  let monthT = new Date().getMonth();
+  let yearT = new Date().getFullYear();
+  let DateString = `${dateT}${monthT}${yearT}`;
+
+  const generateId = () => {
+    let id = Math.floor(1000 + Math.random() * 9000) + DateString;
+    return id;
+  };
+
+  const verifyID = async () => {
+    let sendId = generateId();
+
+    const data = await fetch("/api/uniqueId", {
+      method: "POST",
+      body: JSON.stringify({
+        sendId,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((t) => t.json());
+    if (data.response === 200) {
+      console.log(data.id);
+      setPId(data.id);
+    }
+    if (data.response === 409) {
+      verifyID();
+    }
+  };
+
   const [value, setValue] = useState();
   const [query, setQuery] = useState({
     customerName: "",
@@ -47,7 +77,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
     salesEmail: "",
     InvoiceDate: new Date().toLocaleDateString,
     salesMan: salesMan,
-    invoiceId: id,
+    invoiceId: pId,
   });
 
   useEffect(() => {
@@ -88,6 +118,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
   //verify submit function
   const verifySubmit = async (e) => {
     e.preventDefault();
+    verifyID();
     setVerify(true);
   };
 
@@ -112,7 +143,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
             InvoiceDate: query.InvoiceDate,
             paymentMode: query.paymentMode,
             coursePrice: query.coursePrice,
-            invoiceId: code + id,
+            invoiceId: code + pId,
           }),
           headers: {
             "Content-Type": "application/json",
