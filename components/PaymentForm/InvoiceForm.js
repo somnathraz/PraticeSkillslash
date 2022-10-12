@@ -32,6 +32,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
     fileUpload: "",
   });
   const [display, setDisplay] = useState(false);
+
   let id = Math.floor(1000 + Math.random() * 9000);
   const [value, setValue] = useState();
   const [query, setQuery] = useState({
@@ -42,6 +43,8 @@ const InvoiceForm = ({ refund, salesMan }) => {
     paymentDate: "",
     coursePrice: "",
     paymentMode: "",
+    salesEmail: "",
+    InvoiceDate: new Date().toLocaleDateString,
     salesMan: salesMan,
     invoiceId: id,
   });
@@ -76,12 +79,14 @@ const InvoiceForm = ({ refund, salesMan }) => {
         {
           method: "POST",
           body: JSON.stringify({
+            salesEmail: query.salesEmail,
             customerName: query.customerName,
             customerEmail: query.customerEmail,
             customerPhone: query.customerPhone,
             courseName: query.courseName,
-            paymentDate: query.paymentDate,
+            paymentDate: query.paymentDate.toLocaleDateString(),
             salesMan: query.salesMan,
+            InvoiceDate: query.InvoiceDate,
             paymentMode: query.paymentMode,
             coursePrice: query.coursePrice,
             invoiceId: id,
@@ -105,7 +110,10 @@ const InvoiceForm = ({ refund, salesMan }) => {
         courseName: "",
         paymentDate: "",
         coursePrice: "",
-        invoiceId: "",
+        paymentMode: "",
+        salesEmail: "",
+        salesMan: "",
+        invoiceId: id,
       });
       setValue("");
       setStartDate("");
@@ -123,6 +131,17 @@ const InvoiceForm = ({ refund, salesMan }) => {
   return (
     <div className={styles.App}>
       <form onSubmit={verifySubmit}>
+        <div className={styles.formWrapper}>
+          <input
+            type="text"
+            name="salesEmail"
+            required
+            placeholder="Enter salesman Email*"
+            className={styles.EmailInput}
+            value={query.salesEmail}
+            onChange={handleParam()}
+          />
+        </div>
         <div className={styles.formWrapper}>
           <input
             type="text"
@@ -275,6 +294,17 @@ const InvoiceForm = ({ refund, salesMan }) => {
             />
             <h2>Verify Details</h2>
             <form className={styles.readOnly} onSubmit={formSubmit}>
+              <div className={styles.readOnlyDiv}>
+                <AiOutlineUser className={styles.formIcon} />
+                <TbMinusVertical className={styles.formLine} />
+                <input
+                  type="text"
+                  id="salesEmail"
+                  name="salesEmail"
+                  value={query.salesEmail}
+                  readOnly
+                />
+              </div>
               <div className={styles.readOnlyDiv}>
                 <AiOutlineUser className={styles.formIcon} />
                 <TbMinusVertical className={styles.formLine} />

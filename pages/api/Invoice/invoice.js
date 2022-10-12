@@ -8,7 +8,7 @@ import { authentication } from "../../../lib/googleSheet";
 import { connectToDatabase } from "../../../lib/mongodb";
 let fileUpload = "";
 let emailSent = "";
-const invoiceDate = new Date();
+
 const AWSCredentials = {
   accessKey: process.env.AWSAccessKeyId,
   secret: process.env.AWSSecretKey,
@@ -35,12 +35,14 @@ export default async function pdfGenerate(req, res) {
     customerPhone,
     coursePrice,
     invoiceId,
+    salesEmail,
     salesMan,
+    InvoiceDate,
     paymentMode,
     paymentDate,
     customerEmail,
   } = req.body;
-
+  console.log(InvoiceDate);
   let GST =
     parseFloat(coursePrice) - parseFloat(coursePrice) * (100 / (100 + 18));
 
@@ -57,6 +59,7 @@ export default async function pdfGenerate(req, res) {
 
   const uploadToS3 = (fileName) => {
     // Read content from the file
+
     const fileContent = fs.readFileSync(`./public/invoice/${fileName}`);
 
     // Setting up S3 upload parameters
@@ -88,7 +91,7 @@ export default async function pdfGenerate(req, res) {
       customerPhone,
       coursePrice,
       invoiceId,
-      invoiceDate,
+      InvoiceDate,
       paymentDate,
       customerEmail,
       OriginalCost,
@@ -103,10 +106,9 @@ export default async function pdfGenerate(req, res) {
     const fPdfName = pdfName.replace(/[&\/\\#,+()$~%.'":*?<>{} ]/g, "-");
 
     const mailData = {
-      from: "somanath@skillslash.com",
+      from: "admissions@skillslash.com",
       to: customerEmail,
-      subject: `${courseName} invoice`,
-      text: "hello from skillslash",
+      subject: `invoice From Skillslash`,
       attachments: [
         {
           filename: `${fPdfName}.pdf`,
@@ -114,8 +116,7 @@ export default async function pdfGenerate(req, res) {
           contentType: "application/pdf",
         },
       ],
-      html: `<div>hello</div><p>Sent from:
-           somanath@skillslash.com</p>`,
+      html: `<div>Hi ${customerName},</div><p>Greetings from  Skillslash,</p> <p>We have attached Invoice along with this mail.</p><div>For any clarifications or doubts feel free to reach out to us on : <p><a href="mailto:admissions@skillslash.com">admissions@skillslash.com</a></p></div><p>Please find the attachments below. Your learning manager will reach out to you via email and call to help you with the next steps.</p> <p>We wish you all the very Best 👍</p><div>Thanks and Regards</div><div>Admissions Team</div>`,
     };
 
     // set our compiled html template as the pages content
@@ -150,11 +151,13 @@ export default async function pdfGenerate(req, res) {
           requestBody: {
             values: [
               [
-                customerName,
-                customerEmail,
                 paymentDate,
+                InvoiceDate,
+                salesEmail,
+                customerName,
+                parseInt(coursePrice),
+                customerEmail,
                 customerPhone,
-                parseFloat(coursePrice),
                 "backendData",
                 "backendData",
                 GST,

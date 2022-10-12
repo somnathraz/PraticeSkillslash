@@ -8,6 +8,7 @@ import { authentication } from "../../../lib/googleSheet";
 import { connectToDatabase } from "../../../lib/mongodb";
 let fileUpload = "";
 let emailSent = "";
+
 const AWSCredentials = {
   accessKey: process.env.AWSAccessKeyId,
   secret: process.env.AWSSecretKey,
@@ -34,6 +35,8 @@ export default async function pdfGenerate(req, res) {
     customerPhone,
     coursePrice,
     invoiceId,
+    salesEmail,
+    InvoiceDate,
     salesMan,
     paymentDate,
     paymentMode,
@@ -89,6 +92,7 @@ export default async function pdfGenerate(req, res) {
       customerPhone,
       coursePrice,
       invoiceId,
+      InvoiceDate,
       paymentDate,
       customerEmail,
       OriginalCost,
@@ -150,14 +154,16 @@ export default async function pdfGenerate(req, res) {
           requestBody: {
             values: [
               [
-                customerName,
-                customerEmail,
                 paymentDate,
-                customerPhone,
+                InvoiceDate,
+                salesEmail,
+                customerName,
                 parseInt(coursePrice),
+                customerEmail,
+                customerPhone,
                 "backendData",
                 "backendData",
-                parseInt(GST),
+                GST,
                 invoiceId,
                 paymentMode,
                 courseName,
