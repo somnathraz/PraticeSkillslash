@@ -32,8 +32,9 @@ const InvoiceForm = ({ refund, salesMan }) => {
     fileUpload: "",
   });
   const [display, setDisplay] = useState(false);
-
-  let id = Math.floor(1000 + Math.random() * 9000);
+  let code;
+  let dateT = new Date().toLocaleDateString;
+  let id = Math.floor(1000 + Math.random() * 9000) + dateT.replace("/", "");
   const [value, setValue] = useState();
   const [query, setQuery] = useState({
     customerName: "",
@@ -62,6 +63,28 @@ const InvoiceForm = ({ refund, salesMan }) => {
       [name]: value,
     }));
   };
+  if (query.courseName === "Adv Data Science and AI (Basic/Pro/ProMax)") {
+    code = "FAIML";
+  }
+  if (query.courseName === "Full Stack Developer course with certification") {
+    code = "FSDC";
+  }
+  if (query.courseName === "Full Stack Developer course with certification") {
+    code = "FSDC";
+  }
+  if (query.courseName === "Business Analytics Program For Professionals") {
+    code = "BAP";
+  }
+  if (query.courseName === "Blockchain program and certification") {
+    code = "BCP";
+  }
+  if (query.courseName === "Blockchain program and certification") {
+    code = "BCP";
+  }
+  if (query.courseName === "Data Structures and Algorithms + System Design") {
+    code = "DSAS";
+  }
+
   //verify submit function
   const verifySubmit = async (e) => {
     e.preventDefault();
@@ -89,7 +112,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
             InvoiceDate: query.InvoiceDate,
             paymentMode: query.paymentMode,
             coursePrice: query.coursePrice,
-            invoiceId: id,
+            invoiceId: code + id,
           }),
           headers: {
             "Content-Type": "application/json",
@@ -206,6 +229,9 @@ const InvoiceForm = ({ refund, salesMan }) => {
             </option>
             <option value="Business Analytics Program For Professionals">
               Business Analytics Program For Professionals
+            </option>
+            <option value="Data Structures and Algorithms + System Design">
+              Data Structures and Algorithms + System Design
             </option>
           </select>
         </div>
