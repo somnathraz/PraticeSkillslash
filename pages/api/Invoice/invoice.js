@@ -165,6 +165,7 @@ export default async function pdfGenerate(req, res) {
                 paymentMode,
                 courseName,
                 salesMan,
+                fileUpload,
               ],
             ],
           },

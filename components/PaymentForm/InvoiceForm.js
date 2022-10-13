@@ -3,6 +3,7 @@ import styles from "../ContactusForm/ContactUsForm.module.css";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import DatePicker from "react-datepicker";
+import Image from "next/image";
 import {
   AiOutlineCloseCircle,
   AiOutlineUser,
@@ -35,7 +36,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
   const [pId, setPId] = useState();
   let code;
   let dateT = new Date().getDate();
-  let monthT = new Date().getMonth();
+  let monthT = new Date().getMonth() + 1;
   let yearT = new Date().getFullYear();
   let DateString = `${dateT}${monthT}${yearT}`;
 
@@ -346,13 +347,11 @@ const InvoiceForm = ({ refund, salesMan }) => {
       {verify ? (
         <div className={styles.infoWrap}>
           <div className={styles.infoD}>
-            <div className={styles.circle} />
-            <div className={styles.circle1} />
-            <div className={styles.circle2} />
-            <div className={styles.circle3} />
-            <div className={styles.circle4} />
-            <div className={styles.circle5} />
-
+            <Image
+              src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/google-background-verify.webp"
+              layout="fill"
+              alt="review"
+            />
             <AiOutlineCloseCircle
               className={styles.close}
               onClick={() => {
@@ -362,7 +361,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
             <h2>Verify Details</h2>
             <form className={styles.readOnly} onSubmit={formSubmit}>
               <div className={styles.readOnlyDiv}>
-                <AiOutlineUser className={styles.formIcon} />
+                <span>Salesman Email</span>
                 <TbMinusVertical className={styles.formLine} />
                 <input
                   type="text"
@@ -373,7 +372,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
                 />
               </div>
               <div className={styles.readOnlyDiv}>
-                <AiOutlineUser className={styles.formIcon} />
+                <span> Customer Name</span>
                 <TbMinusVertical className={styles.formLine} />
                 <input
                   type="text"
@@ -384,7 +383,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
                 />
               </div>
               <div className={styles.readOnlyDiv}>
-                <AiOutlineMail className={styles.formIcon} />
+                <span>Customer Email</span>
                 <TbMinusVertical className={styles.formLine} />
                 <input
                   type="text"
@@ -395,7 +394,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
                 />
               </div>
               <div className={styles.readOnlyDiv}>
-                <BsPhone className={styles.formIcon} />
+                <span>Customer phone</span>
                 <TbMinusVertical className={styles.formLine} />
                 <input
                   type="phone"
@@ -407,7 +406,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
               </div>
 
               <div className={styles.readOnlyDiv}>
-                <BsFillJournalBookmarkFill className={styles.formIcon} />
+                <span>Course Name</span>
                 <TbMinusVertical className={styles.formLine} />
                 <input
                   type="text"
@@ -418,7 +417,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
                 />
               </div>
               <div className={styles.readOnlyDiv}>
-                <MdOutlinePayment className={styles.formIcon} />
+                <span>Payment Mode</span>
                 <TbMinusVertical className={styles.formLine} />
                 <input
                   type="text"
@@ -429,7 +428,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
                 />
               </div>
               <div className={styles.readOnlyDiv}>
-                <BsCalendarDate className={styles.formIcon} />
+                <span>Payment Date</span>
                 <TbMinusVertical className={styles.formLine} />
                 <input
                   type="text"
@@ -440,7 +439,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
                 />
               </div>
               <div className={styles.readOnlyDiv}>
-                <MdOutlineAttachMoney className={styles.formIcon} />
+                <span>course price</span>
                 <TbMinusVertical className={styles.formLine} />
                 <input
                   type="number"

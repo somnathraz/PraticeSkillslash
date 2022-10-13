@@ -9,6 +9,7 @@
         body {
             margin-top: 5rem;
             position: relative;
+
         }
 
         h2,
@@ -21,9 +22,10 @@
             display: grid;
             width: 100%;
             max-width: 100%;
+            margin: 5px;
             grid-template-columns: 57% 39%;
             justify-content: space-between;
-            gap: 40px;
+            gap: 30px;
 
         }
 
@@ -52,12 +54,18 @@
 
         }
 
+        .sign p {
+            color: rgb(172, 172, 172);
+            font-size: 12px;
+        }
+
         .note {
             color: rgb(172, 172, 172);
             font-size: 12px;
             position: absolute;
             bottom: 0;
         }
+
 
         .invoice-box {
             width: 700px;
@@ -211,12 +219,12 @@
                         <div>
                             <div class="infoRow">
 
-                                Invoice Date: {{InvoiceDate}}<br>
-                                Payment Date: {{paymentDate}}
+                                <b> Invoice Date</b>: {{InvoiceDate}}<br>
+                                <b> Payment Date</b>: {{paymentDate}}
                             </div>
 
                             <div class="infoRow">
-                                <b>TO:</b>
+                                <b>To:</b>
                                 <p> {{customerName}}</p>
                             </div>
                             <div class="infoRow">
@@ -224,7 +232,7 @@
                                 <p>{{customerEmail}}</p>
                             </div>
                             <div class="infoRow">
-                                <b>phone:</b>
+                                <b>Phone:</b>
                                 <p>{{customerPhone}}</p>
                             </div>
 
@@ -269,7 +277,8 @@
         <div class="sign">
             Notes:
             All relevant information about live classes and Access details will be shared through email.
-            Refund Policy: https://skillslash.com/refunds-cancellation/
+            <p> Refund Policy: https://skillslash.com/refunds-cancellation/</p>
+
 
             <p class="note">*This is a computer generated invoice</p>
         </div>
