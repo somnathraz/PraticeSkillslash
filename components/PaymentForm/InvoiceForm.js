@@ -58,7 +58,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
           "Content-Type": "application/json",
         },
       });
-      console.log(data.status);
+
       if (data.status === 200) {
         const { id } = await data.json();
 
@@ -84,6 +84,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
     InvoiceDate: `${dateT}/${monthT}/${yearT}`,
     salesMan: salesMan,
     invoiceId: pId,
+    paymentType: "",
   });
 
   useEffect(() => {
@@ -154,6 +155,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
             InvoiceDate: query.InvoiceDate,
             paymentMode: query.paymentMode,
             coursePrice: query.coursePrice,
+            paymentType: query.paymentType,
             invoiceId: code + pId,
           }),
           headers: {
@@ -178,7 +180,8 @@ const InvoiceForm = ({ refund, salesMan }) => {
         paymentMode: "",
         salesEmail: "",
         salesMan: "",
-        invoiceId: id,
+        invoiceId: "",
+        paymentMode: "",
       });
       setValue("");
       setStartDate("");
@@ -297,6 +300,21 @@ const InvoiceForm = ({ refund, salesMan }) => {
             <option value="Direct Bank Transfer">Direct Bank Transfer</option>
           </select>
         </div>
+        <div className={styles.formWrapper}>
+          <select
+            name="paymentType"
+            required
+            value={query.paymentType}
+            onChange={handleParam()}
+            placeholder="Select Payment Type*"
+          >
+            <option className={styles.option} value="">
+              Payment Type*
+            </option>
+            <option value="Full Payment">Full Payment</option>
+            <option value="Partial Payment">Partial Payment</option>
+          </select>
+        </div>
 
         <div className={styles.inner} style={{ marginBottom: "10px" }}>
           <DatePicker
@@ -351,6 +369,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
               src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/google-background-verify.webp"
               layout="fill"
               alt="review"
+              style={{ borderRadius: "4px" }}
             />
             <AiOutlineCloseCircle
               className={styles.close}
@@ -495,10 +514,17 @@ const InvoiceForm = ({ refund, salesMan }) => {
       {display ? (
         <div className={styles.infoWrap}>
           <div className={styles.infoD}>
+            <Image
+              src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/google-background-verify.webp"
+              layout="fill"
+              alt="review"
+              style={{ borderRadius: "4px" }}
+            />
             <AiOutlineCloseCircle
               className={styles.close}
               onClick={() => {
                 setDisplay(false);
+                setVerify(false);
               }}
             />
             <h2>Invoice Generated Successfully</h2>

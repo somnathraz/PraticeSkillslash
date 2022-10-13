@@ -36,10 +36,11 @@ export default async function pdfGenerate(req, res) {
     coursePrice,
     invoiceId,
     salesEmail,
-    InvoiceDate,
+
     salesMan,
     paymentDate,
     paymentMode,
+    paymentType,
     customerEmail,
   } = req.body;
 
@@ -92,7 +93,7 @@ export default async function pdfGenerate(req, res) {
       customerPhone,
       coursePrice,
       invoiceId,
-      InvoiceDate,
+
       paymentDate,
       customerEmail,
       OriginalCost,
@@ -159,6 +160,7 @@ export default async function pdfGenerate(req, res) {
                 salesEmail,
                 customerName,
                 parseInt(coursePrice),
+                paymentType,
                 customerEmail,
                 customerPhone,
                 "backendData",
@@ -186,6 +188,7 @@ export default async function pdfGenerate(req, res) {
           fileLink: fileUpload,
           emailInfo: emailSent,
           salesMan: salesMan,
+          paymentType: paymentType,
           paymentMode: paymentMode,
         });
         res.status(200).json({

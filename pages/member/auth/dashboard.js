@@ -16,7 +16,6 @@ import AddUserFrom from "../../../components/PaymentForm/AddUserForm";
 import Image from "next/image";
 
 const Dashboard = (props) => {
-  console.log(props);
   const discountPercentRef = useRef();
   const couponLengthRef = useRef();
   const [showItem, setShowItem] = useState({
@@ -50,7 +49,6 @@ const Dashboard = (props) => {
   const characters =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   function generateString(length) {
-    console.log("string");
     let result = " ";
     const charactersLength = characters.length;
     for (let i = 0; i < length; i++) {
@@ -68,7 +66,7 @@ const Dashboard = (props) => {
     setLoading(true);
     const coupon = (generateString(couponLength) + discountPercent).trim();
     setCouponCode(coupon);
-    console.log(coupon, "inside handler");
+
     try {
       const response = await fetch("/api/Database/getUserName", {
         method: "POST",
@@ -98,7 +96,7 @@ const Dashboard = (props) => {
 
     return currentDate.getTime() < selectedDate.getTime();
   };
-  console.log(validCoupon);
+
   return (
     <>
       {showMenu ? (
