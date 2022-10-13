@@ -12,7 +12,7 @@ import {
 import { BsThreeDots } from "react-icons/bs";
 import { RiCoupon2Line, RiHandCoinLine } from "react-icons/ri";
 import { TbFileInvoice } from "react-icons/tb";
-import AddUserFrom from "../../../components/PaymentForm/addUserForm";
+import AddUserFrom from "../../../components/PaymentForm/AddUserForm";
 import Image from "next/image";
 
 const Dashboard = (props) => {
