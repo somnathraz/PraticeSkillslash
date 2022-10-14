@@ -32,9 +32,9 @@
         .footer {
             display: flex;
             width: 100%;
-
-            margin-bottom: 60px;
-            margin-top: 60px;
+            position: relative;
+            margin-bottom: 20px;
+            margin-top: 20px;
             justify-content: space-between;
         }
 
@@ -66,6 +66,19 @@
             bottom: 0;
         }
 
+        .footer div {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .img {
+            width: 220px;
+
+            align-self: flex-end;
+            justify-self: flex-end;
+        }
 
         .invoice-box {
             width: 700px;
@@ -219,6 +232,11 @@
                         <div>
                             <div class="infoRow">
                                 <b> Payment Date</b>: {{paymentDate}}
+
+                            </div>
+                            <div class="infoRow">
+                                <b>Payment Type</b>: {{paymentType}}
+
                             </div>
 
                             <div class="infoRow">
@@ -270,7 +288,12 @@
         </table>
         <div class="footer">
             <div></div>
-            <div>Authorised Signatory</div>
+
+            <div>
+                <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/sign_authority.png"
+                    class="img" />
+                Authorized Signatory
+            </div>
         </div>
         <div class="sign">
             Notes:

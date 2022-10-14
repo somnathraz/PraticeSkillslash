@@ -92,6 +92,7 @@ export default async function pdfGenerate(req, res) {
       coursePrice,
       invoiceId,
       paymentDate,
+      paymentType,
       customerEmail,
       OriginalCost,
       SGST,

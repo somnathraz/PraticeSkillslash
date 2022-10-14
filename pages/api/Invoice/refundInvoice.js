@@ -36,7 +36,6 @@ export default async function pdfGenerate(req, res) {
     coursePrice,
     invoiceId,
     salesEmail,
-
     salesMan,
     paymentDate,
     paymentMode,
@@ -93,7 +92,7 @@ export default async function pdfGenerate(req, res) {
       customerPhone,
       coursePrice,
       invoiceId,
-
+      paymentType,
       paymentDate,
       customerEmail,
       OriginalCost,
