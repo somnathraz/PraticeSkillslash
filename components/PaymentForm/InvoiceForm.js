@@ -105,20 +105,31 @@ const InvoiceForm = ({ refund, salesMan }) => {
       [name]: value,
     }));
   };
-  if (query.courseName === "Adv Data Science and AI (Basic/Pro/ProMax)") {
+  if (
+    query.courseName === "Adv Data Science and AI (Basic)" ||
+    query.courseName === "Adv Data Science and AI (Pro)" ||
+    query.courseName === "Adv Data Science and AI (ProMax)"
+  ) {
     code = "FAIML";
   }
-  if (query.courseName === "Full Stack Developer course with certification") {
+  if (
+    query.courseName ===
+      "Full Stack Developer course with certification (pro)" ||
+    query.courseName ===
+      "Full Stack Developer course with certification (pro Max)"
+  ) {
     code = "FSDC";
   }
-  if (query.courseName === "Full Stack Developer course with certification") {
-    code = "FSDC";
-  }
-  if (query.courseName === "Business Analytics Program For Professionals") {
+
+  if (
+    query.courseName ===
+      "Business Analytics Program For Professionals (Basic)" ||
+    query.courseName ===
+      "Business Analytics Program For Professionals (pro Max)" ||
+    query.courseName ===
+      "Business Analytics Program For Professionals (pro Max)"
+  ) {
     code = "BAP";
-  }
-  if (query.courseName === "Blockchain program and certification") {
-    code = "BCP";
   }
   if (query.courseName === "Blockchain program and certification") {
     code = "BCP";
@@ -262,18 +273,33 @@ const InvoiceForm = ({ refund, salesMan }) => {
               Select a course*
             </option>
 
-            <option value="Adv Data Science and AI (Basic/Pro/ProMax)">
-              Adv Data Science and AI (Basic/Pro/ProMax)
+            <option value="Adv Data Science and AI (Basic)">
+              Adv Data Science and AI (Basic)
             </option>
-            <option value="Full Stack Developer course with certification">
-              Full Stack Developer course with certification
+            <option value="Adv Data Science and AI (Pro)">
+              Adv Data Science and AI (Pro)
+            </option>
+            <option value="Adv Data Science and AI (ProMax)">
+              Adv Data Science and AI (ProMax)
+            </option>
+            <option value="Full Stack Developer course with certification (pro)">
+              Full Stack Developer course with certification (pro)
+            </option>
+            <option value="Full Stack Developer course with certification (pro Max)">
+              Full Stack Developer course with certification (pro Max)
             </option>
 
             <option value="Blockchain program and certification">
               Blockchain program and certification
             </option>
-            <option value="Business Analytics Program For Professionals">
-              Business Analytics Program For Professionals
+            <option value="Business Analytics Program For Professionals (Basic)">
+              Business Analytics Program For Professionals (Basic)
+            </option>
+            <option value="Business Analytics Program For (pro)">
+              Business Analytics Program For Professionals (pro)
+            </option>
+            <option value="Business Analytics Program For Professionals (pro Max)">
+              Business Analytics Program For Professionals (pro Max)
             </option>
             <option value="Data Structures and Algorithms + System Design">
               Data Structures and Algorithms + System Design

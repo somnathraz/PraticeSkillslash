@@ -334,6 +334,10 @@
     padding: 20px;
     padding-left: 100px;
   }
+  .header h2 {
+    font-size: 24px;
+    color: #0487d9;
+  }
   .couponWrap h2,
   .loan h2 {
     text-align: center;
