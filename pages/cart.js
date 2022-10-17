@@ -21,7 +21,7 @@ const CartPage = ({ isConnected }) => {
   const instance = axios.create({
     baseURL: publicRuntimeConfig.backendUrl,
   });
-  const router = useRouter();
+
   const [payment, setPayments] = useState(false);
   const couponDataCartRef = useRef();
   const [redirectSeconds, setRedirectSeconds] = useState(15);

@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import "../styles/form.css";
-
+import React, { useEffect } from "react";
 import { Provider } from "react-redux";
 import store from "../redux/store";
 import Script from "next/script";
