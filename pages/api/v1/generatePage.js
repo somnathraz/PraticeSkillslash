@@ -1,7 +1,5 @@
 import { google } from "googleapis";
 import fs from "fs";
-import path from "path";
-import handlers from "handlebars";
 const DRIVE_CLIENT_ID = process.env.DRIVE_CLIENT_ID;
 const DRIVE_CLIENT_SECRET = process.env.DRIVE_CLIENT_SECRET;
 const DRIVE_REDIRECT_URI = process.env.DRIVE_REDIRECT_URI;

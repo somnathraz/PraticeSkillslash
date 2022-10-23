@@ -10,10 +10,12 @@ import {
   AiOutlineUserDelete,
 } from "react-icons/ai";
 import { BsThreeDots } from "react-icons/bs";
-import { RiCoupon2Line, RiHandCoinLine } from "react-icons/ri";
+import { BiCalendarEvent } from "react-icons/bi";
+import { RiCoupon2Line, RiHandCoinLine, RiWindow2Fill } from "react-icons/ri";
 import { TbFileInvoice } from "react-icons/tb";
 import AddUserFrom from "../../../components/PaymentForm/AddUserForm";
 import Image from "next/image";
+import AddPopupFrom from "../../../components/PaymentForm/PopupDetails";
 
 const Dashboard = (props) => {
   const discountPercentRef = useRef();
@@ -25,6 +27,8 @@ const Dashboard = (props) => {
     fourth: false,
     fifth: false,
     sixth: false,
+    seventh: false,
+    eight: false,
   });
   const [mobile, setMobile] = useState(false);
   const [startDate, setStartDate] = useState();
@@ -128,11 +132,6 @@ const Dashboard = (props) => {
                 height="40px"
               />
             )}
-
-            {/* <span>
-              <BsThreeDots className={styles.close} />
-              CLOSE
-            </span> */}
           </div>
           <div className={styles.list}>
             <div className={styles.head}>
@@ -149,6 +148,8 @@ const Dashboard = (props) => {
                   fourth: false,
                   fifth: false,
                   sixth: false,
+                  seventh: false,
+                  eight: false,
                 })
               }
             >
@@ -171,6 +172,8 @@ const Dashboard = (props) => {
                   fourth: false,
                   fifth: false,
                   sixth: false,
+                  seventh: false,
+                  eight: false,
                 })
               }
             >
@@ -193,6 +196,8 @@ const Dashboard = (props) => {
                   fourth: false,
                   fifth: false,
                   sixth: true,
+                  seventh: false,
+                  eight: false,
                 })
               }
             >
@@ -204,6 +209,55 @@ const Dashboard = (props) => {
 
               <p className={styles.item}>Refund Form</p>
             </span>
+            <span
+              className={showItem.seventh ? styles.spanActive : styles.span}
+              onClick={() =>
+                setShowItem({
+                  ...showItem,
+                  second: false,
+                  first: false,
+                  third: false,
+                  fourth: false,
+                  fifth: false,
+                  sixth: false,
+                  seventh: true,
+                  eight: false,
+                })
+              }
+            >
+              <BiCalendarEvent
+                className={
+                  showItem.seventh ? styles.barIconActive : styles.barIcon
+                }
+              />
+
+              <p className={styles.item}>Batch Date</p>
+            </span>
+            <span
+              className={showItem.eight ? styles.spanActive : styles.span}
+              onClick={() =>
+                setShowItem({
+                  ...showItem,
+                  second: false,
+                  first: false,
+                  third: false,
+                  fourth: false,
+                  fifth: false,
+                  sixth: false,
+                  seventh: false,
+                  eight: true,
+                })
+              }
+            >
+              <RiWindow2Fill
+                className={
+                  showItem.eight ? styles.barIconActive : styles.barIcon
+                }
+              />
+
+              <p className={styles.item}>popup</p>
+            </span>
+
             {props.token.role === "Admin" ? (
               <div className={styles.list}>
                 <div className={styles.head}>
@@ -364,6 +418,21 @@ const Dashboard = (props) => {
           <div className={styles.loan}>
             <h2>Generate Invoice</h2>
             <InvoiceForm salesMan={props.token.token} />
+          </div>
+        ) : (
+          ""
+        )}
+        {showItem.seventh ? (
+          <div className={styles.loan}>
+            <h2>Generate Popup</h2>
+          </div>
+        ) : (
+          ""
+        )}
+        {showItem.eight ? (
+          <div className={styles.loan}>
+            <h2>Generate Popup</h2>
+            <AddPopupFrom />
           </div>
         ) : (
           ""

@@ -162,7 +162,7 @@ const CartPage = ({ isConnected }) => {
         try {
           const data = await axios.post(`/api/generateInvoice`, invoiceData);
           // convert the response into an array Buffer
-          if (data.response === 200) {
+          if (data.status === 200) {
             const pdfName = data.json();
             console.log(pdfName);
             setPdfNames(pdfName);

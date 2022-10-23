@@ -6,17 +6,11 @@ import DatePicker from "react-datepicker";
 import Image from "next/image";
 import {
   AiOutlineCloseCircle,
-  AiOutlineUser,
   AiOutlineMail,
   AiOutlineDatabase,
 } from "react-icons/ai";
-import { BsPhone, BsArrowRightShort } from "react-icons/bs";
-import {
-  BsFillJournalBookmarkFill,
-  BsCalendarDate,
-  BsFileEarmarkPdf,
-} from "react-icons/bs";
-import { MdOutlineAttachMoney, MdOutlinePayment } from "react-icons/md";
+import { BsArrowRightShort } from "react-icons/bs";
+import { BsFileEarmarkPdf } from "react-icons/bs";
 import { TbMinusVertical } from "react-icons/tb";
 
 const InvoiceForm = ({ refund, salesMan }) => {
@@ -273,9 +267,6 @@ const InvoiceForm = ({ refund, salesMan }) => {
               Select a course*
             </option>
 
-            <option value="Adv Data Science and AI (Basic)">
-              Adv Data Science and AI (Basic)
-            </option>
             <option value="Adv Data Science and AI (Pro)">
               Adv Data Science and AI (Pro)
             </option>
@@ -292,9 +283,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
             <option value="Blockchain program and certification">
               Blockchain program and certification
             </option>
-            <option value="Business Analytics Program For Professionals (Basic)">
-              Business Analytics Program For Professionals (Basic)
-            </option>
+
             <option value="Business Analytics Program For (pro)">
               Business Analytics Program For Professionals (pro)
             </option>

@@ -1,5 +1,5 @@
 .loan {
-  width: 50%;
+  width: 55%;
   margin: auto;
   display: flex;
   align-items: center;
@@ -161,6 +161,8 @@
   flex-flow: column;
   gap: 20px;
   width: 90px;
+
+  overflow-y: scroll;
   z-index: 1000;
   height: 100vh;
   transition: width 2s ease-in-out;
@@ -181,6 +183,7 @@
   flex-flow: column;
   gap: 20px;
   width: 140px;
+  overflow-y: scroll;
   z-index: 1000;
   height: 100vh;
   transition: width 100ms ease-in-out;

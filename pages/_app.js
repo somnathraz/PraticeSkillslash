@@ -6,6 +6,11 @@ import store from "../redux/store";
 import Script from "next/script";
 
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    fetch("/api/v1/generatePage", {
+      method: "GET",
+    });
+  });
   return (
     <Provider store={store}>
       <>
