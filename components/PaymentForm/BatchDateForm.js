@@ -1,28 +1,53 @@
 import React, { useState, useEffect } from "react";
 import styles from "../ContactusForm/ContactUsForm.module.css";
-import Toast from "../Toast/Toast";
 import DatePicker from "react-datepicker";
 import subDays from "date-fns/subDays";
-import DashboardBox from "../dashboardBox/DashboardBox";
-const AddPopupFrom = () => {
-  const [popupData, setPopupData] = useState([]);
+
+const BatchDateForm = ({ id, setUpdateForm }) => {
   const [startDate, setStartDate] = useState();
-  const [endDate, setEndDate] = useState();
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [display, setDisplay] = useState(false);
   const [query, setQuery] = useState({
-    heading: "",
-    para1: "",
-    para2: "",
+    batchDates: startDate,
+    batchType: "",
+    batchStatus: "",
     page: [],
-    startDate: "",
-    endDate: "",
+    batchWeek: "",
+    batchDesc1: "",
+    batchDesc2: "",
   });
 
+  // useEffect(() => {
+  //   const fetchPopup = async () => {
+  //     const data = await fetch("/api/v1/singlePopup", {
+  //       method: "POST",
+  //       body: JSON.stringify({ id: id, soloData: true }),
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     });
+  //     if (data.status === 200) {
+  //       const { myPost } = await data.json();
+
+  //       setQuery({
+  //         id: id,
+  //         heading: myPost.heading,
+  //         para1: myPost.para1,
+  //         para2: myPost.para2,
+  //         page: [],
+  //         startDate: myPost.startDate,
+  //         endDate: myPost.endDate,
+  //       });
+  //       showList(myPost.page);
+  //       setStartDate(new Date(myPost.startDate));
+  //       setEndDate(new Date(myPost.endDate));
+  //     }
+  //   };
+  //   fetchPopup();
+  // }, [id]);
   useEffect(() => {
     const fetchPopup = async () => {
-      const data = await fetch("/api/v1/generatePopup", {
+      const data = await fetch("/api/v1/generateBatchDate", {
         method: "GET",
       });
       if (data.status === 200) {
@@ -32,14 +57,12 @@ const AddPopupFrom = () => {
     };
     fetchPopup();
   }, []);
-
   useEffect(() => {
     setQuery({
       ...query,
-      startDate: startDate,
-      endDate: endDate,
+      batchDates: startDate,
     });
-  }, [startDate, endDate]);
+  }, [startDate]);
   // Update inputs value
   const handleChange = (e) => {
     // Destructuring
@@ -77,96 +100,51 @@ const AddPopupFrom = () => {
   const formSubmit = async (e) => {
     e.preventDefault();
 
-    if (endDate < startDate) {
-      setError(true);
-    } else {
-      setLoading(true);
-      try {
-        const data = await fetch("/api/v1/generatePopup", {
-          method: "POST",
-          body: JSON.stringify(query),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
-        if (data.status === 200) {
-          setQuery({
-            heading: "",
-            para1: "",
-            para2: "",
-            startDate: "",
-            endDate: "",
-            page: [],
-          });
-          setEndDate("");
-          setStartDate("");
-        } else {
-          setDisplay(true);
-        }
-      } catch (error) {
-        console.log(error);
-      }
+    setLoading(true);
 
-      setLoading(false);
+    try {
+      const data = await fetch("/api/v1/generateBatchDate", {
+        method: "POST",
+        body: JSON.stringify(query),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (data.status === 200) {
+        setQuery({
+          batchDates: "",
+          batchType: "",
+          batchStatus: "",
+          page: [],
+          batchWeek: "",
+          batchDesc1: "",
+          batchDesc2: "",
+        });
+        setStartDate("");
+        alert("batch added");
+      }
+    } catch (error) {
+      console.log(error);
     }
+
+    setLoading(false);
   };
-  useEffect(() => {
-    const timeOut = setTimeout(() => {
-      setDisplay(false);
-    }, 100);
-    clearTimeout(timeOut);
-  }, [display]);
-  let btnText = "Generate Popup";
+
+  let btnText = "Submit Details";
   const filterPassedTime = (time) => {
     const currentDate = new Date();
     const selectedDate = new Date(time);
 
     return currentDate.getTime() < selectedDate.getTime();
   };
-  console.log(popupData.length >= 2);
   return (
     <div className={styles.App}>
       <form
         onSubmit={formSubmit}
         onChange={() => {
-          setDisplay(false);
           setError(false);
         }}
       >
-        <div className={styles.formWrapper}>
-          <input
-            id="heading"
-            type="text"
-            name="heading"
-            required
-            placeholder="Enter Popup Heading*"
-            className={styles.EmailInput}
-            value={query.heading}
-            onChange={handleParam()}
-          />
-        </div>
-
-        <div className={styles.formWrapper}>
-          <textarea
-            type="text"
-            name="para1"
-            required
-            placeholder="Enter first para*"
-            className={styles.EmailInput}
-            value={query.para1}
-            onChange={handleParam()}
-          />
-        </div>
-        <div className={styles.formWrapper}>
-          <textarea
-            type="text"
-            name="para2"
-            placeholder="Enter second para"
-            className={styles.EmailInput}
-            value={query.para2}
-            onChange={handleParam()}
-          />
-        </div>
         <div className={styles.inner} style={{ marginBottom: "10px" }}>
           <DatePicker
             selected={startDate}
@@ -181,39 +159,92 @@ const AddPopupFrom = () => {
             minDate={subDays(new Date(), 0)}
             wrapperClassName={styles.date}
             className={styles.datePicker}
-            placeholderText="Enter Popup start Date"
+            placeholderText="Enter Batch Date"
             dateFormat="MMMM d, yyyy h:mm aa"
             required
           />
         </div>
-        <div className={styles.inner} style={{ marginBottom: "10px" }}>
-          <DatePicker
-            selected={endDate}
-            name="endDate"
-            id="dateTime"
-            minDate={subDays(new Date(), 0)}
-            onChange={(date) => {
-              setEndDate(date);
-            }}
-            showTimeSelect
-            timeIntervals={15}
-            filterTime={filterPassedTime}
-            wrapperClassName={styles.date}
-            className={styles.datePicker}
-            placeholderText="Enter Popup End Date"
-            dateFormat="MMMM d, yyyy h:mm aa"
+
+        <div className={styles.formWrapper}>
+          <select
+            name="batchType"
             required
-          />
-          {error ? (
-            <label htmlFor="endDate">
-              end date must be greater than start date
-            </label>
-          ) : (
-            ""
-          )}
+            value={query.batchType}
+            onChange={handleParam()}
+            placeholder="Select Batch Type*"
+          >
+            <option className={styles.option} value="">
+              select batch type
+            </option>
+            <option className={styles.option} value="Weekday">
+              Weekday
+            </option>
+
+            <option value="Weekend">Weekend</option>
+          </select>
         </div>
         <div className={styles.formWrapper}>
-          <label>Select courses You want to display popup</label>
+          <select
+            name="batchStatus"
+            required
+            value={query.batchStatus}
+            onChange={handleParam()}
+            placeholder="Select Batch Status*"
+          >
+            <option className={styles.option} value="">
+              select batch status
+            </option>
+            <option className={styles.option} value="Filled">
+              Filled
+            </option>
+
+            <option value="Partially Filled">Partially Filled</option>
+          </select>
+        </div>
+        <div className={styles.formWrapper}>
+          <select
+            name="batchWeek"
+            required
+            value={query.batchWeek}
+            onChange={handleParam()}
+            placeholder="Select Batch WeekDay*"
+          >
+            <option
+              className={styles.option}
+              value="Weekday Batch (Mon -  Fri)"
+            >
+              Weekday Batch (Mon - Fri)
+            </option>
+
+            <option value="Weekend Batch (Sat -  Sun)">
+              Weekend Batch (Sat - Sun)
+            </option>
+          </select>
+        </div>
+        <div className={styles.formWrapper}>
+          <textarea
+            type="text"
+            name="batchDesc1"
+            placeholder="Enrollment for this batch is no longer accepted"
+            className={styles.EmailInput}
+            value={query.batchDesc1}
+            required
+            onChange={handleParam()}
+          />
+        </div>
+        <div className={styles.formWrapper}>
+          <textarea
+            type="text"
+            name="batchDesc2"
+            required
+            placeholder="Seats are partially filled"
+            className={styles.EmailInput}
+            value={query.batchDesc2}
+            onChange={handleParam()}
+          />
+        </div>
+        <div className={styles.formWrapper}>
+          <label>Select courses You want to display Batch</label>
           <div className={styles.checkBoxDiv}>
             <input
               type="checkbox"
@@ -266,7 +297,7 @@ const AddPopupFrom = () => {
             <input
               type="checkbox"
               name="pages"
-              value=" Data Structures and Algorithms + System Design"
+              value="Data Structures and Algorithms + System Design"
               id="flexCheckDefault"
               onChange={handleChange}
             />
@@ -275,6 +306,7 @@ const AddPopupFrom = () => {
             </label>
           </div>
         </div>
+
         {loading ? (
           <div className="center">
             <div className="wave"></div>
@@ -288,18 +320,14 @@ const AddPopupFrom = () => {
             <div className="wave"></div>
             <div className="wave"></div>
           </div>
-        ) : popupData.length >= 2 ? (
-          <button className={styles.dButton}>{btnText}</button>
         ) : (
           <button type="submit" className={styles.button}>
             {btnText}
           </button>
         )}
       </form>
-      {popupData.length === 0 ? "" : <DashboardBox popupData={popupData} />}
-      {display ? <Toast content="popup created" success shows /> : ""}
     </div>
   );
 };
 
-export default AddPopupFrom;
+export default BatchDateForm;

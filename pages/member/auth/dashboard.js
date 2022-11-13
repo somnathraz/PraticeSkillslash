@@ -16,6 +16,8 @@ import { TbFileInvoice } from "react-icons/tb";
 import AddUserFrom from "../../../components/PaymentForm/AddUserForm";
 import Image from "next/image";
 import AddPopupFrom from "../../../components/PaymentForm/PopupDetails";
+import BatchDates from "../../../components/Batch/BatchDates";
+import BatchDateForm from "../../../components/PaymentForm/BatchDateForm";
 
 const Dashboard = (props) => {
   const discountPercentRef = useRef();
@@ -424,7 +426,8 @@ const Dashboard = (props) => {
         )}
         {showItem.seventh ? (
           <div className={styles.loan}>
-            <h2>Generate Popup</h2>
+            <h2>Edit Batch details</h2>
+            <BatchDateForm />
           </div>
         ) : (
           ""

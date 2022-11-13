@@ -184,6 +184,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
         coursePrice: "",
         paymentMode: "",
         salesEmail: "",
+        paymentType: "",
         salesMan: "",
         invoiceId: "",
         paymentMode: "",

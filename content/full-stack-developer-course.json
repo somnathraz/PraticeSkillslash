@@ -13,6 +13,7 @@
         "@type": "Brand",
         "name": "Skillslash"
       },
+
       "offers": {
         "@type": "AggregateOffer",
         "url": "https://skillslash.com/full-stack-developer-course",

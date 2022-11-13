@@ -1,0 +1,279 @@
+.BatchDates {
+  display: flex;
+  flex-flow: column;
+  margin: 40px 100px;
+  justify-content: center;
+}
+.MHeading {
+  margin-bottom: 20px;
+}
+.batchDateWrap,
+.batchDateWrapActive {
+  display: grid;
+  grid-template-columns: 10% 34% 19% 19%;
+  gap: 15px;
+  margin-bottom: 10px;
+
+  justify-content: space-between;
+  height: max-content;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border-radius: 8px;
+  padding: 5px;
+}
+.batchDetailsMobile {
+  display: none;
+}
+.date {
+  background-color: #ecf3fe;
+  padding: 10px 35px;
+  display: flex;
+  border-radius: 8px;
+  height: 100%;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+.dateActive {
+  background-color: #0487d9;
+  padding: 10px 35px;
+  display: flex;
+  border-radius: 8px;
+  height: 100%;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+.month {
+  color: #000;
+  letter-spacing: 5px;
+  font-size: 14px;
+  margin: 0;
+  font-weight: 500;
+}
+.dateActive .month {
+  color: white;
+}
+.date p {
+  margin: 0;
+  line-height: 60px;
+  font-size: 50px;
+  color: #000;
+  font-weight: bold;
+}
+.dateActive p {
+  margin: 0;
+  line-height: 60px;
+  font-size: 50px;
+  color: white;
+  font-weight: bold;
+}
+.batchDetailsWrap,
+.batchInfo,
+.enrollWrap {
+  display: flex;
+  align-items: center;
+}
+.batchDetails h5 {
+  font-size: 22px;
+  margin: 0;
+  line-height: 35px;
+}
+
+.batchDetails p {
+  margin: 0;
+}
+.tag {
+  background-color: #f28705;
+  color: white;
+  border-radius: 4px;
+  display: flex;
+  width: 100%;
+
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+  font-size: 12px;
+}
+.dateActive .tag {
+  background: white;
+  color: #f28705;
+}
+.batchInfo {
+  flex-flow: column;
+  align-items: unset;
+  justify-content: center;
+  gap: 15px;
+}
+.batchStatus span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.activeBatch {
+  background-color: #e0f3ff;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+.batchTypeName {
+  margin: 0;
+  color: #000;
+  font-size: 14px;
+}
+.batchType,
+.batchFilled {
+  padding: 5px 15px;
+  border-radius: 4px;
+  align-items: center;
+
+  width: 100%;
+}
+.batchFilled {
+  background: #fff7ed;
+}
+
+.status {
+  margin: 0;
+  font-size: 14px;
+  color: #000000;
+}
+.spanIcon {
+  color: #f28705;
+}
+.spanIconA {
+  color: #0487d9;
+}
+.red {
+  color: #a85978;
+  font-weight: 600;
+}
+.button {
+  font-size: 12px;
+  color: #0487d9;
+  font-weight: 600;
+  cursor: not-allowed;
+  border: 1px solid #0487d9;
+  background-color: transparent;
+  padding: 15px 35px;
+  margin-right: 30px;
+}
+
+.activeButton {
+  font-size: 12px;
+  color: white;
+  font-weight: 600;
+  background-color: #0487d9;
+  padding: 15px 35px;
+  margin-right: 30px;
+}
+@media (max-width: 1281px) {
+  .BatchDates {
+    margin: 40px 70px;
+  }
+}
+@media (max-width: 1025px) {
+  .BatchDates {
+    margin: 40px 30px;
+  }
+}
+@media (max-width: 961px) {
+  .batchDateWrap,
+  .batchDateWrapActive {
+    display: flex;
+    gap: 10px;
+  }
+
+  .date,
+  .dateActive {
+    padding: 10px 30px;
+  }
+  .date P,
+  .dateActive p {
+    font-size: 35px;
+    line-height: 40px;
+  }
+  .month {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+  .batchDetails h5 {
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .batchDetails p {
+    font-size: 12px;
+  }
+  .status,
+  .batchTypeName {
+    font-size: 12px;
+  }
+  .button,
+  .activeButton {
+    margin-right: 10px;
+  }
+}
+@media (max-width: 801px) {
+  .batchInfo {
+    display: none;
+  }
+  .batchDetailsMobile {
+    display: flex;
+    gap: 5px;
+  }
+  .batchTypeMobile,
+  .batchFilledMobile {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+}
+@media (max-width: 481px) {
+  .BatchDates {
+    margin: 20px 10px;
+  }
+  .batchDateWrap {
+    border-left: 4px solid #f28705;
+  }
+  .batchDateWrapActive {
+    border-left: 4px solid #0487d9;
+  }
+  .batchFilledMobile {
+    display: none;
+  }
+
+  .date,
+  .dateActive {
+    background: transparent;
+    padding: 0;
+  }
+  .month {
+    color: #f28705;
+  }
+  .date p {
+    color: #f28705;
+  }
+  .dateActive p {
+    color: #0487d9;
+  }
+  .dateActive .month {
+    color: #0487d9;
+  }
+  .dateActive .tag {
+    background-color: #ecf3fe;
+    color: #0487d9;
+  }
+  .button,
+  .activeButton {
+    padding: 8px 15px;
+    margin-right: 0px;
+  }
+  .batchDetails h5 {
+    font-size: 14px;
+  }
+  .desc {
+    display: none;
+  }
+}

@@ -28,6 +28,7 @@ import { BsArrowRightCircleFill } from "react-icons/bs";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import Navbar from "../components/Navbar/Navbar";
 import Product from "../components/Product/Product";
+import BatchDates from "../components/Batch/BatchDates";
 
 export default function Home() {
   const [popups, setPopups] = useState(false);
@@ -177,7 +178,11 @@ export default function Home() {
           productData={setProductData}
           showProducts={setShowProduct}
         />
-        <BatchDetails
+        <BatchDates
+          batchDetails={DataScienceCourseData[0].BatchDates}
+          dataScience={true}
+        />
+        {/* <BatchDetails
           props={DataScienceCourseData[0].product}
           dataScience={true}
           changeBatch={true}
@@ -198,7 +203,7 @@ export default function Home() {
           }
           weekEndBatch={DataScienceCourseData[0].BatchDetails.weekEndBatch}
           weekDayBatch={DataScienceCourseData[0].BatchDetails.weekDayBatch}
-        />
+        /> */}
 
         <BannerCTA dataScience={true} />
         <div className="faq" id="faq">

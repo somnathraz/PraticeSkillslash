@@ -11,6 +11,7 @@ import Reviews from "../components/Review/Reviews";
 import CTA from "../components/CTA/CTA";
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
+import BatchDates from "../components/Batch/BatchDates";
 
 export default function Home() {
   return (
@@ -51,6 +52,7 @@ export default function Home() {
           <Steps />
         </div>
         <RealWork />
+        <BatchDates />
         <Reviews
           home={true}
           title="Our Mission Is To Provide World-Class Education"

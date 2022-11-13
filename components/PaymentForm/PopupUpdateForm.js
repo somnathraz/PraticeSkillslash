@@ -5,7 +5,6 @@ import subDays from "date-fns/subDays";
 
 const UpdatePopupFrom = ({ id, setUpdateForm }) => {
   const [popupData, setPopupData] = useState([]);
-
   const [startDate, setStartDate] = useState();
 
   const [endDate, setEndDate] = useState();
@@ -21,6 +20,7 @@ const UpdatePopupFrom = ({ id, setUpdateForm }) => {
     startDate: "",
     endDate: "",
   });
+
   useEffect(() => {
     const fetchPopup = async () => {
       const data = await fetch("/api/v1/singlePopup", {
