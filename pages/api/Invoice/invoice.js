@@ -108,6 +108,7 @@ export default async function pdfGenerate(req, res) {
     const mailData = {
       from: "admissions@skillslash.com",
       to: customerEmail,
+      cc: "invoice@skillslash.com",
       subject: `invoice From Skillslash`,
       attachments: [
         {
