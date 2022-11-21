@@ -52,7 +52,7 @@ export default function Home() {
           <Steps />
         </div>
         <RealWork />
-        <BatchDates />
+
         <Reviews
           home={true}
           title="Our Mission Is To Provide World-Class Education"

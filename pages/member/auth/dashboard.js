@@ -239,7 +239,6 @@ const Dashboard = (props) => {
               className={showItem.eight ? styles.spanActive : styles.span}
               onClick={() =>
                 setShowItem({
-                  ...showItem,
                   second: false,
                   first: false,
                   third: false,
@@ -276,6 +275,8 @@ const Dashboard = (props) => {
                       fourth: false,
                       fifth: false,
                       sixth: false,
+                      eight: false,
+                      seventh: false,
                     })
                   }
                 >
@@ -298,6 +299,8 @@ const Dashboard = (props) => {
                       fourth: true,
                       fifth: false,
                       sixth: false,
+                      seventh: false,
+                      eight: false,
                     })
                   }
                 >
@@ -319,6 +322,9 @@ const Dashboard = (props) => {
                       second: false,
                       fourth: false,
                       fifth: true,
+                      sixth: false,
+                      seventh: false,
+                      eight: false,
                     })
                   }
                 >
