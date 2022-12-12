@@ -5,86 +5,32 @@ import subDays from "date-fns/subDays";
 
 const BatchDateForm = ({ id, setUpdateForm }) => {
   const [startDate, setStartDate] = useState();
+  const [startTime, setStartTime] = useState();
+  const [endTime, setEndTime] = useState();
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const [query, setQuery] = useState({
     batchDates: startDate,
+    batchStartTime: startTime,
+    batchEndTime: endTime,
     batchType: "",
     batchStatus: "",
-    page: [],
+    page: "",
     batchWeek: "",
     batchDesc1: "",
     batchDesc2: "",
+    activeBatch: "",
   });
 
-  // useEffect(() => {
-  //   const fetchPopup = async () => {
-  //     const data = await fetch("/api/v1/singlePopup", {
-  //       method: "POST",
-  //       body: JSON.stringify({ id: id, soloData: true }),
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //     });
-  //     if (data.status === 200) {
-  //       const { myPost } = await data.json();
-
-  //       setQuery({
-  //         id: id,
-  //         heading: myPost.heading,
-  //         para1: myPost.para1,
-  //         para2: myPost.para2,
-  //         page: [],
-  //         startDate: myPost.startDate,
-  //         endDate: myPost.endDate,
-  //       });
-  //       showList(myPost.page);
-  //       setStartDate(new Date(myPost.startDate));
-  //       setEndDate(new Date(myPost.endDate));
-  //     }
-  //   };
-  //   fetchPopup();
-  // }, [id]);
-  useEffect(() => {
-    const fetchPopup = async () => {
-      const data = await fetch("/api/v1/generateBatchDate", {
-        method: "GET",
-      });
-      if (data.status === 200) {
-        const { popData, msg } = await data.json();
-        setPopupData(popData);
-      }
-    };
-    fetchPopup();
-  }, []);
   useEffect(() => {
     setQuery({
       ...query,
       batchDates: startDate,
+      batchStartTime: startTime,
+      batchEndTime: endTime,
     });
-  }, [startDate]);
+  }, [startDate, startTime, endTime]);
   // Update inputs value
-  const handleChange = (e) => {
-    // Destructuring
-    const { value, checked } = e.target;
-    const { page } = query;
-
-    // Case 1 : The user checks the box
-    if (checked) {
-      setQuery({
-        ...query,
-        page: [...page, value],
-      });
-    }
-
-    // Case 2  : The user unchecks the box
-    else {
-      setQuery({
-        ...query,
-        page: page.filter((e) => e !== value),
-      });
-    }
-  };
 
   const handleParam = () => (e) => {
     const name = e.target.name;
@@ -115,12 +61,17 @@ const BatchDateForm = ({ id, setUpdateForm }) => {
           batchDates: "",
           batchType: "",
           batchStatus: "",
-          page: [],
+          page: "",
           batchWeek: "",
           batchDesc1: "",
           batchDesc2: "",
+          batchStartTime: "",
+          batchEndTime: "",
+          activeBatch: "",
         });
         setStartDate("");
+        setStartTime("");
+        setEndTime("");
         alert("batch added");
       }
     } catch (error) {
@@ -153,15 +104,43 @@ const BatchDateForm = ({ id, setUpdateForm }) => {
             onChange={(date) => {
               setStartDate(date);
             }}
-            showTimeSelect
-            timeIntervals={15}
-            filterTime={filterPassedTime}
             minDate={subDays(new Date(), 0)}
             wrapperClassName={styles.date}
             className={styles.datePicker}
             placeholderText="Enter Batch Date"
-            dateFormat="MMMM d, yyyy h:mm aa"
+            dateFormat="MMMM d, yyyy"
             required
+          />
+        </div>
+        <div className={styles.inners} style={{ marginBottom: "10px" }}>
+          <DatePicker
+            selected={startTime}
+            onChange={(date) => {
+              setStartTime(date);
+            }}
+            showTimeSelect
+            showTimeSelectOnly
+            timeIntervals={60}
+            timeCaption="Time"
+            dateFormat="h:mm aa"
+            wrapperClassName={styles.date}
+            className={styles.datePicker}
+            placeholderText="Enter Batch Start Time"
+            required
+          />
+          <DatePicker
+            selected={endTime}
+            onChange={(date) => {
+              setEndTime(date);
+            }}
+            showTimeSelect
+            showTimeSelectOnly
+            timeIntervals={15}
+            timeCaption="Time"
+            dateFormat="h:mm aa"
+            placeholderText="Enter Batch End Time"
+            wrapperClassName={styles.date}
+            className={styles.datePicker}
           />
         </div>
 
@@ -176,11 +155,12 @@ const BatchDateForm = ({ id, setUpdateForm }) => {
             <option className={styles.option} value="">
               select batch type
             </option>
-            <option className={styles.option} value="Weekday">
-              Weekday
+            <option className={styles.option} value="Morning Batch,">
+              Morning Batch
             </option>
 
-            <option value="Weekend">Weekend</option>
+            <option value="Afternoon Batch,">Afternoon Batch</option>
+            <option value="Evening Batch,">Evening Batch</option>
           </select>
         </div>
         <div className={styles.formWrapper}>
@@ -189,10 +169,10 @@ const BatchDateForm = ({ id, setUpdateForm }) => {
             required
             value={query.batchStatus}
             onChange={handleParam()}
-            placeholder="Select Batch Status*"
+            placeholder="Select Batch seat details*"
           >
             <option className={styles.option} value="">
-              select batch status
+              select batch seat Details*
             </option>
             <option className={styles.option} value="Filled">
               Filled
@@ -209,6 +189,9 @@ const BatchDateForm = ({ id, setUpdateForm }) => {
             onChange={handleParam()}
             placeholder="Select Batch WeekDay*"
           >
+            <option className={styles.option} value="">
+              Select Batch Week
+            </option>
             <option
               className={styles.option}
               value="Weekday Batch (Mon -  Fri)"
@@ -219,6 +202,23 @@ const BatchDateForm = ({ id, setUpdateForm }) => {
             <option value="Weekend Batch (Sat -  Sun)">
               Weekend Batch (Sat - Sun)
             </option>
+          </select>
+        </div>
+        <div className={styles.formWrapper}>
+          <select
+            name="activeBatch"
+            required
+            value={query.activeBatch}
+            onChange={handleParam()}
+            placeholder="Select batch status*"
+          >
+            <option className={styles.option} value="">
+              Select batch status*
+            </option>
+            <option className={styles.option} value="true">
+              true
+            </option>
+            <option value="false">false</option>
           </select>
         </div>
         <div className={styles.formWrapper}>
@@ -247,11 +247,11 @@ const BatchDateForm = ({ id, setUpdateForm }) => {
           <label>Select courses You want to display Batch</label>
           <div className={styles.checkBoxDiv}>
             <input
-              type="checkbox"
-              name="pages"
+              type="radio"
+              name="page"
               value="Adv Data Science and AI"
               id="flexCheckDefault"
-              onChange={handleChange}
+              onChange={handleParam()}
             />
             <label className="form-check-label" htmlFor="flexCheckDefault">
               Adv Data Science and AI
@@ -259,11 +259,11 @@ const BatchDateForm = ({ id, setUpdateForm }) => {
           </div>
           <div className={styles.checkBoxDiv}>
             <input
-              type="checkbox"
-              name="pages"
+              type="radio"
+              name="page"
               value="Full Stack Developer course with certification"
               id="flexCheckDefault"
-              onChange={handleChange}
+              onChange={handleParam()}
             />
             <label className="form-check-label" htmlFor="flexCheckDefault">
               Full Stack Developer course with certification
@@ -271,11 +271,11 @@ const BatchDateForm = ({ id, setUpdateForm }) => {
           </div>
           <div className={styles.checkBoxDiv}>
             <input
-              type="checkbox"
-              name="pages"
+              type="radio"
+              name="page"
               value="Blockchain program and certification"
               id="flexCheckDefault"
-              onChange={handleChange}
+              onChange={handleParam()}
             />
             <label className="form-check-label" htmlFor="flexCheckDefault">
               Blockchain program and certification
@@ -283,11 +283,11 @@ const BatchDateForm = ({ id, setUpdateForm }) => {
           </div>
           <div className={styles.checkBoxDiv}>
             <input
-              type="checkbox"
-              name="pages"
+              type="radio"
+              name="page"
               value="Business Analytics Program For Professionals"
               id="flexCheckDefault"
-              onChange={handleChange}
+              onChange={handleParam()}
             />
             <label className="form-check-label" htmlFor="flexCheckDefault">
               Business Analytics Program For Professionals
@@ -295,11 +295,11 @@ const BatchDateForm = ({ id, setUpdateForm }) => {
           </div>
           <div className={styles.checkBoxDiv}>
             <input
-              type="checkbox"
-              name="pages"
+              type="radio"
+              name="page"
               value="Data Structures and Algorithms + System Design"
               id="flexCheckDefault"
-              onChange={handleChange}
+              onChange={handleParam()}
             />
             <label className="form-check-label" htmlFor="flexCheckDefault">
               Data Structures and Algorithms + System Design

@@ -162,7 +162,8 @@
   flex-flow: column;
   justify-content: center;
 }
-.inner .date input {
+.inner .date input,
+.inners .date input {
   border: 1px solid #0487d9;
   border-radius: 8px;
   padding: 10px;
@@ -172,7 +173,8 @@
   font-size: 17px;
 }
 
-.inner .time {
+.inner .time,
+.inners .time {
   border: 1px solid #0487d9;
   border-radius: 8px;
   padding: 10px;
@@ -217,6 +219,12 @@
 .inner {
   display: grid;
   grid-template-columns: 100%;
+  gap: 10px;
+  width: 100%;
+}
+.inners {
+  display: grid;
+  grid-template-columns: 49% 49%;
   gap: 10px;
   width: 100%;
 }

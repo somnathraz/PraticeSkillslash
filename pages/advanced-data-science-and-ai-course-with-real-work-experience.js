@@ -35,6 +35,7 @@ export default function Home() {
   const [productData, setProductData] = useState(
     DataScienceCourseData[0].product
   );
+  const [batchDateData, setBatchDateData] = useState("");
   const [showProduct, setShowProduct] = useState(false);
 
   const popupShow = () => {
@@ -42,7 +43,24 @@ export default function Home() {
   };
   console.log(productData, "ProductData");
   console.log(showProduct, "showProduct");
-
+  useEffect(() => {
+    console.log("inside");
+    const fetchBatch = async () => {
+      const data = await fetch("/api/v1/getBatchDate", {
+        method: "POST",
+        body: JSON.stringify("Adv Data Science and AI"),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (data.status === 200) {
+        const { batchDate } = await data.json();
+        setBatchDateData(batchDate);
+      }
+    };
+    fetchBatch();
+  }, []);
+  console.log(batchDateData, "state");
   return (
     <>
       <Navbar dataScience={true} course={true} />
@@ -178,10 +196,15 @@ export default function Home() {
           productData={setProductData}
           showProducts={setShowProduct}
         />
-        <BatchDates
-          batchDetails={DataScienceCourseData[0].BatchDates}
-          dataScience={true}
-        />
+        {batchDateData === "" ? (
+          ""
+        ) : (
+          <BatchDates
+            batchDetails={batchDateData.batchDetails}
+            dataScience={true}
+          />
+        )}
+
         {/* <BatchDetails
           props={DataScienceCourseData[0].product}
           dataScience={true}

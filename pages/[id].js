@@ -19,7 +19,7 @@ import RealWork from "../components/Course/ReaWork/RealWork";
 import Project from "../components/Course/Project/Project";
 import Reviews from "../components/Review/Reviews";
 import Footer from "../components/Footer/Footer";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Popup from "../components/Popup/Popup";
 import Form from "../components/Form/Form";
 import BottomBar from "../components/Course/BottomBar/BottomBar";
@@ -44,6 +44,7 @@ export default function Home({ DataScienceCourseData }) {
   const popupShow = () => {
     setPopups(true);
   };
+
   return (
     <>
       <Navbar

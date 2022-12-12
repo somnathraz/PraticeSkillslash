@@ -10,64 +10,123 @@ function getMonthShortName(monthNo) {
 export default async function handler(req, res) {
   const { db } = await connectToDatabase();
   if (req.method === "POST") {
-    const idArray = [];
+    let id = "";
+
     const {
       batchDates,
       batchType,
       batchStatus,
+      batchStartTime,
+      batchEndTime,
       page,
       batchWeek,
       batchDesc1,
       batchDesc2,
+      activeBatch,
     } = req.body;
+
     const batchDate = new Date(batchDates).getDate();
     const batchMonth = getMonthShortName(new Date(batchDates).getMonth());
+    const addDate = new Date(batchDates);
+    addDate.setDate(addDate.getDate() + 1);
+    console.log(addDate);
+    if (page === "Adv Data Science and AI") {
+      id = "FAIML";
+    }
+    if (page === "Full Stack Developer course with certification") {
+      id = "FSD";
+    }
+    if (page === "Blockchain program and certification") {
+      id = "BLC";
+    }
+    if (page === "Business Analytics Program For Professionals") {
+      id = "BAP";
+    }
+    if (page === "Data Structures and Algorithms + System Design") {
+      id = "DSA";
+    }
 
-    page.map((pageName, i) => {
-      if (pageName === "Adv Data Science and AI") {
-        idArray.push("FAIML");
-      }
-      if (pageName === "Full Stack Developer course with certification") {
-        idArray.push("FSD");
-      }
-      if (pageName === "Blockchain program and certification") {
-        idArray.push("BLC");
-      }
-      if (pageName === "Business Analytics Program For Professionals") {
-        idArray.push("BLC");
-      }
-      if (pageName === "Data Structures and Algorithms + System Design") {
-        idArray.push("DSA");
-      }
-    });
-    let id = Array.from(new Set(idArray));
     try {
       const checkForId = await db.collection("batchDate").findOne({
         id,
       });
       if (checkForId) {
+        const updateBatch = await db.collection("batchDate").updateOne(
+          {
+            id: id,
+          },
+          {
+            $push: {
+              batchDetails: {
+                batchDate: batchDate,
+                batchMonth: batchMonth.toUpperCase(),
+                batchStatus: batchStatus,
+                batchType: batchType,
+                batchStartTime: new Date(batchStartTime).toLocaleTimeString(
+                  [],
+                  { hour: "2-digit", minute: "2-digit" }
+                ),
+                batchEndTime: new Date(batchEndTime).toLocaleTimeString([], {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                }),
+                batchDesc: batchDesc1,
+                batchWeek: batchWeek,
+                batchMsg: batchDesc2,
+                activeBatch: activeBatch,
+                expireAt: addDate,
+              },
+            },
+          }
+        );
+        await db
+          .collection("batchDate")
+          .createIndex({ expireAt: 1 }, { expireAfterSeconds: 0 });
+        res.send("hello");
       } else {
         const CreateBatch = await db.collection("batchDate").insertOne({
           id,
           batchDetails: [
             {
-              batchDate: "11",
-              batchMonth: "NOV",
+              batchDate: batchDate,
+              batchMonth: batchMonth.toUpperCase(),
               batchStatus: batchStatus,
-              batchType: "Evening Batch, ",
-              batchTime: "08:00 to 10:00",
-              batchDesc:
-                "Enrollment for this batch will be closed by today 11 PM",
-              batchWeek: "weekday batch (Mon - Fri)",
-              batchMsg: "Seats are almost filled",
-              activeBatch: true,
+              batchType: batchType + ",",
+              batchStartTime: new Date(batchStartTime).toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit",
+              }),
+              batchEndTime: new Date(batchEndTime).toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit",
+              }),
+              batchDesc: batchDesc1,
+              batchWeek: batchWeek,
+              batchMsg: batchDesc2,
+              activeBatch: activeBatch,
+              expireAt: addDate,
             },
           ],
         });
+        await db
+          .collection("batchDate")
+          .createIndex({ expireAt: 1 }, { expireAfterSeconds: 0 });
+        res.send("hello");
       }
     } catch (error) {}
   }
+  if (req.method === "GET") {
+    try {
+      const batchDates = [];
 
-  console.log(req.body);
-  res.send("hello");
+      let myPost = await db
+        .collection("batchDate")
+        .find()
+        .forEach(function (item) {
+          batchDates.push(item);
+        });
+
+      res.status(200).json({ batchDates, msg: "BatchDate" });
+    } catch (error) {}
+  }
 }

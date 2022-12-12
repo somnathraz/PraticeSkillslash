@@ -13,8 +13,8 @@ const BatchDates = ({
   redirectBl,
   redirectDe,
   redirectFs,
+  redirectWeb,
 }) => {
-  console.log(batchDetails);
   const [popups, setPopups] = useState(false);
   const [mobile, setMobile] = useState(false);
   useEffect(() => {
@@ -45,99 +45,107 @@ const BatchDates = ({
             redirectBa={redirectBa}
             redirectBl={redirectBl}
             redirectDe={redirectDe}
+            redirectWeb={redirectWeb}
           />
         </div>
       </Popup>
       <h4 className={styles.MHeading}>Next cohorts Dates</h4>
-      {batchDetails.map((data, i) => {
-        return (
-          <div
-            className={
-              data.activeBatch
-                ? styles.batchDateWrapActive
-                : styles.batchDateWrap
-            }
-            key={i}
-          >
-            <div className={styles.dateWrap}>
-              <div
-                className={data.activeBatch ? styles.dateActive : styles.date}
-              >
-                <span className={styles.month}>{data.batchMonth}</span>
-                <p>{data.batchDate}</p>
-                <span className={styles.tag}>{data.batchStatus}</span>
+
+      {batchDetails === [] ? (
+        <p>Batch Date will be updated soon!</p>
+      ) : (
+        batchDetails.map((data, i) => {
+          const startTime = data.batchStartTime.split(" ");
+          const endTime = data.batchEndTime.split(" ");
+          return (
+            <div
+              className={
+                data.activeBatch
+                  ? styles.batchDateWrapActive
+                  : styles.batchDateWrap
+              }
+              key={i}
+            >
+              <div className={styles.dateWrap}>
+                <div
+                  className={data.activeBatch ? styles.dateActive : styles.date}
+                >
+                  <span className={styles.month}>{data.batchMonth}</span>
+                  <p>{data.batchDate}</p>
+                  <span className={styles.tag}>{data.batchStatus}</span>
+                </div>
               </div>
-            </div>
-            <div className={styles.batchDetailsWrap}>
-              <div className={styles.batchDetails}>
-                <h5>
-                  {data.batchType}
-                  {data.batchTime}
-                </h5>
-                {data.activeBatch ? (
-                  <p className={styles.desc}>{data.batchDesc} </p>
-                ) : (
-                  <p className={styles.desc}>{data.batchDesc} </p>
-                )}
-                <p className={styles.desc}>{data.batchDesc} </p>
-                <div className={styles.batchDetailsMobile}>
-                  <span className={styles.batchTypeMobile}>
-                    <AiOutlineCalendar className={styles.spanIcon} />
+              <div className={styles.batchDetailsWrap}>
+                <div className={styles.batchDetails}>
+                  <h5>
+                    {data.batchType}
+                    {startTime[0]} to {endTime[0]}
+                  </h5>
+                  {data.activeBatch ? (
+                    <p className={styles.desc}>{data.batchDesc} </p>
+                  ) : (
+                    <p className={styles.desc}>{data.batchDesc} </p>
+                  )}
+
+                  <div className={styles.batchDetailsMobile}>
+                    <span className={styles.batchTypeMobile}>
+                      <AiOutlineCalendar className={styles.spanIcon} />
+                      <p className={styles.batchTypeName}>{data.batchWeek}</p>
+                    </span>
+                    <span className={styles.batchFilledMobile}>
+                      <MdDoneAll className={styles.spanIcon} />
+                      <p className={styles.status}>{data.batchMsg}</p>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.batchInfo}>
+                <div className={styles.batchStatus}>
+                  <span
+                    className={
+                      data.activeBatch ? styles.activeBatch : styles.batchType
+                    }
+                  >
+                    <AiOutlineCalendar
+                      className={
+                        data.activeBatch ? styles.spanIconA : styles.spanIcon
+                      }
+                    />
+
                     <p className={styles.batchTypeName}>{data.batchWeek}</p>
                   </span>
-                  <span className={styles.batchFilledMobile}>
-                    <MdDoneAll className={styles.spanIcon} />
+                </div>
+                <div className={styles.batchStatus}>
+                  <span
+                    className={
+                      data.activeBatch ? styles.activeBatch : styles.batchFilled
+                    }
+                  >
+                    <MdDoneAll
+                      className={
+                        data.activeBatch ? styles.spanIconA : styles.spanIcon
+                      }
+                    />
                     <p className={styles.status}>{data.batchMsg}</p>
                   </span>
                 </div>
               </div>
-            </div>
-            <div className={styles.batchInfo}>
-              <div className={styles.batchStatus}>
-                <span
-                  className={
-                    data.activeBatch ? styles.activeBatch : styles.batchType
-                  }
-                >
-                  <AiOutlineCalendar
+              <div className={styles.enrollWrap}>
+                <div className={styles.batchEnroll}>
+                  <button
                     className={
-                      data.activeBatch ? styles.spanIconA : styles.spanIcon
+                      data.activeBatch ? styles.activeButton : styles.button
                     }
-                  />
-
-                  <p className={styles.batchTypeName}>{data.batchWeek}</p>
-                </span>
-              </div>
-              <div className={styles.batchStatus}>
-                <span
-                  className={
-                    data.activeBatch ? styles.activeBatch : styles.batchFilled
-                  }
-                >
-                  <MdDoneAll
-                    className={
-                      data.activeBatch ? styles.spanIconA : styles.spanIcon
-                    }
-                  />
-                  <p className={styles.status}>{data.batchMsg}</p>
-                </span>
+                    onClick={popupShow}
+                  >
+                    Enroll Now
+                  </button>
+                </div>
               </div>
             </div>
-            <div className={styles.enrollWrap}>
-              <div className={styles.batchEnroll}>
-                <button
-                  className={
-                    data.activeBatch ? styles.activeButton : styles.button
-                  }
-                  onClick={popupShow}
-                >
-                  Enroll Now
-                </button>
-              </div>
-            </div>
-          </div>
-        );
-      })}
+          );
+        })
+      )}
       {/* <div className={styles.batchDateWrap}>
         <div className={styles.dateWrap}>
           <div className={styles.date}>
