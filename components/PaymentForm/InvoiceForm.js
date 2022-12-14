@@ -294,6 +294,9 @@ const InvoiceForm = ({ refund, salesMan }) => {
             <option value="Data Structures and Algorithms + System Design">
               Data Structures and Algorithms + System Design
             </option>
+            <option value="Full stack Web Development Course with Real Work Experience">
+              Full stack Web Development Course with Real Work Experience
+            </option>
           </select>
         </div>
         <div className={styles.formWrapper}>
