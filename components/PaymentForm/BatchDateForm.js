@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import styles from "../ContactusForm/ContactUsForm.module.css";
 import DatePicker from "react-datepicker";
 import subDays from "date-fns/subDays";
+import BatchDateBox from "../BatchDateBox/BatchDateBox";
+
 
 const BatchDateForm = ({ id, setUpdateForm }) => {
   const [startDate, setStartDate] = useState();
@@ -9,6 +11,8 @@ const BatchDateForm = ({ id, setUpdateForm }) => {
   const [endTime, setEndTime] = useState();
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [passBatchData, setPassBatchData] = useState("");
+  const [display, setDisplay] = useState(true);
   const [query, setQuery] = useState({
     batchDates: startDate,
     batchStartTime: startTime,
@@ -31,6 +35,21 @@ const BatchDateForm = ({ id, setUpdateForm }) => {
     });
   }, [startDate, startTime, endTime]);
   // Update inputs value
+
+ //For fetching batch details
+ useEffect(() => {
+const fetchBatchDetails = async () =>{
+  const data = await fetch("/api/v1/generateBatchDate", {
+  method: "GET",
+});
+if (data.status === 200) {
+const {batchDatesDetails} = await data.json();
+setPassBatchData(batchDatesDetails)
+// console.log(batchDatesDetails);
+
+}}
+fetchBatchDetails()
+ },[])
 
   const handleParam = () => (e) => {
     const name = e.target.name;
@@ -61,7 +80,7 @@ const BatchDateForm = ({ id, setUpdateForm }) => {
           batchDates: "",
           batchType: "",
           batchStatus: "",
-          page: "",
+          page: query.page,
           batchWeek: "",
           batchDesc1: "",
           batchDesc2: "",
@@ -326,6 +345,8 @@ const BatchDateForm = ({ id, setUpdateForm }) => {
           </button>
         )}
       </form>
+
+      {display ? passBatchData === "" ? "" :<div><BatchDateBox PassBatchData = {passBatchData}/></div>: ""}
     </div>
   );
 };
