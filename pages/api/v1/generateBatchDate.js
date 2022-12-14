@@ -139,24 +139,23 @@ export default async function handler(req, res) {
     } catch (error) {}
   }
 
-  if(req.method === "DELETE"){
+  // if(req.method === "DELETE"){
  
-    const {id} = req.body;
-
-    try {
-      const findBatch = await db.collection("batchDate").findOne({
-        batchId:id.batchId,
-      });
-      console.log(findBatch,"hello");
-      // if(findBatch){
-      //   const deleteBatch = await db.collection("batchDate").updateMany({ batchId:id},{ $pull: {
-      //     batchDetails: id
-      // }})
-      // }
-      // console.log(findBatch);
-      res.status(200).send("hello")
-    } catch (error) {
-      res.status(200).send(error)
-    }
-  }
+  //   const {id} = req.body;
+  //   try {
+  //     const findBatch = await db.collection("batchDate").findOne({
+  //       batchId:id.batchId,
+  //     });
+  //     console.log(findBatch,"hello");
+  //     // if(findBatch){
+  //     //   const deleteBatch = await db.collection("batchDate").updateMany({ batchId:id},{ $pull: {
+  //     //     batchDetails: id
+  //     // }})
+  //     // }
+  //     // console.log(findBatch);
+  //     res.status(200).send("hello")
+  //   } catch (error) {
+  //     res.status(200).send(error)
+  //   }
+  // }
 }

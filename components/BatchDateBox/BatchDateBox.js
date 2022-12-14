@@ -4,11 +4,11 @@ import {MdDeleteForever} from 'react-icons/md'
 
 const BatchDateBox = ({PassBatchData}) => {
 
-  const handler = async (id) =>{
-   
-      const data = await fetch("/api/v1/generateBatchDate", {
+  const handler = async (id, batchId) =>{
+  //  console.log(id);
+    const data = await fetch("/api/v1/deleteBatch", {
       method: "DELETE",
-      body: JSON.stringify(id),
+      body: JSON.stringify({id:id, batchId}),
       headers: {
         "Content-Type": "application/json",
       },
@@ -20,23 +20,26 @@ const BatchDateBox = ({PassBatchData}) => {
        <h2>Batch Details</h2>
        <div className={style.wrapperDiv}>
         {PassBatchData.map((data, i) => {
-         
+        // console.log(data.batchDetails.length === 0 ? "hi" : "bye");
           return (
+          
+          
           <div className={style.wrapperContent} key={i}>
-            
-            
+              {data.batchDetails.length === 0 ? "":  <div>
            <h3>ID: {data.id}</h3>
            {data.batchDetails.map((dataS,i)=>{
           
             return (
               <div className={style.innerBox} key={i}>
-                <MdDeleteForever  className={style.delIcon} onClick={()=>handler(dataS)}/>
+                <MdDeleteForever  className={style.delIcon} onClick={()=>handler(data.id,dataS.batchId)}/>
                 <p>ID: {dataS.batchId}</p>
               <p>BatchDate: {dataS.batchDate}</p>
            <p>BatchTime: {dataS.batchStartTime} to {dataS.batchEndTime}</p>
       </div>
             )
            })}
+           </div> }
+          
            
            </div>)
         })}
