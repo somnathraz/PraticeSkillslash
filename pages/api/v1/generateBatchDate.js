@@ -11,7 +11,7 @@ export default async function handler(req, res) {
   const { db } = await connectToDatabase();
   if (req.method === "POST") {
     let id = "";
-    let batchId = ""; 
+    let batchId = "";
 
     const {
       batchDates,
@@ -30,7 +30,7 @@ export default async function handler(req, res) {
     const batchMonth = getMonthShortName(new Date(batchDates).getMonth());
     const addDate = new Date(batchDates);
     addDate.setDate(addDate.getDate() + 1);
-    
+
     if (page === "Adv Data Science and AI") {
       id = "FAIML";
       batchId = id + batchDate + batchMonth;
@@ -65,7 +65,7 @@ export default async function handler(req, res) {
           {
             $push: {
               batchDetails: {
-                batchId:batchId,
+                batchId: batchId,
                 batchDate: batchDate,
                 batchMonth: batchMonth.toUpperCase(),
                 batchStatus: batchStatus,
@@ -96,11 +96,11 @@ export default async function handler(req, res) {
           id,
           batchDetails: [
             {
-              batchId:batchId,
+              batchId: batchId,
               batchDate: batchDate,
               batchMonth: batchMonth.toUpperCase(),
               batchStatus: batchStatus,
-              batchType: batchType + ",",
+              batchType: batchType,
               batchStartTime: new Date(batchStartTime).toLocaleTimeString([], {
                 hour: "2-digit",
                 minute: "2-digit",
@@ -140,7 +140,7 @@ export default async function handler(req, res) {
   }
 
   // if(req.method === "DELETE"){
- 
+
   //   const {id} = req.body;
   //   try {
   //     const findBatch = await db.collection("batchDate").findOne({

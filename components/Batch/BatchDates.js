@@ -51,7 +51,7 @@ const BatchDates = ({
       </Popup>
       <h4 className={styles.MHeading}>Next cohorts Dates</h4>
 
-      {batchDetails === [] ? (
+      {batchDetails === "" ? (
         <p>Batch Date will be updated soon!</p>
       ) : (
         batchDetails.map((data, i) => {

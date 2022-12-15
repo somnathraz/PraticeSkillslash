@@ -9,7 +9,7 @@ import ToolsCovered from "../components/Course/ToolsCovered/ToolsCovered";
 import Benefits from "../components/Course/Benefits/Benefits";
 import BatchDetails from "../components/Course/BatchDetails/BatchDetails";
 import BannerCTA from "../components/Course/BannerCTA/BannerCTA";
-
+import BatchDates from "../components/Batch/BatchDates";
 import FAQ from "../components/Course/FAQ/FAQ";
 import Fee from "../components/Course/Fee/Fee";
 import styles from "../styles/Home.module.css";
@@ -33,8 +33,9 @@ export default function Home({ DataScienceCourseData }) {
   const [popups, setPopups] = useState(false);
   const redirectDs = DataScienceCourseData.data.form.dataScience;
   const redirectFs = DataScienceCourseData.data.form.FullStack;
-
+  const [batchDateData, setBatchDateData] = useState("");
   let fullStackProject;
+  let pageName;
   if (redirectFs) {
     fullStackProject = false;
   } else {
@@ -45,6 +46,30 @@ export default function Home({ DataScienceCourseData }) {
     setPopups(true);
   };
 
+  useEffect(() => {
+    if (redirectFs) {
+      pageName = "Full Stack Developer course with certification";
+    }
+    if (redirectDs) {
+      pageName = "Adv Data Science and AI";
+    }
+    console.log("inside");
+    const fetchBatch = async () => {
+      const data = await fetch("/api/v1/getBatchDate", {
+        method: "POST",
+        body: JSON.stringify(pageName),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (data.status === 200) {
+        const { batchDate } = await data.json();
+        setBatchDateData(batchDate);
+      }
+    };
+    fetchBatch();
+  }, []);
+  console.log(batchDateData, "array");
   return (
     <>
       <Navbar
@@ -251,32 +276,27 @@ export default function Home({ DataScienceCourseData }) {
           ProMaxPrice={DataScienceCourseData.data.Fee.ProMaxPrice}
           ProMaxDesc={DataScienceCourseData.data.Fee.ProMaxDesc}
         />
-        <BatchDetails
-          dataScience={false}
-          BatchName1={DataScienceCourseData.data.BatchDetails.BatchName1}
-          BatchName2={DataScienceCourseData.data.BatchDetails.BatchName2}
-          redirectDs={DataScienceCourseData.data.form.dataScience}
-          redirectFs={DataScienceCourseData.data.form.FullStack}
-          redirectDe={DataScienceCourseData.data.form.DataEngineering}
-          redirectBl={DataScienceCourseData.data.form.blockchain}
-          redirectBa={DataScienceCourseData.data.form.BusinessAnalytics}
-          changeBatch={true}
-          BatchHeader={DataScienceCourseData.data.BatchDetails.BatchHeader}
-          weekDayBatchDate={
-            DataScienceCourseData.data.BatchDetails.weekDayBatchDate
-          }
-          weekEndBatchDate={
-            DataScienceCourseData.data.BatchDetails.weekEndBatchDate
-          }
-          weekDayBatchTime={
-            DataScienceCourseData.data.BatchDetails.weekDayBatchTime
-          }
-          weekEndBatchTime={
-            DataScienceCourseData.data.BatchDetails.weekEndBatchTime
-          }
-          weekEndBatch={DataScienceCourseData.data.BatchDetails.weekEndBatch}
-          weekDayBatch={DataScienceCourseData.data.BatchDetails.weekDayBatch}
-        />
+        {batchDateData === "" ? (
+          ""
+        ) : batchDateData === null ? (
+          <BatchDates
+            batchDetails=""
+            redirectDs={DataScienceCourseData.data.form.dataScience}
+            redirectFs={DataScienceCourseData.data.form.FullStack}
+            redirectDe={DataScienceCourseData.data.form.DataEngineering}
+            redirectBl={DataScienceCourseData.data.form.blockchain}
+            redirectBa={DataScienceCourseData.data.form.BusinessAnalytics}
+          />
+        ) : (
+          <BatchDates
+            batchDetails={batchDateData.batchDetails}
+            redirectDs={DataScienceCourseData.data.form.dataScience}
+            redirectFs={DataScienceCourseData.data.form.FullStack}
+            redirectDe={DataScienceCourseData.data.form.DataEngineering}
+            redirectBl={DataScienceCourseData.data.form.blockchain}
+            redirectBa={DataScienceCourseData.data.form.BusinessAnalytics}
+          />
+        )}
 
         <BannerCTA
           dataScience={false}

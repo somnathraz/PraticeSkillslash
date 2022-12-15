@@ -5,7 +5,6 @@ export default async function handler(req, res) {
 
   if (req.method === "POST") {
     let id = "";
-
     if (req.body === "Adv Data Science and AI") {
       id = "FAIML";
     }
