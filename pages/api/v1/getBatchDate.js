@@ -20,7 +20,9 @@ export default async function handler(req, res) {
     if (req.body === "Data Structures and Algorithms + System Design") {
       id = "DSA";
     }
-
+    if (req.body === "Full stack web development course") {
+      id = "WEB";
+    }
     try {
       const batchDate = await db.collection("batchDate").findOne({
         id,

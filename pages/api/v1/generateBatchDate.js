@@ -52,6 +52,9 @@ export default async function handler(req, res) {
       id = "DSA";
       batchId = id + batchDate + batchMonth;
     }
+    if (req.body === "Full stack web development course") {
+      id = "WEB";
+    }
 
     try {
       const checkForId = await db.collection("batchDate").findOne({

@@ -324,6 +324,18 @@ fetchBatchDetails()
               Data Structures and Algorithms + System Design
             </label>
           </div>
+          <div className={styles.checkBoxDiv}>
+            <input
+              type="radio"
+              name="page"
+              value=""
+              id="flexCheckDefault"
+              onChange={handleParam()}
+            />
+            <label className="form-check-label" htmlFor="flexCheckDefault">
+              Data Structures and Algorithms + System Design
+            </label>
+          </div>
         </div>
 
         {loading ? (

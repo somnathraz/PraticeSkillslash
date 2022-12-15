@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     console.log(batchId, "id");
     try {
       const findBatch = await db.collection("batchDate").findOne({ id: id });
-      // console.log(findBatch,"hello");
+      // console.log(findBatch,"hello")
 
       if (findBatch) {
         const updateBatch = await db.collection("batchDate").updateOne(
