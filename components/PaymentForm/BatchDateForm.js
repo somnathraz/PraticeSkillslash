@@ -4,7 +4,6 @@ import DatePicker from "react-datepicker";
 import subDays from "date-fns/subDays";
 import BatchDateBox from "../BatchDateBox/BatchDateBox";
 
-
 const BatchDateForm = ({ id, setUpdateForm }) => {
   const [startDate, setStartDate] = useState();
   const [startTime, setStartTime] = useState();
@@ -36,20 +35,20 @@ const BatchDateForm = ({ id, setUpdateForm }) => {
   }, [startDate, startTime, endTime]);
   // Update inputs value
 
- //For fetching batch details
- useEffect(() => {
-const fetchBatchDetails = async () =>{
-  const data = await fetch("/api/v1/generateBatchDate", {
-  method: "GET",
-});
-if (data.status === 200) {
-const {batchDatesDetails} = await data.json();
-setPassBatchData(batchDatesDetails)
-// console.log(batchDatesDetails);
-
-}}
-fetchBatchDetails()
- },[])
+  //For fetching batch details
+  useEffect(() => {
+    const fetchBatchDetails = async () => {
+      const data = await fetch("/api/v1/generateBatchDate", {
+        method: "GET",
+      });
+      if (data.status === 200) {
+        const { batchDatesDetails } = await data.json();
+        setPassBatchData(batchDatesDetails);
+        // console.log(batchDatesDetails);
+      }
+    };
+    fetchBatchDetails();
+  }, []);
 
   const handleParam = () => (e) => {
     const name = e.target.name;
@@ -197,7 +196,7 @@ fetchBatchDetails()
               Filled
             </option>
 
-            <option value="Partially Filled">Partially Filled</option>
+            <option value="New">New</option>
           </select>
         </div>
         <div className={styles.formWrapper}>
@@ -232,12 +231,12 @@ fetchBatchDetails()
             placeholder="Select batch status*"
           >
             <option className={styles.option} value="">
-              Select batch status*
+              Select active batch status*
             </option>
-            <option className={styles.option} value="true">
+            <option className={styles.option} value={true}>
               true
             </option>
-            <option value="false">false</option>
+            <option value={false}>false</option>
           </select>
         </div>
         <div className={styles.formWrapper}>
@@ -328,12 +327,12 @@ fetchBatchDetails()
             <input
               type="radio"
               name="page"
-              value=""
+              value="Full stack web development course"
               id="flexCheckDefault"
               onChange={handleParam()}
             />
             <label className="form-check-label" htmlFor="flexCheckDefault">
-              Data Structures and Algorithms + System Design
+              Full stack web development course
             </label>
           </div>
         </div>
@@ -358,7 +357,17 @@ fetchBatchDetails()
         )}
       </form>
 
-      {display ? passBatchData === "" ? "" :<div><BatchDateBox PassBatchData = {passBatchData}/></div>: ""}
+      {display ? (
+        passBatchData === "" ? (
+          ""
+        ) : (
+          <div>
+            <BatchDateBox PassBatchData={passBatchData} />
+          </div>
+        )
+      ) : (
+        ""
+      )}
     </div>
   );
 };

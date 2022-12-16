@@ -13,7 +13,7 @@ const BatchDateBox = ({ PassBatchData }) => {
       },
     });
     if (data.status === 200) {
-      const { msg } = await response.json();
+      const { msg } = await data.json();
       alert(msg);
     }
   };
