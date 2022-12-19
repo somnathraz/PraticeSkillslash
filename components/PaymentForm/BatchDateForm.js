@@ -122,7 +122,6 @@ const BatchDateForm = ({ id, setUpdateForm }) => {
             onChange={(date) => {
               setStartDate(date);
             }}
-            minDate={subDays(new Date(), 0)}
             wrapperClassName={styles.date}
             className={styles.datePicker}
             placeholderText="Enter Batch Date"
