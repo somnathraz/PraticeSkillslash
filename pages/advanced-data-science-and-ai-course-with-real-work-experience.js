@@ -205,7 +205,7 @@ export default function Home() {
           />
         )}
 
-        {/* <BatchDetails
+        <BatchDetails
           props={DataScienceCourseData[0].product}
           dataScience={true}
           changeBatch={true}
@@ -226,7 +226,7 @@ export default function Home() {
           }
           weekEndBatch={DataScienceCourseData[0].BatchDetails.weekEndBatch}
           weekDayBatch={DataScienceCourseData[0].BatchDetails.weekDayBatch}
-        /> */}
+        />
 
         <BannerCTA dataScience={true} />
         <div className="faq" id="faq">

@@ -22,7 +22,7 @@ const BatchDateForm = ({ id, setUpdateForm }) => {
     batchWeek: "",
     batchDesc1: "",
     batchDesc2: "",
-    activeBatch: "",
+    activeBatch: true,
   });
 
   useEffect(() => {

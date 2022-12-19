@@ -25,12 +25,18 @@ export default async function handler(req, res) {
       batchDesc2,
       activeBatch,
     } = req.body;
-
+    let activeBatchDetails;
+    if (activeBatch === "true") {
+      activeBatchDetails = true;
+    }
+    if (activeBatch === "false") {
+      activeBatchDetails = false;
+    }
     const batchDate = new Date(batchDates).getDate();
     const batchMonth = getMonthShortName(new Date(batchDates).getMonth());
     const addDate = new Date(batchDates);
     addDate.setDate(addDate.getDate() + 1);
-
+    console.log(addDate);
     if (page === "Adv Data Science and AI") {
       id = "FAIML";
       batchId = id + batchDate + batchMonth;
@@ -85,8 +91,8 @@ export default async function handler(req, res) {
                 batchDesc: batchDesc1,
                 batchWeek: batchWeek,
                 batchMsg: batchDesc2,
-                activeBatch: activeBatch,
-                expireAt: addDate,
+                activeBatch: activeBatchDetails,
+                expireAt: new Date(addDate),
               },
             },
           }
@@ -116,8 +122,8 @@ export default async function handler(req, res) {
               batchDesc: batchDesc1,
               batchWeek: batchWeek,
               batchMsg: batchDesc2,
-              activeBatch: activeBatch,
-              expireAt: addDate,
+              activeBatch: activeBatchDetails,
+              expireAt: new Date(addDate),
             },
           ],
         });
