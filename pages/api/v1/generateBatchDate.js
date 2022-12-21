@@ -59,11 +59,11 @@ export default async function handler(req, res) {
     }
 
     try {
-      const checkForId = await db.collection("batchDate").findOne({
+      const checkForId = await db.collection("batchDateDemo").findOne({
         id,
       });
       if (checkForId) {
-        const updateBatch = await db.collection("batchDate").updateOne(
+        const updateBatch = await db.collection("batchDateDemo").updateOne(
           {
             id: id,
           },
@@ -97,7 +97,7 @@ export default async function handler(req, res) {
           .createIndex({ expireAt: 1 }, { expireAfterSeconds: 0 });
         res.send("hello");
       } else {
-        const CreateBatch = await db.collection("batchDate").insertOne({
+        const CreateBatch = await db.collection("batchDateDemo").insertOne({
           id,
           batchDetails: [
             {
