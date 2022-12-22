@@ -27,7 +27,7 @@ export default async function handler(req, res) {
     } = req.body;
     console.log(req.body, "whole");
 
-    const batchDate = new Date(batchDates).getDate();
+    const batchDate = new Date(batchDates).getDate() + 1;
     const batchMonth = getMonthShortName(new Date(batchDates).getMonth());
     const addDate = new Date(batchDates);
     addDate.setDate(addDate.getDate() + 1);
@@ -59,11 +59,11 @@ export default async function handler(req, res) {
     }
 
     try {
-      const checkForId = await db.collection("batchDateDemo").findOne({
+      const checkForId = await db.collection("batchDate").findOne({
         id,
       });
       if (checkForId) {
-        const updateBatch = await db.collection("batchDateDemo").updateOne(
+        const updateBatch = await db.collection("batchDate").updateOne(
           {
             id: id,
           },
@@ -76,13 +76,21 @@ export default async function handler(req, res) {
                 batchStatus: batchStatus,
                 batchType: batchType,
                 batchStartTime: new Date(batchStartTime).toLocaleTimeString(
-                  [],
-                  { hour: "2-digit", minute: "2-digit" }
+                  "en-IN",
+                  {
+                    timeZone: "Asia/Kolkata",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  }
                 ),
-                batchEndTime: new Date(batchEndTime).toLocaleTimeString([], {
-                  hour: "2-digit",
-                  minute: "2-digit",
-                }),
+                batchEndTime: new Date(batchEndTime).toLocaleTimeString(
+                  "en-IN",
+                  {
+                    timeZone: "Asia/Kolkata",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  }
+                ),
                 batchDesc: batchDesc1,
                 batchWeek: batchWeek,
                 batchMsg: batchDesc2,
@@ -97,7 +105,7 @@ export default async function handler(req, res) {
           .createIndex({ expireAt: 1 }, { expireAfterSeconds: 0 });
         res.send("hello");
       } else {
-        const CreateBatch = await db.collection("batchDateDemo").insertOne({
+        const CreateBatch = await db.collection("batchDate").insertOne({
           id,
           batchDetails: [
             {
@@ -106,11 +114,12 @@ export default async function handler(req, res) {
               batchMonth: batchMonth.toUpperCase(),
               batchStatus: batchStatus,
               batchType: batchType,
-              batchStartTime: new Date(batchStartTime).toLocaleTimeString([], {
-                hour: "2-digit",
-                minute: "2-digit",
-              }),
-              batchEndTime: new Date(batchEndTime).toLocaleTimeString([], {
+              batchStartTime: new Date(batchStartTime).toLocaleTimeString(
+                "en-IN",
+                { timeZone: "Asia/Kolkata", hour: "2-digit", minute: "2-digit" }
+              ),
+              batchEndTime: new Date(batchEndTime).toLocaleTimeString("en-IN", {
+                timeZone: "Asia/Kolkata",
                 hour: "2-digit",
                 minute: "2-digit",
               }),
