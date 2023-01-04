@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100&display=swap');
+     body {
+           margin: 0;
+           padding: 0;
+           font-family: 'Roboto', sans-serif;
+            position: relative;
+
+        }
+   .wrapper{
+     display: flex;
+     width: 100vw;
+     overflow-x: hidden;
+     height: 100vh;
+     align-items: center;
+     justify-content: center;
+     
+   }
+   .certificate{
+    display: flex;
+    margin: auto;
+    width: 1122px;
+    height: 793px;
+    background-color: #F0824F;
+    padding: 5px 0 5px 0;
+    border-radius: 8px ;
+   }
+   .innerWrapper{
+    display: flex;
+    margin: auto;
+    width: 1122px;
+    justify-content: center;
+    align-items: center;
+    height: 793px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: #ffffff;
+    overflow: hidden;
+   }
+
+   .contentWrapper{
+    width: 100%;
+    height: max-content;
+    position: relative;
+   }
+   .logoWrapper{
+    justify-content: center;
+    display: flex; 
+    padding: 10px 0;
+   }
+   .heading{
+      text-align: center;
+      color: #F0824F;
+      font-size: 50px;
+      margin-bottom: 5px;
+      font-weight: 500;
+   }
+   p{
+    font-size: 25px;
+    font-weight: 300;
+    justify-content: center;
+    display: flex; 
+   }
+   .middleBlock{
+    width: 100%;
+    height: max-content;
+    padding: 30px 0;
+    background-color: #2883C6;
+   }
+   .middleBlock h2{
+    color: white;
+    font-size: 60px;
+    font-weight: 500;
+    justify-content: center;
+    display: flex; 
+    padding: 0px;
+    margin: 0;
+    margin-bottom: 5px;
+  
+   }
+   .middleBlock p{
+    color: rgb(230, 230, 230);
+   
+ 
+   }
+ 
+   .bottomBlock{
+    display: grid;
+
+    grid-template-columns: 33% 33% 33%;
+   
+     padding: 20px;
+   }
+   .boxText{
+    border-width: 4px 6px 4px 6px;
+    border-style: solid;
+    border-color: white;
+   
+    width: max-content;
+    margin: auto;
+    color: white !important;
+    padding: 8px 85px;
+    font-size: 40px;
+    font-weight: 500;
+    margin-top: 20px;
+   }
+   .date{
+     justify-content: center;
+     align-items: center;
+     
+   }
+   .date div{
+     padding: 50px;
+   }
+    h4, p{
+     justify-content: center;
+     display: flex;
+     margin: 0px; 
+   }
+   h4{
+    font-size: 25px;
+   }
+   .sign img{
+    width: 100px;
+    height: 100%;
+   }
+   .signWrapper{
+     justify-content: center;
+     display: flex;
+     padding: 10px;
+   }
+   .middleWrapper{
+    position: relative;
+   }
+   .sideBars{
+    background-color: #F0824F;
+    width: 25%;
+    height: 25px;
+    position: absolute;
+    right: -20px;
+    top: -25px;
+    z-index: 0;
+    overflow: hidden;
+    transform: skew(-50deg, 0deg);
+   }
+   .sideBars1{
+    background-color: #F0824F;
+    width: 25%;
+    left: 0;
+    overflow: hidden;
+    height: 25px;
+    position: absolute;
+    left: -20px;
+    bottom: -25px;
+    z-index: 0;
+    overflow: hidden;
+    transform: skew(-50deg, 0deg);
+   }
+   .stamp{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+   
+    justify-content: flex-end;
+   }
+</style>
+
+<body>
+ <div class="wrapper">
+    <div class="certificate">
+        <div class="innerWrapper">
+            <div class="contentWrapper">
+                <div class="logoWrapper">
+                <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/logo.ico" alt="skillslash-logo">
+                </div>
+
+                <h1 class="heading">CERTIFICATE OF COMPLETION</h1>
+                <p style="margin-bottom: 25px;">this certificate is proudly presented to</p>
+             <div class="middleWrapper"> 
+                <div class="sideBars"></div>
+                <div class="middleBlock">
+                    <h2>{{name}}</h2>
+                    <p>for successfully completing the course on</p>
+                    <p class="boxText">{{courseName}}</p>
+                </div>
+                <div class="sideBars1"></div>
+</div>
+                <div class="bottomBlock">
+                    <div class="date">
+                        <div></div>
+                        <h4>{{date}}</h4>
+                        <p>Certificate ID : {{id}}</p>
+                    </div>
+                    <div class="stamp">
+                        <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/Logo+%26+certification-09.png" alt="logo-certificate" width="204px" >
+                    </div>
+                    <div class="sign">
+                        <div class="signWrapper">
+                        <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/Sketch-sign.png" alt="rahul-sign">
+                        </div>
+                        <h4>Rahul Kashyap</h4>
+                        <p>Co-Founder</p>
+                    </div>
+                </div>
+            </div>
+
+           
+        
+        </div>
+    </div>
+ </div>
+</body>
+
+</html>

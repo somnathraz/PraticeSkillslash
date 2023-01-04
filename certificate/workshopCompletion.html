@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop completion</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        }
+
+        .wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .certificate {
+            display: flex;
+            width: 1122px;
+            align-items: center;
+            justify-content: center;
+            height: 793px;
+            background: linear-gradient(0deg, rgba(13, 75, 156, 0.89) 12%, rgba(50, 131, 189, 0.449) 81%), url("https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/amazing-aerial-shot-singapore-cityscape-with-lots-skyscrapers.jpg") center center no-repeat;
+            background-size: cover;
+            position: relative;
+            border-radius: 4px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+
+        .line {
+            background-color: #F28705;
+            position: absolute;
+            left: 20%;
+            top: 0;
+            height: 100%;
+            width: 130px;
+
+        }
+
+        .inner {
+            background-color: white;
+            position: relative;
+            width: 90%;
+            height: 80%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            flex-flow: column;
+        }
+
+        .pattern1 {
+            width: 129px;
+            left: 0;
+            top: 150px;
+            height: 359px;
+            position: absolute;
+        }
+
+        .pattern2 {
+            width: 129px;
+            right: 0;
+            top: 150px;
+            height: 359px;
+            position: absolute;
+            transform: rotateY(180deg)
+        }
+
+        .top {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            padding: 15px;
+            justify-content: center;
+        }
+
+        .top h3 {
+            color: #0487D9;
+            font-size: 32px;
+            letter-spacing: 8px;
+            font-weight: 700;
+            margin: 0;
+          
+        }
+
+        .top p {
+            margin: 0;
+            font-size: 19px;
+            letter-spacing: 4px;
+            color: #0487D9;
+        }
+
+        .bottom p {
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .top h2 {
+            text-align: center;
+            font-size: 37px;
+            margin: 5px;
+            color: #0487D9;
+        }
+
+        .footer {
+            display: flex;
+            gap: 20px;
+            width: 60%;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer .left p b {
+            font-size: 21px;
+        }
+
+        .footer .right {
+            position: relative;
+        }
+
+        .sign {
+            position: absolute;
+            top: -70px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="certificate">
+            <div class="line"></div>
+            <div class="inner">
+                <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/workshopCompletionPattern.png"
+                    alt="pattern" class="pattern1" />
+                <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/workshopCompletionPattern.png"
+                    alt="pattern" class="pattern2" />
+                <div class="top">
+                    <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/logo.ico"
+                        alt="hello" width="190px" />
+                    <h3>CERTIFICATION</h3>
+                    <p>of participation</p>
+
+                    <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/congratulationText.png"
+                        alt="text" width="290px" height="100%" style="margin-top: 20px;" />
+                    <h2>{{name}}</h2>
+                </div>
+                <div class="bottom">
+
+                    <p>For successful completion of <b>{{courseName}}</b> workshop<br /><br />
+
+                        conducted on {{durationStartDate}} and {{durationEndDate}}.
+                    </p>
+                </div>
+                <div class="footer">
+                    <div class="left">
+                        <p><b>{{date}}</b><br />
+                            <span>Certificate ID:{{id}}</span>
+                        </p>
+                    </div>
+                    <div class="middle">
+                        <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/Logo+%26+certification-09.png"
+                            alt="stamp" width="184px" />
+                    </div>
+                    <div class="right">
+                        <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/Sketch-sign.png"
+                            / alt="sign" width="85px" height="69px" class="sign">
+                        <p>Rahul Kashyap<br />
+                            Co - Founder</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

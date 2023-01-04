@@ -13,11 +13,13 @@ import { BsThreeDots } from "react-icons/bs";
 import { BiCalendarEvent } from "react-icons/bi";
 import { RiCoupon2Line, RiHandCoinLine, RiWindow2Fill } from "react-icons/ri";
 import { TbFileInvoice } from "react-icons/tb";
+import {TbCertificate} from "react-icons/tb"
 import AddUserFrom from "../../../components/PaymentForm/AddUserForm";
 import Image from "next/image";
 import AddPopupFrom from "../../../components/PaymentForm/PopupDetails";
-import BatchDates from "../../../components/Batch/BatchDates";
+
 import BatchDateForm from "../../../components/PaymentForm/BatchDateForm";
+import CertificateForm from "../../../components/PaymentForm/CertificateForm";
 
 const Dashboard = (props) => {
   const discountPercentRef = useRef();
@@ -31,6 +33,7 @@ const Dashboard = (props) => {
     sixth: false,
     seventh: false,
     eight: false,
+    nine:false,
   });
   const [mobile, setMobile] = useState(false);
   const [startDate, setStartDate] = useState();
@@ -152,6 +155,7 @@ const Dashboard = (props) => {
                   sixth: false,
                   seventh: false,
                   eight: false,
+                  nine:false
                 })
               }
             >
@@ -176,6 +180,7 @@ const Dashboard = (props) => {
                   sixth: false,
                   seventh: false,
                   eight: false,
+                  nine:false
                 })
               }
             >
@@ -200,6 +205,7 @@ const Dashboard = (props) => {
                   sixth: true,
                   seventh: false,
                   eight: false,
+                  nine:false
                 })
               }
             >
@@ -224,6 +230,7 @@ const Dashboard = (props) => {
                   sixth: false,
                   seventh: true,
                   eight: false,
+                  nine:false,
                 })
               }
             >
@@ -257,6 +264,31 @@ const Dashboard = (props) => {
               />
 
               <p className={styles.item}>popup</p>
+            </span>
+            <span
+                  className={showItem.nine ? styles.spanActive : styles.span}
+                  onClick={() =>
+                    setShowItem({
+                      ...showItem,
+                      third: false,
+                      first: false,
+                      second: false,
+                      fourth: false,
+                      fifth: true,
+                      sixth: false,
+                      seventh: false,
+                      eight: false,
+                      nine:true,
+                    })
+                  }
+                >
+                  <TbCertificate
+                    className={
+                      showItem.nine ? styles.barIconActive : styles.barIcon
+                    }
+                  />
+
+                  <p className={styles.item}>certificate</p>
             </span>
 
             {props.token.role === "Admin" ? (
@@ -325,6 +357,7 @@ const Dashboard = (props) => {
                       sixth: false,
                       seventh: false,
                       eight: false,
+                      nine:false,
                     })
                   }
                 >
@@ -336,6 +369,7 @@ const Dashboard = (props) => {
 
                   <p className={styles.item}>Edit User</p>
                 </span>
+                
               </div>
             ) : (
               ""
@@ -404,6 +438,8 @@ const Dashboard = (props) => {
                   <button>Generate Coupon</button>
                 )}
               </div>
+
+
             </form>
             {validCoupon.success ? (
               <p className={styles.couponCode}>{couponCode}</p>
@@ -442,6 +478,14 @@ const Dashboard = (props) => {
           <div className={styles.loan}>
             <h2>Generate Popup</h2>
             <AddPopupFrom />
+          </div>
+        ) : (
+          ""
+        )}
+         {showItem.nine ? (
+          <div className={styles.loan}>
+            <h2>Generate Certificate</h2>
+            <CertificateForm/>
           </div>
         ) : (
           ""
