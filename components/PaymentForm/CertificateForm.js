@@ -6,22 +6,20 @@ import Toast from "../Toast/Toast";
 
 const CertificateForm = () => {
   //offset to maintain time zone difference
-const [startDate, setStartDate] = useState();
-const [programStartDate, setProgramStartDate] = useState()
-const [programEndDate, setProgramEndDate] = useState()
+  const [startDate, setStartDate] = useState();
+  const [programStartDate, setProgramStartDate] = useState();
+  const [programEndDate, setProgramEndDate] = useState();
   const [loading, setLoading] = useState(false);
   const [display, setDisplay] = useState(false);
-
 
   const [query, setQuery] = useState({
     name: "",
     courseName: "",
     date: "",
-    certificateType:"",
+    certificateType: "",
     id: "",
     durationStartDate: "",
     durationEndDate: "",
-    
   });
 
   // Update inputs value
@@ -33,25 +31,24 @@ const [programEndDate, setProgramEndDate] = useState()
       [name]: value,
     }));
   };
- const ConvertDate = (date) =>{
+  const ConvertDate = (date) => {
     //convert date to format//
-  let dateT = new Date(date).getDate();
-  let monthT = new Date(date).getMonth() + 1;
-  let yearT = new Date(date).getFullYear();
-  let DateString = `${dateT}/${monthT}/${yearT}`;
+    let dateT = new Date(date).getDate();
+    let monthT = new Date(date).getMonth() + 1;
+    let yearT = new Date(date).getFullYear();
+    let DateString = `${dateT}/${monthT}/${yearT}`;
 
-  return DateString;
-  }
+    return DateString;
+  };
   useEffect(() => {
     setQuery({
       ...query,
-    
-      date: ConvertDate(startDate) ,
+
+      date: ConvertDate(startDate),
       durationStartDate: ConvertDate(programStartDate),
-      durationEndDate: ConvertDate(programEndDate)
-     
+      durationEndDate: ConvertDate(programEndDate),
     });
-  }, [startDate,programStartDate,programEndDate]);
+  }, [startDate, programStartDate, programEndDate]);
   // Form Submit function
 
   useEffect(() => {
@@ -61,60 +58,59 @@ const [programEndDate, setProgramEndDate] = useState()
       });
       if (data.status === 200) {
         const { id } = await data.json();
-      setQuery({
-        ...query,
-        id:id
-      })
-      console.log(id,"id");
+        setQuery({
+          ...query,
+          id: id,
+        });
+        console.log(id, "id");
         // console.log(batchDatesDetails);
       }
     };
     fetchCertificateId();
-  }, []);
-
- 
+  }, [query.id]);
 
   const formSubmit = async (e) => {
-
     e.preventDefault();
     setLoading(true);
 
     try {
       const updateId = await fetch("/api/v1/certificateIdGenerator", {
         method: "POST",
-        body: JSON.stringify({id:query.id+1}),
+        body: JSON.stringify({ id: query.id + 1 }),
         headers: {
           "Content-Type": "application/json",
         },
-      })
-     
-      if( updateId.status === 200){
-        console.log(query,"frontend");
+      });
+
+      if (updateId.status === 200) {
+        console.log(query, "frontend");
         try {
-        const data = await fetch("/api/v1/generateCertificate", {
-        method: "POST",
-        body: JSON.stringify(query),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-      if (data.response === 200) {
-        
-        setQuery({
-          name: "",
-          courseName: "",
-          date: "",
-          certificateType:"",
-          id: "",
-          durationStartDate: "",
-          durationEndDate: "",
-        });
-       
-      } 
+          const data = await fetch("/api/v1/generateCertificate", {
+            method: "POST",
+            body: JSON.stringify(query),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+          if (data.status === 200) {
+            console.log("hello");
+            setQuery({
+              name: "",
+              courseName: "",
+              date: "",
+              certificateType: "",
+              id: "",
+              durationStartDate: "",
+              durationEndDate: "",
+            });
+            setProgramEndDate("");
+            setProgramStartDate("");
+            setStartDate("");
+          }
         } catch (error) {
           console.log(error);
         }
-      }   
+      }
     } catch (error) {
       console.log(error);
     }
@@ -134,7 +130,6 @@ const [programEndDate, setProgramEndDate] = useState()
       <form
         onSubmit={formSubmit}
         onChange={() => {
-         
           setDisplay(false);
         }}
       >
@@ -149,7 +144,6 @@ const [programEndDate, setProgramEndDate] = useState()
             value={query.name}
             onChange={handleParam()}
           />
-          
         </div>
         <div className={styles.inner} style={{ marginBottom: "10px" }}>
           <DatePicker
@@ -166,7 +160,7 @@ const [programEndDate, setProgramEndDate] = useState()
             required
           />
         </div>
-         <div className={styles.formWrapper}>
+        <div className={styles.formWrapper}>
           <select
             name="certificateType"
             required
@@ -177,56 +171,69 @@ const [programEndDate, setProgramEndDate] = useState()
             <option className={styles.option} value="">
               Select Certificate Type*
             </option>
-            <option value="course completion certificate">course completion certificate</option>
-            <option value="project experience certificate Theorax">project experience certificate Theorax</option>
-            <option value="project experience certificate Caspian">project experience certificate Caspian</option>
-            <option value="Workshop completion certificate">Workshop completion certificate</option>
+            <option value="course completion certificate">
+              course completion certificate
+            </option>
+            <option value="project experience certificate Theorax">
+              project experience certificate Theorax
+            </option>
+            <option value="project experience certificate Caspian">
+              project experience certificate Caspian
+            </option>
+            <option value="Workshop completion certificate">
+              Workshop completion certificate
+            </option>
           </select>
         </div>
         {}
- <div className={styles.formWrapper}>
-        <input
+        <div className={styles.formWrapper}>
+          <input
             id="courseName"
             type="text"
             name="courseName"
             required
             placeholder="Enter Course Name/ Project Name/ Workshop Name*"
-                className={styles.EmailInput}
+            className={styles.EmailInput}
             value={query.courseName}
             onChange={handleParam()}
           />
         </div>
-  
-    {query.certificateType === ""  ?   "": query.certificateType !== "course completion certificate" ? <div className={styles.inners} style={{ marginBottom: "10px" }}>
-          <DatePicker
-            selected={programStartDate}
-            name="date"
-            id="date"
-            onChange={(date) => {
-              setProgramStartDate(date);
-            }}
-            wrapperClassName={styles.date}
-            className={styles.datePicker}
-            placeholderText="Enter program start Date"
-            dateFormat="MMMM d, yyyy"
-            required
-          />
-          <DatePicker
-            selected={programEndDate}
-            name="date"
-            id="date"
-            onChange={(date) => {
-              setProgramEndDate(date);
-            }}
-            wrapperClassName={styles.date}
-            className={styles.datePicker}
-            placeholderText="Enter program End Date"
-            dateFormat="MMMM d, yyyy"
-            required
-          />
-        </div>:"" }
-      
-        
+
+        {query.certificateType === "" ? (
+          ""
+        ) : query.certificateType !== "course completion certificate" ? (
+          <div className={styles.inners} style={{ marginBottom: "10px" }}>
+            <DatePicker
+              selected={programStartDate}
+              name="date"
+              id="date"
+              onChange={(date) => {
+                setProgramStartDate(date);
+              }}
+              wrapperClassName={styles.date}
+              className={styles.datePicker}
+              placeholderText="Enter program start Date"
+              dateFormat="MMMM d, yyyy"
+              required
+            />
+            <DatePicker
+              selected={programEndDate}
+              name="date"
+              id="date"
+              onChange={(date) => {
+                setProgramEndDate(date);
+              }}
+              wrapperClassName={styles.date}
+              className={styles.datePicker}
+              placeholderText="Enter program End Date"
+              dateFormat="MMMM d, yyyy"
+              required
+            />
+          </div>
+        ) : (
+          ""
+        )}
+
         {loading ? (
           <div className="center">
             <div className="wave"></div>
