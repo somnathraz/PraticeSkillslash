@@ -4,6 +4,7 @@ import puppeteer from "puppeteer";
 import handlers from "handlebars";
 import { connectToDatabase } from "../../../lib/mongodb";
 import { authentication } from "../../../lib/googleSheet";
+
 let fileUpload = "";
 const AWSCredentials = {
   accessKey: process.env.AWSAccessKeyId,
@@ -50,6 +51,8 @@ export default async function handler(req, res) {
         Bucket: AWSCredentials.bucketName,
         Key: fileName,
         Body: fileContent,
+        ContentDisposition:"inline",
+        ContentType:"application/pdf"
       };
 
       // Uploading files to the bucket
@@ -121,6 +124,8 @@ export default async function handler(req, res) {
         certificateType,
         downloadFile,
       });
+
+
       fs.unlinkSync(`./public/certificate/${fPdfName}.pdf`);
       res.status(200).json({
         fileLink: fileUpload,
