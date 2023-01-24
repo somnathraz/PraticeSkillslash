@@ -17,6 +17,7 @@ const CertificateForm = () => {
     courseName: "",
     date: "",
     certificateType: "",
+    ids: "",
     id: "",
     durationStartDate: "",
     durationEndDate: "",
@@ -31,6 +32,7 @@ const CertificateForm = () => {
       [name]: value,
     }));
   };
+
   const ConvertDate = (date) => {
     //convert date to format//
     let dateT = new Date(date).getDate();
@@ -57,17 +59,21 @@ const CertificateForm = () => {
         method: "GET",
       });
       if (data.status === 200) {
+        let r = (Math.random() + 1).toString(36).substring(8);
+        console.log(r);
         const { id } = await data.json();
+        const customId = id + r;
         setQuery({
           ...query,
-          id: id,
+          ids: id,
+          id: customId,
         });
         console.log(id, "id");
         // console.log(batchDatesDetails);
       }
     };
     fetchCertificateId();
-  }, [query.id]);
+  }, [query.ids]);
 
   const formSubmit = async (e) => {
     e.preventDefault();
@@ -76,7 +82,7 @@ const CertificateForm = () => {
     try {
       const updateId = await fetch("/api/v1/certificateIdGenerator", {
         method: "POST",
-        body: JSON.stringify({ id: query.id + 1 }),
+        body: JSON.stringify({ id: query.ids + 1 }),
         headers: {
           "Content-Type": "application/json",
         },
@@ -100,6 +106,7 @@ const CertificateForm = () => {
               date: "",
               certificateType: "",
               id: "",
+              ids: "",
               durationStartDate: "",
               durationEndDate: "",
             });

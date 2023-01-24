@@ -3,20 +3,20 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CERTIFICATE</title>
 
 </head>
 
 <style>
- @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100&family=Tinos&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100&family=Tinos&display=swap');
+
     body {
         margin: 0;
         padding: 0;
-       print-color-adjust:exact;
+        print-color-adjust: exact;
         position: relative;
-    
+
     }
 
     .wrapper {
@@ -26,14 +26,14 @@
         height: 100vh;
         align-items: center;
         justify-content: center;
-       
+
     }
 
-    .wrapper .bckWrapper{
-       position: absolute;
-       right: 0;
-       top: 0;
-       height: 100%;
+    .wrapper .bckWrapper {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
     }
 
     .certificate {
@@ -46,30 +46,33 @@
         padding: 10px 0 10px 0;
         border-radius: 8px;
         position: relative;
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        ;
         overflow: hidden;
     }
 
-    .logoWrapper{
+    .logoWrapper {
         padding: 20px 40px;
     }
 
-    .headingWrapper{
-        background: rgb(17,114,177);
-        background: linear-gradient(90deg, rgba(17,114,177,1) 21%, rgba(26,40,69,1) 90%) !important;
+    .headingWrapper {
+        background: rgb(17, 114, 177);
+        background: linear-gradient(90deg, rgba(17, 114, 177, 1) 21%, rgba(26, 40, 69, 1) 90%) !important;
         width: 100%;
         margin-bottom: 30px;
         padding: 30px 70px;
     }
-    @media print{
-        .headingWrapper{
-             
-        background: linear-gradient(90deg, rgba(17,114,177,1) 21%, rgba(26,40,69,1) 90%) !important;
-        print-color-adjust:exact;
-        -webkit-print-color-adjust:exact;
+
+    @media print {
+        .headingWrapper {
+
+            background: linear-gradient(90deg, rgba(17, 114, 177, 1) 21%, rgba(26, 40, 69, 1) 90%) !important;
+            print-color-adjust: exact;
+            -webkit-print-color-adjust: exact;
         }
     }
-    .headingWrapper h1{
+
+    .headingWrapper h1 {
         color: #ffffff;
         font-size: 65px;
         margin: 10px 0;
@@ -78,147 +81,191 @@
         letter-spacing: 5px;
         font-family: 'Tinos', serif;
     }
-    .headingWrapper h1 span{
+
+    .headingWrapper h1 span {
         font-size: 38px;
     }
-    .centerBlock{
-       display: flex;
-       flex-flow: column;
-       padding: 30px 70px;
+
+    .centerBlock {
+        display: flex;
+        flex-flow: column;
+        padding: 30px 70px;
     }
-    .centerBlock h1{
+
+    .centerBlock h1 {
         border-bottom: 3px solid #3C9ED8;
         width: max-content;
         font-size: 60px;
         font-weight: 500;
         margin: 5px 0px;
     }
-    .centerBlock > p{
+
+    .centerBlock>p {
         color: #25385d;
         font-size: 25px;
     }
-    .centerBlock span{
+
+    .centerBlock span {
         color: #13649D;
         font-weight: 700;
     }
-    .centerBlock .para{
+
+    .centerBlock .para {
         font-family: 'Roboto', sans-serif;
         font-size: 27px;
         margin: 0;
         line-height: 1.8em;
         letter-spacing: 2px;
     }
-      .bottomBlock{
-     display: grid;
-     align-items: center;
-     grid-template-columns: 29% 29% 29%;
-     /* padding: 10px; */
-     height: 120PX;
-     margin-top: -90px;
-   }
-   .bottomBlock div{
-    display: flex;
-  
-    flex-flow: column;
-   } 
-   .wrapper h4, p{
-     margin: 0;
-    
-   }
 
-   .sign{
-    position: relative;
- align-items: center;
-   }
-   .sign p{
-    font-size: 26px;
-    color: #25385d;
-    margin-top: 8px;
-   }
-   .sign img{
-    width: 100px;
-    height: 100%;
-   }
-   .signWrapper{
-     justify-content: center;
-     display: flex;
-     padding: 10px;
-     position: absolute;
-     top:-40px;
-   }
-   .line{
-    border-bottom: 2px solid black;
-     width: 60%;
+    .bottomBlock {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 29% 29% 29%;
+        /* padding: 10px; */
+        height: 120PX;
+        margin-top: -90px;
     }
-    .sign .line{
+
+    .bottomBlock div {
+        display: flex;
+
+        flex-flow: column;
+    }
+
+    .wrapper h4,
+    p {
+        margin: 0;
+
+    }
+
+    .sign {
+        position: relative;
+        align-items: center;
+    }
+
+    .sign p {
+        font-size: 26px;
+        color: #25385d;
+        margin-top: 8px;
+    }
+
+    .sign img {
+        width: 100px;
+        height: 100%;
+    }
+
+    .signWrapper {
+        justify-content: center;
+        display: flex;
+        padding: 10px;
+        position: absolute;
+        top: -40px;
+    }
+
+    .line {
+        border-bottom: 2px solid black;
+        width: 60%;
+    }
+
+    .sign .line {
         margin-top: 43px;
     }
-   .stamp{
-    display: flex;
-    flex-flow: column;
-    align-items: center;   
-    justify-content: flex-end;
-   }
-   .date p{
-    margin-top: 5px;
-   }
-   .date h4{
-    font-size: 24px;
-    font-weight: 500;
-    margin-bottom: 5px;
-   }
 
+    .stamp {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .date p {
+        margin-top: 5px;
+    }
+
+    .date h4 {
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
+
+    .qrCode {
+        width: 90px;
+        height: 90px;
+
+    }
+
+    .qrWrap {
+        display: flex;
+        position: absolute;
+        right: 280px;
+        top: 20px;
+        align-items: center;
+        flex-flow: column;
+
+    }
+
+    .qrWrap p {
+        font-size: 14px;
+    }
 </style>
 
 <body>
     <div class="wrapper">
-       
-        <div class="certificate">
-         <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/theorax+element.png"
-            class="bckWrapper" style="z-index: 1;"/>
-              <div class="logoWrapper">
-                <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/Theorax+logo.png"
-                            alt="therox-logo" width="200px" style="padding: 20px;">
-              </div>
 
-              <div class="headingWrapper">
-                <h1>PROJECT EXPERIENCE <br/> <span>CERTIFICATE</span></h1>
-              </div>
-                    
-              <div class="centerBlock">
+        <div class="certificate">
+            <div class="qrWrap">
+                <img class="qrCode"
+                    src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/qrcode_Verify.png"
+                    alt="qrCode" />
+                <p>Scan to verify</p>
+            </div>
+            <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/theorax+element.png"
+                class="bckWrapper" style="z-index: 1;" />
+            <div class="logoWrapper">
+                <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/Theorax+logo.png"
+                    alt="therox-logo" width="200px" style="padding: 20px;">
+            </div>
+
+            <div class="headingWrapper">
+                <h1>PROJECT EXPERIENCE <br /> <span>CERTIFICATE</span></h1>
+            </div>
+
+            <div class="centerBlock">
                 <p>THIS IS TO CERTIFY THAT</p>
                 <h1>{{name}}</h1>
-                <p class="para">has successfully completed the project on<br/>
-                 <span>{{courseName}}</span> from <br/>
-                {{durationStartDate}} to {{durationEndDate}}</p>
-                    <div class="bottomBlock">
-                        <div class="date"> 
-                            <h4>{{date}}</h4>
-                            <div class="line"></div>
-                            <p>Certificate ID : {{id}}</p>
-                        </div>
-                        <div class="stamp">
-                            <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/Logo+%26+certification+skills-ai.png"
-                                alt="logo-certificate" width="504px">
-                        </div>
-                        <div class="sign">
-                            <div class="signWrapper">
-                                <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/Sketch-sign.png"
-                                    alt="rahul-sign" >
-                            </div>
-                            <div class="line"></div>
-                            <p>Director</p>
-                        </div>
+                <p class="para">has successfully completed the project on<br />
+                    <span>{{courseName}}</span> from <br />
+                    {{durationStartDate}} to {{durationEndDate}}
+                </p>
+                <div class="bottomBlock">
+                    <div class="date">
+                        <h4>{{date}}</h4>
+                        <div class="line"></div>
+                        <p>Certificate ID : {{id}}</p>
                     </div>
-              </div>
-
-                 
-               
-
-
-
+                    <div class="stamp">
+                        <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/Logo+%26+certification+skills-ai.png"
+                            alt="logo-certificate" width="504px">
+                    </div>
+                    <div class="sign">
+                        <div class="signWrapper">
+                            <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/Sketch-sign.png"
+                                alt="rahul-sign">
+                        </div>
+                        <div class="line"></div>
+                        <p>Director</p>
+                    </div>
+                </div>
             </div>
+
+
+
+
+
+
         </div>
+    </div>
     </div>
 </body>
 

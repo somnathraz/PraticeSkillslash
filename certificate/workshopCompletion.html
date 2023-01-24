@@ -22,7 +22,7 @@
             width: 1122px;
             align-items: center;
             justify-content: center;
-            height: 793px;
+            height: 773px;
             background: linear-gradient(0deg, rgba(13, 75, 156, 0.89) 12%, rgba(50, 131, 189, 0.449) 81%), url("https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/amazing-aerial-shot-singapore-cityscape-with-lots-skyscrapers.jpg") center center no-repeat;
             background-size: cover;
             position: relative;
@@ -74,6 +74,7 @@
             flex-flow: column;
             align-items: center;
             padding: 15px;
+            margin-top: 30px;
             justify-content: center;
         }
 
@@ -83,7 +84,7 @@
             letter-spacing: 8px;
             font-weight: 700;
             margin: 0;
-          
+
         }
 
         .top p {
@@ -125,6 +126,26 @@
             position: absolute;
             top: -70px;
         }
+
+        .qrCode {
+            width: 90px;
+            height: 90px;
+
+        }
+
+        .qrWrap {
+            display: flex;
+            position: absolute;
+            left: 60px;
+            top: 20px;
+            align-items: center;
+            flex-flow: column;
+
+        }
+
+        .qrWrap p {
+            font-size: 14px;
+        }
     </style>
 </head>
 
@@ -133,18 +154,24 @@
         <div class="certificate">
             <div class="line"></div>
             <div class="inner">
+                <div class="qrWrap">
+                    <img class="qrCode"
+                        src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/qrcode_Verify.png"
+                        alt="qrCode" />
+                    <p>Scan to verify</p>
+                </div>
                 <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/workshopCompletionPattern.png"
                     alt="pattern" class="pattern1" />
                 <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/workshopCompletionPattern.png"
                     alt="pattern" class="pattern2" />
                 <div class="top">
-                    <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/logo.ico"
-                        alt="hello" width="190px" />
+                    <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/logo.ico" alt="hello"
+                        width="190px" />
                     <h3>CERTIFICATION</h3>
                     <p>of participation</p>
 
                     <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/congratulationText.png"
-                        alt="text" width="290px" height="100%" style="margin-top: 20px;" />
+                        alt="text" width="290px" height=auto style="margin-top: 20px;" />
                     <h2>{{name}}</h2>
                 </div>
                 <div class="bottom">
