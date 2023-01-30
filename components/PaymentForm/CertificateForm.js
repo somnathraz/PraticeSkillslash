@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "../ContactusForm/ContactUsForm.module.css";
 import DatePicker from "react-datepicker";
-import { BiShow, BiHide } from "react-icons/bi";
-import Toast from "../Toast/Toast";
+import Link from "next/link";
 
 const CertificateForm = () => {
   //offset to maintain time zone difference
@@ -11,6 +10,8 @@ const CertificateForm = () => {
   const [programEndDate, setProgramEndDate] = useState();
   const [loading, setLoading] = useState(false);
   const [display, setDisplay] = useState(false);
+  const [show, setShow] = useState(false);
+  const [link, setLink] = useState(false);
 
   const [query, setQuery] = useState({
     name: "",
@@ -89,7 +90,6 @@ const CertificateForm = () => {
       });
 
       if (updateId.status === 200) {
-        console.log(query, "frontend");
         try {
           const data = await fetch("/api/v1/generateCertificate", {
             method: "POST",
@@ -99,7 +99,8 @@ const CertificateForm = () => {
             },
           });
           if (data.status === 200) {
-            console.log("hello");
+            const { fileLink } = await data.json();
+            setLink(fileLink);
             setQuery({
               name: "",
               courseName: "",
@@ -113,8 +114,11 @@ const CertificateForm = () => {
             setProgramEndDate("");
             setProgramStartDate("");
             setStartDate("");
+            alert("Certificate Generated Successfully");
+            setShow(true);
           }
         } catch (error) {
+          alert(error);
           console.log(error);
         }
       }
@@ -260,7 +264,13 @@ const CertificateForm = () => {
           </button>
         )}
       </form>
-      {display ? <Toast content={user.msg} success={user.success} shows /> : ""}
+      {show ? (
+        <div className={styles.link}>
+          <p>FileLink: {link}</p>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };
