@@ -2,9 +2,13 @@ import { connectToDatabase } from "../../../lib/mongodb";
 
 function getMonthShortName(monthNo) {
   const date = new Date();
-  date.setMonth(monthNo);
-
-  return date.toLocaleString("en-US", { month: "short" });
+  console.log(monthNo);
+  if (monthNo === 1) {
+    return "Feb";
+  } else {
+    date.setMonth(monthNo);
+    return date.toLocaleString("en-US", { month: "short" });
+  }
 }
 
 export default async function handler(req, res) {
@@ -26,12 +30,18 @@ export default async function handler(req, res) {
       activeBatch,
     } = req.body;
     console.log(req.body, "whole");
-
+    let batchActive;
+    if (activeBatch === "true") {
+      batchActive = true;
+    }
+    if (activeBatch === "false") {
+      batchActive = false;
+    }
     const batchDate = new Date(batchDates).getDate() + 1;
     const batchMonth = getMonthShortName(new Date(batchDates).getMonth());
     const addDate = new Date(batchDates);
     addDate.setDate(addDate.getDate() + 1);
-    console.log(addDate, batchDate, "batchDate");
+    console.log(batchMonth);
     if (page === "Adv Data Science and AI") {
       id = "FAIML";
       batchId = id + batchDate + batchMonth;
@@ -94,7 +104,7 @@ export default async function handler(req, res) {
                 batchDesc: batchDesc1,
                 batchWeek: batchWeek,
                 batchMsg: batchDesc2,
-                activeBatch: activeBatch,
+                activeBatch: batchActive,
                 expireAt: new Date(addDate),
               },
             },
@@ -126,7 +136,7 @@ export default async function handler(req, res) {
               batchDesc: batchDesc1,
               batchWeek: batchWeek,
               batchMsg: batchDesc2,
-              activeBatch: activeBatch,
+              activeBatch: batchActive,
               expireAt: new Date(addDate),
             },
           ],
