@@ -15,6 +15,7 @@ const CertificateForm = () => {
 
   const [query, setQuery] = useState({
     name: "",
+    email: "",
     courseName: "",
     date: "",
     certificateType: "",
@@ -103,6 +104,7 @@ const CertificateForm = () => {
             setLink(fileLink);
             setQuery({
               name: "",
+              email: "",
               courseName: "",
               date: "",
               certificateType: "",
@@ -153,6 +155,18 @@ const CertificateForm = () => {
             placeholder="Enter Participants name*"
             className={styles.EmailInput}
             value={query.name}
+            onChange={handleParam()}
+          />
+        </div>
+        <div className={styles.formWrapper}>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            required
+            placeholder="Enter Participants email*"
+            className={styles.EmailInput}
+            value={query.email}
             onChange={handleParam()}
           />
         </div>
