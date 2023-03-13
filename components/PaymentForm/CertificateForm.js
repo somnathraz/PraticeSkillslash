@@ -208,6 +208,9 @@ const CertificateForm = () => {
             <option value="Workshop completion certificate">
               Workshop completion certificate
             </option>
+            <option value="Module completion certificate">
+              Module completion certificate
+            </option>
           </select>
         </div>
         {}
@@ -226,7 +229,8 @@ const CertificateForm = () => {
 
         {query.certificateType === "" ? (
           ""
-        ) : query.certificateType !== "course completion certificate" ? (
+        ) : query.certificateType !== "course completion certificate" &&
+          query.certificateType !== "Module completion certificate" ? (
           <div className={styles.inners} style={{ marginBottom: "10px" }}>
             <DatePicker
               selected={programStartDate}

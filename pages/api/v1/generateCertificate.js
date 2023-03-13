@@ -39,6 +39,7 @@ export default async function handler(req, res) {
       durationStartDate,
       durationEndDate,
     } = req.body;
+    console.log(certificateType);
     let path = "";
     if (certificateType === "course completion certificate") {
       path = "./certificate/courseCompletion.html";
@@ -51,6 +52,9 @@ export default async function handler(req, res) {
     }
     if (certificateType === "Workshop completion certificate") {
       path = "./certificate/workshopCompletion.html";
+    }
+    if (certificateType === "Module completion certificate") {
+      path = "./certificate/moduleCompeletionCertificate.html";
     }
 
     const uploadToS3 = async (fileName) => {
@@ -119,6 +123,24 @@ export default async function handler(req, res) {
       await browser.close();
       let mailData;
       if (certificateType === "course completion certificate") {
+        console.log("hello inside mail");
+        mailData = {
+          from: "certificate@skillslash.com",
+          to: email,
+          cc: "phani.kishore@skillslash.com",
+          subject: `certificate From Skillslash`,
+          attachments: [
+            {
+              filename: `${fPdfName}.pdf`,
+              path: `./public/certificate/${fPdfName}.pdf`,
+              contentType: "application/pdf",
+            },
+          ],
+          html: `<div>Hi ${name},</div><p>Congratulations!,</p> <p>Here is your certificate of completion of the ${courseName}</p></div><p> A Module by Skillslash Academy! Congratulations on receiving your certificate of completion! </p> <p>You can now download your certificate.</p><p>Please see the attached file for your certificate.</p><div>Thanks and Regards</div><div>Team Skillslash</div>`,
+        };
+      }
+      if (certificateType === "Module completion certificate") {
+        console.log("hello inside mail");
         mailData = {
           from: "certificate@skillslash.com",
           to: email,
@@ -173,11 +195,12 @@ export default async function handler(req, res) {
       await uploadToS3(`${fPdfName}.pdf`);
       transporter.sendMail(mailData, async function (err, info) {
         if (err) {
+          console.log(err);
           emailSent = err.message;
           res.status(200).send({
             fPdfName: fPdfName,
             emailSent: emailSent,
-            myPost: myPost,
+
             fileUpload: fileUpload,
           });
         } else {
@@ -209,7 +232,10 @@ export default async function handler(req, res) {
               },
             });
           }
-          if (certificateType === "course completion certificate") {
+          if (
+            certificateType === "course completion certificate" ||
+            certificateType === "Module completion certificate"
+          ) {
             const response = await sheets.spreadsheets.values.append({
               spreadsheetId: process.env.GOOGLE_SHEET_ID1,
               range: "course certification",
