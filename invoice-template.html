@@ -2,12 +2,21 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Invoice</title>
-    <style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet" />
+    <style type="text/css">
         body {
             margin-top: 5rem;
+            background-color: #efedff;
+            display: flex;
+            font-family: "Roboto", sans-serif;
+            align-items: center;
+            justify-content: center;
         }
 
         h2,
@@ -16,14 +25,147 @@
             margin: 0;
         }
 
-        .infoGrid {
-            display: grid;
-            width: 100%;
-            max-width: 100%;
-            grid-template-columns: 57% 39%;
-            justify-content: space-between;
-            gap: 40px;
+        .wrapper {
+            background-color: white;
+            padding: 20px 40px;
+            display: flex;
+            flex-flow: column;
+            gap: 20px;
+            width: 63%;
+        }
 
+        .wrapperHeader {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 20px;
+
+            background-color: #4f419a;
+        }
+
+        .wrapperHeader p {
+            color: white;
+            font-size: 20px;
+        }
+
+        .wrapperLogo {
+            display: grid;
+            grid-template-columns: 18% 38% 30%;
+            gap: 20px;
+            background-color: #efedff;
+            border: 1px solid #4f419a;
+            padding: 20px;
+            justify-content: space-between;
+        }
+
+        .wrapperInfo {
+            display: grid;
+            grid-template-columns: 18% 38% 30%;
+            gap: 20px;
+            background-color: transparent;
+            border: 1px solid #4f419a;
+            padding: 20px;
+            justify-content: space-between;
+        }
+
+        .wrapperInfo div {
+            display: flex;
+            flex-flow: column;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .wrapperInfo div span {
+            display: flex;
+            gap: 10px;
+        }
+
+        .wrapperLogo div {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+        }
+
+        .wrapperLogo img {
+            width: 180px;
+            height: auto;
+        }
+
+        .detail {
+            display: flex;
+            flex-flow: column;
+            gap: 10px;
+        }
+
+        .detail p,
+        .detail b,
+        .address p,
+        .address b,
+        .sender p,
+        .sender b {
+            font-size: 20px;
+        }
+
+        .infoRow {
+            display: flex !important;
+            flex-flow: row !important;
+            gap: 5px;
+            justify-content: flex-start !important;
+        }
+
+        .infoRow p,
+        .infoRow b {
+            font-size: 20px;
+        }
+
+        .infoRow a {
+            text-decoration: none;
+        }
+
+        .tg {
+            border-collapse: collapse;
+            border-color: #aabcfe;
+            border-spacing: 0;
+            width: 100%;
+        }
+
+        .tg td {
+            background-color: #e8edff;
+            border-color: #aabcfe;
+            border-style: solid;
+            border-width: 1px;
+            color: #669;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            overflow: hidden;
+            padding: 10px 5px;
+            word-break: normal;
+        }
+
+        .tg th {
+            background-color: #4f419a;
+            border-color: #aabcfe;
+            border-style: solid;
+            border-width: 1px;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: normal;
+            overflow: hidden;
+            padding: 10px 5px;
+            word-break: normal;
+        }
+
+        .tg .tg-0pky {
+            border-color: inherit;
+            text-align: left;
+            vertical-align: top;
+            font-size: 20px;
+        }
+
+        .gstText {
+            font-size: 20px !important;
+            text-align: left !important;
         }
 
         .footer {
@@ -33,217 +175,146 @@
             justify-content: space-between;
         }
 
-        .infoRow {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
+        .footer {
+            font-size: 20px;
         }
 
-        .invoice-box {
-            width: 700px;
-            max-width: 800px;
-            margin: auto;
-            padding: 30px;
-            border: 1px solid #eee;
-            box-shadow: 0 0 10px rgba(0, 0, 0, .15);
-            font-size: 16px;
-            line-height: 24px;
-            font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
-            color: #555;
+        .note {
+            text-align: center;
         }
 
-        .invoice-box table {
+        .gst {
+            width: 42.9%;
+        }
+
+        .gstWrap {
             width: 100%;
-            line-height: inherit;
-            text-align: left;
-        }
-
-        .invoice-box table td {
-            padding: 5px;
-            vertical-align: top;
-        }
-
-        .invoice-box table tr td:nth-child(2) {
-            text-align: right;
-        }
-
-        .invoice-box table tr.top table td {
-            padding-bottom: 20px;
-        }
-
-        .invoice-box table tr.top table td.title {
-            font-size: 45px;
-            line-height: 45px;
-            color: #333;
-        }
-
-        .invoice-box table tr.information table td {
-            padding-bottom: 40px;
-        }
-
-        .invoice-box table tr.heading td {
-            background: #eee;
-            border-bottom: 1px solid #ddd;
-            font-weight: bold;
-        }
-
-        .invoice-box table tr.details td {
-            padding-bottom: 20px;
-        }
-
-        .invoice-box table tr.item td {
-            border-bottom: 1px solid #eee;
-        }
-
-        .invoice-box table tr.item.last td {
-            border-bottom: none;
-        }
-
-        .invoice-box table tr.total td:nth-child(2) {
-            border-top: 2px solid #eee;
-            font-weight: bold;
-        }
-
-        @media only screen and (max-width: 600px) {
-            .invoice-box table tr.top table td {
-                width: 100%;
-                display: block;
-                text-align: center;
-            }
-
-            .invoice-box table tr.information table td {
-                width: 100%;
-                display: block;
-                text-align: center;
-            }
-        }
-
-        /** RTL **/
-        .rtl {
-            direction: rtl;
-            font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
-        }
-
-        .rtl table {
-            text-align: right;
-        }
-
-        .rtl table tr td:nth-child(2) {
-            text-align: left;
+            display: flex;
+            justify-content: flex-end;
         }
     </style>
 </head>
 
 <body>
-    <div class="invoice-box">
-        <table cellpadding="0" cellspacing="0">
-            <tr class="top">
-                <td colspan="2">
-                    <table>
-                        <tr>
-                            <td class="title">
-                                <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/logo.ico"
-                                    alt="skillslash" />
-                            </td>
+    <div class="wrapper">
+        <section class="wrapperHeader">
+            <p>Date:{{today}}</p>
+            <p><b>Tax Invoice</b></p>
+            <p>Serial No.:{{invoiceId}}</p>
+        </section>
 
-                            <td>
-                                Invoice #: {{invoiceId}}<br>
-                                Invoice Date: {{invoiceDate}}<br>
-                                Payment Date: {{paymentDate}}
-                            </td>
-                        </tr>
+        <section class="wrapperLogo">
+            <div class="logo">
+                <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/New-UI/Skillslash-logo-new.png"
+                    alt="skillslash" />
+            </div>
+            <div class="address">
+                <h2>Skillslash Pvt Ltd.</h2>
+                <h3>Business name : Skillslash</h3>
+                <b>Address:</b>
+                <p>
+                    Skillslash Pvt Ltd, Level 8, Umiya Business Bay, Tower 1, Cessna
+                    Business Bay, Marathahalli ORR, Bengaluru, 560103
+                </p>
+            </div>
+            <div class="detail">
+                <div class="infoRow">
+                    <b>MOB:</b>
+                    <p><a href="tel:7349222263">+91 7349222263</a></p>
+                </div>
+                <div class="infoRow">
+                    <b> Website :</b>
+                    <p>
+                        <a href="https://skillslash.com/">www.skillslash.com</a>
+                    </p>
+                </div>
+                <div class="infoRow">
+                    <b> Email:</b>
+                    <p><a href="mail:info@skillsash.com">info@skillsash.com</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="wrapperInfo">
+            <div class="sender">
+                <b>Bill To:</b>
+                <p>{{customerName}}</p>
+            </div>
+            <div class="address">
+                <span>
+                    <b>Email:</b>
+                    <p>{{customerEmail}}</p>
+                </span>
+                <span>
+                    <b>Phone:</b>
+                    <p>{{customerPhone}}</p>
+                </span>
+            </div>
+            <div class="detail">
+                <span>
+                    <b>Date:</b>
+                    <p>{{paymentDate}}</p>
+                </span>
+                <span>
+                    <b>Total:</b>
+                    <p>₹{{TotalPrice}}</p>
+                </span>
+                <span>
+                    <b>Payment Method:</b>
+                    <p>{{paymentMode}}</p>
+                </span>
+            </div>
+        </section>
+
+        <section class="wrapperTable">
+            <table class="tg">
+                <thead>
+                    <tr>
+                        <th class="tg-0pky">S No.</th>
+                        <th class="tg-0pky">Description</th>
+                        <th class="tg-0pky">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="tg-0pky">1</td>
+                        <td class="tg-0pky">{{courseName}}</td>
+                        <td class="tg-0pky">₹{{OriginalCost}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="gstWrap">
+                <div class="gst">
+                    <table class="tg">
+                        <tbody>
+                            <tr>
+                                <td class="gstText">CGST</td>
+                                <td class="gstText">{{CGST}}</td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td class="gstText">SGST</td>
+                                <td class="gstText">{{SGST}}</td>
+                            </tr>
+
+                            <tr>
+                                <th class="gstText">Total</td>
+                                <th class="gstText">{{TotalPrice}}</td>
+                            </tr>
+                        </tbody>
                     </table>
-                </td>
-            </tr>
+                </div>
+            </div>
+        </section>
 
-            <tr class="information">
-                <td colspan="2">
-                    <div class="infoGrid">
-
-                        <div>
-                            <h2>Skillslash Pvt Ltd.</h2>
-                            <h3>Business name : Skillslash</h3>
-                            <b>Address:</b>
-                            <p>Skillslash Pvt Ltd, Level 8, Umiya Business Bay, Tower 1, Cessna Business Bay,
-                                Marathahalli ORR, Bengaluru, 560103</p><br />
-                            <div class="infoRow"><b>GST :</b>
-                                <p>29AADCL9947P1ZF</p><br />
-                            </div>
-                            <div class="infoRow">
-                                <b>MOB:</b>
-                                <p><a href="tel:7349222263">+91 7349222263</a></p>
-                            </div>
-                            <div class="infoRow">
-                                <b> Website :</b>
-                                <p><a href="https://skillslash.com/">www.skillslash.com</a> </p>
-                            </div>
-                            <div class="infoRow">
-                                <b> Email:</b>
-                                <p><a href="mail:info@skillsash.com">info@skillsash.com</a> </p>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="infoRow">
-                                <b>TO:</b>
-                                <p> {{customerName}}</p>
-                            </div>
-                            <div class="infoRow">
-                                <b>Email:</b>
-                                <p>{{customerEmail}}</p>
-                            </div>
-                            <div class="infoRow">
-                                <b>phone:</b>
-                                <p>{{customerPhone}}</p>
-                            </div>
-
-
-                        </div>
-
-                    </div>
-                </td>
-            </tr>
-
-
-
-            <tr class="heading">
-                <td>
-                    Item
-                </td>
-
-                <td>
-                    Price
-                </td>
-            </tr>
-
-            <tr class="item">
-                <td>
-                    {{courseName}}
-                </td>
-
-                <td>
-                    Actual Price: ₹{{coursePrice}}<br />
-                    GST:+₹{{GST}}<br />
-                    Discount: -₹{{DiscountPrice}}<br />
-
-                </td>
-            </tr>
-
-
-
-
-            <tr class="total">
-                <td></td>
-
-                <td>
-                    Total: {{TotalPrice}}
-                </td>
-            </tr>
-        </table>
-        <div class="footer">
-            <div>Receiver Signature</div>
-            <div>Authorised Signatory</div>
-        </div>
+        <section class="wrapperBottom">
+            <div class="footer">
+                <div>Receiver Signature</div>
+                <div>Authorized Signatory</div>
+            </div>
+            <p class="note">This is a computer generated invoice</p>
+        </section>
     </div>
 </body>
 

@@ -6,6 +6,7 @@ import handlers from "handlebars";
 const nodemailer = require("nodemailer");
 import { authentication } from "../../../lib/googleSheet";
 import { connectToDatabase } from "../../../lib/mongodb";
+import { months } from "moment/moment";
 let fileUpload = "";
 let emailSent = "";
 
@@ -48,8 +49,14 @@ export default async function pdfGenerate(req, res) {
 
   let OriginalCost = parseFloat(coursePrice) - GST;
   OriginalCost = parseInt(OriginalCost);
+  let TotalPrice = OriginalCost + GST;
   const CGST = parseInt(GST / 2);
   const SGST = parseInt(GST / 2);
+  const today = new Date().toLocaleDateString("IN", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 
   const s3 = new AWS.S3({
     accessKeyId: AWSCredentials.accessKey,
@@ -95,6 +102,9 @@ export default async function pdfGenerate(req, res) {
       paymentType,
       customerEmail,
       OriginalCost,
+      TotalPrice,
+      GST,
+      today,
       SGST,
       CGST,
     });
