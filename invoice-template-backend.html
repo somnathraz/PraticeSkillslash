@@ -5,13 +5,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Invoice</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet" />
     <style type="text/css">
         body {
-            margin-top: 5rem;
+            margin-top: 10px;
+            position: relative;
             background-color: #efedff;
             display: flex;
             font-family: "Roboto", sans-serif;
@@ -23,6 +25,7 @@
         h3,
         p {
             margin: 0;
+            color: #585858;
         }
 
         .wrapper {
@@ -31,7 +34,8 @@
             display: flex;
             flex-flow: column;
             gap: 20px;
-            width: 63%;
+            width: 100%;
+            max-width: 100%;
         }
 
         .img {
@@ -55,18 +59,22 @@
         }
 
         .wrapperLogo {
-            display: grid;
-            grid-template-columns: 18% 38% 30%;
-            gap: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
             background-color: #efedff;
             border: 1px solid #4f419a;
             padding: 20px;
             justify-content: space-between;
         }
 
+        .wrapperLogo .address {
+            flex-basis: 40%;
+        }
+
         .wrapperInfo {
             display: grid;
-            grid-template-columns: 18% 38% 30%;
+            grid-template-columns: 27% 45% 25%;
             gap: 20px;
             background-color: transparent;
             border: 1px solid #4f419a;
@@ -77,6 +85,7 @@
         .wrapperInfo div {
             display: flex;
             flex-flow: column;
+            width: 100%;
             gap: 10px;
             justify-content: center;
         }
@@ -92,6 +101,12 @@
             justify-content: center;
         }
 
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .wrapperLogo img {
             width: 180px;
             height: auto;
@@ -103,19 +118,26 @@
             gap: 10px;
         }
 
+        .detail span,
+        .address span {
+            display: flex;
+            align-items: center;
+        }
+
         .detail p,
         .detail b,
         .address p,
         .address b,
         .sender p,
         .sender b {
-            font-size: 20px;
+            font-size: 18px;
         }
 
         .infoRow {
             display: flex !important;
             flex-flow: row !important;
             gap: 5px;
+            align-items: center;
             justify-content: flex-start !important;
         }
 
@@ -178,7 +200,7 @@
             display: flex;
             width: 100%;
             align-items: center;
-            margin-top: 60px;
+            margin-top: 20px;
             justify-content: space-between;
         }
 
@@ -226,6 +248,10 @@
 
 <body>
     <div class="wrapper">
+        <div class="logo">
+            <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/New-UI/Skillslash-logo-new.png"
+                alt="skillslash" />
+        </div>
         <section class="wrapperHeader">
             <p>Date:{{today}}</p>
             <p><b>Tax Invoice</b></p>
@@ -233,32 +259,27 @@
         </section>
 
         <section class="wrapperLogo">
-            <div class="logo">
-                <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/New-UI/Skillslash-logo-new.png"
-                    alt="skillslash" />
-            </div>
+
             <div class="address">
                 <h2>Skillslash Pvt Ltd.</h2>
-                <h3>Business name : Skillslash</h3>
-                <b>Address:</b>
                 <p>
-                    Skillslash Pvt Ltd, Level 8, Umiya Business Bay, Tower 1, Cessna
-                    Business Bay, Marathahalli ORR, Bengaluru, 560103
+                    No.255 2nd floor Skillslash above Airtel office ,17th cross road, HSR Layout Sector 6 Bangalore,
+                    Karnataka -560102
                 </p>
             </div>
             <div class="detail">
                 <div class="infoRow">
-                    <b>MOB:</b>
+                    <i class="fa-solid fa-phone-volume"></i>
                     <p><a href="tel:7349222263">+91 7349222263</a></p>
                 </div>
                 <div class="infoRow">
-                    <b> Website :</b>
+                    <i class="fa-solid fa-globe"></i>
                     <p>
                         <a href="https://skillslash.com/">www.skillslash.com</a>
                     </p>
                 </div>
                 <div class="infoRow">
-                    <b> Email:</b>
+                    <i class="fa-solid fa-envelope"></i>
                     <p><a href="mail:info@skillsash.com">info@skillsash.com</a></p>
                 </div>
             </div>
@@ -269,27 +290,25 @@
                 <b>Bill To:</b>
                 <p>{{customerName}}</p>
             </div>
-            <div class="address">
+            <div class="Saddress">
                 <span>
-                    <b>Email:</b>
+                    <i class="fa-solid fa-envelope"></i>
                     <p>{{customerEmail}}</p>
+
                 </span>
                 <span>
-                    <b>Phone:</b>
+                    <i class="fa-solid fa-mobile-screen-button"></i>
                     <p>{{customerPhone}}</p>
                 </span>
             </div>
             <div class="detail">
                 <span>
-                    <b>Date:</b>
+                    <i class="fa-regular fa-calendar-days"></i>
                     <p>{{paymentDate}}</p>
                 </span>
+
                 <span>
-                    <b>Total:</b>
-                    <p>₹{{TotalPrice}}</p>
-                </span>
-                <span>
-                    <b>Payment Method:</b>
+                    <i class="fa-solid fa-building-columns"></i>
                     <p>{{paymentMode}}</p>
                 </span>
             </div>
@@ -308,7 +327,7 @@
                     <tr>
                         <td class="tg-0pky">1</td>
                         <td class="tg-0pky">{{courseName}}</td>
-                        <td class="tg-0pky">₹{{OriginalCost}}</td>
+                        <td class="tg-0pky">₹ {{OriginalCost}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -318,18 +337,18 @@
                         <tbody>
                             <tr>
                                 <td class="gstText">CGST</td>
-                                <td class="gstText">{{CGST}}</td>
+                                <td class="gstText">₹ {{CGST}}</td>
                             </tr>
                         </tbody>
                         <tbody>
                             <tr>
                                 <td class="gstText">SGST</td>
-                                <td class="gstText">{{SGST}}</td>
+                                <td class="gstText">₹ {{SGST}}</td>
                             </tr>
 
                             <tr>
                                 <th class="gstText">Total</td>
-                                <th class="gstText">{{TotalPrice}}</td>
+                                <th class="gstText">₹ {{TotalPrice}}</td>
                             </tr>
                         </tbody>
                     </table>

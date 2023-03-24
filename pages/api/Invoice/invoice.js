@@ -49,7 +49,7 @@ export default async function pdfGenerate(req, res) {
 
   let OriginalCost = parseFloat(coursePrice) - GST;
   OriginalCost = parseInt(OriginalCost);
-  let TotalPrice = OriginalCost + GST;
+  let TotalPrice = Math.ceil(OriginalCost + GST);
   const CGST = parseInt(GST / 2);
   const SGST = parseInt(GST / 2);
   const today = new Date().toLocaleDateString("IN", {
@@ -99,7 +99,7 @@ export default async function pdfGenerate(req, res) {
       coursePrice,
       invoiceId,
       paymentDate,
-      paymentType,
+      paymentMode,
       customerEmail,
       OriginalCost,
       TotalPrice,
@@ -135,7 +135,7 @@ export default async function pdfGenerate(req, res) {
     await page.setContent(html, { waitUntil: "networkidle0" });
 
     // convert the page to pdf with the .pdf() method
-    const pdf = await page.pdf({ format: "A4" });
+    const pdf = await page.pdf({ format: "A4", printBackground: true });
     fs.mkdirSync("./public/invoice", { recursive: true });
     fs.writeFileSync(`./public/invoice/${fPdfName}.pdf`, pdf);
 
