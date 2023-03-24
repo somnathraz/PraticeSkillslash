@@ -192,6 +192,21 @@
             display: flex;
             justify-content: flex-end;
         }
+
+        .sign {
+            border-top: 1px dotted rgb(172, 172, 172);
+            padding-top: 10px;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+
+
+        }
+
+        .sign p {
+            color: rgb(172, 172, 172);
+            font-size: 12px;
+        }
     </style>
 </head>
 
@@ -310,10 +325,21 @@
 
         <section class="wrapperBottom">
             <div class="footer">
-                <div>Receiver Signature</div>
-                <div>Authorized Signatory</div>
+
+                <div>
+                    <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Paid-Stamp-01.webp"
+                        class="img" />
+
+                </div>
             </div>
-            <p class="note">This is a computer generated invoice</p>
+            <div class="sign">
+                Notes:
+                All relevant information about live classes and Access details will be shared through email.
+                <p> Refund Policy: https://skillslash.com/refunds-cancellation/</p>
+
+
+                <p class="note">*This is a computer generated invoice</p>
+            </div>
         </section>
     </div>
 </body>
