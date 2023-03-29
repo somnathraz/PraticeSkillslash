@@ -54,10 +54,10 @@ export default async function pdfGenerate(req, res) {
   const SGST = parseInt(GST / 2);
   const today = new Date().toLocaleDateString("IN", {
     year: "numeric",
-    month: "long",
+    month: "short",
     day: "numeric",
   });
-
+  console.log(today);
   const s3 = new AWS.S3({
     accessKeyId: AWSCredentials.accessKey,
     secretAccessKey: AWSCredentials.secret,
