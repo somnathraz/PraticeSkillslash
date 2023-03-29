@@ -57,7 +57,7 @@ export default async function pdfGenerate(req, res) {
     month: "2-digit",
     day: "numeric",
   });
-  console.log(today);
+
   const s3 = new AWS.S3({
     accessKeyId: AWSCredentials.accessKey,
     secretAccessKey: AWSCredentials.secret,
