@@ -220,7 +220,7 @@
         }
 
         .gst {
-            width: 42.9%;
+            width: 100%;
         }
 
         .gstWrap {
@@ -330,30 +330,28 @@
                         <td class="tg-0pky">₹ {{OriginalCost}}</td>
                     </tr>
                 </tbody>
-            </table>
-            <div class="gstWrap">
-                <div class="gst">
-                    <table class="tg">
-                        <tbody>
-                            <tr>
-                                <td class="gstText">CGST</td>
-                                <td class="gstText">₹ {{CGST}}</td>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr>
-                                <td class="gstText">SGST</td>
-                                <td class="gstText">₹ {{SGST}}</td>
-                            </tr>
+                <tbody>
+                    <tr>
+                        <td class="tg-0pky"></td>
+                        <td class="gstText">CGST</td>
+                        <td class="gstText">₹ {{CGST}}</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td class="tg-0pky"></td>
+                        <td class="gstText">SGST</td>
+                        <td class="gstText">₹ {{SGST}}</td>
+                    </tr>
 
-                            <tr>
-                                <th class="gstText">Total</td>
-                                <th class="gstText">₹ {{TotalPrice}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+                    <tr>
+                        <td class="tg-0pky"></td>
+                        <th class="gstText">Total</td>
+                        <th class="gstText">₹ {{TotalPrice}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
         </section>
 
         <section class="wrapperBottom">
