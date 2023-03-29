@@ -54,7 +54,7 @@ export default async function pdfGenerate(req, res) {
   const SGST = parseInt(GST / 2);
   const today = new Date().toLocaleDateString("IN", {
     year: "numeric",
-    month: "short",
+    month: "2-digit",
     day: "numeric",
   });
   console.log(today);
