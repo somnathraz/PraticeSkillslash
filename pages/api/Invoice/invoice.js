@@ -7,6 +7,7 @@ const nodemailer = require("nodemailer");
 import { authentication } from "../../../lib/googleSheet";
 import { connectToDatabase } from "../../../lib/mongodb";
 import { months } from "moment/moment";
+import { log } from "console";
 let fileUpload = "";
 let emailSent = "";
 
@@ -145,11 +146,12 @@ export default async function pdfGenerate(req, res) {
 
     transporter.sendMail(mailData, async function (err, info) {
       if (err) {
+        console.log(err);
         emailSent = err.message;
         res.status(200).send({
           fPdfName: fPdfName,
           emailSent: emailSent,
-          myPost: myPost,
+
           fileUpload: fileUpload,
         });
       } else {

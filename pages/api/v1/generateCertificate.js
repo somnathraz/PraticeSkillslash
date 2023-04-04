@@ -5,6 +5,7 @@ import handlers from "handlebars";
 const nodemailer = require("nodemailer");
 import { connectToDatabase } from "../../../lib/mongodb";
 import { authentication } from "../../../lib/googleSheet";
+import { log } from "console";
 
 let fileUpload = "";
 let emailSent = "";
@@ -39,7 +40,7 @@ export default async function handler(req, res) {
       durationStartDate,
       durationEndDate,
     } = req.body;
-    console.log(certificateType);
+
     let path = "";
     if (certificateType === "course completion certificate") {
       path = "./certificate/courseCompletion.html";
@@ -49,6 +50,9 @@ export default async function handler(req, res) {
     }
     if (certificateType === "project experience certificate Caspian") {
       path = "./certificate/projectExperienceCertifateCs.html";
+    }
+    if (certificateType === "project experience certificate SingleDoor") {
+      path = "./certificate/projectExperienceCertifateCsSingleDoor.html";
     }
     if (certificateType === "Workshop completion certificate") {
       path = "./certificate/workshopCompletion.html";
@@ -85,7 +89,7 @@ export default async function handler(req, res) {
 
     try {
       // read our invoice-template.html file using node fs module
-      console.log(path);
+
       const file = fs.readFileSync(path, "utf8");
 
       // compile the file with handlebars and inject the customerName variable
@@ -123,7 +127,6 @@ export default async function handler(req, res) {
       await browser.close();
       let mailData;
       if (certificateType === "course completion certificate") {
-        console.log("hello inside mail");
         mailData = {
           from: "certificate@skillslash.com",
           to: email,
@@ -140,7 +143,6 @@ export default async function handler(req, res) {
         };
       }
       if (certificateType === "Module completion certificate") {
-        console.log("hello inside mail");
         mailData = {
           from: "certificate@skillslash.com",
           to: email,
@@ -158,7 +160,8 @@ export default async function handler(req, res) {
       }
       if (
         certificateType === "project experience certificate Theorax" ||
-        certificateType === "project experience certificate Caspian"
+        certificateType === "project experience certificate Caspian" ||
+        certificateType === "project experience certificate SingleDoor"
       ) {
         mailData = {
           from: "certificate@skillslash.com",
@@ -200,7 +203,6 @@ export default async function handler(req, res) {
           res.status(200).send({
             fPdfName: fPdfName,
             emailSent: emailSent,
-
             fileUpload: fileUpload,
           });
         } else {

@@ -202,6 +202,9 @@ const CertificateForm = () => {
             <option value="project experience certificate Theorax">
               project experience certificate Theorax
             </option>
+            <option value="project experience certificate SingleDoor">
+              project experience certificate SingleDoor
+            </option>
             <option value="project experience certificate Caspian">
               project experience certificate Caspian
             </option>

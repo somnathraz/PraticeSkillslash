@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project completion</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lusitana&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
+
+        body {
+            font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+
+        }
+
+        .wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .innerWrapper {
+            display: flex;
+            flex-flow: column;
+            width: 1122px;
+            align-items: center;
+            justify-content: center;
+            height: 760px;
+            overflow: hidden;
+            border-radius: 8px;
+            background-color: white;
+            background-image: url("https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/PROJECT+EXPERIENCE+CERTIFICATE+(SingleDoor)+bg.png");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        .logo {
+            position: absolute;
+            right: 40%;
+            top: 20px;
+            z-index: 99;
+        }
+
+        .content {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content h2 {
+            font-family: 'Lusitana', serif;
+            font-weight: 600;
+            text-align: center;
+            font-size: 70px;
+            margin: 0;
+        }
+
+        .certificate {
+            font-size: 35px;
+            letter-spacing: 5px;
+            font-weight: 600;
+            margin: 0;
+            margin-bottom: 20px;
+        }
+
+        .content h1 {
+            font-size: 40px;
+            border-bottom: 2px solid #E7C45A;
+            font-family: 'Petit Formal Script', cursive;
+        }
+
+        .yellowLine {
+
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            justify-content: center;
+        }
+
+        .yellowLine p {
+            font-weight: 600;
+            letter-spacing: 3px;
+            font-size: 20px;
+            text-transform: uppercase;
+            margin-bottom: 0;
+        }
+
+
+        .innerContent {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bold {
+            font-weight: 800;
+        }
+
+        .bottomBlock {
+            display: grid;
+            margin-top: -90px;
+            margin-left: 60px;
+            align-items: center;
+            grid-template-columns: 30% 30% 30%;
+            /* padding: 10px; */
+            height: 120px;
+        }
+
+        .bottomBlock div {
+            display: flex;
+
+            flex-flow: column;
+        }
+
+        .wrapper h4,
+        p {
+            margin: 0;
+
+        }
+
+        .sign {
+            position: relative;
+            align-items: center;
+        }
+
+        .sign p {
+            font-size: 26px;
+            color: #25385d;
+            margin-top: 8px;
+        }
+
+        .sign img {
+            width: 100px;
+            height: 100%;
+        }
+
+        .signWrapper {
+            justify-content: center;
+            display: flex;
+            padding: 10px;
+            position: absolute;
+            top: -40px;
+        }
+
+        .date .line {
+            border-bottom: 2px solid black;
+            width: 80%;
+        }
+
+        .sign .line {
+            margin-top: 43px;
+            width: 60%;
+            border-bottom: 2px solid black;
+        }
+
+        .stamp {
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .date p {
+            margin-top: 5px;
+        }
+
+        .date h4 {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .bold {
+            color: #13649d;
+        }
+
+        .innerContent p {
+            font-size: 23px;
+            margin: 5px;
+        }
+
+        .qrCode {
+            width: 90px;
+            height: 90px;
+
+        }
+
+        .qrWrap {
+            display: flex;
+            position: absolute;
+            left: 120px;
+            top: 90px;
+            align-items: center;
+            flex-flow: column;
+
+        }
+
+        .qrWrap p {
+            font-size: 14px;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <div class="innerWrapper">
+            <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/singledoor+logo.png"
+                class="logo" width="160px" />
+
+
+            <div class="content">
+
+                <h2>Project Experience</h2>
+                <p class="certificate">CERTIFICATE</p>
+                <div class="yellowLine">
+                    <p>This is to certify that</p>
+                </div>
+
+                <h1>{{name}}</h1>
+                <div class="innerContent">
+                    <p class="">has successfully completed the project on</p>
+                    <p class="bold"><b>{{courseName}}</b></p>
+                    <p>from {{durationStartDate}} to {{durationEndDate}}</p>
+                </div>
+
+            </div>
+            <div class="bottomBlock">
+                <div class="qrWrap">
+                    <img class="qrCode"
+                        src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/qrcode_Verify.png"
+                        alt="qrCode" />
+                    <p>Scan to verify</p>
+                </div>
+                <div class="date">
+                    <h4>{{date}}</h4>
+                    <div class="line"></div>
+                    <p>Certificate ID : {{id}}</p>
+                </div>
+                <div class="stamp">
+                    <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/Logo+%26+certification+skills-ai.png"
+                        alt="logo-certificate" width="504px">
+                </div>
+                <div class="sign">
+                    <div class="signWrapper">
+                        <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/Sketch-sign.png"
+                            alt="rahul-sign">
+                    </div>
+                    <div class="line"></div>
+
+                    <p>Director</p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>
