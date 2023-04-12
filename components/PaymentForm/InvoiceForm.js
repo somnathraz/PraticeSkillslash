@@ -66,6 +66,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
   }, []);
 
   const [value, setValue] = useState();
+
   const [query, setQuery] = useState({
     customerName: "",
     customerEmail: "",
@@ -74,6 +75,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
     paymentDate: "",
     coursePrice: "",
     paymentMode: "",
+    partialPrice: "",
     salesEmail: "",
     InvoiceDate: `${dateT}/${monthT}/${yearT}`,
     salesMan: salesMan,
@@ -161,6 +163,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
             paymentMode: query.paymentMode,
             coursePrice: query.coursePrice,
             paymentType: query.paymentType,
+            partialPrice: query.partialPrice,
             invoiceId: code + pId,
           }),
           headers: {
@@ -332,10 +335,25 @@ const InvoiceForm = ({ refund, salesMan }) => {
               Payment Type*
             </option>
             <option value="Full Payment">Full Payment</option>
+
             <option value="Partial Payment">Partial Payment</option>
           </select>
         </div>
-
+        {query.paymentType === "Partial Payment" ? (
+          <div className={styles.formWrapper}>
+            <input
+              type="number"
+              name="partialPrice"
+              required
+              placeholder="Enter the partial amount paid*"
+              className={styles.EmailInput}
+              value={query.partialPrice}
+              onChange={handleParam()}
+            />
+          </div>
+        ) : (
+          ""
+        )}
         <div className={styles.inner} style={{ marginBottom: "10px" }}>
           <DatePicker
             selected={startDate}
