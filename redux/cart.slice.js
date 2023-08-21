@@ -4,7 +4,7 @@ import { getCookie, setCookie } from "../lib/useCookies";
 
 const cartSlice = createSlice({
   name: "cart",
-  initialState: [],
+  initialState: CARD,
   reducers: {
     addToCart: (state, action) => {
       const itemExists = state.find((item) => item.id === action.payload.id);

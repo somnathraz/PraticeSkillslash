@@ -6,8 +6,6 @@ import handlers from "handlebars";
 const nodemailer = require("nodemailer");
 import { authentication } from "../../../lib/googleSheet";
 import { connectToDatabase } from "../../../lib/mongodb";
-import { months } from "moment/moment";
-import { log } from "console";
 let fileUpload = "";
 let emailSent = "";
 
@@ -117,7 +115,7 @@ export default async function pdfGenerate(req, res) {
     const fPdfName = pdfName.replace(/[&\/\\#,+()$~%.'":*?<>{} ]/g, "-");
 
     const mailData = {
-      from: "admissions@skillslash.com",
+      from: "admission@skillslash.com",
       to: customerEmail,
       cc: "invoice@skillslash.com",
       subject: `invoice From Skillslash`,
@@ -151,12 +149,10 @@ export default async function pdfGenerate(req, res) {
         res.status(200).send({
           fPdfName: fPdfName,
           emailSent: emailSent,
-
           fileUpload: fileUpload,
         });
       } else {
         emailSent = `email sent successfully. ${info.messageId}`;
-
         const response = await sheets.spreadsheets.values.append({
           spreadsheetId: process.env.GOOGLE_SHEET_ID,
           range: "Sheet1",

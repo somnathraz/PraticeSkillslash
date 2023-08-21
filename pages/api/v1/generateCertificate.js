@@ -5,7 +5,6 @@ import handlers from "handlebars";
 const nodemailer = require("nodemailer");
 import { connectToDatabase } from "../../../lib/mongodb";
 import { authentication } from "../../../lib/googleSheet";
-import { log } from "console";
 
 let fileUpload = "";
 let emailSent = "";
