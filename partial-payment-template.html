@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet" />
+    <style type="text/css">
+        body {
+            margin-top: 10px;
+            position: relative;
+            background-color: #efedff;
+            display: flex;
+            font-family: "Roboto", sans-serif;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h2,
+        h3,
+        p {
+            margin: 0;
+            color: #585858;
+        }
+
+        .wrapper {
+            background-color: white;
+            padding: 20px 40px;
+            display: flex;
+            flex-flow: column;
+            gap: 20px;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .img {
+            width: 220px;
+
+
+        }
+
+        .wrapperHeader {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 20px;
+
+            background-color: #4f419a;
+        }
+
+        .wrapperHeader p {
+            color: white;
+            font-size: 20px;
+        }
+
+        .wrapperLogo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #efedff;
+            border: 1px solid #4f419a;
+            padding: 20px;
+            justify-content: space-between;
+        }
+
+        .wrapperLogo .address {
+            flex-basis: 40%;
+        }
+
+        .wrapperInfo {
+            display: grid;
+            grid-template-columns: 27% 45% 25%;
+            gap: 20px;
+            background-color: transparent;
+            border: 1px solid #4f419a;
+            padding: 20px;
+            justify-content: space-between;
+        }
+
+        .wrapperInfo div {
+            display: flex;
+            flex-flow: column;
+            width: 100%;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .wrapperInfo div span {
+            display: flex;
+            gap: 10px;
+        }
+
+        .wrapperLogo div {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wrapperLogo img {
+            width: 180px;
+            height: auto;
+        }
+
+        .detail {
+            display: flex;
+            flex-flow: column;
+            gap: 10px;
+        }
+
+        .detail span,
+        .address span {
+            display: flex;
+            align-items: center;
+        }
+
+        .detail p,
+        .detail b,
+        .address p,
+        .address b,
+        .sender p,
+        .sender b {
+            font-size: 18px;
+        }
+
+        .infoRow {
+            display: flex !important;
+            flex-flow: row !important;
+            gap: 5px;
+            align-items: center;
+            justify-content: flex-start !important;
+        }
+
+        .infoRow p,
+        .infoRow b {
+            font-size: 20px;
+        }
+
+        .infoRow a {
+            text-decoration: none;
+        }
+
+        .tg {
+            border-collapse: collapse;
+            border-color: #aabcfe;
+            border-spacing: 0;
+            width: 100%;
+        }
+
+        .tg td {
+            background-color: #e8edff;
+            border-color: #aabcfe;
+            border-style: solid;
+            border-width: 1px;
+            color: #669;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            overflow: hidden;
+            padding: 10px 5px;
+            word-break: normal;
+        }
+
+        .tg th {
+            background-color: #4f419a;
+            border-color: #aabcfe;
+            border-style: solid;
+            border-width: 1px;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: normal;
+            overflow: hidden;
+            padding: 10px 5px;
+            word-break: normal;
+        }
+
+        .tg .tg-0pky {
+            border-color: inherit;
+            text-align: left;
+            vertical-align: top;
+            font-size: 20px;
+        }
+
+        .gstText {
+            font-size: 20px !important;
+            text-align: left !important;
+        }
+
+        .footer {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            margin-top: 20px;
+            justify-content: space-between;
+        }
+
+        .footer div {
+            width: 100%;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer {
+            font-size: 20px;
+        }
+
+        .note {
+            text-align: center;
+        }
+
+        .gst {
+            width: 100%;
+        }
+
+        .gstWrap {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .sign {
+            border-top: 1px dotted rgb(172, 172, 172);
+            padding-top: 10px;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+
+
+        }
+
+        .sign p {
+            color: rgb(172, 172, 172);
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="logo">
+            <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/New-UI/Skillslash-logo-new.png"
+                alt="skillslash" />
+        </div>
+        <section class="wrapperHeader">
+            <p>Date:{{today}}</p>
+            <p><b> Invoice </b></p>
+            <p>Serial No.:{{invoiceId}}</p>
+        </section>
+
+        <section class="wrapperLogo">
+
+            <div class="address">
+                <h2>Skillslash Pvt Ltd.</h2>
+                <p>
+                    No.255 2nd floor Skillslash above Airtel office ,17th cross road, HSR Layout Sector 6 Bangalore,
+                    Karnataka -560102
+                </p>
+            </div>
+            <div class="detail">
+                <div class="infoRow">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <p><a href="tel:7349222263">+91 7349222263</a></p>
+                </div>
+                <div class="infoRow">
+                    <i class="fa-solid fa-globe"></i>
+                    <p>
+                        <a href="https://skillslash.com/">www.skillslash.com</a>
+                    </p>
+                </div>
+                <div class="infoRow">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p><a href="mail:info@skillsash.com">info@skillsash.com</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="wrapperInfo">
+            <div class="sender">
+                <b>Bill To:</b>
+                <p>{{customerName}}</p>
+            </div>
+            <div class="Saddress">
+                <span>
+                    <i class="fa-solid fa-envelope"></i>
+                    <p>{{customerEmail}}</p>
+
+                </span>
+                <span>
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <p>{{customerPhone}}</p>
+                </span>
+            </div>
+            <div class="detail">
+                <span>
+                    <i class="fa-regular fa-calendar-days"></i>
+                    <p>{{paymentDate}}</p>
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-building-columns"></i>
+                    <p>{{paymentMode}}</p>
+                </span>
+            </div>
+        </section>
+
+        <section class="wrapperTable">
+            <table class="tg">
+                <thead>
+                    <tr>
+                        <th class="tg-0pky">S No.</th>
+                        <th class="tg-0pky">Description</th>
+                        <th class="tg-0pky">Total Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="tg-0pky">1</td>
+                        <td class="tg-0pky">{{courseName}}</td>
+                        <td class="tg-0pky">₹ {{coursePrice}}</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                </tbody>
+                <tbody>
+
+                     <tr>
+                        <td class="tg-0pky"></td>
+                        <th class="gstText">Amount Paid</td>
+                        <th class="gstText">₹ {{partialPrice}}</td>
+                    </tr>
+
+                     <tr>
+                        <td class="tg-0pky"></td>
+                        <th class="gstText">Amount Due</td>
+                        <th class="gstText">₹ {{AmountDue}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+
+        <section class="wrapperBottom">
+            <div class="footer">
+
+                <div>
+                    <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/Paid-Stamp-01.webp"
+                        class="img" />
+
+                </div>
+            </div>
+            <div class="sign">
+                Notes:
+                All relevant information about live classes and Access details will be shared through email.
+                <p> Refund Policy: https://skillslash.com/refunds-cancellation/</p>
+
+
+                <p class="note">*This is a computer generated invoice</p>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

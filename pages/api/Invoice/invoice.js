@@ -6,6 +6,7 @@ import handlers from "handlebars";
 const nodemailer = require("nodemailer");
 import { authentication } from "../../../lib/googleSheet";
 import { connectToDatabase } from "../../../lib/mongodb";
+
 let fileUpload = "";
 let emailSent = "";
 
@@ -41,14 +42,17 @@ export default async function pdfGenerate(req, res) {
     paymentType,
     paymentDate,
     customerEmail,
+    partialPrice,
   } = req.body;
-
+  // console.log(partialPrice);
   let GST =
     parseFloat(coursePrice) - parseFloat(coursePrice) * (100 / (100 + 18));
 
   let OriginalCost = parseFloat(coursePrice) - GST;
   OriginalCost = parseInt(OriginalCost);
   let TotalPrice = Math.ceil(OriginalCost + GST);
+  let AmountDue = parseFloat(coursePrice) - partialPrice;
+  console.log(AmountDue, "amountDue");
   const CGST = parseInt(GST / 2);
   const SGST = parseInt(GST / 2);
   const today = new Date().toLocaleDateString("IN", {
@@ -85,9 +89,14 @@ export default async function pdfGenerate(req, res) {
     });
   };
   GST = parseInt(GST);
+
   try {
     // read our invoice-template.html file using node fs module
-    const file = fs.readFileSync("./invoice-template-backend.html", "utf8");
+
+    const file =
+      paymentType === "Partial Payment"
+        ? fs.readFileSync("./partial-payment-template.html", "utf8")
+        : fs.readFileSync("./invoice-template-backend.html", "utf8");
 
     // compile the file with handlebars and inject the customerName variable
     const template = handlers.compile(`${file}`);
@@ -102,6 +111,8 @@ export default async function pdfGenerate(req, res) {
       customerEmail,
       OriginalCost,
       TotalPrice,
+      AmountDue,
+      partialPrice,
       GST,
       today,
       SGST,
@@ -179,7 +190,34 @@ export default async function pdfGenerate(req, res) {
             ],
           },
         });
-
+        if (paymentType === "Partial Payment") {
+          const response = await sheets.spreadsheets.values.append({
+            spreadsheetId: process.env.GOOGLE_SHEET_ID,
+            range: "partialPayment",
+            valueInputOption: "USER_ENTERED",
+            requestBody: {
+              values: [
+                [
+                  paymentDate,
+                  salesEmail,
+                  customerName,
+                  parseInt(coursePrice),
+                  paymentType,
+                  customerEmail,
+                  customerPhone,
+                  "backendData",
+                  "backendData",
+                  GST,
+                  invoiceId,
+                  paymentMode,
+                  courseName,
+                  salesMan,
+                  fileUpload,
+                ],
+              ],
+            },
+          });
+        }
         let myPost = await db.collection("generatedInvoice").insertOne({
           customerName: customerName,
           courseName: courseName,
