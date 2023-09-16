@@ -127,6 +127,13 @@ const InvoiceForm = ({ refund, salesMan }) => {
   ) {
     code = "BAP";
   }
+  if (
+    query.courseName === "Data Analytics Program For Professionals (Basic)" ||
+    query.courseName === "Data Analytics Program For Professionals (pro Max)" ||
+    query.courseName === "Data Analytics Program For Professionals (pro Max)"
+  ) {
+    code = "DAP";
+  }
   if (query.courseName === "Blockchain program and certification") {
     code = "BCP";
   }
@@ -293,6 +300,12 @@ const InvoiceForm = ({ refund, salesMan }) => {
             </option>
             <option value="Business Analytics Program For Professionals (pro Max)">
               Business Analytics Program For Professionals (pro Max)
+            </option>
+            <option value="Data Analytics Program For (pro)">
+              Data Analytics Program For Professionals (pro)
+            </option>
+            <option value="Data Analytics Program For Professionals (pro Max)">
+              Data Analytics Program For Professionals (pro Max)
             </option>
             <option value="Data Structures and Algorithms + System Design">
               Data Structures and Algorithms + System Design

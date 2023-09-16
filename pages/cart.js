@@ -63,16 +63,16 @@ const CartPage = ({ isConnected }) => {
   //   }
   // }, [payment]);
 
-  const getTotalPrice = () => {
-    console.log("normal method");
-    return cart.reduce(
-      (accumulator, item) =>
-        parseFloat(accumulator + item.quantity * item.price).toLocaleString(
-          "en-US"
-        ),
-      0
-    );
-  };
+  // const getTotalPrice = () => {
+  //   console.log("normal method");
+  //   return cart.reduce(
+  //     (accumulator, item) =>
+  //       parseFloat(accumulator + item.quantity * item.price).toLocaleString(
+  //         "en-US"
+  //       ),
+  //     0
+  //   );
+  // };
   const getDiscountPrice = () => {
     return cart.reduce(
       (accumulator, item) =>
@@ -317,7 +317,7 @@ const CartPage = ({ isConnected }) => {
           <div>Actions</div>
           <div>Total Price</div>
         </div>
-        {cart.map((item, i) => (
+        {/* {cart.map((item, i) => (
           <div className={styles.body} key={item.id}>
             <div className={styles.image}>
               <Image src={item.image} height="90" width="65" alt="hello" />
@@ -337,7 +337,7 @@ const CartPage = ({ isConnected }) => {
               ₹ {parseFloat(item.quantity * item.price).toLocaleString("en-US")}
             </p>
           </div>
-        ))}
+        ))} */}
         <form onSubmit={submitHandler}>
           <div>
             <input
@@ -368,11 +368,11 @@ const CartPage = ({ isConnected }) => {
             )}
           </div>
         </form>
-
+        {/* 
         <h2>
           Grand Total: ₹{" "}
           {discount === "" ? getTotalPrice() : getDiscountPrice()}
-        </h2>
+        </h2> */}
 
         <PaymentForm setDetails={setDetails} />
         <button
