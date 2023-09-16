@@ -4,7 +4,7 @@ import { BsThreeDots, BsLayers } from "react-icons/bs";
 import { FiEdit } from "react-icons/fi";
 import { AiOutlineDelete } from "react-icons/ai";
 import { AiOutlineCloseCircle } from "react-icons/ai";
-import UpdatePopupFrom from "../PaymentForm/popupUpdateForm";
+import UpdatePopupFrom from "../PaymentForm/PopupUpdateForm";
 import moment from "moment";
 
 const DashboardBox = ({ popupData }) => {
