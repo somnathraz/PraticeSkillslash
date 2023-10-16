@@ -59,6 +59,9 @@ export default async function handler(req, res) {
     if (certificateType === "Module completion certificate") {
       path = "./certificate/moduleCompeletionCertificate.html";
     }
+    if (certificateType === "project experience certificate CHMS") {
+      path = "./certificate/projectExperienceCertifateChms.html";
+    }
 
     const uploadToS3 = async (fileName) => {
       // Read content from the file
@@ -125,6 +128,7 @@ export default async function handler(req, res) {
 
       await browser.close();
       let mailData;
+
       if (certificateType === "course completion certificate") {
         mailData = {
           from: "certificate@skillslash.com",
@@ -160,7 +164,8 @@ export default async function handler(req, res) {
       if (
         certificateType === "project experience certificate Theorax" ||
         certificateType === "project experience certificate Caspian" ||
-        certificateType === "project experience certificate SingleDoor"
+        certificateType === "project experience certificate SingleDoor" ||
+        certificateType === "project experience certificate CHMS"
       ) {
         mailData = {
           from: "certificate@skillslash.com",
