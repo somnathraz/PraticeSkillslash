@@ -32,7 +32,7 @@ export default async function generatePage(req, res) {
 
     Array.prototype.push.apply(files, response.files);
     response.data.files.forEach(function (file) {
-      console.log(file.name);
+      // console.log(file.name);
       fs.mkdirSync(`./pages/tutor/${file.name}`, { recursive: true });
       fs.mkdirSync(`./tutor/${file.name}`, { recursive: true });
       //create files inside folder

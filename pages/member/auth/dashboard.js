@@ -13,14 +13,13 @@ import { BsThreeDots } from "react-icons/bs";
 import { BiCalendarEvent } from "react-icons/bi";
 import { RiCoupon2Line, RiHandCoinLine, RiWindow2Fill } from "react-icons/ri";
 import { TbFileInvoice } from "react-icons/tb";
-import {TbCertificate} from "react-icons/tb"
+import { TbCertificate, TbMail } from "react-icons/tb";
 import AddUserFrom from "../../../components/PaymentForm/AddUserForm";
 import Image from "next/image";
 import AddPopupFrom from "../../../components/PaymentForm/PopupDetails";
-
 import BatchDateForm from "../../../components/PaymentForm/BatchDateForm";
 import CertificateForm from "../../../components/PaymentForm/CertificateForm";
-
+import EmailForm from "../../../components/PaymentForm/EmailForm";
 const Dashboard = (props) => {
   const discountPercentRef = useRef();
   const couponLengthRef = useRef();
@@ -33,7 +32,8 @@ const Dashboard = (props) => {
     sixth: false,
     seventh: false,
     eight: false,
-    nine:false,
+    nine: false,
+    // tenth: false,
   });
   const [mobile, setMobile] = useState(false);
   const [startDate, setStartDate] = useState();
@@ -155,7 +155,8 @@ const Dashboard = (props) => {
                   sixth: false,
                   seventh: false,
                   eight: false,
-                  nine:false
+                  nine: false,
+                  // tenth: false,
                 })
               }
             >
@@ -180,7 +181,8 @@ const Dashboard = (props) => {
                   sixth: false,
                   seventh: false,
                   eight: false,
-                  nine:false
+                  nine: false,
+                  // tenth: false,
                 })
               }
             >
@@ -205,7 +207,8 @@ const Dashboard = (props) => {
                   sixth: true,
                   seventh: false,
                   eight: false,
-                  nine:false
+                  nine: false,
+                  // tenth: false,
                 })
               }
             >
@@ -230,7 +233,8 @@ const Dashboard = (props) => {
                   sixth: false,
                   seventh: true,
                   eight: false,
-                  nine:false,
+                  nine: false,
+                  // tenth: false,
                 })
               }
             >
@@ -254,6 +258,8 @@ const Dashboard = (props) => {
                   sixth: false,
                   seventh: false,
                   eight: true,
+                  nine: false,
+                  // tenth: false,
                 })
               }
             >
@@ -266,30 +272,58 @@ const Dashboard = (props) => {
               <p className={styles.item}>popup</p>
             </span>
             <span
-                  className={showItem.nine ? styles.spanActive : styles.span}
-                  onClick={() =>
-                    setShowItem({
-                      ...showItem,
-                      third: false,
-                      first: false,
-                      second: false,
-                      fourth: false,
-                      fifth: true,
-                      sixth: false,
-                      seventh: false,
-                      eight: false,
-                      nine:true,
-                    })
-                  }
-                >
-                  <TbCertificate
-                    className={
-                      showItem.nine ? styles.barIconActive : styles.barIcon
-                    }
-                  />
+              className={showItem.nine ? styles.spanActive : styles.span}
+              onClick={() =>
+                setShowItem({
+                  ...showItem,
+                  third: false,
+                  first: false,
+                  second: false,
+                  fourth: false,
+                  fifth: false,
+                  sixth: false,
+                  seventh: false,
+                  eight: false,
+                  nine: true,
+                  // tenth: false,
+                })
+              }
+            >
+              <TbCertificate
+                className={
+                  showItem.nine ? styles.barIconActive : styles.barIcon
+                }
+              />
 
-                  <p className={styles.item}>certificate</p>
+              <p className={styles.item}>certificate</p>
             </span>
+
+            {/* <span
+              className={showItem.tenth ? styles.spanActive : styles.span}
+              onClick={() =>
+                setShowItem({
+                  ...showItem,
+                  third: false,
+                  first: false,
+                  second: false,
+                  fourth: false,
+                  fifth: false,
+                  sixth: false,
+                  seventh: false,
+                  eight: false,
+                  nine: false,
+                  tenth: true,
+                })
+              }
+            >
+              <TbMail
+                className={
+                  showItem.nine ? styles.barIconActive : styles.barIcon
+                }
+              />
+
+              <p className={styles.item}>Send Email</p>
+            </span> */}
 
             {props.token.role === "Admin" ? (
               <div className={styles.list}>
@@ -309,6 +343,8 @@ const Dashboard = (props) => {
                       sixth: false,
                       eight: false,
                       seventh: false,
+                      nine: false,
+                      // tenth: false,
                     })
                   }
                 >
@@ -357,7 +393,7 @@ const Dashboard = (props) => {
                       sixth: false,
                       seventh: false,
                       eight: false,
-                      nine:false,
+                      nine: false,
                     })
                   }
                 >
@@ -369,7 +405,6 @@ const Dashboard = (props) => {
 
                   <p className={styles.item}>Edit User</p>
                 </span>
-                
               </div>
             ) : (
               ""
@@ -438,8 +473,6 @@ const Dashboard = (props) => {
                   <button>Generate Coupon</button>
                 )}
               </div>
-
-
             </form>
             {validCoupon.success ? (
               <p className={styles.couponCode}>{couponCode}</p>
@@ -482,14 +515,23 @@ const Dashboard = (props) => {
         ) : (
           ""
         )}
-         {showItem.nine ? (
+        {showItem.nine ? (
           <div className={styles.loan}>
             <h2>Generate Certificate</h2>
-            <CertificateForm/>
+            <CertificateForm />
           </div>
         ) : (
           ""
         )}
+
+        {/* {showItem.tenth ? (
+          <div className={styles.loan}>
+            <h2>Edit/Send Email</h2>
+            <EmailForm />
+          </div>
+        ) : (
+          ""
+        )} */}
       </div>
     </>
   );

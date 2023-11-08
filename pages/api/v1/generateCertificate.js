@@ -38,8 +38,11 @@ export default async function handler(req, res) {
       id,
       durationStartDate,
       durationEndDate,
+      textarea,
+      vertical,
     } = req.body;
 
+    console.log(req.body);
     let path = "";
     if (certificateType === "course completion certificate") {
       path = "./certificate/courseCompletion.html";
@@ -61,6 +64,9 @@ export default async function handler(req, res) {
     }
     if (certificateType === "project experience certificate CHMS") {
       path = "./certificate/projectExperienceCertifateChms.html";
+    }
+    if (certificateType === "SingleDoor Project Completion") {
+      path = "./certificate/singleDoor.html";
     }
 
     const uploadToS3 = async (fileName) => {
@@ -104,6 +110,7 @@ export default async function handler(req, res) {
         id,
         durationStartDate,
         durationEndDate,
+        textarea,
       });
 
       // simulate a chrome browser with puppeteer and navigate to a new page
@@ -118,11 +125,26 @@ export default async function handler(req, res) {
       //MAIL DATA
 
       // convert the page to pdf with the .pdf() method
-      const pdf = await page.pdf({
-        width: "1122",
-        height: "793",
-        printBackground: true,
-      });
+      // const pdf = await page.pdf({
+      //   width: "1122",
+      //   height: "793",
+      //   printBackground: true,
+      // });
+
+      let pdf;
+      if (vertical) {
+        pdf = await page.pdf({
+          width: "980", // set width to A4 width
+          height: "920",
+          printBackground: true,
+        });
+      } else {
+        pdf = await page.pdf({
+          width: "1122",
+          height: "793",
+          printBackground: true,
+        });
+      }
       fs.mkdirSync("./public/certificate", { recursive: true });
       fs.writeFileSync(`./public/certificate/${fPdfName}.pdf`, pdf);
 
@@ -196,6 +218,28 @@ export default async function handler(req, res) {
             },
           ],
           html: `<div>Dear ${name},</div><p>Congratulations!,</p> <p>Here is your certificate for ${courseName} by Skillslash Academy !</p></div><p>Congratulations on receiving your ${courseName}! You can now download your certificate.</p> <p>Your certificate is available in an online format so that you can retrieve it anywhere at any time, and easily share the details of your achievement.</p><p>Having trouble with your certificate or you want to unsubscribe from email list? Contact us at info@skillslash.com.</p>`,
+        };
+      }
+      // singledoor project completition
+      if (certificateType === "SingleDoor Project Completion") {
+        mailData = {
+          from: "certificate@skillslash.com",
+          to: email,
+          cc: "phani.kishore@skillslash.com",
+          subject: `certificate From Skillslash`,
+          attachments: [
+            {
+              filename: `${fPdfName}.pdf`,
+              path: `./public/certificate/${fPdfName}.pdf`,
+              contentType: "application/pdf",
+            },
+          ],
+          html: `<div>This is to certify that ${name} was engaged in a
+              ${courseName} by Single Door Pvt Ltd.
+              This certificate is awarded in recognition of your exceptional
+              contributions to the project.</div>
+              <div>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.</div>
+              <div>${textarea}</div>`,
         };
       }
 

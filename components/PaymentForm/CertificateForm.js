@@ -12,6 +12,7 @@ const CertificateForm = () => {
   const [display, setDisplay] = useState(false);
   const [show, setShow] = useState(false);
   const [link, setLink] = useState(false);
+  const [vertical, setVertical] = useState(false);
 
   const [query, setQuery] = useState({
     name: "",
@@ -23,6 +24,7 @@ const CertificateForm = () => {
     id: "",
     durationStartDate: "",
     durationEndDate: "",
+    textarea: "",
   });
 
   // Update inputs value
@@ -62,7 +64,7 @@ const CertificateForm = () => {
       });
       if (data.status === 200) {
         let r = (Math.random() + 1).toString(36).substring(8);
-        console.log(r);
+        // console.log(r);
         const { id } = await data.json();
         const customId = id + r;
         setQuery({
@@ -70,7 +72,7 @@ const CertificateForm = () => {
           ids: id,
           id: customId,
         });
-        console.log(id, "id");
+        // console.log(id, "id");
         // console.log(batchDatesDetails);
       }
     };
@@ -79,6 +81,11 @@ const CertificateForm = () => {
 
   const formSubmit = async (e) => {
     e.preventDefault();
+
+    if (query.certificateType === "SingleDoor Project Completion") {
+      console.log("gs");
+      setVertical(true);
+    }
     setLoading(true);
 
     try {
@@ -94,7 +101,7 @@ const CertificateForm = () => {
         try {
           const data = await fetch("/api/v1/generateCertificate", {
             method: "POST",
-            body: JSON.stringify(query),
+            body: JSON.stringify({ ...query, vertical }),
             headers: {
               "Content-Type": "application/json",
             },
@@ -112,6 +119,7 @@ const CertificateForm = () => {
               ids: "",
               durationStartDate: "",
               durationEndDate: "",
+              textarea: "",
             });
             setProgramEndDate("");
             setProgramStartDate("");
@@ -217,6 +225,9 @@ const CertificateForm = () => {
             <option value="Module completion certificate">
               Module completion certificate
             </option>
+            <option value="SingleDoor Project Completion">
+              SingleDoor Project Completion
+            </option>
           </select>
         </div>
         {}
@@ -235,7 +246,10 @@ const CertificateForm = () => {
 
         {query.certificateType === "" ? (
           ""
-        ) : query.certificateType !== "course completion certificate" ? (
+        ) : query.certificateType === "course completion certificate" ||
+          query.certificateType === "SingleDoor Project Completion" ? (
+          ""
+        ) : (
           <div className={styles.inners} style={{ marginBottom: "10px" }}>
             <DatePicker
               selected={programStartDate}
@@ -262,6 +276,21 @@ const CertificateForm = () => {
               placeholderText="Enter program End Date"
               dateFormat="MMMM d, yyyy"
               required
+            />
+          </div>
+        )}
+
+        {query.certificateType === "SingleDoor Project Completion" ? (
+          <div
+            className={styles.inn}
+            style={{ marginBottom: "10px", width: "100%" }}
+          >
+            <textarea
+              name="textarea"
+              value={query.textarea}
+              placeholder="Enter program or project details"
+              className={styles.textArea}
+              onChange={handleParam()}
             />
           </div>
         ) : (
