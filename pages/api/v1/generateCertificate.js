@@ -135,7 +135,7 @@ export default async function handler(req, res) {
       if (vertical) {
         pdf = await page.pdf({
           width: "980", // set width to A4 width
-          height: "920",
+          height: "1130",
           printBackground: true,
         });
       } else {

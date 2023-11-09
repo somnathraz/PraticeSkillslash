@@ -54,7 +54,11 @@ const CertificateForm = () => {
       durationStartDate: ConvertDate(programStartDate),
       durationEndDate: ConvertDate(programEndDate),
     });
-  }, [startDate, programStartDate, programEndDate]);
+    if (query.certificateType === "SingleDoor Project Completion") {
+      console.log("gs");
+      setVertical(true);
+    }
+  }, [startDate, programStartDate, programEndDate, query.certificateType]);
   // Form Submit function
 
   useEffect(() => {
@@ -82,10 +86,6 @@ const CertificateForm = () => {
   const formSubmit = async (e) => {
     e.preventDefault();
 
-    if (query.certificateType === "SingleDoor Project Completion") {
-      console.log("gs");
-      setVertical(true);
-    }
     setLoading(true);
 
     try {
