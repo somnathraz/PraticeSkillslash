@@ -1,316 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project completion</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lusitana&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap");
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project completion</title>
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Lusitana&display=swap");
-    @import url("https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap");
+      body {
+        font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+      }
 
-    body {
-      font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-    }
+      .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-    .wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .innerWrapper {
-      display: flex;
-      flex-flow: column;
-      /* width: 980px;
+      .innerWrapper {
+        display: flex;
+        flex-flow: column;
+        /* width: 980px;
         height: 1108px; */
-      align-items: center;
-      overflow: hidden;
-      border-radius: 8px;
-      background-color: white;
-      padding: 45px;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      position: relative;
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    }
+        align-items: center;
+        overflow: hidden;
+        border-radius: 8px;
+        background-color: white;
+        padding: 45px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
 
-    .logo {
-      /* position: absolute; */
-      right: 40%;
-      top: 20px;
-      z-index: 99;
-    }
+      .logo {
+        /* position: absolute; */
+        right: 40%;
+        top: 20px;
+        z-index: 99;
+      }
 
-    .content {
-      display: flex;
-      flex-flow: column;
-      align-items: center;
-      justify-content: center;
-    }
+      .content {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+      }
 
-    hr {
-      width: 90%;
-      background-color: rgb(209, 208, 208);
-      height: 2px;
-    }
+      hr {
+        width: 90%;
+        background-color: rgb(209, 208, 208);
+        height: 2px;
+      }
 
-    .content h2 {
-      font-family: "Roboto", sans-serif;
-      font-weight: 600;
-      text-align: center;
-      font-size: 26px;
-      margin: 0;
-      color: #f18350;
-    }
+      .content h2 {
+        font-family: "Roboto", sans-serif;
+        font-weight: 600;
+        text-align: center;
+        font-size: 26px;
+        margin: 0;
+        color: #f18350;
+      }
 
-    .certificate {
-      font-size: 17px;
-      font-weight: 400;
-      margin: 0;
-      color: gray;
-      margin-bottom: 20px;
-      text-align: center;
-    }
+      .certificate {
+        font-size: 17px;
+        font-weight: 400;
+        margin: 0;
+        color: gray;
+        margin-bottom: 20px;
+        text-align: center;
+      }
 
-    .content h1 {
-      font-size: 40px;
-      border-bottom: 2px solid #e7c45a;
-      font-family: "Petit Formal Script", cursive;
-    }
+      .content h1 {
+        font-size: 40px;
+        border-bottom: 2px solid #e7c45a;
+        font-family: "Petit Formal Script", cursive;
+      }
 
-    .yellowLine {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      padding: 10px;
-      justify-content: center;
-    }
+      .yellowLine {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        justify-content: center;
+      }
 
-    .yellowLine p {
-      font-weight: 600;
-      letter-spacing: 3px;
-      font-size: 20px;
-      text-transform: uppercase;
-      margin-bottom: 0;
-      border-bottom: 2px black solid;
-    }
+      .yellowLine p {
+        font-weight: 600;
+        letter-spacing: 3px;
+        font-size: 20px;
+        text-transform: uppercase;
+        margin-bottom: 0;
+        border-bottom: 2px black solid;
+      }
 
-    .innerContent {
-      display: flex;
-      flex-flow: column;
-      align-items: center;
-      justify-content: center;
-      padding-top: 15px !important;
-      padding: 60px;
-    }
+      .innerContent {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 15px !important;
+        padding: 60px;
+      }
 
-    .bold {
-      font-weight: 800;
-    }
+      .bold {
+        font-weight: 800;
+      }
 
-    .bottomBlock {
-      display: flex;
-      align-items: center;
-      height: 120px;
-      margin-right: 83%;
-    }
+      .bottomBlock {
+        display: flex;
+        align-items: center;
+        height: 120px;
+        /* width: 100%; */
 
-    .bottomBlock div {
-      display: flex;
+        padding: 10px 60px;
+        justify-content: space-around;
+      }
 
-      flex-flow: column;
-    }
+      .bottomBlock div {
+        display: flex;
 
-    .wrapper h4,
-    p {
-      margin: 0;
-      color: #555555;
-    }
+        flex-flow: column;
+      }
 
-    .sign {
-      position: relative;
-      align-items: center;
-    }
+      .wrapper h4,
+      p {
+        margin: 0;
+        color: #555555;
+      }
 
-    .sign p {
-      font-size: 19px;
-      color: #25385d;
-      margin-top: 8px;
-    }
+      .sign {
+        position: relative;
+        align-items: center;
+      }
 
-    .sign img {
-      width: 100px;
-      height: 100%;
-    }
+      .sign p {
+        font-size: 12px;
+        color: #25385d;
+        margin-top: 8px;
+      }
 
-    .signWrapper {
-      justify-content: center;
-      display: flex;
-      padding: 10px;
-      position: absolute;
-      top: -40px;
-    }
+      .sign img {
+        width: 100px;
+        height: 100%;
+      }
 
-    .date .line {
-      border-bottom: 2px solid black;
-      width: 79%;
-    }
+      .signWrapper {
+        justify-content: center;
+        display: flex;
+        padding: 10px;
+        position: absolute;
+        top: -40px;
+      }
 
-    .sign .line {
-      margin-top: 43px;
-      width: 60%;
-      border-bottom: 2px solid black;
-    }
+      .date .line {
+        border-bottom: 2px solid black;
+        width: 100%;
+      }
 
-    .stamp {
-      display: flex;
-      flex-flow: column;
-      align-items: center;
-      justify-content: flex-end;
-    }
+      .sign .line {
+        margin-top: 43px;
+        width: 60%;
+        border-bottom: 2px solid black;
+      }
 
-    .dateRight {
-      margin-left: 80%;
-    }
+      .stamp {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: flex-end;
+      }
 
-    .date p {
-      margin-top: 5px;
-    }
+      .dateRight {
+        margin-left: 80%;
+      }
 
-    .date h4 {
-      font-size: 24px;
-      font-weight: 500;
-      margin-bottom: 5px;
-    }
+      .date p {
+        margin-top: 5px;
+      }
 
-    .bold {
-      color: #13649d;
-    }
+      .date h4 {
+        font-size: 21px;
+        font-weight: 500;
+        margin-bottom: 5px;
+      }
 
-    .innerContent p {
-      font-size: 21px;
-      line-height: 27px;
-    }
+      .bold {
+        color: #13649d;
+      }
 
-    /* .content {
+      .innerContent p {
+        font-size: 21px;
+        line-height: 27px;
+      }
+
+      /* .content {
         margin: 5px;
       } */
-    .qrCode {
-      width: 90px;
-      height: 90px;
-    }
+      .qrCode {
+        width: 90px;
+        height: 90px;
+      }
 
-    .qrWrap {
-      display: flex;
-      position: absolute;
-      left: 120px;
-      top: 90px;
-      align-items: center;
-      flex-flow: column;
-    }
+      .qrWrap {
+        display: flex;
+        position: absolute;
+        left: 120px;
+        top: 50px;
+        align-items: center;
+        flex-flow: column;
+      }
 
-    .qrWrap p {
-      font-size: 14px;
-      margin: 0;
-    }
+      .qrWrap p {
+        font-size: 14px;
+        margin: 0;
+      }
 
-    .signature {
-      width: 100%;
-    }
-  </style>
-</head>
+      .signature {
+        width: 100%;
+      }
+      
+    </style>
+  </head>
 
-<body>
-  <div class="wrapper">
-    <div class="innerWrapper">
-      <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/singledoor+logo.png"
-        class="logo" width="160px" />
+  <body>
+    <div class="wrapper">
+      <div class="innerWrapper">
+        <img
+          src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/singledoor+logo.png"
+          class="logo"
+          width="160px"
+        />
 
-      <div class="content">
-        <h2>
-          SINGLE DOOR TECHNO<br />
-          SOLUTIONS PRIVATE LIMITED
-        </h2>
-        <hr />
-        <p class="certificate">
-          Single Door Techno Solutions Private Limited,<br />West Midnapore,
-          West Bengal, India
-        </p>
-        <div class="dateRight">
-          <p>Date:{{date}}</p>
-        </div>
-        <div class="yellowLine">
-          <p>TO WHOM SO EVER IT MAY CONCERN</p>
-        </div>
-
-        <div class="innerContent">
-          <p class="content">
-            This is to certify that {{name}} was engaged in a
-            telecommunications visualization project by Single Door Pvt Ltd.
-            This certificate is awarded in recognition of your exceptional
-            contributions to the project.
+        <div class="content">
+          <h2>
+            SINGLE DOOR TECHNO<br />
+            SOLUTIONS PRIVATE LIMITED
+          </h2>
+          <hr />
+          <p class="certificate">
+            Single Door Techno Solutions Private Limited,<br />West Midnapore,
+            West Bengal, India
           </p>
-          <p>
-            Server side any one (or more) of: Java, JUnit, AssertJ, Mockito
-            C#, NUnit, Moq Python, pytest Go Typescript, Jest JavaScript, Jest
-            PHP, PHPUnit
-          </p>
-          <p>
-            Server side any one (or more) of: Java, JUnit, AssertJ, Mockito
-            C#, NUnit, Moq Python, pytest Go Typescript, Jest JavaScript, Jest
-            PHP, PHPUnit
-          </p>
-          <p>{{textarea}}</p>
-          <br />
-          <br />
-          <div class="signature">
-            <p><b>Yours Sincerely</b></p>
-            <p><b>Teams Singledoor</b></p>
+          <div class="dateRight">
+            <p>Date:{{date}}</p>
           </div>
-          <br /><br />
-          <p>
-            N.B - This certificate is being issued to validate the intern's
-            contribution to our project(s). This is not to be construed as a
-            job referral and any party using this certificate must also do
-            their due diligence in the hiring process.
-          </p>
+          <div class="yellowLine">
+            <p>TO WHOM SO EVER IT MAY CONCERN</p>
+          </div>
+
+          <div class="innerContent">
+            <p class="content">
+              This is to certify that {{name}} was engaged in a
+              telecommunications visualization project by Single Door Pvt Ltd.
+              This certificate is awarded in recognition of your exceptional
+              contributions to the project.
+            </p>
+            <p>
+              Server side any one (or more) of: Java, JUnit, AssertJ, Mockito
+              C#, NUnit, Moq Python, pytest Go Typescript, Jest JavaScript, Jest
+              PHP, PHPUnit
+            </p>
+            <!-- <p>
+            Server side any one (or more) of: Java, JUnit, AssertJ, Mockito
+            C#, NUnit, Moq Python, pytest Go Typescript, Jest JavaScript, Jest
+            PHP, PHPUnit
+          </p> -->
+            <p>{{textarea}}</p>
+            <br />
+            <br />
+            <div class="signature">
+              <p><b>Yours Sincerely</b></p>
+              <p><b>Teams Singledoor</b></p>
+            </div>
+            <br /><br />
+            <p>
+              N.B - This certificate is being issued to validate the intern's
+              contribution to our project(s). This is not to be construed as a
+              job referral and any party using this certificate must also do
+              their due diligence in the hiring process.
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="bottomBlock">
-        <!-- <div class="qrWrap">
+        <div class="bottomBlock">
+          <div class="qrWrap">
             <img
               class="qrCode"
               src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/qrcode_Verify.png"
               alt="qrCode"
             />
             <p>Scan to verify</p>
-          </div> -->
-        <!-- <div class="date">
+          </div>
+          <div class="date">
             <h4>{{date}}</h4>
             <div class="line"></div>
-            <p>Certificate ID : {{id}}</p>
-          </div> -->
-        <!-- <div class="stamp">
+            <p>Certificate ID : {{sdgdsgsdgdfs}}</p>
+          </div>
+          <div class="stamp">
             <img
               src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/Logo+%26+certification+skills-ai.png"
               alt="logo-certificate"
               width="504px"
             />
-          </div> -->
-        <div class="sign">
-          <div class="signWrapper">
-            <img src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/Sketch-sign.png"
-              alt="rahul-sign" />
           </div>
-          <div class="line"></div>
-
-          <p>Rahul Kashyap</p>
+          <div class="sign">
+            <div class="signWrapper">
+              <img
+                src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/certificateTemplate/Sketch-sign.png"
+                alt="rahul-sign"
+              />
+            </div>
+            <div class="line"> </div>
+            <p>Rahul Kashyap</p>
+            <p >Director of Skillslash</p>
+         
         </div>
       </div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>

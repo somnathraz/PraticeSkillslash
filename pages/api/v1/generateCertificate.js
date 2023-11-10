@@ -238,7 +238,6 @@ export default async function handler(req, res) {
               ${courseName} by Single Door Pvt Ltd.
               This certificate is awarded in recognition of your exceptional
               contributions to the project.</div>
-            
               <div>${textarea}</div>`,
         };
       }
