@@ -46,6 +46,13 @@ const CertificateForm = () => {
 
     return DateString;
   };
+  // log text area split
+  const textData = query.textarea;
+  console.log(textData.split("@"));
+  const arrayTextData = textData.split("@");
+  console.log(arrayTextData);
+  // console.log(arrayTextData[);
+
   useEffect(() => {
     setQuery({
       ...query,
@@ -55,7 +62,7 @@ const CertificateForm = () => {
       durationEndDate: ConvertDate(programEndDate),
     });
     if (query.certificateType === "SingleDoor Project Completion") {
-      console.log("gs");
+      // console.log("gs");
       setVertical(true);
     }
   }, [startDate, programStartDate, programEndDate, query.certificateType]);
@@ -285,7 +292,7 @@ const CertificateForm = () => {
             className={styles.inn}
             style={{ marginBottom: "10px", width: "100%" }}
           >
-            <textarea
+            <input
               name="textarea"
               value={query.textarea}
               placeholder="Enter program or project details"
