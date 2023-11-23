@@ -25,6 +25,7 @@ const CertificateForm = () => {
     durationStartDate: "",
     durationEndDate: "",
     textarea: "",
+    point: "",
   });
 
   // Update inputs value
@@ -127,6 +128,7 @@ const CertificateForm = () => {
               durationStartDate: "",
               durationEndDate: "",
               textarea: "",
+              point: "",
             });
             setProgramEndDate("");
             setProgramStartDate("");
@@ -288,18 +290,34 @@ const CertificateForm = () => {
         )}
 
         {query.certificateType === "SingleDoor Project Completion" ? (
-          <div
-            className={styles.inn}
-            style={{ marginBottom: "10px", width: "100%" }}
-          >
-            <input
-              name="textarea"
-              value={query.textarea}
-              placeholder="Enter program or project details"
-              className={styles.textArea}
-              onChange={handleParam()}
-            />
-          </div>
+          <>
+            <div
+              className={styles.inn}
+              style={{ marginBottom: "10px", width: "100%" }}
+            >
+              <input
+                name="textarea"
+                type="text"
+                value={query.textarea}
+                placeholder="Enter program or project details"
+                className={styles.textArea}
+                onChange={handleParam()}
+              />
+            </div>
+            <div
+              className={styles.inn}
+              style={{ marginBottom: "10px", width: "100%" }}
+            >
+              <input
+                name="point"
+                type="text"
+                value={query.point}
+                placeholder="Enter the point separate each point with point break"
+                className={styles.textArea}
+                onChange={handleParam()}
+              />
+            </div>
+          </>
         ) : (
           ""
         )}

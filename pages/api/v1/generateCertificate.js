@@ -40,9 +40,9 @@ export default async function handler(req, res) {
       durationEndDate,
       textarea,
       vertical,
+      point,
     } = req.body;
 
-    console.log(req.body);
     let path = "";
     if (certificateType === "course completion certificate") {
       path = "./certificate/courseCompletion.html";
@@ -92,6 +92,7 @@ export default async function handler(req, res) {
         fileUpload = data.Location;
       });
     };
+    const certPoint = point.split("pointbreak");
 
     const { sheets } = await authentication();
 
@@ -111,6 +112,7 @@ export default async function handler(req, res) {
         durationStartDate,
         durationEndDate,
         textarea,
+        certPoint,
       });
 
       // simulate a chrome browser with puppeteer and navigate to a new page
