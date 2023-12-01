@@ -261,9 +261,11 @@
             contributions to the project.
           </p>
           <p>{{textarea}}</p>
+          {{#if vertical}}
           {{#each certPoint}}
           <li>{{this}}</li>
           {{/each}}
+          {{/if}}
           <br />
           <br />
           <div class="signature">
