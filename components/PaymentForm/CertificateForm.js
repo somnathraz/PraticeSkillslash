@@ -49,9 +49,8 @@ const CertificateForm = () => {
   };
   // log text area split
   const textData = query.textarea;
-  console.log(textData.split("@"));
   const arrayTextData = textData.split("@");
-  console.log(arrayTextData);
+
   // console.log(arrayTextData[);
 
   useEffect(() => {
@@ -76,7 +75,7 @@ const CertificateForm = () => {
       });
       if (data.status === 200) {
         let r = (Math.random() + 1).toString(36).substring(8);
-        // console.log(r);
+        console.log(r);
         const { id } = await data.json();
         const customId = id + r;
         setQuery({
@@ -84,7 +83,7 @@ const CertificateForm = () => {
           ids: id,
           id: customId,
         });
-        // console.log(id, "id");
+        console.log(id, "id");
         // console.log(batchDatesDetails);
       }
     };

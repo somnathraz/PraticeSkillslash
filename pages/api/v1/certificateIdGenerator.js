@@ -1,45 +1,51 @@
 import { connectToDatabase } from "../../../lib/mongodb";
 export default async function handler(req, res) {
   const { db } = await connectToDatabase();
-  if(req.method === "GET"){
+  if (req.method === "GET") {
     try {
-         const popData = [];
+      const popData = [];
 
-         const generateCertificateId = await db.collection("certificateId").find().forEach(function (item) {
+      const generateCertificateId = await db
+        .collection("certificateId")
+        .find()
+        .forEach(function (item) {
           popData.push(item);
         });
-        
-        res.status(200).json({id:popData[0].id, msg:"id fetched"})
-        
+
+      res.status(200).json({ id: popData[0].id, msg: "id fetched" });
     } catch (error) {
-        res.status(400).json({ msg:error}) 
+      res.status(400).json({ msg: error });
     }
   }
-  if(req.method === "POST"){
-    const {id}= req.body;
-    const popData= []
-    
+  if (req.method === "POST") {
+    const { id } = req.body;
+    console.log(id);
+    const popData = [];
+
     try {
-const getId = await db.collection("certificateId").find().forEach(function (item) {
+      const getId = await db
+        .collection("certificateId")
+        .find()
+        .forEach(function (item) {
           popData.push(item);
         });
-      
-    const generateCertificateId = await db.collection("certificateId").updateOne(
-        {
-          id:popData[0].id
-        },
-        {
-          $set: {
-          id,
+
+      const generateCertificateId = await db
+        .collection("certificateId")
+        .updateOne(
+          {
+            id: popData[0].id,
           },
+          {
+            $set: {
+              id,
+            },
+          }
+        );
 
-        }
-      )
-    
-      res.status(200).json({msg:"id updated"})
+      res.status(200).json({ msg: "id updated" });
     } catch (error) {
-        res.status(400).json({ msg:error})  
+      res.status(400).json({ msg: error });
     }
   }
-  
 }
