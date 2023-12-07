@@ -261,10 +261,20 @@
           </div>
           <!-- <p>{{textarea}}</p> -->
           <!-- {{#if vertical}} -->
+          <p class="content">
+            This is to certify that {{name}} was engaged in a
+            telecommunications visualization project by Single Door Pvt Ltd.
+            This certificate is awarded in recognition of your exceptional
+            contributions to the project.
+          </p>
+          <p>{{textarea}}</p>
+          {{#if certPoint}}
           {{#each certPoint}}
           <li>{{this}}</li>
           {{/each}}
           <!-- {{/if}} -->
+          {{/if}}
+
           <br />
           <br />
           <div class="signature">
@@ -290,7 +300,7 @@
         <div class="date">
           <h4>{{date}}</h4>
           <div class="line"></div>
-          <p>Certificate ID : {{sdgdsgsdgdfs}}</p>
+          <p>Certificate ID : {{id}}</p>
         </div>
         <div class="stamp">
           <img

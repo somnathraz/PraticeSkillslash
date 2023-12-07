@@ -42,6 +42,7 @@ export default async function handler(req, res) {
       vertical,
       point,
     } = req.body;
+    console.log(req.body);
 
     console.log(req.body);
     let path = "";
