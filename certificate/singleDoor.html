@@ -254,26 +254,25 @@
         </div>
 
         <div class="innerContent">
-          <p class="content">
-            This is to certify that {{name}} was engaged in a
-            telecommunications visualization project by Single Door Pvt Ltd.
-            This certificate is awarded in recognition of your exceptional
-            contributions to the project.
-          </p>
-          <p>{{textarea}}</p>
-          {{#if vertical}}
+          <div class="content"  >
+            <p>This is to certify that <b>{{name}}</b> was engaged in a
+            <b>{{{courseName}}}</b> project by Single Door Pvt Ltd. from {{durationStartDate}} and {{durationEndDate}}. This certificate is awarded in recognition of your exceptional
+            contributions to the project.</p>
+          </div>
+          <!-- <p>{{textarea}}</p> -->
+          <!-- {{#if vertical}} -->
           {{#each certPoint}}
           <li>{{this}}</li>
           {{/each}}
-          {{/if}}
+          <!-- {{/if}} -->
           <br />
           <br />
           <div class="signature">
-            <p><b>Yours Sincerely</b></p>
-            <p><b>Teams Singledoor</b></p>
+            <p ><b>Yours Sincerely</b></p>
+            <p ><b>Teams Singledoor</b></p>
           </div>
           <br /><br />
-          <p>
+          <p >
             N.B - This certificate is being issued to validate the intern's
             contribution to our project(s). This is not to be construed as a
             job referral and any party using this certificate must also do

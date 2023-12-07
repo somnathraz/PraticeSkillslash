@@ -255,8 +255,7 @@ const CertificateForm = () => {
 
         {query.certificateType === "" ? (
           ""
-        ) : query.certificateType === "course completion certificate" ||
-          query.certificateType === "SingleDoor Project Completion" ? (
+        ) : query.certificateType === "course completion certificate" ? (
           ""
         ) : (
           <div className={styles.inners} style={{ marginBottom: "10px" }}>
@@ -291,7 +290,7 @@ const CertificateForm = () => {
 
         {query.certificateType === "SingleDoor Project Completion" ? (
           <>
-            <div
+            {/* <div
               className={styles.inn}
               style={{ marginBottom: "10px", width: "100%" }}
             >
@@ -303,7 +302,7 @@ const CertificateForm = () => {
                 className={styles.textArea}
                 onChange={handleParam()}
               />
-            </div>
+            </div> */}
             <div
               className={styles.inn}
               style={{ marginBottom: "10px", width: "100%" }}

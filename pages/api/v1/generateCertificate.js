@@ -43,6 +43,7 @@ export default async function handler(req, res) {
       point,
     } = req.body;
 
+    console.log(req.body);
     let path = "";
     if (certificateType === "course completion certificate") {
       path = "./certificate/courseCompletion.html";
