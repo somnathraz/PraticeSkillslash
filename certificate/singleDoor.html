@@ -183,9 +183,10 @@
     }
 
     .date h4 {
-      font-size: 21px;
+      font-size: 16px;
       font-weight: 500;
       margin-bottom: 5px;
+          text-align: center;
     }
 
     .bold {
@@ -255,24 +256,25 @@
 
         <div class="innerContent">
           <div class="content">
-            <p>This is to certify that <b>{{name}}</b> was engaged in a
+            <p  style="font-size: 17px;">This is to certify that <b>{{name}}</b> was engaged in a
               <b>{{{courseName}}}</b> project by Single Door Pvt Ltd. from {{durationStartDate}} and
               {{durationEndDate}}. This certificate is awarded in recognition of your exceptional
               contributions to the project.
             </p>
+           
           </div>
           <p>{{textarea}}</p>
           {{#each certPoint}}
-          <li>{{this}}</li>
+          <li style="line-height: 27px;">{{this}}</li>
           {{/each}}
           <br />
           <br />
-          <div class="signature">
-            <p><b>Yours Sincerely</b></p>
-            <p><b>Teams Singledoor</b></p>
+          <div class="signature" >
+            <p style="font-size: 15px;"><b>Yours Sincerely</b></p>
+            <p style="font-size: 15px;"><b>Team Singledoor</b></p>
           </div>
           <br /><br />
-          <p>
+          <p style="font-size: 11px;">
             N.B - This certificate is being issued to validate the intern's
             contribution to our project(s). This is not to be construed as a
             job referral and any party using this certificate must also do
@@ -288,9 +290,9 @@
           <p>Scan to verify</p>
         </div>
         <div class="date">
-          <h4>{{date}}</h4>
+          <h4 >{{date}}</h4>
           <div class="line"></div>
-          <p>Certificate ID : {{id}}</p>
+          <p style="font-size: 10px;">Certificate ID : {{id}}</p>
         </div>
         <div class="stamp">
           <img
@@ -303,8 +305,8 @@
               alt="rahul-sign" />
           </div>
           <div class="line"> </div>
-          <p>Rahul Kashyap</p>
-          <p>Director of Skillslash</p>
+          <p >Rahul Kashyap</p>
+          <p >Director of Skillslash</p>
 
         </div>
       </div>

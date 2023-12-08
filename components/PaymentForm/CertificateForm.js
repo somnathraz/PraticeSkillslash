@@ -297,7 +297,7 @@ const CertificateForm = () => {
                 name="textarea"
                 type="text"
                 value={query.textarea}
-                placeholder="Enter program or project details"
+                placeholder="Ignore field"
                 className={styles.textArea}
                 onChange={handleParam()}
               />
@@ -313,6 +313,7 @@ const CertificateForm = () => {
                 placeholder="Enter the point separate each point with point break"
                 className={styles.textArea}
                 onChange={handleParam()}
+                style={{ fontSize: "10px" }}
               />
             </div>
           </>
