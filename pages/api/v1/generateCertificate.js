@@ -42,9 +42,9 @@ export default async function handler(req, res) {
       vertical,
       point,
     } = req.body;
-    console.log(req.body);
+    // console.log(req.body);
 
-    console.log(req.body);
+    // console.log(req.body);
     let path = "";
     if (certificateType === "course completion certificate") {
       path = "./certificate/courseCompletion.html";
@@ -95,6 +95,7 @@ export default async function handler(req, res) {
       });
     };
     const certPoint = point.split("pointbreak");
+    // console.log(certPoint, "array");
 
     const { sheets } = await authentication();
 
