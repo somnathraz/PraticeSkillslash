@@ -49,6 +49,9 @@ export default async function handler(req, res) {
     if (certificateType === "course completion certificate") {
       path = "./certificate/courseCompletion.html";
     }
+    if (certificateType === "CHMS-vertical") {
+      path = "./certificate/CHMS-vertical.html";
+    }
     if (certificateType === "project experience certificate Theorax") {
       path = "./certificate/projectExperienceCertificateTH.html";
     }
@@ -226,7 +229,10 @@ export default async function handler(req, res) {
         };
       }
       // singledoor project completition
-      if (certificateType === "SingleDoor Project Completion") {
+      if (
+        certificateType === "SingleDoor Project Completion" ||
+        certificateType === "CHMS-vertical"
+      ) {
         mailData = {
           from: "certificate@skillslash.com",
           to: email,

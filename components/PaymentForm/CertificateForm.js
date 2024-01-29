@@ -61,7 +61,10 @@ const CertificateForm = () => {
       durationStartDate: ConvertDate(programStartDate),
       durationEndDate: ConvertDate(programEndDate),
     });
-    if (query.certificateType === "SingleDoor Project Completion") {
+    if (
+      query.certificateType === "SingleDoor Project Completion" ||
+      query.certificateType === "CHMS-vertical"
+    ) {
       // console.log("gs");
       setVertical(true);
     }
@@ -215,6 +218,7 @@ const CertificateForm = () => {
             <option value="course completion certificate">
               course completion certificate
             </option>
+            <option value="CHMS-vertical">CHMS-vertical</option>
             <option value="project experience certificate Theorax">
               project experience certificate Theorax
             </option>
@@ -287,7 +291,8 @@ const CertificateForm = () => {
           </div>
         )}
 
-        {query.certificateType === "SingleDoor Project Completion" ? (
+        {query.certificateType === "SingleDoor Project Completion" ||
+        query.certificateType === "CHMS-vertical" ? (
           <>
             {/* <div
               className={styles.inn}
