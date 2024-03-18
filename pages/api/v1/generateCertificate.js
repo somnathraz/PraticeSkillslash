@@ -11,7 +11,7 @@ let emailSent = "";
 const AWSCredentials = {
   accessKey: process.env.AWSAccessKeyId,
   secret: process.env.AWSSecretKey,
-  bucketName: "skillslash-cdn/Certificate",
+  bucketName: "skillslash-data/certificate",
 };
 const transporter = nodemailer.createTransport({
   port: 465,
@@ -266,7 +266,7 @@ export default async function handler(req, res) {
         } else {
           emailSent = `email sent successfully. ${info.messageId}`;
 
-          const downloadFile = `https://skillslash-cdn.s3.ap-south-1.amazonaws.com/Certificate/${fPdfName}.pdf`;
+          const downloadFile = ` https://skillslash-data.s3.us-east-2.amazonaws.com/certificate/${fPdfName}.pdf`;
           const response = await sheets.spreadsheets.values.append({
             spreadsheetId: process.env.GOOGLE_SHEET_ID1,
             range: "Sheet1",
