@@ -15,7 +15,6 @@ const cartSlice = createSlice({
       }
       setCookie(CARD, state);
     },
-
     decrementQuantity: (state, action) => {
       const item = state.find((item) => item.id === action.payload);
       if (item.quantity === 1) {
