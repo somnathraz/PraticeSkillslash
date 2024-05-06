@@ -37,6 +37,7 @@
     "react-use": "^17.4.0",
     "redux": "^4.2.0",
     "redux-devtools-extension": "^2.13.9",
+    "saas": "^1.0.0",
     "sass": "^1.52.2",
     "sharp": "^0.30.7",
     "shortid": "^2.2.16",

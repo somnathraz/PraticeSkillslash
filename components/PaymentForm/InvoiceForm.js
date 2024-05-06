@@ -140,6 +140,18 @@ const InvoiceForm = ({ refund, salesMan }) => {
   if (query.courseName === "Data Structures and Algorithms + System Design") {
     code = "DSAS";
   }
+  if (query.courseName === "Data Science & AI Bootcamp  ") {
+    code = "DSAB";
+  }
+  if (query.courseName === "Data Analytics Bootcamp  ") {
+    code = "DAB";
+  }
+  if (query.courseName === "DSA & System Design Bootcamp  ") {
+    code = "DSDB";
+  }
+  if (query.courseName === "Gen-AI & ChatGPT Course  ") {
+    code = "GACC";
+  }
 
   //verify submit function
   const verifySubmit = async (e) => {
@@ -312,6 +324,24 @@ const InvoiceForm = ({ refund, salesMan }) => {
             </option>
             <option value="Full stack Web Development Course with Real Work Experience">
               Full stack Web Development Course with Real Work Experience
+            </option>
+
+
+            <option value="Data Science & AI Bootcamp ">
+            Data Science & AI Bootcamp
+            </option>
+
+            <option value="Data Analytics Bootcamp">
+            Data Analytics Bootcamp
+            </option>
+
+
+            <option value="DSA & System Design Bootcamp">
+            DSA & System Design Bootcamp
+            </option>
+
+            <option value="Gen-AI & ChatGPT Course ">
+            Gen-AI & ChatGPT Course
             </option>
           </select>
         </div>
