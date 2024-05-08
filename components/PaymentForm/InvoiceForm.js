@@ -55,7 +55,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
 
       if (data.status === 200) {
         const { id } = await data.json();
-
+        console.log(id, "invoice");
         setPId(id);
       }
       if (data.status === 409) {
@@ -140,13 +140,17 @@ const InvoiceForm = ({ refund, salesMan }) => {
   if (query.courseName === "Data Structures and Algorithms + System Design") {
     code = "DSAS";
   }
-  if (
-    query.courseName === "Data Science & AI Bootcamp  " ||
-    query.courseName === "Data Analytics Bootcamp  " ||
-    query.courseName === "DSA & System Design Bootcamp  " ||
-    query.courseName === "Gen-AI & ChatGPT Course  "
-  ) {
-    code = "BOOTCAMP";
+  if (query.courseName === "Data Science & AI Bootcamp") {
+    code = "DSAB";
+  }
+  if (query.courseName === "Data Analytics Bootcamp") {
+    code = "DAB";
+  }
+  if (query.courseName === "DSA & System Design Bootcamp") {
+    code = "DSASDB";
+  }
+  if (query.courseName === "Gen-AI & ChatGPT Course") {
+    code = "GACGPTC";
   }
 
   //verify submit function
@@ -322,7 +326,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
               Full stack Web Development Course with Real Work Experience
             </option>
 
-            <option value="Data Science & AI Bootcamp ">
+            <option value="Data Science & AI Bootcamp">
               Data Science & AI Bootcamp
             </option>
 
@@ -334,7 +338,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
               DSA & System Design Bootcamp
             </option>
 
-            <option value="Gen-AI & ChatGPT Course ">
+            <option value="Gen-AI & ChatGPT Course">
               Gen-AI & ChatGPT Course
             </option>
           </select>
@@ -441,7 +445,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
         <div className={styles.infoWrap}>
           <div className={styles.infoD}>
             <Image
-              src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/Skillslash-logo.webp"
+              src=""
               layout="fill"
               alt="review"
               style={{ borderRadius: "4px" }}
@@ -590,7 +594,7 @@ const InvoiceForm = ({ refund, salesMan }) => {
         <div className={styles.infoWrap}>
           <div className={styles.infoD}>
             <Image
-              src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/Skillslash-logo.webp"
+              src="https://skillslash-cdn.s3.ap-south-1.amazonaws.com/static/web/google-background-verify.webp"
               layout="fill"
               alt="review"
               style={{ borderRadius: "4px" }}
